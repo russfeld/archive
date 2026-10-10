@@ -1,0 +1,263 @@
+<html lang="en">
+<head>
+  <BASE href="../">
+  <link href="favicon.ico" rel="shortcut icon">
+  <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+  <meta name="description" content="CIS 225 Fall 2014 Lecture 11" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 225 Fall 2014 Lecture 11</title>
+    <link href="css/impress.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 225</b><br><br>Lecture 11: User Management</p>
+    </div>
+
+    <div id="users" class="step slide" data-x="1000" data-y="0">
+      <p class="centertext"><b>User Accounts</b><br><br></p>
+      <ul>
+        <li>Allows multiple people to share resources</li>
+        <li>Each user can have different permissions</li>
+        <li>Aids in auditing (who did what)</li>
+        <li>Protects system from unauthorized use</li>
+      </ul>
+    </div>
+
+    <div id="authorize_authenticate" class="step slide" data-x="2000" data-y="0">
+      <p class="centertext"><b>Authentication vs. Authorization</b><br><br></p>
+      <ul>
+        <li><b>Authentication</b> - Confirming a user is who he or she claims to be (logging in)</li>
+        <li><b>Authorization</b> - Allow an authenticated user access to specific resources</li>
+        <li>Authentication <b>DOES NOT IMPLY</b> Authorization</li>
+      </ul>
+    </div>
+
+    <div id="authenticate" class="step slide" data-x="3000" data-y="0">
+      <p class="centertext"><b>Authentication Methods</b><br><br></p>
+      <p>One or more of the following factors</p>
+      <ul>
+        <li>Ownership factors - something user has</li>
+        <li>Knowledge factors - something user knows</li>
+        <li>Inheritance factors - something user is or does</li>
+      </ul>
+    </div>
+
+    <div id="authorize" class="step slide" data-x="4000" data-y="0">
+      <p class="centertext"><b>Authorization Methods</b><br><br></p>
+      <ul>
+        <li>Security Policies</li>
+        <li>Access Control Lists (ACL)</li>
+      </ul>
+    </div>
+
+    <div id="user_accounts" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>User Identification</b><br><br></p>
+      <ul>
+        <li>Operating systems refer to users by a unique identifier<ul>
+          <li>Linux: user identifier (UID)</li>
+          <li>Windows: security identifier (SID)</li></ul></li>
+        <li>This allows user to change usernames without affecting the account</li>
+      </ul>
+    </div>
+
+    <div id="identification" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b>User Account Information</b><br><br></p>
+      <ul>
+        <li>UID / SID</li>
+        <li>Username</li>
+        <li>Password</li>
+        <li>Home directory</li>
+        <li>Group(s)</li>
+      </ul>
+    </div>
+
+    <div id="groups" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>Groups</b><br><br></p>
+      <ul>
+        <li>List of user accounts</li>
+        <li>Aid in assigning access to users</li>
+        <li>Each user may be a part of one or many groups</li>
+        <li>Unique identifier<ul>
+          <li>Linux: group identifier (GID)</li>
+          <li>Windows: security identifier (SID)</li></ul></li>
+      </ul>
+    </div>
+
+    <div id="win8_control" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>Windows 8 Accounts</b></p>
+      <p class="centertext" style="font-size:40px">Control Panel</p>
+      <img class="centerimg" width="850" src="cis225fall2014/images/lecture11/win8_1.png">
+    </div>
+
+    <div id="win8_manage" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>Windows 8 Accounts</b></p>
+      <p class="centertext" style="font-size:40px">Computer Management</p>
+      <img class="centerimg" width="850" src="cis225fall2014/images/lecture11/win8_2.png">
+    </div>
+
+    <div id="win8_default_accounts" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>Windows 8 Default Accounts</b></p>
+      <ul>
+        <li>Administrator<ul>
+          <li>Access to <em>everything</em></li>
+          <li>Cannot be deleted</li>
+          <li>Disabled by default</li>
+          <li>Has no password by default</li></ul></li>
+        <li>Guest<ul>
+          <li>Limited access</li>
+          <li>Disabled by default</li></ul></li>
+      </ul>
+    </div>
+
+    <div id="win8_pseudo_accounts" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b>Windows 8 Pseudo Accounts</b></p>
+      <ul>
+        <li>LocalSystem - system-level tasks & services</li>
+        <li>LocalService - fewer rights than LocalSystem</li>
+        <li>NetworkService - fewer rights than LocalService, but allows network access</li>
+      </ul>
+    </div>
+
+    <div id="win8_default_groups" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b>Windows 8 Default Groups</b></p>
+      <ul>
+        <li>Administrators - complete access</li>
+        <li>Event Log Readers - read event logs</li>
+        <li>Guests - access system only</li>
+        <li>Power Users - <em>not used</em></li>
+        <li>Remote Desktop Users - log on remotely</li>
+        <li>Users - normal users</li>
+      </ul>
+      <p>Many others, refer to documentation</p>
+    </div>
+
+    <div id="win8_uac" class="step slide" data-x="3000" data-y="1800">
+      <p class="centertext"><b>User Account Control</b></p>
+      <ul>
+        <img class="centerimg" width="400" src="cis225fall2014/images/lecture11/win8_3.png">
+        <li>Protects the system from unwanted changes</li>
+        <li>Allows administrators to run commands from a non-administrator account</li>
+      </ul>
+    </div>
+
+    <div id="win8_gpedit" class="step slide" data-x="4000" data-y="1800">
+      <p class="centertext"><b>Local Group Policy Editor</b></p>
+      <p class="centertext" style="font-size:40px">WIN+R - gpedit.msc</p>
+      <img class="centerimg" height="550" src="cis225fall2014/images/lecture11/win8_4.png">
+    </div>
+
+    <div id="ubuntu_acct" class="step slide" data-x="0" data-y="2700">
+      <p class="centertext"><b>Ubuntu Account Types</b></p>
+      <ul>
+        <li>Super User (root)<ul>
+          <li>Complete control</li>
+          <li>Disabled by default</li>
+          <li>UID = 0; GID = 0</li></ul></li>
+        <li>Regular User<ul>
+          <li>User who can log on to the system</li></ul></li>
+        <li>System User<ul>
+          <li>Used by programs and services to access the system</li></ul></li>
+      </ul>
+    </div>
+
+    <div id="ubuntu_acct2" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>Ubuntu Accounts</b><br><br></p>
+      <p>Regular Users:</p>
+      <ul>
+        <li>UID: starting at 1000 and up</li>
+        <li>Each account has a private group created with matching GID</li>
+      </ul>
+    </div>
+
+    <div id="ubuntu_accounts" class="step slide" data-x="2000" data-y="2700">
+      <p class="centertext"><b>Ubuntu Accounts</b></p>
+      <p class="centertext" style="font-size:40px">System Settings</p>
+      <img class="centerimg" width="850" src="cis225fall2014/images/lecture11/lin_1.png">
+    </div>
+
+    <div id="ubuntu_accounts2" class="step slide" data-x="3000" data-y="2700">
+      <p class="centertext"><b>/etc/passwd</b></p>
+      <img class="centerimg" width="850" src="cis225fall2014/images/lecture11/lin_2.png">
+    </div>
+
+    <div id="ubuntu_accounts3" class="step slide" data-x="4000" data-y="2700">
+      <p class="centertext"><b>/etc/shadow</b></p>
+      <img class="centerimg" width="850" src="cis225fall2014/images/lecture11/lin_3.png">
+    </div>
+
+    <div id="commands" class="step slide" data-x="0" data-y="3600">
+      <p class="centertext"><b>Commands</b></p>
+      <ul>
+        <li>groupadd - add a group</li>
+        <li>groupdel - remove a group</li>
+        <li>groupmod - modify group</li>
+        <li>gpasswd - change group administrator or password</li>
+        <li>useradd - add a user</li>
+        <li>userdel - remove a user</li>
+        <li>usermod - modify a user</li>
+        <li>passwd - change password</li>
+      </ul>
+    </div>
+
+    <div id="sudo" class="step slide" data-x="1000" data-y="3600">
+      <p class="centertext"><b>sudo</b><br><br></p>
+      <ul>
+        <li>Short for "super user do"</li>
+        <li>Allows regular users to run commands as root</li>
+        <li>User and rights listed in /etc/sudoers</li>
+        <li>Add users to the "sudo" or "admin" group to give them access</li>
+      </ul>
+    </div>
+
+    <div id="reading" class="step slide" data-x="2000" data-y="3600">
+      <p class="centertext"><b>Reading<br><br></b></p>
+      <ul>
+        <li>Windows 8 Book - Chapter 13</li>
+        <li>Ubuntu Unleashed - Chapter 10</li>
+      </ul>
+    </div>
+
+    <div id="assignments" class="step slide" data-x="3000" data-y="3600">
+      <p class="centertext"><b>Assignments<br><br></b></p>
+      <ul>
+        <li>Lab 5 - User & File Management: Due 10/13 @ 11:30 AM</li>
+      </ul>
+    </div>
+
+    <div id="exam" class="step slide" data-x="4000" data-y="3600">
+      <p class="centertext"><b>Exam Results</b><br><br></p>
+      <ul>
+        <li>Max - 82/82, Min - 56.5/82</li>
+        <li>Avg - 71 (86%), Median - 70 (86%)</li>
+        <li>MC - Avg 21/24, Median 21/24</li>
+      </ul>
+    </div>
+    
+    <div id="overview" class="step" data-x="2000" data-y="2000" data-z="-1" data-scale="6.5">
+    </div>
+
+
+</div>
+
+<script src="js/analytics.js"></script>
+
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+
+</body>
+</html>

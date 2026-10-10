@@ -1,0 +1,358 @@
+<html lang="en">
+<head>
+    <link href="/favicon.ico" rel="shortcut icon">
+    <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+    <meta name="description" content="CIS 225 - Software" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 225 - Software</title>
+    <link href="/css/impress.css" rel="stylesheet" />
+    <link href="/css/TimeCircles.css" rel="stylesheet" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 225</b><br><br>Software</p>
+    </div>
+
+    <div id="Software_Architecture" class="step slide" data-x="1000" data-y="0">
+      <p class="centertext"><b>Windows Software Architecture<br><br></b></p>
+      <ul>
+        <li>Executable Image (.EXE)</li>
+        <li>Dynamic Link Library (.DLL)</li>
+        <li>Initialization File (.INI)</li>
+        <li>Registry Keys</li>
+        <li><em>Drivers</em></li>
+        <li><em>Services</em></li>
+      </ul>
+    </div>
+
+    <div id="exe" class="step slide" data-x="2000" data-y="0">
+      <p class="centertext"><b>Executable Image (.EXE)<br><br></b></p>
+      <ul>
+        <li>Contains the actual executable code for an application</li>
+        <li>May also contain resources, graphics, fonts, etc.</li>
+        <li>Based on the old Unix COFF (Common Object File Format)</li>
+      </ul>
+    </div>
+
+    <div id="dll" class="step slide" data-x="3000" data-y="0">
+      <p class="centertext"><b>Dynamic Link Library (.DLL)<br><br></b></p>
+      <ul>
+        <li>Shared library files used by programs</li>
+        <li>Uses same format as .EXE file</li>
+        <li>Programs can access same .DLL files simultaneously</li>
+      </ul>
+    </div>
+
+    <div id="ini" class="step slide" data-x="4000" data-y="0">
+      <p class="centertext"><b>Initialization File (.INI)<br><br></b></p>
+      <ul>
+        <li>Informal standard for configuration files</li>
+        <li>Used extensively in Windows up to Windows ME for system & software settings</li>
+        <li>Structured text files</li>
+      </ul>
+    </div>
+
+    <div id="registry" class="step slide" data-x="5000" data-y="0">
+      <p class="centertext"><b>Registry Keys<br><br></b></p>
+      <ul>
+        <li>Structured data storage for system settings</li>
+        <li>Key &lt;-&gt; Value pairs</li>
+        <li>Faster loading of settings</li>
+        <li>Allows multiple users to use a system simultaneously</li>
+      </ul>
+    </div>
+
+    <div id="install" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>Windows Software Install Process<br><br></b></p>
+      <ul>
+        <li>Extract/expand files</li>
+        <li>Place files in location</li>
+        <li>Create registry keys</li>
+        <li>Install drivers/services</li>
+        <li>Create user data files</li>
+        <li>Create shortcuts</li>
+      </ul>
+    </div>
+
+    <div id="track_install" class="step" data-x="1000" data-y="900">
+      <p class="centertext"><b>Tracking - Process Monitor</b></p>
+      <img class="centerimg" height="550" src="images/procmon.png">
+    </div>
+
+    <div id="track_install2" class="step" data-x="2000" data-y="900">
+      <p class="centertext"><b>Tracking - InstallWatch Pro</b></p>
+      <img class="centerimg" height="550" src="images/installwatch.png">
+    </div>
+
+    <div id="track_install3" class="step" data-x="3000" data-y="900">
+      <p class="centertext"><b>Installing - Thunderbird</b></p>
+      <img class="centerimg" height="600" src="images/thunderbird.png">
+    </div>
+
+    <div id="ubuntu_architecture" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>Ubuntu Software Architecture<br><br></b></p>
+      <ul>
+        <li>Binary Files</li>
+        <li>Shared Object Files (.SO)</li>
+        <li>Library Files</li>
+        <li>Settings Files</li>
+        <li>Documentation Files</li>
+        <li><em>Upstart/Systemd/init scripts</em></li>
+      </ul>
+    </div>
+
+    <div id="binary" class="step slide" data-x="5000" data-y="900">
+      <p class="centertext"><b>Binary Files<br><br></b></p>
+      <ul>
+        <li>Contains the executable code for the application</li>
+        <li>Uses the ELF (Executable and Linkable Format)</li>
+        <li>Commonly used in many Unix-like systems</li>
+        <li>Usually stored in /bin folder</li>
+      </ul>
+    </div>
+
+    <div id="so" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>Shared Object & Library Files<br><br></b></p>
+      <ul>
+        <li>Shared information or code used by multiple programs</li>
+        <li>Install once, use everywhere</li>
+        <li>May have to store multiple versions for different programs</li>
+        <li>Usually stored in /usr/lib</li>
+      </ul>
+    </div>
+
+    <div id="etc" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b>Settings Files<br><br></b></p>
+      <ul>
+        <li>Configuration files used by programs</li>
+        <li>Text based, similar to .INI files</li>
+        <li>Usually stored in /etc for system-wide settings or in a hidden folder in ~/ (like ~/.thunderbird)</li>
+      </ul>
+    </div>
+
+    <div id="doc" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b>Documentation Files<br><br></b></p>
+      <ul>
+        <li>Stores information about the software</li>
+        <li>Responds to 'man' command on terminal</li>
+        <li>Usually stored in /usr/share folder</li>
+      </ul>
+    </div>
+
+    <div id="package" class="step slide" data-x="3000" data-y="1800">
+      <p class="centertext"><b>Ubuntu Package Management<br><br></b></p>
+      <ul>
+        <li>Most software installed via "packages"</li>
+        <li>Packages are provided from a repository</li>
+        <li>Programs such as Synaptic or apt can install packages</li>
+        <li>Programs can also be installed from source</li>
+      </ul>
+    </div>
+
+    <div id="apt_cmds" class="step slide" data-x="4000" data-y="1800">
+      <p class="centertext"><b>Ubuntu Software Commands<br><br></b></p>
+      <ul>
+        <li>apt-get install (package)</li>
+        <li>apt-get update</li>
+        <li>apt-get upgrade</li>
+        <li>apt-get dist-upgrade</li>
+        <li>auto-apt run (command)</li>
+        <li>dpkg-reconfigure (package)</li>
+      </ul>
+    </div>
+
+
+    <div id="install_ubuntu" class="step slide" data-x="5000" data-y="1800">
+      <p class="centertext"><b>Ubuntu Software Install Process<br><br></b></p>
+      <ul>
+        <li>Extract/expand files</li>
+        <li>Place files in location</li>
+        <li>Create user data files (usually on first run)</li>
+        <li><em>Create startup scripts</em></li>
+      </ul>
+    </div>
+
+    <div id="track_install4" class="step" data-x="6000" data-y="1800">
+      <p class="centertext"><b>Tracking - Synaptic</b></p>
+      <img class="centerimg" height="550" src="images/synaptic.png">
+    </div>
+
+    <div id="configuration" class="step slide" data-x="0" data-y="2700">
+      <p class="centertext"><b>Software Configuration<br><br></b></p>
+      <ul>
+        <li>Modifying software settings</li>
+        <li>Storing user specific information</li>
+        <li>Customizing software to suit user preference</li>
+      </ul>
+    </div>
+
+    <div id="windows_configuration" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>Windows Software Configuration<br><br></b></p>
+      <ul>
+        <li>Control Panel Options</li>
+        <li>Software Provided Menus</li>
+        <li>Configuration Files</li>
+        <li>Registry Entries</li>
+      </ul>
+    </div>
+
+    <div id="windows_defaults" class="step slide" data-x="2000" data-y="2700">
+      <p class="centertext"><b>Windows Default Programs<br><br></b></p>
+      <ul>
+        <li>Files types on Windows determined by file extension</li>
+        <li>File extensions are mapped to programs</li>
+        <li>Program will be started when a file is double-clicked in Windows Explorer</li>
+      </ul>
+    </div>
+
+    <div id="windows_defaults1" class="step" data-x="3000" data-y="2700">
+      <p class="centertext"><b>Defaults by Programs</b></p>
+      <img class="centerimg" height="600" src="images/win_default1.png">
+    </div>
+
+    <div id="windows_defaults10" class="step" data-x="4000" data-y="2700">
+      <p class="centertext"><b>Defaults by App</b></p>
+      <img class="centerimg" height="600" src="images/win10default.png">
+    </div>
+
+    <div id="windows_defaults2" class="step" data-x="5000" data-y="2700">
+      <p class="centertext"><b>Defaults by File Type</b></p>
+      <img class="centerimg" height="600" src="images/win_default2.png">
+    </div>
+
+    <div id="windows_autoplay" class="step" data-x="6000" data-y="2700">
+      <p class="centertext"><b>AutoPlay Defaults</b></p>
+      <img class="centerimg" height="600" src="images/win_autoplay.png">
+    </div>
+
+    <div id="menu_configuration" class="step slide" data-x="0" data-y="3600">
+      <p class="centertext"><b>Software Menus<br><br></b></p>
+      <ul>
+        <li>Most programs provide configuration via menus</li>
+        <li>Usually Tools > Options or Edit > Preferences</li>
+        <li>Read settings CAREFULLY before making changes</li>
+      </ul>
+    </div>
+
+    <div id="firefox1" class="step" data-x="1000" data-y="3600">
+      <p class="centertext"><b>Firefox Config - Menu</b></p>
+      <img class="centerimg" height="600" src="images/firefox1.png">
+    </div>
+
+    <div id="firefox2" class="step" data-x="2000" data-y="3600">
+      <p class="centertext"><b>Firefox Config - about:config</b></p>
+      <img class="centerimg" height="600" src="images/firefox2.png">
+    </div>
+
+    <div id="file_configuration" class="step slide" data-x="3000" data-y="3600">
+      <p class="centertext"><b>File Configuration<br><br></b></p>
+      <ul>
+        <li>Some program store settings in text files</li>
+        <li>PRO: Can be easily edited by hand, shared between systems</li>
+        <li>CON: No verification of settings, easy to make mistakes</li>
+      </ul>
+    </div>
+
+    <div id="pmail1" class="step" data-x="4000" data-y="3600">
+      <p class="centertext"><b>Pegasus Mail Config - Menu</b></p>
+      <img class="centerimg" height="600" src="images/pmail1.png">
+    </div>
+
+    <div id="pmail2" class="step" data-x="5000" data-y="3600">
+      <p class="centertext"><b>Pegasus Mail Config - Files</b></p>
+      <img class="centerimg" height="600" src="images/pmail2.png">
+    </div>
+
+    <div id="reg_configuration" class="step slide" data-x="0" data-y="4500">
+      <p class="centertext"><b>Registry Configuration<br><br></b></p>
+      <ul>
+        <li>Other programs store settings the Windows registry</li>
+        <li>PRO: Easy to organize and retrieve values, hides settings from most users</li>
+        <li>CON: Can still be edited by users, corrupted registry affects multiple programs</li>
+      </ul>
+    </div>
+
+    <div id="registry1" class="step" data-x="1000" data-y="4500">
+      <p class="centertext"><b>Internet Explorer - Settings</b></p>
+      <img class="centerimg" height="600" src="images/registry1.png">
+    </div>
+
+    <div id="registry2" class="step" data-x="2000" data-y="4500">
+      <p class="centertext"><b>Internet Explorer - Registry</b></p>
+      <img class="centerimg" height="600" src="images/registry2.png">
+    </div>
+
+    <div id="ubuntu_defaults" class="step slide" data-x="3000" data-y="4500">
+      <p class="centertext"><b>Ubuntu Default Programs</b></p>
+      <ul>
+        <li>File Types in Ubuntu determined by many things<ul>
+          <li>File Extension</li>
+          <li>File Header</li>
+          <li>Magic Number</li>
+        </ul></li>
+        <li>File types are mapped to programs</li>
+        <li>Program will be started when a file is double-clicked in Nautilus</li>
+      </ul>
+    </div>
+
+    <div id="ubuntu_defaults1" class="step" data-x="4000" data-y="4500">
+      <p class="centertext"><b>Default Programs</b></p>
+      <img class="centerimg" width="850" src="images/ubuntu_defaults1.png">
+    </div>
+
+    <div id="ubuntu_defaults2" class="step" data-x="5000" data-y="4500">
+      <p class="centertext"><b>Defaults by File Type</b></p>
+      <img class="centerimg" height="600" src="images/ubuntu_defaults2.png">
+    </div>
+
+    <div id="ubuntu_autoplay" class="step" data-x="0" data-y="5400">
+      <p class="centertext"><b>AutoPlay Defaults</b></p>
+      <img class="centerimg" width="850" src="images/ubuntu_autoplay.png">
+    </div>
+
+    <div id="reading" class="step slide" data-x="1000" data-y="5400">
+      <p class="centertext"><b>Reading</b><br><br></p>
+      See Class Website:
+      <p style="font-size:40px"><a href="/cis225fall2016/">http://people.cis.ksu.edu/~russfeld/cis225fall2016/</a></p>
+    </div>
+
+    <div id="assignments" class="step slide" data-x="2000" data-y="5400">
+      <p class="centertext"><b>Assignments</b><br><br></p>
+      <ul>
+        <li><b>EXAM 1 - 9/30 During Class</b></li>
+        <li>Lab 4 - Services, Processes & Software<br>Due 9/26 11:30 AM <b>Before Lecture!!</b></li>
+      </ul>
+    </div>
+
+    <div id="overview" class="step" data-x="2500" data-y="2700" data-z="-1" data-scale="8.5">
+    </div>
+
+</div>
+
+<script src="/js/analytics.js"></script>
+<script src="/js/impress.js"></script>
+<script>impress().init();</script>
+<script src="/js/jquery-1.10.2.min.js"></script>
+<script src="/js/TimeCircles.js"></script>
+<script src="/js/timer.js"></script>
+<script src="/js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+
+</body>
+</html>

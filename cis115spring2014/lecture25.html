@@ -1,0 +1,586 @@
+<html lang="en">
+<head>
+  <BASE href="../">
+  <link href="favicon.ico" rel="shortcut icon">
+  <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+  <meta name="description" content="CIS 115 Spring 2014 Lecture 25" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 115 Spring 2014 Lecture 25</title>
+    <link href="css/impress.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 115</b><br><br>Lecture 25: Security</p>
+    </div>
+
+    <div id="how" class="step" data-x="1000" data-y="0">
+      <p class="centertext"><b>How can we keep our data secure?</b></p>
+    </div>
+    
+    <div id="white_hat" class="step" data-x="2000" data-y="0">
+      <img class="centerimg" height="650" src="cis115spring2014/images/lecture25/white_hat_jadikreatif_flickr.png">
+      <p class="imagecredit">Image Source: <a href="http://www.flickr.com/photos/jadikreatif/8122221978/sizes/l/">jadikreatif on Flickr</a></p>
+    </div> 
+
+    <div id="authentication" class="step slide" data-x="3000" data-y="0">
+      <p class="centertext"><b>Authentication</b><br><br></p>
+      <ul>
+        <li><b>Ownership</b> Factors - user <em>has</em><br>ID card, badge, token</li>
+        <li><b>Knowledge</b> Factors - user <em>knows</em><br>PIN, password, response</li>
+        <li><b>Inherence</b> Factors - user <em>is</em><br>Biometrics</li>
+      </ul>
+    </div>
+
+    <div id="passwords" class="step" data-x="4000" data-y="0">
+      <p class="centertext"><b>Passwords</b></p>
+      <img class="centerimg" height="650" src="cis115spring2014/images/lecture25/password_strength1_xkcd.png">
+      <p class="imagecredit">Image Source: <a href="http://xkcd.com/936/">XKCD</a></p>
+    </div>
+
+    <div id="brute" class="step slide" data-x="5000" data-y="0">
+      <p class="centertext"><b>Cracking Passwords - Brute Force</b><br><br></p>
+      <ul style="columns:3; -webkit-columns:3; -moz-columns:3;">
+        <li>aaaaaa</li>
+        <li>aaaaab</li>
+        <li>aaaaac</li>
+        <li>aaaaad</li>
+        <li>aaaaae</li>
+        <li>aaaaaf</li>
+        <li>aaaaag</li>
+        <li>aaaaah</li>
+        <li>aaaaai</li>
+        <li>aaaaaj</li>
+        <li>aaaaak</li>
+        <li>aaaaal</li>
+        <li>aaaaam</li>
+        <li>aaaaan</li>
+        <li>aaaaao</li>
+        <li>aaaaap</li>
+        <li>aaaaaq</li>
+        <li>aaaaar</li>
+        <li>aaaaas</li>
+        <li>aaaaat</li>
+        <li>aaaaau</li>
+      </ul>
+    </div>
+
+    <div id="lookup" class="step slide" data-x="6000" data-y="0">
+      <p class="centertext"><b>Cracking Passwords - Lookup Table</b></p>
+      <ul style="columns:3; -webkit-columns:3; -moz-columns:3;">
+        <li>password</li>
+        <li>123456</li>
+        <li>12345678</li>
+        <li>abc123</li>
+        <li>qwerty</li>
+        <li>monkey</li>
+        <li>letmein</li>
+        <li>dragon</li>
+        <li>111111</li>
+        <li>baseball</li>
+        <li>iloveyou</li>
+        <li>trustno1</li>
+        <li>1234567</li>
+        <li>sunshine</li>
+        <li>master</li>
+        <li>123123</li>
+        <li>welcome</li>
+        <li>shadow</li>
+        <li>ashley</li>
+        <li>football</li>
+        <li>jesus</li>
+      </ul>
+      <p class="imagecredit">Source: <a href="http://gizmodo.com/5954372/the-25-most-popular-passwords-of-2012">Gizmodo</a></p>
+      <p><a href="http://www.freerainbowtables.com/en/tables2/">Rainbow Tables</a></p>
+    </div>
+
+    <div id="entropy1" class="step" data-x="7000" data-y="0">
+      <p class="centertext"><b>Password Entropy</b></p>
+      <img class="centerimg" width="850" src="cis115spring2014/images/lecture25/password_strength2_xkcd.png">
+      <p class="imagecredit">Image Source: <a href="http://xkcd.com/936/">XKCD</a></p>
+    </div>
+
+    <div id="entropy2" class="step" data-x="0" data-y="900">
+      <p class="centertext"><b>Password Entropy</b></p>
+      <img class="centerimg" height="650" src="cis115spring2014/images/lecture25/password_strength3_xkcd.png">
+      <p class="imagecredit">Image Source: <a href="http://xkcd.com/936/">XKCD</a></p>
+    </div>
+
+    <div id="entropy3" class="step" data-x="1000" data-y="900">
+      <p class="centertext"><b>Password Entropy</b></p>
+      <img class="centerimg" width="850" src="cis115spring2014/images/lecture25/password_strength4_xkcd.png">
+      <p class="imagecredit">Image Source: <a href="http://xkcd.com/936/">XKCD</a></p>
+    </div>
+
+    <div id="storing" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>Storing Passwords Securely</b><br><br></p>
+      <p class="centertext">Store the password itself<br><br></p>
+      <ul>
+        <li>Needed to compromise: database access</li>
+        <li>Accounts compromised: all</li>
+        <li>Relative ease: simple</li>
+      </ul>
+    </div>
+
+    <div id="storing2" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>Storing Passwords Securely</b><br><br></p>
+      <p class="centertext">Encrypt all passwords with a key<br><br></p>
+      <ul>
+        <li>Needed to compromise: database & key (or lookup table)</li>
+        <li>Accounts compromised: all</li>
+        <li>Relative ease: medium</li>
+      </ul>
+    </div>
+
+    <div id="salt" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>Password Salt</b><br><br></p>
+      <ul>
+        <li>Random data added to a password before hashing</li>
+        <li>Protects against dictionary and rainbow table attacks</li>
+        <li>Ensures the password is long enough to be hard to crack</li>
+      </ul>
+    </div>
+
+    <div id="storing3" class="step slide" data-x="5000" data-y="900">
+      <p class="centertext"><b>Storing Passwords Securely</b><br><br></p>
+      <p class="centertext">Encrypt all passwords with a global salt value<br><br></p>
+      <ul>
+        <li>Needed to compromise: database, encryption key & salt value</li>
+        <li>Accounts compromised: all</li>
+        <li>Relative ease: harder</li>
+      </ul>
+    </div>
+
+    <div id="storing4" class="step slide" data-x="6000" data-y="900">
+      <p class="centertext"><b>Storing Passwords Securely</b><br><br></p>
+      <p class="centertext">Encrypt all passwords with a unique salt value<br><br></p>
+      <ul>
+        <li>Needed to compromise: database, encryption key & salt value</li>
+        <li>Accounts compromised: one at a time</li>
+        <li>Relative ease: really hard</li>
+      </ul>
+    </div>
+
+    <div id="encryptic" class="step" data-x="7000" data-y="900">
+      <img class="centerimg" height="680" src="cis115spring2014/images/lecture25/encryptic_xkcd.png">
+      <p class="imagecredit">Image Source: <a href="http://xkcd.com/1286/">XKCD</a></p>
+    </div>
+
+    <div id="social_engg" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>Social Engineering</b></p>
+      <p class="centertext">Using techniques to compromise a system by exploiting the users directly instead of the system's security</p>
+      <img class="centerimg" height="400" src="cis115spring2014/images/lecture25/weakest_link_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/The_Weakest_Link_(UK_game_show)">Wikipedia</a></p>
+    </div>
+
+    <div id="pretext" class="step" data-x="1000" data-y="1800">
+      <p class="centertext"><b>Pretexting</b></p>
+      <img class="centerimg" height="650" src="cis115spring2014/images/lecture25/pretexting_pentestlab.jpg">
+      <p class="imagecredit">Image Source: <a href="http://pentestlab.wordpress.com/2013/03/28/dumpster-diving/">Penetration Test Lab</a></p>
+    </div>
+
+    <div id="impersonation" class="step" data-x="2000" data-y="1800">
+      <p class="centertext"><b>Impersonation</b></p>
+      <img class="centerimg" width="850" src="cis115spring2014/images/lecture25/impersonation_1worder.png">
+      <p class="imagecredit">Image Source: <a href="http://1worder.com/tag/sheep/">1worder</a></p>
+    </div>
+
+    <div id="quidproquo" class="step" data-x="3000" data-y="1800">
+      <img class="centerimg" width="850" src="cis115spring2014/images/lecture25/quidproquo_ww4f_flickr.jpg">
+      <p class="imagecredit">Image Source: <a href="http://www.flickr.com/photos/ww4f/5709154891/sizes/l/in/photolist-9GuUR2/">John Gosier on Flickr</a></p>
+    </div>
+
+    <div id="phishing" class="step slide" data-x="4000" data-y="1800">
+      <p class="centertext"><b>Phishing</b></p>
+      <img class="centerimg" width="850" src="cis115spring2014/images/lecture25/phishing.png">
+    </div>
+
+    <div id="419" class="step slide" data-x="5000" data-y="1800">
+      <p class="centertext"><b>419 Scams</b><br><br></p>
+      <ul>
+        <li>Section 419 of Nigeria's Criminal Code</li>
+        <li>Advance-fee fraud</li>
+        <li>Pay a small sum of money now, they transfer a you large sum of money later</li>
+      </ul>
+    </div>
+
+    <div id="419_ex" class="step slide" data-x="6000" data-y="1800">
+      <p class="centertext"><b>419 Scams</b></p>
+      <img class="centerimg" height="630" src="cis115spring2014/images/lecture25/419.png">
+    </div>
+
+    <div id="baiting" class="step" data-x="7000" data-y="1800">
+      <p class="centertext"><b>Baiting</b></p>
+      <img class="centerimg" width="850" src="cis115spring2014/images/lecture25/flash_drive_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/USB_flash_drive">Wikipedia</a></p>
+    </div>
+
+    <div id="threats" class="step" data-x="0" data-y="2700">
+      <p class="centertext"><b>Threats</b></p>
+      <img class="centerimg" width="850" src="cis115spring2014/images/lecture25/security_xkcd.png">
+      <p class="imagecredit">Image Source: <a href="http://xkcd.com/538/">XKCD</a></p>
+    </div>
+
+    <div id="combating" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>Combating Social Engineering</b><br><br></p>
+      <ul>
+        <li>User Training</li>
+        <li>Security Protocols and Audits</li>
+        <li>Always Questioning Everything</li>
+        <li>Penetration Testing</li>
+        <li>Properly Disposing of Garbage</li>
+      </ul>
+    </div>
+
+    <div id="defcon" class="step slide" data-x="2000" data-y="2700">
+      <p class="centertext"><b>Social Engineering in Practice</b></p>
+      <ul>
+        <li>"Capture the Flag" style contest held at DEF CON 21</li>
+        <li>Contestant try to gain information about companies via the internet</li>
+        <li>Using that information, they call the company and attempt to gain more information flags for points</li>
+      </ul>
+      <p class="centertext"><a href="http://www.social-engineer.org/defcon21/DC21_SECTF_Final.pdf">Read the Report</a></p>
+    </div>
+
+    <div id="intercept" class="step" data-x="3000" data-y="2700">
+      <p class="centertext"><b>Interception Attacks</b><br><br></p>
+      <p class="centertext">Intercepting information in order to impersonate another entity or modify the information before it is received</p>
+    </div>
+
+    <div id="mitm" class="step" data-x="4000" data-y="2700">
+      <p class="centertext"><b>Man in the Middle Attack</b></p>
+      <img class="centerimg" width="850" src="cis115spring2014/images/lecture25/mitm_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Man-in-the-middle_attack">Wikipedia</a></p>
+    </div>
+
+    <div id="mitb" class="step slide" data-x="5000" data-y="2700">
+      <p class="centertext"><b>Man in the Browser Attack</b></p>
+      <img class="centerimg" height="600" src="cis115spring2014/images/lecture25/mitb_cronto.gif">
+      <p class="imagecredit">Image Source: <a href="http://blog.cronto.com/index.php?c=1&more=1&pb=1&tb=1&title=2fa_is_dead">Cronto</a></p>
+    </div>
+
+    <div id="combating_inter" class="step slide" data-x="6000" data-y="2700">
+      <p class="centertext"><b>Combating Interception Attacks</b><br><br></p>
+      <ul>
+        <li>Public Key Authentication</li>
+        <li>Mutual Authentication</li>
+        <li>Latency Examination</li>
+        <li>Second Channel Verification</li>
+      </ul>
+    </div>
+
+    <div id="malware" class="step slide" data-x="7000" data-y="2700">
+      <p class="centertext"><b>Malware</b></p>
+      <ul>
+        <li>Virus</li>
+        <li>Ransomware</li>
+        <li>Trojans / Worms</li>
+        <li>Rootkits</li>
+        <li>Keyloggers</li>
+        <li>Spyware</li>
+        <li>Adware</li>
+        <li>Fake Security Software</li>
+      </ul>
+    </div>
+
+    <div id="morris" class="step" data-x="0" data-y="3600">
+      <p class="centertext"><b>Morris Worm</b></p>
+      <img class="centerimg" height="600" src="cis115spring2014/images/lecture25/morris_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Morris_worm">Wikipedia</a></p>
+    </div>
+
+    <div id="morris2" class="step slide" data-x="1000" data-y="3600">
+      <p class="centertext"><b>Morris Worm</b><br><br></p>
+      <ul>
+        <li>Intended to study the size of the internet</li>
+        <li>Caused machines to overload and fail</li>
+        <li>Infected 6000 machines (10% of the internet)</li>
+        <li>First major worm on the internet</li>
+      </ul>
+    </div>
+
+    <div id="morris3" class="step slide" data-x="2000" data-y="3600">
+      <p class="centertext"><b>Morris Worm</b><br><br></p>
+      <ul>
+        <li>Infected machines even if they were already infected 1 out of 7 times</li>
+        <li>Many machines infected multiple times</li>
+        <li>Creator sentenced to 3 years probation and paid $10,000 fine</li>
+      </ul>
+    </div>
+
+    <div id="conficker" class="step" data-x="3000" data-y="3600">
+      <img class="centerimg" width="850" src="cis115spring2014/images/lecture25/conficker_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Conficker">Wikipedia</a></p>
+    </div>
+
+    <div id="conficker2" class="step slide" data-x="4000" data-y="3600">
+      <p class="centertext"><b>Conficker</b><br><br></p>
+      <ul>
+        <li>January 2009 - 9-15 million infected</li>
+        <li>Fix released in October 2008, but 30% of PCs didn't have it installed by Jan 2009</li>
+        <li>Mid 2011 - 1.7 million infected</li>
+        <li>Many government and corporate networks infected</li>
+      </ul>
+    </div>
+
+    <div id="conficker_vid" class="step" data-x="5000" data-y="3600">
+      <div id="HtpCYA5o1J8" data-id="HtpCYA5o1J8" class="youtube">
+        <a href="http://www.youtube.com/watch?v=HtpCYA5o1J8">Downadup/Conficker Revisited on Youtube</a>
+      </div>
+    </div>
+
+    <div id="stuxnet" class="step" data-x="6000" data-y="3600">
+      <p class="centertext"><b>Stuxnet</b></p>
+      <img class="centerimg" width="850" src="cis115spring2014/images/lecture25/stuxnet_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Stuxnet">Wikipedia</a></p>
+    </div>
+
+    <div id="stuxnet2" class="step slide" data-x="7000" data-y="3600">
+      <p class="centertext"><b>Stuxnet</b><br><br></p>
+      <ul>
+        <li>Designed to infect Siemens SCADA systems</li>
+        <li>Only targets systems doing a very specific job</li>
+        <li>Sends faulty data to the controller while presenting fake data to the user</li>
+      </ul>
+    </div>
+
+    <div id="stuxnet_vid1" class="step" data-x="0" data-y="4500">
+      <div id="CS01Hmjv1pQ" data-id="CS01Hmjv1pQ" class="youtube">
+        <a href="http://www.youtube.com/watch?v=CS01Hmjv1pQ">Ralph Langer: Cracking Stuxnet TED Talk on Youtube</a>
+      </div>
+    </div>
+
+    <div id="stuxnet_vid2" class="step" data-x="1000" data-y="4500">
+      <div id="cf0jlzVCyOI" data-id="cf0jlzVCyOI" class="youtube">
+        <a href="http://www.youtube.com/watch?v=cf0jlzVCyOI">Stuxnet: How It Infects PLCs on Youtube</a>
+      </div>
+    </div>
+
+    <div id="fake_av" class="step" data-x="2000" data-y="4500">
+      <p class="centertext"><b>Fake AntiVirus</b></p>
+      <img class="centerimg" width="850" src="cis115spring2014/images/lecture25/fakeav.png">
+    </div>
+
+    <div id="fake_av_vid" class="step" data-x="3000" data-y="4500">
+      <div id="qs9XG3ZGm7A" data-id="qs9XG3ZGm7A" class="youtube">
+        <a href="http://www.youtube.com/watch?v=qs9XG3ZGm7A">Spyware.Monster on Youtube</a>
+      </div>
+    </div>
+
+    <div id="cryptolocker" class="step" data-x="4000" data-y="4500">
+      <p class="centertext"><b>Cryptolocker</b></p>
+      <img class="centerimg" width="850" src="cis115spring2014/images/lecture25/cryptolocker_geek.jpg">
+      <p class="imagecredit">Image Source: <a href="http://www.geek.com/apps/disk-encryptiing-cryptolocker-malware-demands-300-to-decrypt-your-files-1570402/">Geek.com</a></p>
+    </div>
+
+    <div id="cryptolocker2" class="step slide" data-x="5000" data-y="4500">
+      <p class="centertext"><b>Cryptolocker</b><br><br></p>
+      <ul>
+        <li>Installed via a malicious email attachment</li>
+        <li>Communicates with a server to receive a 2048-bit RSA public key</li>
+        <li>Encrypts documents with public key and holds them ransom</li>
+        <li>Current ransom: 2 bitcoins (~$300)</li>
+      </ul>
+    </div>
+
+    <div id="software" class="step" data-x="6000" data-y="4500">
+      <p class="centertext"><b>Software Attacks</b><br><br></p>
+      <p class="centertext">Attacking vulnerabilities in the software running on a system to gain access or retrieve secure data</p>
+    </div>
+
+    <div id="sql_inject" class="step" data-x="7000" data-y="4500">
+      <p class="centertext"><b>SQL Injection</b></p>
+      <img class="centerimg" width="850" src="cis115spring2014/images/lecture25/exploits_of_a_mom_xkcd.png">
+      <p class="imagecredit">Image Source: <a href="http://xkcd.com/327/">XKCD</a></p>
+    </div>
+
+    <div id="sql_inject1" class="step slide" data-x="0" data-y="5400">
+      <p class="centertext"><b>SQL Injection</b><br><br></p>
+      <pre><code style="font-size:30px; line-height:32px">statement := "SELECT * FROM userinfo<br>               WHERE id = " + a_variable + ";”
+a_variable = “1”
+SELECT * FROM userinfo WHERE id=1;</code></pre>
+    </div>
+
+    <div id="sql_inject2" class="step slide" data-x="1000" data-y="5400" data-z="-1">
+      <p class="centertext"><b>SQL Injection</b><br><br></p>
+      <pre><code style="font-size:30px; line-height:32px">statement := "SELECT * FROM userinfo<br>               WHERE id = " + a_variable + ";”
+a_variable = “1”
+SELECT * FROM userinfo WHERE id=1;
+
+
+statement := "SELECT * FROM userinfo<br>               WHERE id = " + a_variable + ";”
+a_variable = “1;DROP TABLE users;”
+SELECT * FROM userinfo WHERE id=1;DROP TABLE users;</code></pre>
+    </div>
+
+        <div id="sql_inject3" class="step slide" data-x="2000" data-y="5400">
+      <p class="centertext"><b>SQL Injection</b><br><br></p>
+      <pre><code style="font-size:29px; line-height:32px">http://books.example.com/showReview.php?ID=5 
+SELECT * FROM bookreviews WHERE ID = '5';
+</code></pre>
+    </div>
+
+        <div id="sql_inject4" class="step slide" data-x="3000" data-y="5400" data-z="-1">
+      <p class="centertext"><b>SQL Injection</b><br><br></p>
+      <pre><code style="font-size:29px; line-height:32px">http://books.example.com/showReview.php?ID=5 
+SELECT * FROM bookreviews WHERE ID = '5';
+
+
+http://books.example.com/showReview.php?ID=5 AND 1=1
+SELECT * FROM bookreviews WHERE ID = '5' AND '1'='1';
+</code></pre>
+    </div>
+
+    <div id="sql_inject5" class="step slide" data-x="4000" data-y="5400" data-z="-2">
+      <p class="centertext"><b>SQL Injection</b><br><br></p>
+      <pre><code style="font-size:29px; line-height:32px">http://books.example.com/showReview.php?ID=5 
+SELECT * FROM bookreviews WHERE ID = '5';
+
+
+http://books.example.com/showReview.php?ID=5 AND 1=1
+SELECT * FROM bookreviews WHERE ID = '5' AND '1'='1';
+</code></pre><pre><code style="font-size:20px; line-height:32px">
+
+http://books.example.com/showReview.php?ID=5 AND substring(@@version,1,1)=4
+SELECT * FROM bookreviews WHERE ID = '5' AND substring(@@version,1,1)=4;
+</code></pre>
+    </div>
+
+    <div id="buffer_overflow" class="step" data-x="5000" data-y="5400">
+      <p class="centertext"><b>Buffer Overflow</b></p>
+      <img class="centerimg" height="650" src="cis115spring2014/images/lecture25/buffer1_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Stack_buffer_overflow">Wikipedia</a></p>
+    </div>
+
+    <div id="buffer_overflow2" class="step" data-x="6000" data-y="5400">
+      <p class="centertext"><b>Buffer Overflow</b></p>
+      <img class="centerimg" height="650" src="cis115spring2014/images/lecture25/buffer2_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Stack_buffer_overflow">Wikipedia</a></p>
+    </div>
+
+    <div id="buffer_vid" class="step" data-x="7000" data-y="5400">
+      <div id="ZYAvTEtRwtM" data-id="ZYAvTEtRwtM" class="youtube" data-start="149">
+        <a href="http://www.youtube.com/watch?v=ZYAvTEtRwtM">Understanding Buffer Overflows on Youtube</a>
+      </div>
+    </div>
+
+    <div id="why" class="step" data-x="0" data-y="6300">
+      <p class="centertext"><b>Why?</b></p>
+    </div>
+
+    <div id="accounts" class="step slide" data-x="1000" data-y="6300">
+      <p class="centertext"><b>Account Access</b></p>
+      <img class="centerimg" height="650" src="cis115spring2014/images/lecture25/key_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Key_(lock)">Wikipedia</a></p>
+    </div>
+
+    <div id="botnets" class="step" data-x="2000" data-y="6300">
+      <p class="centertext"><b>Botnets</b></p>
+      <img class="centerimg" height="650" src="cis115spring2014/images/lecture25/botnet_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Botnet">Wikipedia</a></p>
+    </div>
+
+    <div id="social" class="step" data-x="3000" data-y="6300">
+      <p class="centertext"><b>Social Activism / Hactivism</b></p>
+      <img class="centerimg" height="650" src="cis115spring2014/images/lecture25/anon_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Anonymous_(group)">Wikipedia</a></p>
+    </div>
+
+    <div id="chaos" class="step" data-x="4000" data-y="6300">
+      <p class="centertext"><b>Chaos</b></p>
+      <img class="centerimg" height="650" src="cis115spring2014/images/lecture25/joker_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Joker_%28comics%29">Wikipedia</a></p>
+    </div>
+
+    <div id="discussion" class="step slide" data-x="5000" data-y="6300">
+      <p class="centertext"><b>Discussion</b><br><br></p>
+      <ul>
+        <li style="font-size:35px; line-height:37px">You discovered that there are thousands of devices on the web with an easily exploitable vulnerability on them.</li>
+        <li style="font-size:35px; line-height:37px">The devices themselves can’t do much other than scan other devices and infect  them with the same program.</li>
+        <li style="font-size:35px; line-height:37px">You decide to use them to map the entire internet just to see what is out there, and end up with a database of every IP and common open port on the internet.</li>
+      </ul>
+      <p class="centertext" style="font-size:40px; line-height:43px"><b><br>Is that ethical? Is that legal?<br>Is that useful information?<br>Should you be put in jail for this?</b></p>
+    </div>
+
+    <div id="happened" class="step slide" data-x="6000" data-y="6300">
+      <p class="centertext"><b>It actually happened!</b><br><br></p>
+      <p class="centertext"><a href="http://nakedsecurity.sophos.com/2013/03/20/researcher-uses-botnet-to-map-internet/">Article on Sophos</a><br><br><a href="http://census2012.sourceforge.net/paper.html">Results of the Scan</a></p>
+    </div>
+
+    <div id="scan1" class="step" data-x="7000" data-y="6300">
+      <img class="centerimg" height="680" src="cis115spring2014/images/lecture25/scan_worldmap.png">
+      <p class="imagecredit">Image Source: <a href="http://census2012.sourceforge.net/images.html">Census2012 on Sourceforge</a></p>
+    </div>
+
+    <div id="map" class="step" data-x="0" data-y="7200">
+      <img class="centerimg" height="680" src="cis115spring2014/images/lecture25/map_of_the_internet_xkcd.jpg">
+      <p class="imagecredit">Image Source: <a href="http://xkcd.com/195/">XKCD</a></p>
+    </div>
+
+    <div id="scan3" class="step" data-x="1000" data-y="7200">
+      <img class="centerimg" height="680" src="cis115spring2014/images/lecture25/scan_map.png">
+      <p class="imagecredit">Image Source: <a href="http://census2012.sourceforge.net/images.html">Census2012 on Sourceforge</a></p>
+    </div>
+
+    <div id="assignment" class="step slide" data-x="-825" data-y="-225" data-scale="0.5">
+      <p class="centertext"><b>Assignments</b></p>
+      <ul>
+        <li>Read and be prepared to discuss:<ul>
+          <li><em>BITS</em> Chapter 7: You Can't Say That on the Internet</li>
+        </ul></li>
+        <li>Blog 13: Cybersecurity - Due 5/5 10PM</li>
+        <li>Scratch Game Project - Due 5/1 10PM<br>Judging at 5:30 PM in N122</li>
+      </ul>
+    </div>
+
+    <div id="blog" class="step slide" data-x="-825" data-y="225" data-scale="0.5">
+      <p class="centertext" style="font-size: 35px; line-height: 45px"><b>Blog 13: Cybersecurity</b></p>
+      <p style="font-size: 30px; line-height: 32px">You are employed by a large, multinational corporation, and your responsibility is to protect your companies network, intellectual data, customer data, and computer systems from attack. We’ve spent time in class discussing many different topics related to cybersecurity, but now is your chance to use that knowledge. Tell us how you would go about defending your company from malicious users. </p>
+      <ul style="font-size: 30px; line-height: 32px">
+        <li>What protections would you put in place?</li>
+        <li>How would you store your data?</li>
+        <li>Would you hire teams to do white-hat hacking or penetration testing? What would you want them to look for?</li>
+        <li>How would you train your employees to spot malicious behavior?</li>
+        <li>How would you protect against social engineering and other physical means of attack?</li>
+        <li>If someone attacked you, would you retaliate? Do you feel it is ethical/legal to do so?</li>
+      </ul>
+    </div>
+
+    <div id="activity" class="skip slide" data-x="-825" data-y="655" data-scale="0.5">
+      
+    </div>
+
+    <div id="activity_1" class="step" data-x="-825" data-y="675" data-scale="0.5">
+    </div>
+
+    <div id="activity_2" class="step" data-x="-825" data-y="675" data-scale="0.5">
+    </div>
+
+    <div id="overview" class="step" data-x="3500" data-y="3600" data-z="-1" data-scale="10.5">
+    </div>
+
+</div>
+
+<script src="js/analytics.js"></script>
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
+<script src="js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+</body>
+</html>

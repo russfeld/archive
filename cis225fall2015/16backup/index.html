@@ -1,0 +1,341 @@
+<html lang="en">
+<head>
+    <link href="/favicon.ico" rel="shortcut icon">
+    <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+    <meta name="description" content="CIS 225 - Monitoring & Backups" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 225 - Monitoring & Backups</title>
+    <link href="/css/impress.css" rel="stylesheet" />
+    <link href="/css/TimeCircles.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 225</b><br><br>Monitoring & Backups</p>
+    </div>
+
+   <div id="backups" class="step slide" data-x="1000" data-y="0">
+      <p class="centertext"><b>Backups</b></p>
+      <img class="centerimg" height="600" src="images/harddrive_walkn_flickr.jpg">
+      <p class="imagecredit">Image Source: <a href="http://www.flickr.com/photos/walkn/5472536812/">walkn on Flickr</a></p>
+    </div>
+
+    <div id="backup_strats" class="step slide" data-x="2000" data-y="0">
+      <p class="centertext"><b>Backup Strategies</b><br><br></p>
+      <ul>
+        <li><b>Who</b></li>
+        <li><b>What</b></li>
+        <li><b>When</b></li>
+        <li><b>Where</b></li>
+        <li><b>Why</b></li>
+        <li><b>How</b></li>
+      </ul>
+    </div>
+
+    <div id="backup_strats_2" class="step slide" data-x="2000" data-y="0" data-z="-1" style="z-index: -1">
+      <p class="centertext"><b>Backup Strategies</b><br><br></p>
+      <ul>
+        <li><b>Who</b> owns the data</li>
+        <li><b>What</b> data must be stored</li>
+        <li><b>When</b> backups should be made</li>
+        <li><b>Where</b> backups should be stored</li>
+        <li><b>Why</b> data loss occurs</li>
+        <li><b>How</b> should it be created</li>
+      </ul>
+    </div>
+
+    <div id="who" class="step slide" data-x="3000" data-y="0">
+      <p class="centertext"><b>Who Owns the Data</b><br><br></p>
+      <ul>
+        <li>Who has data that should be backed up?</li>
+        <li>What data is needed to function?</li>
+        <li>Do we have enough resources to back up data?</li>
+      </ul>
+    </div>
+
+    <div id="what" class="step slide" data-x="4000" data-y="0">
+      <p class="centertext"><b>What data must be Stored</b><br><br></p>
+      <ul>
+        <li>Accounting Data</li>
+        <li>Sales Records</li>
+        <li>Inventory</li>
+        <li>Health Records</li>
+        <li>Personnel Records</li>
+        <li>User Data & Files</li>
+      </ul>
+    </div>
+
+    <div id="when" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>When backups should be made</b><br><br></p>
+      <ul>
+        <li>Yearly</li>
+        <li>Monthly</li>
+        <li>Weekly</li>
+        <li>Daily</li>
+        <li>Hourly</li>
+        <li>Instantly</li>
+      </ul>
+    </div>
+
+    <div id="where" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b>Where backups should be stored</b><br><br></p>
+      <ul>
+        <li>Rotational Hard Disk</li>
+        <li>Solid State Storage</li>
+        <li>Optical Storage</li>
+        <li>Magnetic Tape</li>
+        <li>Cloud Storage</li>
+        <li>Paper Storage</li>
+      </ul>
+    </div>
+
+    <div id="where1" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>Where backups should be stored</b><br><br></p>
+      <ul>
+        <li>Rotational Hard Disk<ul>
+          <li>PRO: Cheap, fairly fast, common</li>
+          <li>CON: Moving parts, not long-term</li>
+        </ul></li>
+        <li>Solid State Storage<ul>
+          <li>PRO: Fast, no moving parts</li>
+          <li>CON: Expensive, long-term stability unknown</li>
+        </ul></li>
+      </ul>
+    </div>
+
+    <div id="where2" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>Where backups should be stored</b><br><br></p>
+      <ul>
+        <li>Optical Storage (CD/DVD)<ul>
+          <li>PRO: Cheap, easy to use</li>
+          <li>CON: Small space, easily damaged</li>
+        </ul></li>
+        <li>Magnetic Tape<ul>
+          <li>PRO: High capacity, long-term</li>
+          <li>CON: Expensive, slow, must rotate tapes</li>
+        </ul></li>
+      </ul>
+    </div>
+
+    <div id="where3" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>Where backups should be stored</b></p>
+      <ul>
+        <li>Cloud Storage<ul>
+          <li>PRO: Cost effective, offsite, large</li>
+          <li>CON: No direct control, trust</li>
+        </ul></li>
+        <li>Paper Storage<ul>
+          <li>PRO: Lasts forever, secure from cyber attacks</li>
+          <li>CON: Hard to verify/restore data, flammable</li>
+        </ul></li>
+      </ul>
+    </div>
+
+    <div id="where4" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>Where backups should be stored</b><br><br></p>
+      <ul>
+        <li>On-line - RAID, Network Drives, etc.</li>
+        <li>Near-line - Tape Systems</li>
+        <li>Off-line - Disconnected but nearby</li>
+        <li>Off-site - Different location</li>
+        <li>Backup Site (DR Center) - includes hardware ready to go</li>
+      </ul>
+      <p class="imagecredit">Source: <a href="http://en.wikipedia.org/wiki/Backup">Wikipedia</a></p>
+    </div>
+
+    <div id="why" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b>Why data loss occurs</b><br><br></p>
+      <ul>
+        <li><b>Accidental Deletion</b></li>
+        <li>Software/Hardware Failures</li>
+        <li>Data Corruption over Time</li>
+        <li>Malicious Intent</li>
+        <li>Natural Disasters</li>
+      </ul>
+    </div>
+
+    <div id="how" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b>How should it be created?</b><br><br></p>
+      <ul>
+        <li>Unstructured</li>
+        <li>Full Image</li>
+        <li>Incremental</li>
+        <li>Differential</li>
+        <li>Reverse Delta</li>
+        <li>Continuous</li>
+      </ul>
+      <p class="imagecredit">Source: <a href="http://en.wikipedia.org/wiki/Backup">Wikipedia</a></p>
+    </div>
+
+    <div id="unstruct" class="step slide" data-x="3000" data-y="1800">
+      <p class="centertext"><b>Unstructured</b><br><br></p>
+      <p>"Just a pile of CDs"</p>
+      <ul>
+        <li>PRO: Requires little training or software to accomplish</li>
+        <li>CON: Depends on the user to perform backups; backups may be lost/damaged/unverified and not useful when needed</li>
+      </ul>
+    </div>
+
+    <div id="full" class="step slide" data-x="4000" data-y="1800">
+      <p class="centertext"><b>Full Image</b></p>
+      <p>Contains a complete copy of all files</p>
+      <ul>
+        <li>PRO: Each backup has everything; simple software can create the backups; can be used to create "known good" states</li>
+        <li>CON: Large amounts of storage needed; hard to see multiple versions of files</li>
+      </ul>
+    </div>
+
+    <div id="incremental" class="step slide" data-x="0" data-y="2700">
+      <p class="centertext"><b>Incremental</b></p>
+      <p>Only store changes since last full/incremental backup</p>
+      <ul>
+        <li>PRO: Efficient use of storage; easy to see multiple versions</li>
+        <li>CON: Requires complex software; loss of a any backup invalidates all later incrementals</li>
+      </ul>
+    </div>
+
+    <div id="differential" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>Differential</b></p>
+      <p>Only store changes since last full backup</p>
+      <ul>
+        <li>PRO: Efficient use of storage; easy to see multiple versions</li>
+        <li>CON: Requires complex software; loss of a full backup invalidates all differentials</li>
+      </ul>
+    </div>
+
+    <div id="reverse" class="step slide" data-x="2000" data-y="2700">
+      <p class="centertext"><b>Reverse Delta</b></p>
+      <p>Most recent backup is a full; all previous are based on most recent</p>
+      <ul>
+        <li>PRO: Efficient use of storage; easy to see multiple versions; most recent backup is readily available</li>
+        <li>CON: Requires complex software; loss of a recent backup invalidates all backups</li>
+      </ul>
+    </div>
+
+    <div id="compare" class="step slide" data-x="3000" data-y="2700">
+      <p class="centertext"><b>Comparison</b></p>
+      <table class="table" style="width:100%; padding: 0">
+        <tr>
+          <td>Day</td>
+          <td>Incremental</td>
+          <td>Differential</td>
+        </tr>
+        <tr>
+          <td>Sun</td>
+          <td>Full</td>
+          <td>Full</td>
+        </tr>
+        <tr>
+          <td>Mon</td>
+          <td>Since Sun</td>
+          <td>Since Sun</td>
+        </tr>
+        <tr>
+          <td>Tue</td>
+          <td>Since Mon</td>
+          <td>Since Sun</td>
+        </tr>
+        <tr>
+          <td>Wed</td>
+          <td>Since Tues</td>
+          <td>Since Sun</td>
+        </tr>
+        <tr>
+          <td>Thu</td>
+          <td>Since Wed</td>
+          <td>Since Sun</td>
+        </tr>
+        <tr>
+          <td>Fri</td>
+          <td>Since Thu</td>
+          <td>Since Sun</td>
+        </tr>
+        <tr>
+          <td>Sat</td>
+          <td>Since Fri</td>
+          <td>Since Sun</td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="continuous" class="step slide" data-x="4000" data-y="2700">
+      <p class="centertext"><b>Continuous</b></p>
+      <p>Instantly back-up any changes made</p>
+      <ul>
+        <li>PRO: Very little data loss; </li>
+        <li>CON: Lots of storage; additional overhead on running systems</li>
+      </ul>
+    </div>
+
+    <div id="windows1" class="step slide" data-x="0" data-y="3600">
+      <p class="centertext"><b>Windows File History</b><br><br></p>
+      <img class="centerimg" width="850" src="images/win_filehistory.png">
+    </div>
+
+    <div id="windows2" class="step slide" data-x="1000" data-y="3600">
+      <p class="centertext"><b>DriveImage XML</b></p>
+      <img class="centerimg" height="630" src="images/win_dirimgxml.png">
+    </div>
+
+    <div id="ubuntu1" class="step slide" data-x="2000" data-y="3600">
+      <p class="centertext"><b>Ubuntu Deja-Dup</b><br><br></p>
+      <img class="centerimg" width="850" src="images/lin_dejadup.png">
+    </div>
+
+    <div id="monitor" class="step slide" data-x="2000" data-y="3600">
+      <p class="centertext"><b>Monitoring</b><br><br></p>
+      <ul>
+        <li>Linux Dash</li>
+        <li>Ganglia</li>
+        <li>Nagios</li>
+        <li>Munin</li>
+        <li><a href="https://cloudstats.me/digital-ocean-droplet-monitoring/">CloudStats</a></li>
+    </div>
+
+    <div id="reading" class="step slide" data-x="3000" data-y="3600">
+      <p class="centertext"><b>Reading</b><br><br></p>
+      See Class Website: 
+      <p style="font-size:40px"><a href="/cis225fall2015/">http://people.cis.ksu.edu/~russfeld/cis225fall2015/</a></p>
+    </div>
+
+    <div id="assignments" class="step slide" data-x="4000" data-y="3600">
+      <p class="centertext"><b>Assignments</b></p>
+      <ul>
+        <li>Lab 9 - The Cloud<br>Due 11/30 11:30 PM <b>Before Lecture</b></li>
+        <li>Lab 10 - Monitoring & Backups<br>Due 12/7 11:30 PM <b>Before Lecture</b></li>
+        <li>Lab 11 - Security & Best Practices<br>Due 12/14 11:50 PM <b>Before Final</b></li>
+        <li>FINAL EXAM: Monday 12/14<br>11:50 AM - 1:40 PM</li>
+      </ul>
+    </div>
+    
+    <div id="overview" class="step" data-x="2000" data-y="1800" data-z="-1" data-scale="7">
+    </div>
+
+
+</div>
+
+<script src="/js/analytics.js"></script>
+<script src="/js/impress.js"></script>
+<script>impress().init();</script>
+<script src="/js/jquery-1.10.2.min.js"></script>
+<script src="/js/TimeCircles.js"></script>
+<script src="/js/timer.js"></script>
+<script src="/js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+
+</body>
+</html>

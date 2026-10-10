@@ -1,0 +1,770 @@
+<html lang="en">
+<head>
+    <link href="/favicon.ico" rel="shortcut icon">
+    <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+    <meta name="description" content="CIS 527 - Using Puppet" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 527 - Using Puppet</title>
+    <link href="/css/impress.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 527</b><br><br>Using Puppet</p>
+    </div>
+
+    <div id="puppet" class="step" data-x="1000" data-y="0">
+      <p class="centertext"><b>Puppet</b><br><br></p>
+      <img class="centerimg" width="850" src="images/logo_puppet.svg">
+      <p class="imagecredit">Image Credit: <a href="http://puppetlabs.com/">Puppet Labs</a></p>
+    </div>
+
+    <div id="puppet_attrib1" class="step" data-x="2000" data-y="0">
+      <p class="centertext"><b>Learning Puppet</b><br><br></p>
+      <p>Much of this lecture's content is adapted from the Learning Puppet series on <a href="https://learn.puppetlabs.com/">https://learn.puppetlabs.com/</a></p>
+    </div>
+
+    <div id="puppet_vm" class="step" data-x="3000" data-y="0">
+      <p class="centertext"><b>Learning Puppet VM</b><br><br></p>
+      <p class="centertext">Follow along using the<br>Learning Puppet VM<br><a href="http://puppetlabs.com/download-learning-vm">http://puppetlabs.com/download-learning-vm</a><br>It is also available on my<br>CIS people page</p>
+    </div>
+
+    <div id="abstraction" class="step slide" data-x="4000" data-y="0">
+      <p class="centertext"><b>Abstraction</b><br><br></p>
+      <p>3 <em>big</em> insights</p>
+      <ul>
+        <li>Similar <em>resources</em> can be grouped into <em>types</em></li>
+        <li><em>Description</em> can be separate from <em>implementation</em></li>
+        <li>It is possible to declare a <em>desired state</em> for a resource</li>
+      </ul>
+    </div>
+
+    <div id="resources" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>Resources</b></p>
+      <pre><code>$> puppet resource package</code></pre>
+    </div>
+
+    <div id="resources_2" class="step slide" data-x="0" data-y="900" data-z="-1">
+      <p class="centertext"><b>Resources</b></p>
+      <pre><code>$> puppet resource package</code></pre>
+      <code><pre>package { 'ubuntu-keyring':
+  ensure => '2012.05.19',
+}
+package { 'ubuntu-minimal':
+  ensure => '1.325',
+}
+package { 'ubuntu-mono':
+  ensure => '14.04.+14.04.20140410-0ubuntu1',
+}
+...</pre></code>
+    </div>
+
+    <div id="resources_desc" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b>Resources</b><br><br></p>
+      <ul>
+        <li>A system is a collection of many resources</li>
+        <li>Each resource represents a small unit</li>
+        <li>Resources have a <em>type</em>, <em>title</em> and <em>attributes</em></li>
+      </ul>
+    </div>
+
+    <div id="resources_example" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>Resources Example</b><br><br></p>
+      <code><pre>user { 'dave':
+  ensure     => present,
+  uid        => '507',
+  gid        => 'admin',
+  shell      => '/bin/zsh',
+  home       => '/home/dave',
+  managehome => true,
+}</pre></code><br>
+    <p>Find the <em>type</em>, <em>title</em>, <em>attributes</em>, and <em>values</em></p>
+    </div>
+
+    <div id="resources_list" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>Resource Types</b><br><br></p>
+      <ul>
+        <li>Package</li>
+        <li>File</li>
+        <li>Service</li>
+        <li>Notify</li>
+        <li>User / Group</li>
+        <li>Exec</li>
+        <li>Cron</li>
+      </ul>
+    </div>
+
+    <div id="resource_references" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>Resource Reference</b><br><br></p>
+      <p><a href="http://docs.puppetlabs.com/puppet_core_types_cheatsheet.pdf">http://docs.puppetlabs.com/puppet_<br>core_types_cheatsheet.pdf</a></p><br>
+      <p><a href="http://docs.puppetlabs.com/references/latest/type.html">http://docs.puppetlabs.com/references/<br>latest/type.html</a></p>
+      </ul><br>
+      <code style="font-size:50px"><pre>$> puppet describe &lt;TYPE&gt;</pre></code>
+    </div>
+
+    <div id="modifying_resources" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>Modifying a Resource</b></p>
+      <code style="font-size:40px; line-height:50px"><pre>$> puppet resource user russfeld<br>ensure=present shell="/bin/zsh"<br>home="/home/russfeld"<br>managehome=true</pre></code><p style="line-height:25px"><br></p>
+    </div>
+
+    <div id="modifying_resources_2" class="step slide" data-x="0" data-y="1800" data-z="-1">
+      <p class="centertext"><b>Modifying a Resource</b></p>
+      <code style="font-size:40px; line-height:50px"><pre>$> puppet resource user russfeld<br>ensure=present shell="/bin/zsh"<br>home="/home/russfeld"<br>managehome=true</pre></code>
+      <p style="line-height:25px"><br></p>
+      <code style="font-size:40px; line-height:50px"><pre>notice: /User[russfeld]/ensure: created
+user { 'russfeld':
+  ensure => 'present',
+  home   => '/home/russfeld',
+  shell  => '/bin/zsh'
+}</pre></code>
+      <p>Try to create your own user account</p>
+    </div>
+
+    <div id="manifest_files" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b>Manifest File</b><br><br></p>
+      <ul>
+        <li>Defines a <em>desired state</em> for resources using a <em>resource declaration</em></li>
+        <li>Can be applied repeatedly to the system</li>
+        <li>Can also contain logic and structural elements (next lecture)</li>
+      </ul>
+    </div>
+
+    <div id="manifest_1" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b>First Manifest File</b><br><br></p>
+      <code style="font-size:40px; line-height:50px"><pre># /root/user-absent.pp
+user {'russfeld':
+  ensure => absent,
+}</pre></code>
+    </div>
+
+    <div id="manifest_2" class="step slide" data-x="2000" data-y="1800" data-z="-1">
+      <p class="centertext"><b>First Manifest File</b><br><br></p>
+      <code style="font-size:40px; line-height:50px"><pre># /root/user-absent.pp
+user {'russfeld':
+  ensure => absent,
+}</pre></code>
+      <p style="line-height:25px"><br></p>
+      <code style="font-size:40px; line-height:50px"><pre>$> puppet apply /root/user-absent.pp</pre></code>
+    </div>
+
+    <div id="manifest_3" class="step slide" data-x="2000" data-y="1800" data-z="-2">
+      <p class="centertext"><b>First Manifest File</b><br><br></p>
+      <code style="font-size:40px; line-height:50px"><pre># /root/user-absent.pp
+user {'russfeld':
+  ensure => absent,
+}</pre></code>
+      <p style="line-height:25px"><br></p>
+      <code style="font-size:40px; line-height:50px"><pre>$> puppet apply /root/user-absent.pp</pre></code>
+      <code style="font-size:40px; line-height:50px"><pre>notice: /Stage[main]//User[russfeld]/<br>&nbsp;&nbsp;&nbsp;&nbsp;ensure: removed
+notice: Finished catalog run in<br>&nbsp;&nbsp;&nbsp;&nbsp;0.44 seconds</pre></code>
+    </div>
+
+    <div id="structure" class="step slide" data-x="3000" data-y="1800">
+      <p class="centertext"><b>Resource Declaration</b></p>
+      <code style="font-size:40px; line-height:50px"><pre>file {'testfile':
+  path    => '/tmp/testfile',
+  ensure  => present,
+  mode    => 0640,
+  content => "I'm a test file.",
+}</pre></code>
+      <p style="line-height:25px"><br></p>
+      <ul>
+        <li style="line-height:55px">Type - file {<ul>
+          <li style="line-height:55px">Title - 'testfile' :</li>
+          <li style="line-height:55px">Attribute/value pairs - <br>ensure => present,</li>
+        </ul></li>
+        <li style="line-height:55px">} (end of declaration)</li>
+      </ul>
+    </div>
+
+    <div id="resource_test" class="step slide" data-x="4000" data-y="1800" data-z="-2">
+      <p class="centertext"><b>Testing Resources</b><br><br></p>
+      <ul>
+        <li>Run the manifest again</li>
+        <li>Delete /tmp/testfile</li>
+        <li>Change rights on /tmp/testfile</li>
+        <li>Change contents of /tmp/testfile</li>
+      </ul>
+    </div>
+
+    <div id="compilation" class="step" data-x="0" data-y="2700">
+      <p class="centertext"><b>Manifest Compilation</b></p>
+      <img class="centerimg" height="600" src="images/compile_puppet.png">
+      <p class="imagecredit">Image Credit: <a href="http://docs.puppetlabs.com/learning/manifests.html">Puppet Labs</a></p>
+    </div>
+
+    <div id="ordering" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>Resource Ordering</b></p>
+      <code style="font-size:30px; line-height:33px"><pre># /root/training-manifests/2.file.pp
+
+file {'/tmp/test1':
+  ensure  => present,
+  content => "Hi.",
+}
+
+file {'/tmp/test2':
+  ensure => directory,
+  mode   => 644,
+}
+
+file {'/tmp/test3':
+  ensure => link,
+  target => '/tmp/test1',
+}
+
+notify {"I'm notifying you.":}
+notify {"So am I!":}</pre></code>
+    </div>
+
+
+    <div id="ordering_test" class="step slide" data-x="2000" data-y="2700">
+      <p class="centertext"><b>Resource Ordering</b><br><br></p>
+      <code style="font-size:30px; line-height:33px"><pre>$ puppet apply /root/examples/file-2.pp
+notice: /Stage[main]//File[/tmp/test1]/<br>&nbsp;&nbsp;&nbsp;&nbsp;ensure: created
+notice: /Stage[main]//File[/tmp/test3]/<br>&nbsp;&nbsp;&nbsp;&nbsp;ensure: created
+notice: /Stage[main]//File[/tmp/test2]/<br>&nbsp;&nbsp;&nbsp;&nbsp;ensure: created
+notice: So am I!
+notice: /Stage[main]//Notify[So am I!]/<br>&nbsp;&nbsp;&nbsp;&nbsp;message: defined 'message' as 'So am I!'
+notice: I'm notifying you.
+notice: /Stage[main]//Notify[I'm notifying you.]/<br>&nbsp;&nbsp;&nbsp;&nbsp;message: defined 'message' as 'I'm notifying you.'
+notice: Finished catalog run in 0.05 seconds</pre></code>
+    </div>
+
+    <div id="how_to_order" class="step slide" data-x="3000" data-y="2700">
+      <p class="centertext"><b>Resource Ordering</b><br><br></p>
+      <ul>
+        <li>Puppet assumes resource declaraions are <em>atomic</em></li>
+        <li>Therefore, it applies them in any order</li>
+        <li>You must define relationships between resources</li>
+      </ul>
+    </div>
+
+    <div id="require" class="step slide" data-x="4000" data-y="2700">
+      <p class="centertext"><b>Require</b><br><br></p>
+      <code><pre>file {'/tmp/test1':
+  ensure  => present,
+  content => "Hi.",
+}
+
+notify {'/tmp/test1 has already been synced.':
+  require => File['/tmp/test1'],
+}</pre></code>
+    </div>
+
+    <div id="before" class="step slide" data-x="0" data-y="3600">
+      <p class="centertext"><b>Before</b><br><br></p>
+      <code><pre>file {'/tmp/test1':
+  ensure  => present,
+  content => "Hi.",
+  before  => Notify['/tmp/test1 has<br>&nbsp;&nbsp;&nbsp;&nbsp;already been synced.'],
+}
+
+notify {'/tmp/test1 has already been synced.':}</pre></code>
+    </div>
+
+    <div id="subscribe" class="step slide" data-x="1000" data-y="3600">
+      <p class="centertext"><b>Subscribe</b><br><br></p>
+      <code><pre>file { '/etc/ssh/sshd_config':
+  ensure => file,
+  mode   => 600,
+  source => 'puppet:///modules/ssh/sshd_config',
+}
+service { 'sshd':
+  ensure    => running,
+  enable    => true,
+  subscribe => File['/etc/ssh/sshd_config'],
+}</pre></code>
+    </div>
+
+    <div id="arrows_1" class="step slide" data-x="2000" data-y="3600">
+      <p class="centertext"><b>Chaining Arrows</b><br><br></p>
+      <code><pre>file {'/tmp/test1':
+  ensure  => present,
+  content => "Hi.",
+}
+
+notify {'after':
+  message => '/tmp/test1 has already<br>&nbsp;&nbsp;&nbsp;&nbsp;been synced.',
+}
+
+File['/tmp/test1'] -> Notify['after']</pre></code>
+    </div>
+
+    <div id="arrows_2" class="step slide" data-x="3000" data-y="3600">
+      <p class="centertext"><b>Chaining Arrows</b><br><br></p>
+      <code><pre>file {'/tmp/test1':
+  ensure  => present,
+  content => "Hi.",
+}
+->
+notify {'after':
+  message => '/tmp/test1 has already<br>&nbsp;&nbsp;&nbsp;&nbsp;been synced.',
+}</pre></code>
+    </div>
+
+    <div id="package_file_service" class="step slide" data-x="4000" data-y="3600">
+      <p class="centertext"><b>Package/File/Service</b><br><br></p>
+      <code style="font-size:30px; line-height:33px"><pre>package { 'openssh-server':
+  ensure => present,
+  before => File['/etc/ssh/sshd_config'],
+}
+file { '/etc/ssh/sshd_config':
+  ensure => file,
+  mode   => 600,
+  source => '/root/examples/sshd_config',
+}
+service { 'sshd':
+  ensure     => running,
+  enable     => true,
+  subscribe  => File['/etc/ssh/sshd_config'],
+}</pre></code>
+    </div>
+
+    <div id="puppet_attrib2" class="step" data-x="1000" data-y="4500">
+      <p class="centertext"><b>Day 2</b><br><br></p>
+      <p>Much of this lecture's content is adapted from the Learning Puppet series on <a href="https://learn.puppetlabs.com/">https://learn.puppetlabs.com/</a></p>
+    </div>
+
+    <div id="variables" class="step slide" data-x="2000" data-y="4500">
+      <p class="centertext"><b>Variables</b><br><br></p>
+      <pre><code>$my_variable = "A bunch of text"
+notify {$my_variable:}</code></pre>
+    </div>
+
+    <div id="variables_2" class="step slide" data-x="3000" data-y="4500">
+      <p class="centertext"><b>Variable Notes</b><br><br></p>
+      <ul>
+        <li>Always starts with a dollar sign $</li>
+        <li>Assign with an equals sign =</li>
+        <li>Can hold strings, numbers, arrays, booleans, etc.</li>
+        <li>Can use variables as any value inside a resource declaration, including the title</li>
+      </ul>
+    </div>
+
+    <div id="variables_3" class="step slide" data-x="4000" data-y="4500">
+      <p class="centertext"><b>Variable Notes</b><br><br></p>
+      <ul>
+        <li>Variables are interpolated in double-quoted strings<br><pre><code style="font-size:27px">$username = "russfeld"
+notify {"Your home directory is /home/${username}": }</code></pre></li>
+        <li>Variables can only be assigned once</li>
+      </ul>
+    </div>
+
+    <div id="variables_learn" class="step slide" data-x="0" data-y="5400">
+      <p class="centertext"><b>Learn More</b><br><br></p>
+      <ul>
+        <li><a href="http://docs.puppetlabs.com/puppet/latest/reference/lang_variables.html">http://docs.puppetlabs.com/puppet/<br>latest/reference/lang_variables.html</a></li><br>
+        <li><a href="http://docs.puppetlabs.com/puppet/latest/reference/lang_datatypes.html">http://docs.puppetlabs.com/puppet/<br>latest/reference/lang_datatypes.html</a></li>
+      </ul>
+    </div>
+
+    <div id="facts" class="step slide" data-x="1000" data-y="5400">
+      <p class="centertext"><b>Facts</b><br><br></p>
+      <ul>
+        <li>Puppet uses Facter to learn about systems</li>
+        <li>Facter "facts" are stored as variables</li>
+        <li>Facts can be used in manifest files</li>
+      </ul>
+    </div>
+
+
+    <div id="facts_1" class="step slide" data-x="2000" data-y="5400">
+      <p class="centertext"><b>Facter</b><br><br></p>
+      <pre><code>#> facter -p</code></pre>
+    </div>
+
+    <div id="facts_2" class="step slide" data-x="2000" data-y="5400" data-z="-1">
+      <p class="centertext"><b>Facter</b><br><br></p>
+      <pre><code>#> facter -p</code></pre><br>
+      <code style="line-height:55px"><pre>architecture => i386
+bios_version => 6.00
+block_devices => sda
+domain => localdomain
+id => root
+...</pre></code>
+    </div>
+
+    <div id="list_facts" class="step slide" data-x="3000" data-y="5400">
+      <p class="centertext"><b>Facter</b><br><br></p>
+      <p>List of facts</li>
+      <ul>
+        <li><a href="http://docs.puppetlabs.com/facter/latest/core_facts.html">http://docs.puppetlabs.com/facter/<br>latest/core_facts.html</a></li>
+        <li>You can also write your own if needed</li>
+      </ul>
+    </div>
+
+    <div id="conditionals" class="step slide" data-x="4000" data-y="5400">
+      <p class="centertext"><b>Conditionals</b><br><br></p>
+      <code style="font-size:50px; line-height:60px"><pre>if &lt;boolean&gt; {
+    &lt;code&gt;
+}
+elsif &lt;boolean&gt; {
+    &lt;code&gt;
+}
+else {
+    &lt;code&gt;
+}</pre></code>
+    </div>
+
+    <div id="booleans" class="step slide" data-x="0" data-y="6300">
+      <p class="centertext"><b>Booleans</b><br><br></p>
+      <code style="font-size:50px; line-height:60px"><pre>$boolean = "false"
+if $boolean {
+    notify{"This is true":}
+}
+else {
+    notify{"This is false":}
+}</pre></code>
+    </div>
+
+    <div id="booleans_2" class="step slide" data-x="0" data-y="6300" data-z="-1">
+      <p class="centertext"><b>Booleans</b><br><br></p>
+      <code style="font-size:50px; line-height:60px"><pre>$boolean = "false"
+if $boolean {
+    notify{"This is true":}
+}
+else {
+    notify{"This is false":}
+}
+
+Notify: This is true</pre></code>
+    </div>
+
+    <div id="booleans_3" class="step slide" data-x="1000" data-y="6300">
+      <p class="centertext"><b>Booleans</b><br><br></p>
+      <ul>
+        <li>All facts are strings</li>
+        <li>All non-empty strings are true</li>
+        <li>Use str2bool(&lt;string&gt;)</li>
+        <br>
+        <li><code><pre>puppet module install puppetlabs-stdlib</pre></code></li>
+      </ul>
+    </div>
+
+        <div id="booleans_fix" class="step slide" data-x="2000" data-y="6300">
+      <p class="centertext"><b>Booleans</b><br><br></p>
+      <code style="font-size:50px; line-height:60px"><pre>include stdlib
+$boolean = "false"
+if str2bool("$boolean") {
+    notify{"This is true":}
+}
+else {
+    notify{"This is false":}
+}</pre></code>
+    </div>
+
+    <div id="booleans_fix2" class="step slide" data-x="2000" data-y="6300" data-z="-1">
+      <p class="centertext"><b>Booleans</b><br><br></p>
+      <code style="font-size:50px; line-height:60px"><pre>include stdlib
+$boolean = "false"
+if str2bool("$boolean") {
+    notify{"This is true":}
+}
+else {
+    notify{"This is false":}
+}
+Notify: This is false</pre></code>
+    </div>
+
+    <div id="case" class="step slide" data-x="3000" data-y="6300">
+      <p class="centertext"><b>Case Statement</b><br><br></p>
+      <code style="font-size:40px; line-height:60px"><pre>case $operatingsystem {
+  centos: { $apache = "httpd" }
+  # Note that these matches
+  # are case-insensitive.
+  redhat: { $apache = "httpd" }
+  debian: { $apache = "apache2" }
+  ubuntu: { $apache = "apache2" }
+  default: { fail("Unrecognized OS") }
+}</pre></code>
+    </div>
+
+    <div id="case2" class="step slide" data-x="4000" data-y="6300">
+      <p class="centertext"><b>Case Statement</b><br><br></p>
+      <code style="font-size:40px; line-height:60px"><pre>case $operatingsystem {
+  centos, redhat: { $apache = "httpd" }
+  debian, ubuntu: { $apache = "apache2" }
+  default: { fail("Unrecognized OS") }
+}</pre></code>
+      <p>Can also use Regular Expressions</p>
+    </div>
+
+    <div id="select" class="step slide" data-x="0" data-y="7200">
+      <p class="centertext"><b>Case Statement</b><br><br></p>
+      <code style="font-size:40px; line-height:60px"><pre>$apache = $operatingsystem ? {
+  centos                => 'httpd',
+  redhat                => 'httpd',
+  /(?i)(ubuntu|debian)/ => 'apache2',
+  default               => undef,
+}</pre></code>
+    </div>
+
+    <div id="classes" class="step slide" data-x="1000" data-y="7200">
+      <p class="centertext"><b>Classes</b><br><br></p>
+      <code style="font-size:40px; line-height:60px"><pre>class my_class {
+  notify {"This does something":}
+}
+
+include my_class</pre></code>
+    </div>
+
+    <div id="classes2" class="step slide" data-x="2000" data-y="7200">
+      <p class="centertext"><b>Classes</b><br><br></p>
+      <ul>
+        <li>Classes can contain any Puppet code</li>
+        <li>Names must be all lowercase, with numbers and underscores allowed</li>
+        <li>Classes are <em>defined</em> to make them available, and <em>declared</em> to be evaluated</li>
+      </ul>
+    </div>
+
+    <div id="scope" class="step slide" data-x="3000" data-y="7200">
+      <p class="centertext"><b>Variable Scope</b><br><br></p>
+      <ul>
+        <li>Classes create a new variable scope</li>
+        <li>Use $&lt;class_name&gt;::&lt;var_name&gt; to access</li>
+        <li>They <em>cannot</em> be assigned outside the declaring class</li>
+      </ul>
+    </div>
+
+    <div id="modules" class="step slide" data-x="4000" data-y="7200">
+      <p class="centertext"><b>Modules</b><br><br></p>
+      <ul>
+        <li>You can separate classes into <em>modules</em> for organization</li>
+        <li>Each module has a specific file structure</li>
+        <li>Modules are automatically loaded by Puppet from certain folders</li>
+        <li>/etc/puppetlabs/puppet/puppet.conf</li>
+      </ul>
+    </div>
+
+    <div id="module_struct" class="step slide" data-x="0" data-y="8100">
+      <p class="centertext"><b>Module Structure</b><br><br></p>
+      <code style="font-size:50px; line-height:60px"><pre>/etc/puppetlabs/code/modules/
+  module_name/
+    manifests/
+      init.pp
+    files/
+    templates/
+    lib/</pre></code>
+    </div>
+
+    <div id="module_struct2" class="step slide" data-x="1000" data-y="8100">
+      <p class="centertext"><b>Module Structure</b><br><br></p>
+      <ul>
+        <li>init.pp must contain a single class definition with the <em>same name</em> as the module</li>
+        <li>Modules can contain other classes, files, and templates</li>
+      </ul>
+    </div>
+
+    <div id="site" class="step slide" data-x="2000" data-y="8100">
+      <p class="centertext"><b>Site Manifest</b><br><br></p>
+      <p>/etc/puppetlabs/code/environments/<br>production/manifests/site.pp</p>
+      <ul>
+        <li>Global manifest file for client/server</li>
+        <li>Includes class / module declarations</li>
+        <li>Can have many environments</li>
+      </ul>
+      <code style="font-size:50px; line-height:60px"><pre>include ntp
+include apache
+include mysql</pre></code>
+    </div>
+
+    <div id="forge" class="step slide" data-x="3000" data-y="8100">
+      <p class="centertext"><b>Puppet Forge</b><br><br></p>
+      <ul>
+        <li>Lots of modules available free online</li>
+        <li><a href="http://forge.puppetlabs.com">http://forge.puppetlabs.com/</a></li>
+        <li>Don't reinvent the wheel; make it better</li>
+      </ul>
+    </div>
+
+        <div id="puppet_attrib" class="step" data-x="1000" data-y="9000">
+      <p class="centertext"><b>Day 3</b><br><br></p>
+      <p>Much of this lecture's content is adapted from the Learning Puppet series on <a href="https://learn.puppetlabs.com/">https://learn.puppetlabs.com/</a></p>
+    </div>
+
+    <div id="puppet-single" class="step" data-x="2000" data-y="9000">
+      <p class="centertext"><b>Single Puppet</b></p>
+      <img class="centerimg" height="600" src="images/compile_puppet.png">
+      <p class="imagecredit">Image Credit: <a href="https://docs.puppetlabs.com/learning/agent_master_basic.html">Puppet Labs</a></p>
+    </div>
+
+    <div id="puppet-server" class="step" data-x="3000" data-y="9000">
+      <p class="centertext"><b>Agent/Master Mode</b></p>
+      <img class="centerimg" height="600" src="images/server_puppet.png">
+      <p class="imagecredit">Image Credit: <a href="https://docs.puppetlabs.com/learning/agent_master_basic.html">Puppet Labs</a></p>
+    </div>
+
+    <div id="today" class="step slide" data-x="4000" data-y="9000">
+      <p class="centertext"><b>Today's Plan</b><br><br></p>
+      <ol>
+        <li>Set up the Puppet Learning VM</li>
+        <li>Load 2 agents in Docker</li>
+        <li>Get the VMs to communicate</li>
+        <li>Install a module on the server and apply it on the client</li>
+      </ol>
+    </div>
+
+    <div id="setup" class="step slide" data-x="5000" data-y="9000">
+      <p class="centertext"><b>Helpful Links</b><br><br></p>
+      <ol>
+        <a href="http://ask.puppetlabs.com/question/23939/docker-flag-provided-but-not-defined-d-agent-node-setup-quest/" style="font-size:45px">http://ask.puppetlabs.com/question/<br>23939/docker-flag-provided-but-not-<br>defined-d-agent-node-setup-quest/</a>
+      </ol>
+    </div>
+
+    <div id="puppet_agent" class="step slide" data-x="-1000" data-y="9900">
+      <p class="centertext"><b>Puppet Agent</b><br><br></p>
+      <p>Puppet agent command runs in 2 modes:</p>
+      <ul>
+        <li>Daemon mode</li>
+        <li>Run and quit</li>
+      </ul>
+      <br>
+    </div>
+
+    <div id="puppet_agent_2" class="step slide" data-x="0" data-y="9900">
+      <p class="centertext"><b>First Try</b><br><br></p>
+      <p>Let's try it by running:<pre><code style="font-size:45px">puppet agent -t</code></pre></p>
+    </div>
+
+    <div id="puppet_agent_3" class="step slide" data-x="0" data-y="9900" data-z="-1">
+      <p class="centertext"><b>First Try</b><br><br></p>
+      <p>Let's try it by running:</p><pre><code style="font-size:45px">puppet agent -t</code></pre><br><pre style="line-height:27px"><code style="font-size:23px; line-height:20px">[root@agent1 ~]# puppet agent -t
+info: Creating a new SSL key for agent1.localdomain
+warning: peer certificate won't be verified in this SSL session
+info: Caching certificate for ca
+info: Creating a new SSL certificate request for agent1.localdomain
+info: Certificate Request fingerprint (md5):
+    FD:E7:41:C9:2C:B7:5C:27:11:0C:8F:9C:1D:F6:F9:46
+Exiting; no certificate found and waitforcert is disabled</code></pre>
+    </div>
+
+    <div id="puppet_agent_4" class="step slide" data-x="1000" data-y="9900" data-z="-1">
+      <p class="centertext"><b>What Happened?</b><br><br></p>
+      <ul>
+        <li>Puppet secures communications between the master and agents with SSL</li>
+        <li>Since our agent doesn't have a valid certificate, it won't work</li>
+        <li>We must sign our certificate to continue</li>
+      </ul>
+    </div>
+
+    <div id="puppet_agent_5" class="step slide" data-x="2000" data-y="9900" data-z="0">
+      <p class="centertext"><b>Signing SSL Certificates</b></p>
+      <p>On the Master VM:</p>
+      <pre><code style="font-size:23px">puppet cert list</pre></code>
+    </div>
+
+    <div id="puppet_agent_51" class="step slide" data-x="2000" data-y="9900" data-z="-1">
+      <p class="centertext"><b>Signing SSL Certificates</b></p>
+      <p>On the Master VM:</p>
+      <pre><code style="font-size:23px">puppet cert list
+agent1.localdomain (FD:E7:41:C9:2C:B7:5C:27:11:0C:8F:9C:1D:F6:F9:46)</pre></code>
+    </div>
+
+    <div id="puppet_agent_52" class="step slide" data-x="2000" data-y="9900" data-z="-2">
+      <p class="centertext"><b>Signing SSL Certificates</b></p>
+      <p>On the Master VM:</p>
+      <pre><code style="font-size:23px">puppet cert list
+agent1.localdomain (FD:E7:41:C9:2C:B7:5C:27:11:0C:8F:9C:1D:F6:F9:46)
+
+puppet cert sign agent1.localdomain</pre></code>
+    </div>
+
+    <div id="puppet_agent_53" class="step slide" data-x="2000" data-y="9900" data-z="-3">
+      <p class="centertext"><b>Signing SSL Certificates</b></p>
+      <p>On the Master VM:</p>
+      <pre><code style="font-size:23px">puppet cert list
+agent1.localdomain (FD:E7:41:C9:2C:B7:5C:27:11:0C:8F:9C:1D:F6:F9:46)
+
+puppet cert sign agent1.localdomain
+notice: Signed certificate request for agent1.localdomain
+notice: Removing file Puppet::SSL::CertificateRequest ...</pre></code>
+    </div>
+
+    <div id="puppet_agent_6" class="step slide" data-x="3000" data-y="9900" data-z="-1">
+      <p class="centertext"><b>Try Again</b><br><br></p>
+      <pre><code style="font-size:45px">puppet agent -t</code></pre><br><pre style="line-height:27px"><code style="font-size:23px; line-height:20px">[root@agent1 ~]# puppet agent -t
+warning: peer certificate won't be verified in this SSL session
+info: Caching certificate for agent1.localdomain
+info: Retrieving plugin
+info: Caching certificate_revocation_list for ca
+info: Loading facts in facter_dot_d
+info: Caching catalog for agent1.localdomain
+info: Applying configuration version '1326210629'
+notice: Finished catalog run in 0.11 seconds</code></pre>
+    </div>
+
+    <div id="puppet_agent_7" class="step slide" data-x="4000" data-y="9900" data-z="-3">
+      <p class="centertext"><b>Configuring the site.pp file</b></p>
+      <ul>
+        <li>Install the NTP module from Puppet Forge:<br><pre><code>puppet module install puppetlabs-ntp</code></pre></li>
+        <li>/etc/puppetlabs/code/environments/<br>production/manifests/site.pp:<br><pre style="line-height:32px"><code>node 'agent1.localdomain' {
+# Note the quotes around the name!
+  class {'ntp':
+    servers => [ "ntp-1.ksu.edu dynamic",
+      "ntp-2.ksu.edu dynamic", ],
+  }
+}</code></pre>
+    </div>
+
+    <div id="puppet_agent_8" class="step slide" data-x="0" data-y="11700" data-z="-1">
+      <p class="centertext"><b>Apply on Agent</b><br><br></p>
+      <pre><code style="font-size:45px">puppet agent --test</code></pre><br><pre style="line-height:27px"><code style="font-size:23px; line-height:20px">[root@agent1 ~]# puppet agent --test
+info: Retrieving plugin
+info: Loading facts in facter_dot_d
+notice: /Stage[main]/Ntp/Package[ntp]/ensure: created
++# Managed by puppet class { "ntp": servers => [ ... ] }
+info: ntp.conf: Scheduling refresh of Service[ntp]
+notice: /Stage[main]/Ntp/Service[ntp]: Triggered 'refresh' from 1 events
+notice: Finished catalog run in 32.74 seconds</code></pre>
+    </div>
+
+    <div id="puppet_next" class="step slide" data-x="1000" data-y="11700" data-z="-1">
+      <p class="centertext"><b>What's Next?</b><br><br></p>
+      <ul>
+        <li>Add more modules</li>
+        <li>Add more agents</li>
+        <li>Customize configuration for different types of agents</li>
+        <li>Test, test, test</li>
+        <li>Enjoy your new stress-free life!</li>
+      </ul>
+    </div>
+
+    <div id="assignments" class="step slide" data-x="2000" data-y="11700">
+      <p class="centertext"><b>Assignments</b><br><br></p>
+      <ul>
+        <li>Lab 2 - Configuration Management with Puppet: Due Monday Feb 15th by 11:30 AM</li>
+      </ul>
+    </div>
+
+    <div id="overview" class="step" data-x="2000" data-y="5400" data-z="-1" data-scale="14.5">
+    </div>
+
+</div>
+
+<script src="/js/analytics.js"></script>
+<script src="/js/impress.js"></script>
+<script>impress().init();</script>
+<script src="/js/jquery-1.10.2.min.js"></script>
+<script src="/js/TimeCircles.js"></script>
+<script src="/js/timer.js"></script>
+<script src="/js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+
+
+
+</body>
+</html>

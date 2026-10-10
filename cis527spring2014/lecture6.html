@@ -1,0 +1,210 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <BASE href="../">
+  <link href="favicon.ico" rel="shortcut icon">
+  <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+  <meta name="description" content="CIS 527 Spring 2014 Lecture 6" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 527 Spring 2014 Lecture 6</title>
+    <link href="css/impress.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 527</b><br><br>Lecture 6 - Configuration Management</p>
+    </div>
+
+    <div id="pros" class="step slide" data-x="1000" data-y="0">
+      <p class="centertext"><b>Manual Configuration</b><br><br></p>
+      <p>Pros:</p>
+      <ul>
+        <li>Hands-on management</li>
+        <li>Customize each computer</li>
+        <br>
+        <li>Others?</li>
+      </ul>
+    </div>
+
+    <div id="cons" class="step slide" data-x="2000" data-y="0">
+      <p class="centertext"><b>Manual Configuration</b><br><br></p>
+      <p>Cons:</p>
+      <ul>
+        <li>Labor intensive</li>
+        <li>Inconsistent configuration</li>
+        <li>Updates are applied per-machine</li>
+        <br>
+        <li>Others?</li>
+      </ul>
+    </div>
+
+    <div id="better" class="step" data-x="3000" data-y="0">
+      <p class="centertext"><b>How do you make system configuration easier?</b><br><br></p>
+    </div>
+
+    <div id="make" class="step slide" data-x="4000" data-y="0">
+      <p class="centertext"><b>Make</b><br><br></p>
+      <ul>
+        <li>Tool for automatically building software</li>
+        <li>Allows definition of different build environments and outputs</li>
+        <li>Helps users manage large software projects</li>
+      </ul>
+    </div>
+
+    <div id="improve" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>Defined Configuration</b><br><br></p>
+      <ul>
+        <li>Reduce the configuration to a list</li>
+        <li>Make each item a high-level idea</li>
+        <li>System-agnostic</li>
+        <li>A sysadmin could follow the list</li>
+      </ul>
+    </div>
+
+    <div id="improve2" class="step slide" data-x="0" data-y="900" data-z="-1">
+      <p class="centertext"><b>Defined Configuration</b><br><br></p>
+      <ul>
+        <li>Reduce the configuration to a list</li>
+        <li>Make each item a high-level idea</li>
+        <li>System-agnostic</li>
+        <li>A sysadmin could follow the list</li>
+        <li>Or, a piece of software could, too</li>
+      </ul>
+    </div>
+
+    <div id="config_management" class="step" data-x="1000" data-y="900">
+      <p class="centertext"><b>What is Configuration Management?</b><br><br></p>
+    </div>
+
+    <div id="config_mgmt" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>Configuration Management</b><br><br></p>
+      <ul>
+        <li>Create a Defined Configuration</li>
+        <li>Use automated tools to apply configuration</li>
+        <li>Think of a system configuration as "software"</li>
+        <li>40% of IT downtime due to sysadmin errors</li>
+      </ul>
+    </div>
+
+    <div id="tools_config" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>Configuration Management</b><br><br></p>
+      <p>Tools:</p>
+      <ul>
+        <li>CFEngine</li>
+        <li>Chef</li>
+        <li>Bcfg2</li>
+        <li>Puppet</li>
+      </ul>
+    </div>
+
+    <div id="cfengine" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>CFEngine</b><br><br></p>
+      <ul>
+        <li>Started in 1993</li>
+        <li>Created by post-doc researcher Mark Burgess in Norway</li>
+        <li>Used to automate management of workstations</li>
+        <li>He realized there was very little work done in that area</li>
+      </ul>
+    </div>
+
+    <div id="cfengine2" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>CFEngine</b><br><br></p>
+      <ul>
+        <li>Burgess continued research for the next 20 years</li>
+        <li>Ideas such as "Computer Immunology" and "Promise Theory"</li>
+        <li>Many other competing products today</li>
+      </ul>
+    </div>
+
+    <div id="puppet" class="step" data-x="1000" data-y="1800">
+      <p class="centertext"><b>Puppet</b><br><br></p>
+      <img class="centerimg" width="850" src="cis527spring2014/images/lecture6/logo_puppet.svg">
+      <p class="imagecredit">Image Credit: <a href="http://puppetlabs.com/">Puppet Labs</a></p>
+    </div>
+
+    <div id="puppet2" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b>Puppet</b><br><br></p>
+      <ul>
+        <li>System components defined as "resources"</li>
+        <li>"Manifest" files define a "state"</li>
+        <li>Puppet enforces that state on each machine</li>
+        <li>Puppet can also report "facts" about each machine's configuration</li>
+      </ul>
+    </div>
+
+    <div id="install" class="step slide" data-x="3000" data-y="1800">
+      <p class="centertext"><b>Installing Puppet</b><br><br></p>
+      <ul>
+        <li>Download Puppet Enterprise (free for up to 10 nodes)</li>
+        <li><a href="http://info.puppetlabs.com/download-pe.html">http://info.puppetlabs.com/download-pe.html</a></li>
+        <li>You'll need to use Ubuntu 12.04 or another supported Linux distribution</li>
+        <li>Windows 8 is supported</li>
+      </ul>
+    </div>
+
+    <div id="install2" class="step slide" data-x="4000" data-y="1800">
+      <p class="centertext"><b>Installing Puppet</b><br><br></p>
+      <ul>
+        <li>For Lab 2, you only need to install Puppet Agent</li>
+        <li>Create a manifest file to enforce a defined state for each machine</li>
+        <li>You may create 2 seperate files for each OS</li>
+      </ul>
+    </div>
+
+    <div id="learning" class="step slide" data-x="0" data-y="2700">
+      <p class="centertext"><b>Learning Puppet</b><br><br></p>
+      <ul>
+        <li><p style="font-size:35px"><a href="http://docs.puppetlabs.com/learning">http://docs.puppetlabs.com/learning</a></p></li>
+        <li><p style="font-size:35px"><a href="http://docs.puppetlabs.com/guides/installation.html">http://docs.puppetlabs.com/guides/installation.html</a></p></li>
+        <li><p style="font-size:35px"><a href="http://docs.puppetlabs.com/puppet/3/reference">http://docs.puppetlabs.com/puppet/3/reference</a></p></li>
+      </ul>
+    </div>
+
+    <div id="learning2" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>Learning Puppet</b><br><br></p>
+      <ul>
+        <li>Download their learning VM to test it for yourself</li>
+        <li>Use VMWare snapshots to help with testing</li>
+      </ul>
+    </div>
+
+    <div id="assignments" class="step slide" data-x="-825" data-y="-225" data-scale="0.5">
+        <p class="centertext"><b>Assignments</b></p>
+        <ul>
+            <li>Lab 2 - Configuration Management - Due Sunday, Feb 23th by 11:59 PM</li>
+            <li>Automate configuration using Puppet</li>
+            <li>Turn in:<ul>
+                <li>CIS Transient Storage</li>
+                <li>via Storage Media in class Monday Feb 24th</li>
+                </ul></li> 
+        </ul>
+    </div>
+
+
+    <div id="overview" class="step" data-x="2500" data-y="2350" data-scale="7.5">
+    </div>
+
+</div>
+
+<script src="js/analytics.js"></script>
+
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+
+</body>
+</html>

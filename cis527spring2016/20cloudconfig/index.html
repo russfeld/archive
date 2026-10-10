@@ -1,0 +1,166 @@
+<html lang="en">
+<head>
+    <link href="/favicon.ico" rel="shortcut icon">
+    <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+    <meta name="description" content="CIS 527 - Configuration & Networking in The Cloud" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 527 - Configuration & Networking in The Cloud</title>
+    <link href="/css/impress.css" rel="stylesheet" />
+    <link href="/css/TimeCircles.css" rel="stylesheet" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 527</b><br><br>Configuration & Networking in The Cloud</p>
+    </div>
+
+    <div id="setup" class="step slide" data-x="1000" data-y="0">
+      <p class="centertext"><b>Setting Up a Cloud System</b><br><br></p>
+      <ul>
+        <li>Size & Scale</li>
+        <li>Region</li>
+        <li>Private Networking</li>
+        <li>SSH Keys</li>
+        <li>Pre-built Images</li>
+      </ul>
+    </div>
+
+    <div id="private" class="step" data-x="2000" data-y="0">
+      <img class="centerimg" width="850" src="images/private_do.png">
+      <p class="imagecredit">Image Source: <a href="https://www.digitalocean.com/community/tutorials/7-security-measures-to-protect-your-servers">DigitalOcean</a></p>
+    </div>
+
+    <div id="private2" class="step" data-x="3000" data-y="0">
+      <img class="centerimg" width="850" src="images/private_do2.png">
+      <p class="imagecredit">Image Source: <a href="https://www.digitalocean.com/community/tutorials/how-to-isolate-servers-within-a-private-network-using-iptables">DigitalOcean</a></p>
+    </div>
+
+    <div id="apps" class="step" data-x="4000" data-y="0">
+      <img class="centerimg" width="850" src="images/apps_do.png">
+      <p class="imagecredit">Image Source: <a href="https://cloud.digitalocean.com/droplets/new">DigitalOcean</a></p>
+    </div>
+
+    <div id="config" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>Configuration in the Cloud</b></p>
+      <ul>
+        <li>Root Login</li>
+        <li>Create New Root User</li>
+        <li>SSH Keys & Configure SSH</li>
+        <li>Firewall</li>
+        <li>NTP</li>
+        <li>Swap</li>
+      </ul>
+    </div>
+
+    <div id="ssh" class="step" data-x="1000" data-y="900">
+      <img class="centerimg" width="850" src="images/ssh_do.png">
+      <p class="imagecredit">Image Source: <a href="https://www.digitalocean.com/community/tutorials/7-security-measures-to-protect-your-servers">DigitalOcean</a></p>
+    </div>
+
+    <div id="ntp" class="step" data-x="2000" data-y="900">
+      <p class="centertext"><b>NTP Architecture</b></p>
+      <img class="centerimg" height="600" src="images/ntp_wiki.png">
+      <p class="imagecredit">Image Source: <a href="https://en.wikipedia.org/wiki/Network_Time_Protocol">Wikipedia</a></p>
+    </div>
+
+    <div id="ntp2" class="step" data-x="3000" data-y="900">
+      <p class="centertext"><b>NTP Round-Trip Calculation</b><br><br></p>
+      <img class="centerimg" width="850" src="images/ntp_wiki2.png">
+      <p class="imagecredit">Image Source: <a href="https://en.wikipedia.org/wiki/Network_Time_Protocol">Wikipedia</a></p>
+    </div>
+
+    <div id="vmem" class="step" data-x="4000" data-y="900">
+      <p class="centertext"><b>Linux Virtual Memory (Swap)</b></p>
+      <img class="centerimg" width="850" src="images/vmem_uic.jpg">
+      <p class="imagecredit">Image Source: <a href="https://www.cs.uic.edu/~jbell/CourseNotes/OperatingSystems/9_VirtualMemory.html">John Bell - University of Illinois Chicago (UIC)</a></p>
+    </div>
+
+    <div id="cmd1" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>Helpful Commands</b><br><br></p>
+      <ul>
+        <li>top & htop</li>
+        <li>glances</li>
+        <li>df -h</li>
+        <li>du -sh</li>
+        <li>netstat -peanut</li>
+        <li>w</li>
+      </ul>
+    </div>
+
+    <div id="cmd2" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b>Helpful Commands</b><br><br></p>
+      <ul>
+        <li>uptime</li>
+        <li>free</li>
+        <li>find & grep</li>
+        <li>lsof</li>
+        <li>last</li>
+        <li>wget</li>
+        <li>scp</li>
+      </ul>
+    </div>
+
+    <div id="dns" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b>DNS in the Cloud</b><br><br></p>
+      <ol>
+        <li>Register a Name</li>
+        <li>Set up Nameservers<ul>
+          <li>Through Name Registrar</li>
+          <li>Through Hosting Provider</li>
+          <li>Self-Hosted DNS</li>
+        </ul></li>
+        <li>Set up DNS Records</li>
+        <li>Get Coffee & Wait a While!</li>
+      </ol>
+    </div>
+
+    <div id="dyndns" class="step slide" data-x="3000" data-y="1800">
+      <p class="centertext"><b>Sidenote: Dynamic DNS</b><br><br></p>
+      <ul>
+        <li>Some DNS services provide this (but not all)</li>
+        <li>Register a Domain Name that "floats"</li>
+        <li>Typically a subdomain (host)</li>
+        <li>Software on your server updates DNS record when IP changes</li>
+        <li>Handy for home servers</li>
+    </div>
+
+    <div id="assignments" class="step slide" data-x="4000" data-y="1800">
+      <p class="centertext"><b>Assignments</b><br><br></p>
+      <ul>
+        <li>Lab 5 - The Cloud: Due Monday 4/4 11:30 AM</li>
+      </ul>
+    </div>
+
+    <div id="overview" class="step" data-x="2000" data-y="1800" data-z="-1" data-scale="7.5">
+    </div>
+
+</div>
+
+<script src="/js/analytics.js"></script>
+<script src="/js/impress.js"></script>
+<script>impress().init();</script>
+<script src="/js/jquery-1.10.2.min.js"></script>
+<script src="/js/TimeCircles.js"></script>
+<script src="/js/timer.js"></script>
+<script src="/js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+
+
+
+</body>
+</html>

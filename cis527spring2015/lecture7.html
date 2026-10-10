@@ -1,0 +1,367 @@
+cis<!doctype html>
+
+<html lang="en">
+<head>
+  <BASE href="../">
+  <link href="favicon.ico" rel="shortcut icon">
+  <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+  <meta name="description" content="CIS 527 Spring 2015 Lecture 7" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 527 Spring 2015 Lecture 7</title>
+    <link href="css/impress.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 527</b><br><br>Lecture 7 - Puppet 1 - The Basics</p>
+    </div>
+
+    <div id="puppet" class="step" data-x="1000" data-y="0">
+      <p class="centertext"><b>Puppet</b><br><br></p>
+      <img class="centerimg" width="850" src="cis527spring2015/images/lecture7/logo_puppet.svg">
+      <p class="imagecredit">Image Credit: <a href="http://puppetlabs.com/">Puppet Labs</a></p>
+    </div>
+
+    <div id="puppet_attrib" class="step" data-x="2000" data-y="0">
+      <p class="centertext"><b>Learning Puppet</b><br><br></p>
+      <p>Much of this lecture's content is adapted from the Learning Puppet series on <a href="https://docs.puppetlabs.com/learning/">https://docs.puppetlabs.com/learning/</a></p>
+    </div>
+
+    <div id="puppet_vm" class="step" data-x="3000" data-y="0">
+      <p class="centertext"><b>Learning Puppet VM</b><br><br></p>
+      <p class="centertext">Follow along using the<br>Learning Puppet VM<br><a href="http://puppetlabs.com/download-learning-vm">http://puppetlabs.com/download-learning-vm</a><br>It is also available on the<br>CIS 527 transient drive</p>
+    </div>
+
+    <div id="abstraction" class="step slide" data-x="4000" data-y="0">
+      <p class="centertext"><b>Abstraction</b><br><br></p>
+      <p>3 <em>big</em> insights</p>
+      <ul>
+        <li>Similar <em>resources</em> can be grouped into <em>types</em></li>
+        <li><em>Description</em> can be separate from <em>implementation</em></li>
+        <li>It is possible to declare a <em>desired state</em> for a resource</li>
+      </ul>
+    </div>
+
+    <div id="resources" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>Resources</b></p>
+      <pre><code>$> puppet resource service</code></pre>
+    </div>
+
+    <div id="resources_2" class="step slide" data-x="0" data-y="900" data-z="-1">
+      <p class="centertext"><b>Resources</b></p>
+      <pre><code>$> puppet resource service</code></pre>
+      <code><pre>service { 'NetworkManager':
+  ensure => 'stopped',
+  enable => 'false',
+}
+service { 'acpid':
+  ensure => 'running',
+  enable => 'true',
+}
+service { 'anacron':
+  ensure => 'stopped',
+  enable => 'true',
+}
+...</pre></code>
+    </div>
+
+    <div id="resources_desc" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b>Resources</b><br><br></p>
+      <ul>
+        <li>A system is a collection of many resources</li>
+        <li>Each resource represents a small unit</li>
+        <li>Resources have a <em>type</em>, <em>title</em> and <em>attributes</em></li>
+      </ul>
+    </div>
+
+    <div id="resources_example" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>Resources Example</b><br><br></p>
+      <code><pre>user { 'dave':
+  ensure     => present,
+  uid        => '507',
+  gid        => 'admin',
+  shell      => '/bin/zsh',
+  home       => '/home/dave',
+  managehome => true,
+}</pre></code><br>
+    <p>Find the <em>type</em>, <em>title</em>, <em>attributes</em>, and <em>values</em></p>
+    </div>
+
+    <div id="resources_list" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>Resource Types</b><br><br></p>
+      <ul>
+        <li>Package</li>
+        <li>File</li>
+        <li>Service</li>
+        <li>Notify</li>
+        <li>User / Group</li>
+        <li>Exec</li>
+        <li>Cron</li>
+      </ul>
+    </div>
+
+    <div id="resource_references" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>Resource Reference</b><br><br></p>
+      <p><a href="http://docs.puppetlabs.com/puppet_core_types_cheatsheet.pdf">http://docs.puppetlabs.com/puppet_<br>core_types_cheatsheet.pdf</a></p><br>
+      <p><a href="http://docs.puppetlabs.com/references/latest/type.html">http://docs.puppetlabs.com/references/<br>latest/type.html</a></p>
+      </ul><br>
+      <code style="font-size:50px"><pre>$> puppet describe &lt;TYPE&gt;</pre></code>
+    </div>
+
+    <div id="modifying_resources" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>Modifying a Resource</b></p>
+      <code style="font-size:40px; line-height:50px"><pre>$> puppet resource user russfeld<br>ensure=present shell="/bin/zsh"<br>home="/home/russfeld"<br>managehome=true</pre></code><p style="line-height:25px"><br></p>
+    </div>
+
+    <div id="modifying_resources_2" class="step slide" data-x="0" data-y="1800" data-z="-1">
+      <p class="centertext"><b>Modifying a Resource</b></p>
+      <code style="font-size:40px; line-height:50px"><pre>$> puppet resource user russfeld<br>ensure=present shell="/bin/zsh"<br>home="/home/russfeld"<br>managehome=true</pre></code>
+      <p style="line-height:25px"><br></p>
+      <code style="font-size:40px; line-height:50px"><pre>notice: /User[russfeld]/ensure: created
+user { 'russfeld':
+  ensure => 'present',
+  home   => '/home/russfeld',
+  shell  => '/bin/zsh'
+}</pre></code>
+      <p>Try to create your own user account</p>
+    </div>
+
+    <div id="manifest_files" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b>Manifest File</b><br><br></p>
+      <ul>
+        <li>Defines a <em>desired state</em> for resources using a <em>resource declaration</em></li>
+        <li>Can be applied repeatedly to the system</li>
+        <li>Can also contain logic and structural elements (next lecture)</li>
+      </ul>
+    </div>
+
+    <div id="manifest_1" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b>First Manifest File</b><br><br></p>
+      <code style="font-size:40px; line-height:50px"><pre># /root/user-absent.pp
+user {'russfeld':
+  ensure => absent,
+}</pre></code>
+    </div>
+
+    <div id="manifest_2" class="step slide" data-x="2000" data-y="1800" data-z="-1">
+      <p class="centertext"><b>First Manifest File</b><br><br></p>
+      <code style="font-size:40px; line-height:50px"><pre># /root/user-absent.pp
+user {'russfeld':
+  ensure => absent,
+}</pre></code>
+      <p style="line-height:25px"><br></p>
+      <code style="font-size:40px; line-height:50px"><pre>$> puppet apply /root/user-absent.pp</pre></code>
+    </div>
+
+    <div id="manifest_3" class="step slide" data-x="2000" data-y="1800" data-z="-2">
+      <p class="centertext"><b>First Manifest File</b><br><br></p>
+      <code style="font-size:40px; line-height:50px"><pre># /root/user-absent.pp
+user {'russfeld':
+  ensure => absent,
+}</pre></code>
+      <p style="line-height:25px"><br></p>
+      <code style="font-size:40px; line-height:50px"><pre>$> puppet apply /root/user-absent.pp</pre></code>
+      <code style="font-size:40px; line-height:50px"><pre>notice: /Stage[main]//User[russfeld]/<br>&nbsp;&nbsp;&nbsp;&nbsp;ensure: removed
+notice: Finished catalog run in<br>&nbsp;&nbsp;&nbsp;&nbsp;0.44 seconds</pre></code>
+    </div>
+
+    <div id="structure" class="step slide" data-x="3000" data-y="1800">
+      <p class="centertext"><b>Resource Declaration</b></p>
+      <code style="font-size:40px; line-height:50px"><pre>file {'testfile':
+  path    => '/tmp/testfile',
+  ensure  => present,
+  mode    => 0640,
+  content => "I'm a test file.",
+}</pre></code>
+      <p style="line-height:25px"><br></p>
+      <ul>
+        <li style="line-height:55px">Type - file {<ul>
+          <li style="line-height:55px">Title - 'testfile' :</li>
+          <li style="line-height:55px">Attribute/value pairs - <br>ensure => present,</li>
+        </ul></li>
+        <li style="line-height:55px">} (end of declaration)</li>
+      </ul>
+    </div>
+
+    <div id="resource_test" class="step slide" data-x="4000" data-y="1800" data-z="-2">
+      <p class="centertext"><b>Testing Resources</b><br><br></p>
+      <ul>
+        <li>Run the manifest again</li>
+        <li>Delete /tmp/testfile</li>
+        <li>Change rights on /tmp/testfile</li>
+        <li>Change contents of /tmp/testfile</li>
+      </ul>
+    </div>
+
+    <div id="compilation" class="step" data-x="0" data-y="2700">
+      <p class="centertext"><b>Manifest Compilation</b></p>
+      <img class="centerimg" height="600" src="cis527spring2015/images/lecture7/compile_puppet.png">
+      <p class="imagecredit">Image Credit: <a href="http://docs.puppetlabs.com/learning/manifests.html">Puppet Labs</a></p>
+    </div>
+
+    <div id="ordering" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>Resource Ordering</b></p>
+      <code style="font-size:30px; line-height:33px"><pre># /root/training-manifests/2.file.pp
+
+file {'/tmp/test1':
+  ensure  => present,
+  content => "Hi.",
+}
+
+file {'/tmp/test2':
+  ensure => directory,
+  mode   => 644,
+}
+
+file {'/tmp/test3':
+  ensure => link,
+  target => '/tmp/test1',
+}
+
+notify {"I'm notifying you.":}
+notify {"So am I!":}</pre></code>
+    </div>
+
+
+    <div id="ordering_test" class="step slide" data-x="2000" data-y="2700">
+      <p class="centertext"><b>Resource Ordering</b><br><br></p>
+      <code style="font-size:30px; line-height:33px"><pre>$ puppet apply /root/examples/file-2.pp
+notice: /Stage[main]//File[/tmp/test1]/<br>&nbsp;&nbsp;&nbsp;&nbsp;ensure: created
+notice: /Stage[main]//File[/tmp/test3]/<br>&nbsp;&nbsp;&nbsp;&nbsp;ensure: created
+notice: /Stage[main]//File[/tmp/test2]/<br>&nbsp;&nbsp;&nbsp;&nbsp;ensure: created
+notice: So am I!
+notice: /Stage[main]//Notify[So am I!]/<br>&nbsp;&nbsp;&nbsp;&nbsp;message: defined 'message' as 'So am I!'
+notice: I'm notifying you.
+notice: /Stage[main]//Notify[I'm notifying you.]/<br>&nbsp;&nbsp;&nbsp;&nbsp;message: defined 'message' as 'I'm notifying you.'
+notice: Finished catalog run in 0.05 seconds</pre></code>
+    </div>
+
+    <div id="how_to_order" class="step slide" data-x="3000" data-y="2700">
+      <p class="centertext"><b>Resource Ordering</b><br><br></p>
+      <ul>
+        <li>Puppet assumes resource declaraions are <em>atomic</em></li>
+        <li>Therefore, it applies them in any order</li>
+        <li>You must define relationships between resources</li>
+      </ul>
+    </div>
+
+    <div id="require" class="step slide" data-x="4000" data-y="2700">
+      <p class="centertext"><b>Require</b><br><br></p>
+      <code><pre>file {'/tmp/test1':
+  ensure  => present,
+  content => "Hi.",
+}
+
+notify {'/tmp/test1 has already been synced.':
+  require => File['/tmp/test1'],
+}</pre></code>
+    </div>
+
+    <div id="before" class="step slide" data-x="0" data-y="3600">
+      <p class="centertext"><b>Before</b><br><br></p>
+      <code><pre>file {'/tmp/test1':
+  ensure  => present,
+  content => "Hi.",
+  before  => Notify['/tmp/test1 has<br>&nbsp;&nbsp;&nbsp;&nbsp;already been synced.'],
+}
+
+notify {'/tmp/test1 has already been synced.':}</pre></code>
+    </div>
+
+    <div id="subscribe" class="step slide" data-x="1000" data-y="3600">
+      <p class="centertext"><b>Subscribe</b><br><br></p>
+      <code><pre>file { '/etc/ssh/sshd_config':
+  ensure => file,
+  mode   => 600,
+  source => 'puppet:///modules/ssh/sshd_config',
+}
+service { 'sshd':
+  ensure    => running,
+  enable    => true,
+  subscribe => File['/etc/ssh/sshd_config'],
+}</pre></code>
+    </div>
+
+    <div id="arrows_1" class="step slide" data-x="2000" data-y="3600">
+      <p class="centertext"><b>Chaining Arrows</b><br><br></p>
+      <code><pre>file {'/tmp/test1':
+  ensure  => present,
+  content => "Hi.",
+}
+
+notify {'after':
+  message => '/tmp/test1 has already<br>&nbsp;&nbsp;&nbsp;&nbsp;been synced.',
+}
+
+File['/tmp/test1'] -> Notify['after']</pre></code>
+    </div>
+
+    <div id="arrows_2" class="step slide" data-x="3000" data-y="3600">
+      <p class="centertext"><b>Chaining Arrows</b><br><br></p>
+      <code><pre>file {'/tmp/test1':
+  ensure  => present,
+  content => "Hi.",
+}
+->
+notify {'after':
+  message => '/tmp/test1 has already<br>&nbsp;&nbsp;&nbsp;&nbsp;been synced.',
+}</pre></code>
+    </div>
+
+    <div id="package_file_service" class="step slide" data-x="4000" data-y="3600">
+      <p class="centertext"><b>Package/File/Service</b><br><br></p>
+      <code style="font-size:30px; line-height:33px"><pre>package { 'openssh-server':
+  ensure => present,
+  before => File['/etc/ssh/sshd_config'],
+}
+file { '/etc/ssh/sshd_config':
+  ensure => file,
+  mode   => 600,
+  source => '/root/examples/sshd_config',
+}
+service { 'sshd':
+  ensure     => running,
+  enable     => true,
+  subscribe  => File['/etc/ssh/sshd_config'],
+}</pre></code>
+    </div>
+
+    <div id="assignments" class="step slide" data-x="-825" data-y="-225" data-scale="0.5">
+        <p class="centertext"><b>Assignments</b></p>
+        <ul>
+            <li>Lab 2 - Configuration Management - Due Monday, Feb 23rd by 12:30 PM</li>
+            <li>Automate configuration using Puppet</li>
+            <li>Turn in:<ul>
+                <li>CIS Transient Storage</li>
+                <li>via Storage Media in class Monday Feb 23rd</li>
+                </ul></li> 
+        </ul>
+    </div>
+
+
+    <div id="overview" class="step" data-x="2000" data-y="1800" data-scale="7.0">
+    </div>
+
+</div>
+
+<script src="js/analytics.js"></script>
+
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+
+</body>
+</html>

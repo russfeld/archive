@@ -1,0 +1,689 @@
+<html lang="en">
+<head>
+  <BASE href="../">
+  <link href="favicon.ico" rel="shortcut icon">
+  <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+  <meta name="description" content="CIS 115 Spring 2015 Lecture 28" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 115 Spring 2015 Lecture 28</title>
+    <link href="css/impress.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 115</b><br><br>Lecture 28: Databases, Web 2.0, Informatics, & Social Media (oh my)</p>
+    </div>
+
+    <div id="kst8r" class="step slide" data-x="1000" data-y="0">
+      <p class="centertext"><b>kst8r</b><br><br></p>
+      <p>K-State's new social network!</p>
+      <ul>
+        <li>What features should it have?</li>
+        <li>What data do we need?</li>
+        <li>How should it be stored?</li>
+        <li>How can we retrieve it?</li>
+      </ul>
+    </div>
+
+    <div id="codd" class="step slide" data-x="2000" data-y="0">
+      <p class="centertext"><b>Edgar F. Codd</b></p>
+      <img class="centerimg" height="600" src="cis115spring2015/images/lecture28/codd_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Edgar_F._Codd">Wikipedia</a></p>
+    </div>    
+
+    <div id="relational" class="step slide" data-x="3000" data-y="0">
+      <p class="centertext"><b>Relational Database</b><br><br></p>
+      <img class="centerimg" width="850" src="cis115spring2015/images/lecture28/relational_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Relational_database">Wikipedia</a></p>
+    </div> 
+
+    <div id="example" class="step slide" data-x="4000" data-y="0">
+      <p class="centertext"><b>Relational Database</b><br><br></p>
+      <table class="table" style="width:100%">
+        <tr>
+          <td><b>userID</b></td>
+          <td><b>Name</b></td>
+          <td><b>Birthday</b></td>
+          <td><b>Major</b></td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">russfeld</td>
+          <td style="font-size:42px">Russell</td>
+          <td style="font-size:42px">May 10th</td>
+          <td style="font-size:42px">Comp. Sci</td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">johnsmith</td>
+          <td style="font-size:42px">John</td>
+          <td style="font-size:42px">June 1</td>
+          <td style="font-size:42px">Info. Sci</td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">miriamc</td>
+          <td style="font-size:42px">Miriam</td>
+          <td style="font-size:42px">February 2nd</td>
+          <td style="font-size:42px">Info. Sys</td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">gameguy</td>
+          <td style="font-size:42px">Jayson</td>
+          <td style="font-size:42px">Dec 26</td>
+          <td style="font-size:42px">computersci</td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">sharpie</td>
+          <td style="font-size:42px">Reily</td>
+          <td style="font-size:42px">Dec. 18th</td>
+          <td style="font-size:42px">IS</td>
+        </tr>
+      </table>
+    </div> 
+
+    <div id="normal" class="step slide" data-x="5000" data-y="0">
+      <p class="centertext"><b>Database Normalization</b><br><br></p>
+      <ul>
+        <li>Avoid modification anomalies</li>
+        <li>Minimize errors when redesigning</li>
+        <li>Mirror real-world concepts</li>
+        <li>Avoid problems with different types of queries</li>
+      </ul>
+    </div> 
+
+    <div id="example2" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>Relational Database</b><br><br></p>
+      <table class="table" style="width:100%">
+        <tr>
+          <td><b>userID</b></td>
+          <td><b>Name</b></td>
+          <td><b>Birthday</b></td>
+          <td><b>Major</b></td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">russfeld</td>
+          <td style="font-size:42px">Russell</td>
+          <td style="font-size:42px">May 10th</td>
+          <td style="font-size:42px">Comp. Sci</td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">johnsmith</td>
+          <td style="font-size:42px">John</td>
+          <td style="font-size:42px">June 1</td>
+          <td style="font-size:42px">Info. Sci</td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">smiller</td>
+          <td style="font-size:42px">Sheila</td>
+          <td style="font-size:42px">Sept. 26</td>
+          <td style="font-size:42px">Soft. Engg.</td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">gameguy</td>
+          <td style="font-size:42px">Jayson</td>
+          <td style="font-size:42px">Dec 26</td>
+          <td style="font-size:42px">computersci</td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">sharpie</td>
+          <td style="font-size:42px">Reily</td>
+          <td style="font-size:42px">Dec. 18th</td>
+          <td style="font-size:42px">IS</td>
+        </tr>
+      </table>
+    </div> 
+
+    <div id="one-to-one" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b>Related Tables</b></p>
+      <table class="table" style="width:100%">
+        <tr>
+          <td><b>userID</b></td>
+          <td><b>Name</b></td>
+          <td><b>Birthday</b></td>
+          <td style="background:#66CCCC"><b>Major</b></td>
+        </tr>
+        <tr>
+          <td style="font-size:35px">russfeld</td>
+          <td style="font-size:35px">Russell</td>
+          <td style="font-size:35px">May 10th</td>
+          <td style="font-size:35px; background:#66CCCC">1</td>
+        </tr>
+        <tr>
+          <td style="font-size:35px">johnsmith</td>
+          <td style="font-size:35px">John</td>
+          <td style="font-size:35px">June 1</td>
+          <td style="font-size:35px; background:#66CCCC">3</td>
+        </tr>
+        <tr>
+          <td style="font-size:35px">smiller</td>
+          <td style="font-size:35px">Sheila</td>
+          <td style="font-size:35px">Sept. 26</td>
+          <td style="font-size:35px; background:#66CCCC">2</td>
+        </tr>
+        <tr>
+          <td style="font-size:35px">gameguy</td>
+          <td style="font-size:35px">Jayson</td>
+          <td style="font-size:35px">Dec 26</td>
+          <td style="font-size:35px; background:#66CCCC">1</td>
+        </tr>
+        <tr>
+          <td style="font-size:35px">sharpie</td>
+          <td style="font-size:35px">Reily</td>
+          <td style="font-size:35px">Dec. 18th</td>
+          <td style="font-size:35px; background:#66CCCC">3</td>
+        </tr>
+      </table>
+      <p style="line-height: 35px"><br></p>
+      <table class="table" style="width:100%">
+        <tr>
+          <td style="background:#66CCCC"><b>majorID</b></td>
+          <td><b>Major</b></td>
+          <td><b>Abbreviation</b></td>
+        </tr>
+        <tr>
+          <td style="font-size:35px; background:#66CCCC">1</td>
+          <td style="font-size:35px">Computer Science</td>
+          <td style="font-size:35px">CS</td>
+        </tr>
+        <tr>
+          <td style="font-size:35px; background:#66CCCC">2</td>
+          <td style="font-size:35px">Software Engineering</td>
+          <td style="font-size:35px">SE</td>
+        </tr>
+        <tr>
+          <td style="font-size:35px; background:#66CCCC">3</td>
+          <td style="font-size:35px">Information Systems</td>
+          <td style="font-size:35px">IS</td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="phones" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>Storing Phone Numbers</b></p>
+      <table class="table" style="width:100%">
+        <tr>
+          <td><b>userID</b></td>
+          <td><b>Name</b></td>
+          <td><b>Phone1</b></td>
+          <td><b>Phone2</b></td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">johnsmith</td>
+          <td style="font-size:42px">John</td>
+          <td style="font-size:42px">555-1234</td>
+          <td style="font-size:42px"></td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">smiller</td>
+          <td style="font-size:42px">Sheila</td>
+          <td style="font-size:42px">555-5134</td>
+          <td style="font-size:42px"></td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">gameguy</td>
+          <td style="font-size:42px">Jayson</td>
+          <td style="font-size:42px">555-1235</td>
+          <td style="font-size:42px">555-5134</td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">sharpie</td>
+          <td style="font-size:42px">Reily</td>
+          <td style="font-size:42px">555-5134</td>
+          <td style="font-size:42px"></td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="many-to-one" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>Many-to-One?</b></p>
+      <table class="table" style="width:100%">
+        <tr>
+          <td><b>userID</b></td>
+          <td><b>Name</b></td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">johnsmith</td>
+          <td style="font-size:42px">John</td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">smiller</td>
+          <td style="font-size:42px">Sheila</td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">gameguy</td>
+          <td style="font-size:42px">Jayson</td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">sharpie</td>
+          <td style="font-size:42px">Reily</td>
+        </tr>
+      </table>
+      <p style="line-height: 35px"><br></p>
+      <table class="table" style="width:100%">
+        <tr>
+          <td><b>Phone</b></td>
+          <td><b>user1</b></td>
+          <td><b>user2</b></td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">555-1234</td>
+          <td style="font-size:42px">johnsmith</td>
+          <td style="font-size:42px"></td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">555-5134</td>
+          <td style="font-size:42px">smiller</td>
+          <td style="font-size:42px">gameguy</td>
+          <td style="font-size:42px">?sharpie?</td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">555-1235</td>
+          <td style="font-size:42px">gameguy</td>
+          <td style="font-size:42px"></td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="one-to-many" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>One-to-Many</b></p>
+      <table class="table" style="width:100%">
+        <tr>
+          <td style="background:#66CCCC"><b>userID</b></td>
+          <td><b>Name</b></td>
+        </tr>
+        <tr>
+          <td style="font-size:30px; background:#66CCCC">johnsmith</td>
+          <td style="font-size:30px">John</td>
+        </tr>
+        <tr>
+          <td style="font-size:30px; background:#66CCCC">smiller</td>
+          <td style="font-size:30px">Sheila</td>
+        </tr>
+        <tr>
+          <td style="font-size:30px; background:#66CCCC">gameguy</td>
+          <td style="font-size:30px">Jayson</td>
+        </tr>
+        <tr>
+          <td style="font-size:30px; background:#66CCCC">sharpie</td>
+          <td style="font-size:30px">Reily</td>
+        </tr>
+      </table>
+      <p style="line-height: 30px"><br></p>
+      <table class="table" style="width:100%">
+        <tr>
+          <td style="background:#66CCCC"><b>userID</b></td>
+          <td><b>phone</b></td>
+        </tr>
+        <tr>
+          <td style="font-size:30px; background:#66CCCC">johnsmith</td>
+          <td style="font-size:30px">555-1234</td>
+        </tr>
+        <tr>
+          <td style="font-size:30px; background:#66CCCC">smiller</td>
+          <td style="font-size:30px">555-5134</td>
+        </tr>
+        <tr>
+          <td style="font-size:30px; background:#66CCCC">gameguy</td>
+          <td style="font-size:30px">555-1235</td>
+        </tr>
+        <tr>
+          <td style="font-size:30px; background:#66CCCC">gameguy</td>
+          <td style="font-size:30px">555-5134</td>
+        </tr>
+        <tr>
+          <td style="font-size:30px; background:#66CCCC">sharpie</td>
+          <td style="font-size:30px">555-5134</td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="different" class="step slide" data-x="5000" data-y="900">
+      <img class="centerimg" width="850" src="cis115spring2015/images/lecture28/different.jpg">
+    </div> 
+
+    <div id="the_internet" class="step" data-x="0" data-y="1800">
+      <div id="iDbyYGrswtg" data-id="iDbyYGrswtg" class="youtube">
+        <a href="http://www.youtube.com/watch?v=iDbyYGrswtg">The Internet (IT Crowd) on Youtube</a>
+      </div>
+    </div>
+
+    <div id="what" class="step" data-x="1000" data-y="1800">
+      <p class="centertext"><b>What is Web 2.0?</b></p>
+    </div>
+
+    <div id="tag_cloud" class="step" data-x="2000" data-y="1800">
+      <img class="centerimg" height="650" src="cis115spring2015/images/lecture28/tag_cloud_wiki.svg">
+      <p class="imagecredit">Image Source: <a href="http://upload.wikimedia.org/wikipedia/commons/a/a7/Web_2.0_Map.svg">Wikipedia</a></p>
+    </div> 
+
+    <div id="long_tail" class="step" data-x="3000" data-y="1800">
+      <p class="centertext"><b>The Long Tail</b></p>
+      <img class="centerimg" width="850" src="cis115spring2015/images/lecture28/long_tail_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Long_tail">Wikipedia</a></p>
+    </div> 
+
+    <div id="compare" class="step slide" data-x="4000" data-y="1800">
+      <table style="width:100%" class="table">
+        <tr>
+          <td><b>Web 1.0</b></td>
+          <td><b>Web 2.0</b></td>
+        </tr>
+        <tr>
+          <td>Static web pages</td>
+          <td>Dynamic pages</td>
+        </tr>
+        <tr>
+          <td>Content from few</td>
+          <td>Content from many</td>
+        </tr>
+        <tr>
+          <td>Local software</td>
+          <td>Web software</td>
+        </tr>
+        <tr>
+          <td>Local storage</td>
+          <td>Web storage</td>
+        </tr>
+        <tr>
+          <td>Read only</td>
+          <td>Write / Collaborate</td>
+        </tr>
+        <tr>
+          <td>Text only</td>
+          <td>Multimedia</td>
+        </tr>
+        <tr>
+          <td>Individual thoughts</td>
+          <td>Collective thoughts</td>
+        </tr>
+        <tr>
+          <td>Propietary</td>
+          <td>Open / Shared</td>
+        </tr>
+      </table>
+      <p class="imagecredit">Source: <a href="http://newtoolsworkshop.wikispaces.com/What+is+2.0%3F">New Tools Workshop</a></p>
+    </div> 
+
+    <div id="examples" class="step" data-x="5000" data-y="1800">
+      <p class="centertext"><b>Examples of Web 2.0 Sites?</b></p>
+    </div>
+
+    <div id="tech" class="step slide" data-x="0" data-y="2700">
+      <p class="centertext"><b>Core Web 2.0 Technologies</b><br><br></p>
+      <ul>
+        <li>DOM</li>
+        <li>Javascript</li>
+        <li>AJAX</li>
+        <li>JSON</li>
+      </ul>
+    </div>
+
+    <div id="dom" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>Document Object Model (DOM)</b></p>
+      <img class="centerimg" height="600" src="cis115spring2015/images/lecture28/dom_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Document_object_model">Wikipedia</a></p>
+    </div>
+
+    <div id="js" class="step slide" data-x="2000" data-y="2700">
+      <p class="centertext"><b>JavaScript (1995)</b><br><br></p>
+      <ul>
+        <li>Originally called "LiveScript"
+        <li>Used to manipulate the DOM after the page has loaded</li>
+        <li>Makes the web page much more interactive for the user</li>
+        <li>Unrelated to the Java programming language</li>
+      </ul>
+    </div>
+
+    <div id="ajax" class="step slide" data-x="3000" data-y="2700">
+      <p class="centertext"><b>AJAX (2005)</b><br><br></p>
+      <ul>
+        <li>Asynchronous Javascript and XML</li>
+        <li>Allows scripts on a webpage to send and receive data in the background without reloading the page</li>
+        <li>XML not required; may use JSON instead</li>
+      </ul>
+    </div>
+
+    <div id="xml" class="step slide" data-x="4000" data-y="2700">
+      <p class="centertext"><b>Extensible Markup Language (XML)</b></p>
+      <pre><code style="font-size:25px; line-height:30px">&lt;person>
+   &lt;firstName>John&lt;/firstName>
+   &lt;lastName>Smith&lt;/lastName>
+   &lt;age>25&lt;/age>
+   &lt;address>
+      &lt;city>New York&lt;/city>
+      &lt;postalCode>10021&lt;/postalCode>
+      &lt;state>NY&lt;/state>
+      &lt;streetAddress>21 2nd Street&lt;/streetAddress>
+   &lt;/address>
+   &lt;phoneNumbers>
+      &lt;element>
+         &lt;number>212 555-1234&lt;/number>
+         &lt;type>home&lt;/type>
+      &lt;/element>
+      &lt;element>
+         &lt;number>646 555-4567&lt;/number>
+         &lt;type>fax&lt;/type>
+      &lt;/element>
+   &lt;/phoneNumbers>
+&lt;/person></code></pre>
+    </div>
+
+    <div id="json" class="step slide" data-x="5000" data-y="2700">
+      <p class="centertext"><b>JavaScript Object Notation (JSON)</b></p>
+      <pre><code style="font-size:25px; line-height:30px">{
+    "firstName": "John",
+    "lastName": "Smith",
+    "age": 25,
+    "address": {
+        "streetAddress": "21 2nd Street",
+        "city": "New York",
+        "state": "NY",
+        "postalCode": 10021
+    },
+    "phoneNumbers": [
+        {
+            "type": "home",
+            "number": "212 555-1234"
+        },
+        {
+            "type": "fax",
+            "number": "646 555-4567"
+        }
+    ]
+}</code></pre>
+    </div>
+
+    <div id="machine" class="step" data-x="0" data-y="3600">
+      <div id="ApVQ1it4B04" data-id="NLlGopyXT_g" class="youtube">
+        <a href="http://www.youtube.com/watch?v=NLlGopyXT_g">The Machine is Us/ing Us on Youtube</a>
+      </div>
+    </div>
+
+    <div id="comic" class="step" data-x="1000" data-y="3600">
+      <img class="centerimg" height="650" src="cis115spring2015/images/lecture28/comic_geek_and_poke.jpg">
+      <p class="imagecredit">Image Source: <a href="http://geekandpoke.typepad.com/geekandpoke/2008/06/the-history-of.html">Geek and Poke</a></p>
+    </div>
+
+    <div id="social" class="step slide" data-x="2000" data-y="3600">
+      <p class="centertext"><b>Social Media</b><br><br></p>
+      <ul>
+        <li>How people communicate online</li>
+        <li>Users create and share content</li>
+        <li>Sharing is real-time between users</li>
+        <li>Content can be shared & discussed</li>
+      </ul>
+    </div>
+
+    <div id="rise" class="step slide" data-x="3000" data-y="3600">
+      <p class="centertext"><b>Rise of Social Media</b></p>
+      <ul>
+        <li>1997 - Six Degrees</li>
+        <li>1999 - Blogger & LiveJournal</li>
+        <li>2001 - Wikipedia</li>
+        <li>2002 - Friendster</li>
+        <li>2003 - LinkedIn & MySpace</li>
+        <li>2004 - Facebook, Flickr & digg</li>
+        <li>2005 - YouTube & Reddit</li>
+        <li>2006 - Twitter</li>
+      </ul>
+    </div>
+
+    <div id="rise2" class="step slide" data-x="4000" data-y="3600">
+      <p class="centertext"><b>Social Media Stats</b><br><br></p>
+      <ul>
+        <li>#1 Activity on the Web</li>
+        <li>1 Billion Facebook Users</li>
+        <li>58% of Facebook Users log on Daily</li>
+        <li>43% of people 65+ use Social Media</li>
+        <li><em>Fewer teens are using Facebook than before</em></li>
+      </ul>
+    </div>
+
+    <div id="graphic" class="skip" data-x="-825" data-y="2030" data-scale="0.5">
+      <img class="centerimg" width="850" src="cis115spring2015/images/lecture28/social_media_graphic.png">
+      <p class="imagecredit">Image Source: <a href="http://www.creotivo.com/blog/portfolio/social-media/">Creotivo</a></p>
+    </div>
+
+    <div id="graphic_1" class="step" data-x="-825" data-y="1125" data-scale="0.5">
+    </div>
+
+    <div id="graphic_2" class="step" data-x="-825" data-y="1425" data-scale="0.5">
+    </div>
+
+    <div id="graphic_3" class="step" data-x="-825" data-y="1725" data-scale="0.5">
+    </div>
+
+    <div id="graphic_4" class="step" data-x="-825" data-y="1925" data-scale="0.5">
+    </div>
+
+    <div id="graphic_5" class="step" data-x="-825" data-y="2125" data-scale="0.5">
+    </div>
+
+    <div id="graphic_6" class="step" data-x="-825" data-y="2460" data-scale="0.5">
+    </div>
+
+    <div id="graphic_7" class="step" data-x="-825" data-y="2720" data-scale="0.5">
+    </div>
+
+    <div id="graphic_8" class="step" data-x="-825" data-y="2970" data-scale="0.5">
+    </div>
+
+    <div id="discussion" class="step slide" data-x="5000" data-y="3600">
+      <p class="centertext"><b>Discussion Time!</b><br><br></p>
+      <p class="centertext">Is Web 2.0 and Social Media<br>Good, Bad, or Otherwise?<br><br></p>
+      <p class="centertext">List <b>5-10 Good</b> and <b>5-10 Bad</b> aspects of Web 2.0 and Social Media</p>
+    </div>
+
+    <div id="hans" class="step" data-x="0" data-y="4500">
+      <div id="jbkSRLYSojo" data-id="jbkSRLYSojo" class="youtube" data-start="0">
+        <a href="http://www.youtube.com/watch?v=jbkSRLYSojo">Hans Rosling's 200 Countries, 200 Years, 4 Minutes - The Joy of Stats - BBC Four</a>
+      </div>
+    </div>
+
+    <div id="informatics" class="step slide" data-x="1000" data-y="4500">
+      <p class="centertext"><b>Informatics</b><br><br></p>
+      <ul>
+        <li>Broad area encomapssing information processing and information systems</li>Many domains: art, science, medicine, law</li>
+        <li>Tasks: analytics, visualization, data/info integration</li>
+      </ul>
+    </div>
+
+    <div id="graphics" class="step" data-x="2000" data-y="4500">
+      <img class="centerimg" height="650" src="cis115spring2015/images/lecture28/informatics_blogschmog.jpg">
+      <p class="imagecredit">Image Source: <a href="http://www.blogschmog.net/2007/08/29/what-is-informatics/">Blog Schmog</a></p>
+    </div>
+
+    <div id="informatics2" class="step slide" data-x="3000" data-y="4500">
+      <p class="centertext"><b>Informatics</b></p>
+      <ul>
+        <li style="font-size:40px; line-height:48px"><b>Technology impacting Information</b><br>The use of technology to extract meaning out of large data sets</li><br>
+        <li style="font-size:40px; line-height:48px"><b>Information impacting Technology</b><br>Innovation to technology driven by new data collections</li><br>
+        <li style="font-size:40px; line-height:48px"><b>People impacting Information</b><br>The creation and manipulation of content to produce new informational value</li>
+      </ul>
+      <p class="imagecredit">Source: <a href="http://www.blogschmog.net/2007/08/29/what-is-informatics/">Blog Schmog</a></p>
+    </div>
+
+    <div id="informatics3" class="step slide" data-x="4000" data-y="4500">
+      <p class="centertext"><b>Informatics</b></p>
+      <ul>
+        <li style="font-size:40px; line-height:48px"><b>Information impacting People</b><br>The connections made or strengthened through the aggregation of existing information</li><br>
+        <li style="font-size:40px; line-height:48px"><b>People impacting Technology</b><br>Social and political policy that affects access to and development of technology</li><br>
+        <li style="font-size:40px; line-height:48px"><b>Technology impacting People</b><br>The cultural changes resulting from the introduction and use of technology</li>
+      </ul>
+      <p class="imagecredit">Source: <a href="http://www.blogschmog.net/2007/08/29/what-is-informatics/">Blog Schmog</a></p>
+    </div>
+
+    <div id="baby" class="step slide" data-x="5000" data-y="4500">
+      <p class="centertext"><b>Use Case: Business Intelligence & Customer Relationship Management</b></p>
+      <img class="centerimg" height="500" src="cis115spring2015/images/lecture28/target_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Target_Corporation">Wikipedia</a></p>
+      <p class="imagecredit">Source: <a href="http://www.forbes.com/sites/kashmirhill/2012/02/16/how-target-figured-out-a-teen-girl-was-pregnant-before-her-father-did/">Forbes</a></p>
+    </div>
+
+    <div id="assignment" class="step slide" data-x="-825" data-y="-225" data-scale="0.5">
+      <p class="centertext"><b>Assignments</b></p>
+      <ul>
+        <li>Blog 13: Design a Robot - Due 5/4 10PM</li>
+        <li>Scratch Game Project - Due 5/5 10PM<br>
+        <li>Wiki Final Version - Due 5/8 10PM</li>
+      </ul>
+    </div>
+
+    <div id="blog" class="step slide" data-x="-825" data-y="225" data-scale="0.5">
+      <p class="centertext" style="font-size: 35px; line-height: 45px"><b>Blog 13 - Design a Robot</b><br><br></p>
+      <p style="font-size: 30px; line-height: 32px">In the lecture on robotics, we talked about many examples of how robots are shaping the world we live in today. Based on what you have learned i this class, design a robot that you think would be useful or interesting to you. Some things you can include:
+        <ul style="font-size: 30px; line-height: 31px">
+          <li>What would your robot look like? Would it be human-like or based more on the function (like a roomba for example)?</li>
+          <li>What would your robot be capable of doing? What wouldn't it be able to do?</li>
+          <li>Are there robots today that are doing these tasks? Are those robots good at what they do?</li>
+          <li>How comfortable would you be allowing robots to take over many daily tasks in your life?</li>
+        </ul>
+      </p>
+    </div>
+
+    <div id="activity" class="skip slide" data-x="-825" data-y="655" data-scale="0.5">
+      <p class="centertext"><b>Activity - Word Cloud</b><br><br></p>
+      <ol>
+        <li>Choose a famous person in Computer Science History</li>
+        <li>Find her or his Wikipedia article</li>
+        <li>Use that text to create a word cloud</li>
+        <li><a href="http://www.wordle.net">Wordle.net</a> or <a href="http://www.tagxedo.com">Tagxedo.com</a></li>
+      </ul>
+    </div>
+
+    <div id="activity_1" class="step" data-x="-825" data-y="675" data-scale="0.5">
+    </div>
+
+    <div id="tagcloud2" class="step" data-x="-1000" data-y="4500">
+      <img class="centerimg" width="900" src="cis115spring2015/images/lecture28/wordle.png">
+    </div>
+
+    <div id="activity_2" class="step" data-x="-825" data-y="675" data-scale="0.5">
+    </div>
+
+    <div id="overview" class="step" data-x="2250" data-y="2250" data-z="-1" data-scale="7.5">
+    </div>
+
+</div>
+
+<script src="js/analytics.js"></script>
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
+<script src="js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+</body>
+</html>

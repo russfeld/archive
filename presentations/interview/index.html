@@ -1,0 +1,1248 @@
+<html lang="en">
+<head>
+    <link href="/favicon.ico" rel="shortcut icon">
+    <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+    <meta name="description" content="Polymorphism in C++" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Polymorphism in C++</title>
+    <link href="/css/highlight/github.css" rel="stylesheet" />
+    <link href="/css/TimeCircles.css" rel="stylesheet" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/impress2.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>Polymorphism in C++</b></p>
+        <p style="font-size: 40px; line-height: 42px"><br>Russell Feldhausen<br>russfeldh@gmail.com</p>
+    </div>
+
+    <div id="previously" class="step slide" data-x="2000" data-y="0">
+      <p class="slidetitle"><b>Previously...</b></p>
+      <ul>
+        <li>Classes and Objects in C++</li>
+        <li><code>private</code> and <code>public</code> Members</li>
+        <li>Constructors</li>
+        <li>Function Overloading</li>
+        <li>Pointers and Dereferencing</li>
+      </ul>
+    </div>
+
+    <div id="example0" class="step" data-x="4000" data-y="0">
+      <pre><code style="font-size:45px !important">class Person{
+  private:
+    int age;
+  public:
+    Person(int);
+    int happyBirthday();
+};
+
+Person::Person(int anAge){
+  age = anAge;
+}
+
+int Person::happyBirthday(){
+  age = age + 1;
+  return age;
+}</code></pre>
+    </div>
+
+    <div id="hierarchy" class="step slide skip" data-x="6000" data-y="0">
+      <p class="slidetitle"><b>Class Hierarchy</b></p>
+      <div style="width: 850px" class="pull-right">
+        <ul>
+          <li>Shape</li>
+          <ul>
+            <li>Rectangle</li>
+            <ul>
+              <li>Square</li>
+            </ul>
+            <li>Circle</li>
+          </ul>
+        </ul>
+      </div>
+      <div style="width: 850px">
+        <ul>
+          <li>Person</li>
+          <ul>
+            <li>Student</li>
+            <li>Teacher</li>
+            <ul>
+              <li>Administrator</li>
+            </ul>
+          </ul>
+        </ul>
+      </div>
+      <div>
+        <br>
+      </div>
+    </div>
+
+    <div id="thinkpairshare" class="step" data-x="6000" data-y="-800" data-rotate-x="-30" data-scale="2">
+      <p class="centertext"><b>Think-Pair-Share</b><br>What other examples can you come up with?</p>
+      <div id="timer1" class="timer centertext" data-timer="120" data-textsize="30" style="width: 40%; margin: 0 auto; padding-bottom:350px"></div>
+    </div>
+
+    <div id="polymorphism" class="step slide" data-x="8000" data-y="0">
+      <p class="slidetitle"><b>Polymorphism</b></p>
+      <p><b>noun:</b> <i>The ability to assume different forms or shapes</i></p>
+      <br>
+      <p>In programming, polymorphism allows an object to assume different forms and perform different operations based on its type.<br>An object can assume multiple types based on its class hierarchy (or inheritance).</p>
+    </div>
+
+    <div id="classes0" class="step" data-x="0" data-y="1200">
+      <div style="width: 850px; padding: 25px;" class="pull-right">
+        <pre><code style="font-size: 40px !important" class="lang-cpp">void Person::happyBirthday() {
+  age = age + 1;
+}
+void Student::changeMajor() {
+  major = major + 1;
+}
+void Teacher::promotion() {
+  title = title + 1;
+}
+void Administrator::promotion() {
+  title = title + 1;
+  salary = salary + 1;
+}</pre></code>
+      </div>
+      <div style="width: 850px; padding: 25px;">
+      <pre><code style="font-size: 40px !important" class="lang-cpp">class Person{
+  public:
+    int age;
+    void happyBirthday();
+};
+class Student : public Person{
+  public:
+    int major;
+    void changeMajor();
+};
+class Teacher: public Person{
+  public:
+    int title;
+    void promotion();
+};
+class Administrator: public Teacher{
+  public:
+    int salary;
+    void promotion();
+};</code></pre>
+      </div>
+    </div>
+
+    <div id="example1" class="step" data-x="2000" data-y="1200">
+      <div style="width: 1100px; padding: 25px; padding-top: 300px" class="pull-right">
+        <pre><code style="font-size: 40px !important" class="lang-cpp">int main(){
+  Person person;
+  person.age = 32
+  person.happyBirthday();
+  cout << person.age << endl;
+  return 0;
+}</pre></code>
+      </div>
+      <div style="width: 600px; padding: 25px;">
+      <pre><code style="font-size: 25px !important" class="lang-cpp">class Person{
+  public:
+    int age;
+    void happyBirthday();
+};
+class Student : public Person{
+  public:
+    int major;
+    void changeMajor();
+};
+class Teacher: public Person{
+  public:
+    int title;
+    void promotion();
+};
+class Administrator: public Teacher{
+  public:
+    int salary;
+    void promotion();
+};
+void Person::happyBirthday() {
+  age = age + 1;
+}
+void Student::changeMajor() {
+  major = major + 1;
+}
+void Teacher::promotion() {
+  title = title + 1;
+}
+void Administrator::promotion() {
+  title = title + 1;
+  salary = salary + 1;
+}</code></pre>
+      </div>
+    </div>
+
+    <div id="example1_1" class="step" data-x="2000" data-y="1200" data-z="-1">
+      <div style="width: 1100px; padding: 25px; padding-top: 300px" class="pull-right">
+        <pre><code style="font-size: 40px !important" class="lang-cpp">int main(){
+  Person person;
+  person.age = 32
+  person.happyBirthday();
+  cout << person.age << endl; // 33
+  return 0;
+}</pre></code>
+      </div>
+      <div style="width: 600px; padding: 25px;">
+      <pre><code style="font-size: 25px !important" class="lang-cpp">class Person{
+  public:
+    int age;
+    void happyBirthday();
+};
+class Student : public Person{
+  public:
+    int major;
+    void changeMajor();
+};
+class Teacher: public Person{
+  public:
+    int title;
+    void promotion();
+};
+class Administrator: public Teacher{
+  public:
+    int salary;
+    void promotion();
+};
+void Person::happyBirthday() {
+  age = age + 1;
+}
+void Student::changeMajor() {
+  major = major + 1;
+}
+void Teacher::promotion() {
+  title = title + 1;
+}
+void Administrator::promotion() {
+  title = title + 1;
+  salary = salary + 1;
+}</code></pre>
+      </div>
+    </div>
+
+    <div id="example2" class="step" data-x="4000" data-y="1200">
+      <div style="width: 1100px; padding: 25px; padding-top: 250px" class="pull-right">
+        <pre><code style="font-size: 40px !important" class="lang-cpp">int main(){
+  Student student;
+  Person* person = &student;
+  student.age = 42;
+  student.major = 2;
+  student.happyBirthday();
+  student.changeMajor();
+  cout << student.age << endl;
+  cout << person->age << endl;
+  cout << student.major << endl;
+  return 0;
+}</pre></code>
+      </div>
+      <div style="width: 600px; padding: 25px;">
+      <pre><code style="font-size: 25px !important" class="lang-cpp">class Person{
+  public:
+    int age;
+    void happyBirthday();
+};
+class Student : public Person{
+  public:
+    int major;
+    void changeMajor();
+};
+class Teacher: public Person{
+  public:
+    int title;
+    void promotion();
+};
+class Administrator: public Teacher{
+  public:
+    int salary;
+    void promotion();
+};
+void Person::happyBirthday() {
+  age = age + 1;
+}
+void Student::changeMajor() {
+  major = major + 1;
+}
+void Teacher::promotion() {
+  title = title + 1;
+}
+void Administrator::promotion() {
+  title = title + 1;
+  salary = salary + 1;
+}</code></pre>
+      </div>
+    </div>
+
+    <div id="example2_1" class="step" data-x="4000" data-y="1200" data-z="-1">
+      <div style="width: 1100px; padding: 25px; padding-top: 250px" class="pull-right">
+        <pre><code style="font-size: 40px !important" class="lang-cpp">int main(){
+  Student student;
+  Person* person = &student;
+  student.age = 42;
+  student.major = 2;
+  student.happyBirthday();
+  student.changeMajor();
+  cout << student.age << endl; // 43
+  cout << person->age << endl; // 43
+  cout << student.major << endl; // 3
+  return 0;
+}</pre></code>
+      </div>
+      <div style="width: 600px; padding: 25px;">
+      <pre><code style="font-size: 25px !important" class="lang-cpp">class Person{
+  public:
+    int age;
+    void happyBirthday();
+};
+class Student : public Person{
+  public:
+    int major;
+    void changeMajor();
+};
+class Teacher: public Person{
+  public:
+    int title;
+    void promotion();
+};
+class Administrator: public Teacher{
+  public:
+    int salary;
+    void promotion();
+};
+void Person::happyBirthday() {
+  age = age + 1;
+}
+void Student::changeMajor() {
+  major = major + 1;
+}
+void Teacher::promotion() {
+  title = title + 1;
+}
+void Administrator::promotion() {
+  title = title + 1;
+  salary = salary + 1;
+}</code></pre>
+      </div>
+    </div>
+
+    <div id="example3" class="step" data-x="6000" data-y="1200">
+      <div style="width: 1100px; padding: 25px; padding-top: 200px" class="pull-right">
+        <pre><code style="font-size: 40px !important" class="lang-cpp">int main(){
+  Administrator admin;
+  Teacher* teacher = &admin;
+  Person* person = &admin;
+  admin.age = 25;
+  admin.title = 5;
+  admin.salary = 12;
+  teacher->happyBirthday();
+  admin.promotion();
+  cout << person->age << endl;
+  cout << teacher->title << endl;
+  cout << admin.salary << endl;
+  return 0;
+}</pre></code>
+      </div>
+      <div style="width: 600px; padding: 25px;">
+      <pre><code style="font-size: 25px !important" class="lang-cpp">class Person{
+  public:
+    int age;
+    void happyBirthday();
+};
+class Student : public Person{
+  public:
+    int major;
+    void changeMajor();
+};
+class Teacher: public Person{
+  public:
+    int title;
+    void promotion();
+};
+class Administrator: public Teacher{
+  public:
+    int salary;
+    void promotion();
+};
+void Person::happyBirthday() {
+  age = age + 1;
+}
+void Student::changeMajor() {
+  major = major + 1;
+}
+void Teacher::promotion() {
+  title = title + 1;
+}
+void Administrator::promotion() {
+  title = title + 1;
+  salary = salary + 1;
+}</code></pre>
+      </div>
+    </div>
+
+    <div id="example3_1" class="step" data-x="6000" data-y="1200" data-z="-1">
+      <div style="width: 1100px; padding: 25px; padding-top: 200px" class="pull-right">
+        <pre><code style="font-size: 40px !important" class="lang-cpp">int main(){
+  Administrator admin;
+  Teacher* teacher = &admin;
+  Person* person = &admin;
+  admin.age = 25;
+  admin.title = 5;
+  admin.salary = 12;
+  teacher->happyBirthday();
+  admin.promotion();
+  cout << person->age << endl; // 26
+  cout << teacher->title << endl; // 6
+  cout << admin.salary << endl; // 13
+  return 0;
+}</pre></code>
+      </div>
+      <div style="width: 600px; padding: 25px;">
+      <pre><code style="font-size: 25px !important" class="lang-cpp">class Person{
+  public:
+    int age;
+    void happyBirthday();
+};
+class Student : public Person{
+  public:
+    int major;
+    void changeMajor();
+};
+class Teacher: public Person{
+  public:
+    int title;
+    void promotion();
+};
+class Administrator: public Teacher{
+  public:
+    int salary;
+    void promotion();
+};
+void Person::happyBirthday() {
+  age = age + 1;
+}
+void Student::changeMajor() {
+  major = major + 1;
+}
+void Teacher::promotion() {
+  title = title + 1;
+}
+void Administrator::promotion() {
+  title = title + 1;
+  salary = salary + 1;
+}</code></pre>
+      </div>
+    </div>
+
+    <div id="subclass" class="step slide" data-x="8000" data-y="1200">
+      <p class="slidetitle"><b>Subclass (Child or Derived Class)</b></p>
+      <ul>
+        <li>Can access superclass (parent or base class)<br><code>public</code> members</li>
+        <li>Can access own <code>public</code> & <code>private</code> members</li>
+      </ul>
+      <br>
+      <p>What if I want something accessible by subclasses but NOT everyone?</p>
+    </div>
+
+    <div id="subclass_1" class="step slide" data-x="8000" data-y="1200" data-z="-1">
+      <p class="slidetitle"><b>Subclass (Child or Derived Class)</b></p>
+      <ul>
+        <li>Can access superclass (parent or base class)<br><code>public</code> members</li>
+        <li>Can access own <code>public</code> & <code>private</code> members</li>
+      </ul>
+      <br>
+      <p>What if I want something accessible by subclasses but NOT everyone? <b>Use the <code>protected</code> access modifier</b>!</p>
+    </div>
+
+    <div id="classes1" class="step" data-x="0" data-y="2400">
+      <div style="width: 850px; padding: 25px;" class="pull-right">
+        <pre><code style="font-size: 40px !important" class="lang-cpp">void Person::happyBirthday() {
+  age = age + 1;
+}
+void Student::setAge(int anAge) {
+  age = anAge;
+}
+int Student::getAge() {
+  return age;
+}
+void Student::getOlder() {
+  happyBirthday();
+}
+void Student::changeMajor() {
+  major = major + 1;
+}</pre></code>
+      </div>
+      <div style="width: 850px; padding: 25px;">
+      <pre><code style="font-size: 40px !important" class="lang-cpp">class Person{
+  <i>protected</i>:
+    int age;
+    void happyBirthday();
+};
+class Student : public Person{
+  public:
+    int major;
+    void setAge(int);
+    int getAge();
+    void getOlder();
+    void changeMajor();
+};</code></pre>
+      </div>
+    </div>
+
+    <div id="example4" class="step" data-x="2000" data-y="2400">
+      <div style="width: 1100px; padding: 25px; padding-top: 200px" class="pull-right">
+        <pre><code style="font-size: 40px !important" class="lang-cpp">int main(){
+  Student student;
+  student.age = 42;
+  student.major = 2;
+  student.happyBirthday();
+  student.changeMajor();
+  cout << student.age << endl;
+  cout << student.major << endl;
+  return 0;
+}</pre></code>
+      </div>
+      <div style="width: 600px; padding: 25px;">
+      <pre><code style="font-size: 25px !important" class="lang-cpp">class Person{
+  protected:
+    int age;
+    void happyBirthday();
+};
+class Student : public Person{
+  public:
+    int major;
+    void setAge(int);
+    int getAge();
+    void getOlder();
+    void changeMajor();
+};
+void Person::happyBirthday() {
+  age = age + 1;
+}
+void Student::setAge(int anAge) {
+  age = anAge;
+}
+int Student::getAge() {
+  return age;
+}
+void Student::getOlder() {
+  happyBirthday();
+}
+void Student::changeMajor() {
+  major = major + 1;
+}</code></pre>
+      </div>
+    </div>
+
+    <div id="example4_1" class="step" data-x="2000" data-y="2400" data-z="-1">
+      <div style="width: 1100px; padding: 25px; padding-top: 200px" class="pull-right">
+        <pre><code style="font-size: 40px !important" class="lang-cpp">int main(){
+  Student student;
+  <s>student.age = 42;</s> // protected!
+  student.major = 2;
+  <s>student.happyBirthday();</s> // protected!
+  student.changeMajor();
+  cout << <s>student.age</s> << endl; // protected!
+  cout << student.major << endl;
+  return 0;
+}</pre></code>
+      </div>
+      <div style="width: 600px; padding: 25px;">
+      <pre><code style="font-size: 25px !important" class="lang-cpp">class Person{
+  protected:
+    int age;
+    void happyBirthday();
+};
+class Student : public Person{
+  public:
+    int major;
+    void setAge(int);
+    int getAge();
+    void getOlder();
+    void changeMajor();
+};
+void Person::happyBirthday() {
+  age = age + 1;
+}
+void Student::setAge(int anAge) {
+  age = anAge;
+}
+int Student::getAge() {
+  return age;
+}
+void Student::getOlder() {
+  happyBirthday();
+}
+void Student::changeMajor() {
+  major = major + 1;
+}</code></pre>
+      </div>
+    </div>
+
+    <div id="example5" class="step" data-x="4000" data-y="2400">
+      <div style="width: 1100px; padding: 25px; padding-top: 200px" class="pull-right">
+        <pre><code style="font-size: 40px !important" class="lang-cpp">int main(){
+  Student student;
+  student.setAge(42);
+  student.major = 2;
+  student.getOlder();
+  student.changeMajor();
+  cout << student.getAge() << endl;
+  cout << student.major << endl;
+  return 0;
+}</pre></code>
+      </div>
+      <div style="width: 600px; padding: 25px;">
+      <pre><code style="font-size: 25px !important" class="lang-cpp">class Person{
+  protected:
+    int age;
+    void happyBirthday();
+};
+class Student : public Person{
+  public:
+    int major;
+    void setAge(int);
+    int getAge();
+    void getOlder();
+    void changeMajor();
+};
+void Person::happyBirthday() {
+  age = age + 1;
+}
+void Student::setAge(int anAge) {
+  age = anAge;
+}
+int Student::getAge() {
+  return age;
+}
+void Student::getOlder() {
+  happyBirthday();
+}
+void Student::changeMajor() {
+  major = major + 1;
+}</code></pre>
+      </div>
+    </div>
+
+    <div id="example5_1" class="step" data-x="4000" data-y="2400" data-z="-1">
+      <div style="width: 1100px; padding: 25px; padding-top: 200px" class="pull-right">
+        <pre><code style="font-size: 40px !important" class="lang-cpp">int main(){
+  Student student;
+  student.setAge(42);
+  student.major = 2;
+  student.getOlder();
+  student.changeMajor();
+  cout << student.getAge() << endl; // 43
+  cout << student.major << endl; // 3
+  return 0;
+}</pre></code>
+      </div>
+      <div style="width: 600px; padding: 25px;">
+      <pre><code style="font-size: 25px !important" class="lang-cpp">class Person{
+  protected:
+    int age;
+    void happyBirthday();
+};
+class Student : public Person{
+  public:
+    int major;
+    void setAge(int);
+    int getAge();
+    void getOlder();
+    void changeMajor();
+};
+void Person::happyBirthday() {
+  age = age + 1;
+}
+void Student::setAge(int anAge) {
+  age = anAge;
+}
+int Student::getAge() {
+  return age;
+}
+void Student::getOlder() {
+  happyBirthday();
+}
+void Student::changeMajor() {
+  major = major + 1;
+}</code></pre>
+      </div>
+    </div>
+
+    <div id="subclass1" class="step slide" data-x="6000" data-y="2400">
+      <p class="slidetitle"><b>Subclass (Child or Derived Class)</b></p>
+      <ul>
+        <li>Can access superclass (parent or base class)<br><code>public</code> & <code>protected</code> members</li>
+        <li>Can access own <code>public</code>, <code>protected</code> & <code>private</code> members</li>
+      </ul>
+      <br>
+      <p>Can we have the same function in both a subclass and its superclass, but with different code?</p>
+    </div>
+
+    <div id="subclass1_1" class="step slide" data-x="6000" data-y="2400" data-z="-1">
+      <p class="slidetitle"><b>Subclass (Child or Derived Class)</b></p>
+      <ul>
+        <li>Can access superclass (parent or base class)<br><code>public</code> & <code>protected</code> members</li>
+        <li>Can access own <code>public</code>, <code>protected</code> & <code>private</code> members</li>
+      </ul>
+      <br>
+      <p>Can we have the same function in both a subclass and its superclass, but with different code?<b> Yes!</b></p>
+    </div>
+
+    <div id="classes2" class="step" data-x="8000" data-y="2400">
+      <div style="width: 850px; padding: 25px;" class="pull-right">
+        <pre><code style="font-size: 40px !important" class="lang-cpp">void Person::whoAmI() {
+  cout << "Parent" << endl;
+}
+
+void Student::whoAmI() {
+  cout << "Student" << endl;
+}</pre></code>
+      </div>
+      <div style="width: 850px; padding: 25px;">
+      <pre><code style="font-size: 40px !important" class="lang-cpp">class Person{
+  protected:
+    int age;
+  public:
+    void whoAmI();
+};
+
+class Student : public Person{
+  public:
+    void whoAmI();
+};</code></pre>
+      </div>
+    </div>
+
+    <div id="example6" class="step" data-x="0" data-y="3600">
+      <div style="width: 1100px; padding: 25px; padding-top: 100px" class="pull-right">
+        <pre><code style="font-size: 40px !important" class="lang-cpp">int main(){
+  Person person;
+  Student student;
+  person.whoAmI();
+  student.whoAmI();
+  return 0;
+}</pre></code>
+      </div>
+      <div style="width: 600px; padding: 25px;">
+      <pre><code style="font-size: 25px !important" class="lang-cpp">class Person{
+  protected:
+    int age;
+  public:
+    void whoAmI();
+};
+
+class Student : public Person{
+  public:
+    void whoAmI();
+};
+void Person::whoAmI() {
+  cout << "Parent" << endl;
+}
+
+void Student::whoAmI() {
+  cout << "Student" << endl;
+}</code></pre>
+      </div>
+    </div>
+
+    <div id="example6_1" class="step" data-x="0" data-y="3600" data-z="-1">
+      <div style="width: 1100px; padding: 25px; padding-top: 100px" class="pull-right">
+        <pre><code style="font-size: 40px !important" class="lang-cpp">int main(){
+  Person person;
+  Student student;
+  person.whoAmI(); // Parent
+  student.whoAmI(); // Student
+  return 0;
+}</pre></code>
+      </div>
+      <div style="width: 600px; padding: 25px;">
+      <pre><code style="font-size: 25px !important" class="lang-cpp">class Person{
+  protected:
+    int age;
+  public:
+    void whoAmI();
+};
+
+class Student : public Person{
+  public:
+    void whoAmI();
+};
+void Person::whoAmI() {
+  cout << "Parent" << endl;
+}
+
+void Student::whoAmI() {
+  cout << "Student" << endl;
+}</code></pre>
+      </div>
+    </div>
+
+    <div id="example7" class="step" data-x="2000" data-y="3600">
+      <div style="width: 1100px; padding: 25px; padding-top: 100px" class="pull-right">
+        <pre><code style="font-size: 40px !important" class="lang-cpp">int main(){
+  Student student;
+  Person* person = &student;
+  student.whoAmI();
+  person->whoAmI();
+  return 0;
+}</pre></code>
+      </div>
+      <div style="width: 600px; padding: 25px;">
+      <pre><code style="font-size: 25px !important" class="lang-cpp">class Person{
+  protected:
+    int age;
+  public:
+    void whoAmI();
+};
+
+class Student : public Person{
+  public:
+    void whoAmI();
+};
+void Person::whoAmI() {
+  cout << "Parent" << endl;
+}
+
+void Student::whoAmI() {
+  cout << "Student" << endl;
+}</code></pre>
+      </div>
+    </div>
+
+    <div id="example7_1" class="step" data-x="2000" data-y="3600" data-z="-1">
+      <div style="width: 1100px; padding: 25px; padding-top: 100px" class="pull-right">
+        <pre><code style="font-size: 40px !important" class="lang-cpp">int main(){
+  Student student;
+  Person* person = &student;
+  student.whoAmI(); // Student
+  person->whoAmI(); // Parent
+  return 0;
+}</pre></code>
+      </div>
+      <div style="width: 600px; padding: 25px;">
+      <pre><code style="font-size: 25px !important" class="lang-cpp">class Person{
+  protected:
+    int age;
+  public:
+    void whoAmI();
+};
+
+class Student : public Person{
+  public:
+    void whoAmI();
+};
+void Person::whoAmI() {
+  cout << "Parent" << endl;
+}
+
+void Student::whoAmI() {
+  cout << "Student" << endl;
+}</code></pre>
+      </div>
+    </div>
+
+    <div id="subclass2" class="step slide" data-x="4000" data-y="3600">
+      <p class="slidetitle"><b>Function Overriding</b></p>
+      <p class="centertext">The function in the superclass is<br><b>overridden</b><br>by the function in the subclass.</p>
+      <br>
+      <p>Can we have it <i>always</i> use the subclass code, even if the current type is the superclass?</p>
+    </div>
+
+    <div id="subclass2_1" class="step slide" data-x="4000" data-y="3600" data-z="-1">
+      <p class="slidetitle"><b>Function Overriding</b></p>
+      <p class="centertext">The function in the superclass is<br><b>overridden</b><br>by the function in the subclass.</p>
+      <br>
+      <p>Can we have it <i>always</i> use the subclass code, even if the current type is the superclass? <b>Use the <code>virtual</code> keyword!</b></p>
+    </div>
+
+    <div id="classes3" class="step" data-x="6000" data-y="3600">
+      <div style="width: 850px; padding: 25px;" class="pull-right">
+        <pre><code style="font-size: 40px !important" class="lang-cpp">void Person::whoAmI() {
+  cout << "Parent" << endl;
+}
+
+void Student::whoAmI() {
+  cout << "Student" << endl;
+}</pre></code>
+      </div>
+      <div style="width: 850px; padding: 25px;">
+      <pre><code style="font-size: 40px !important" class="lang-cpp">class Person{
+  protected:
+    int age;
+  public:
+    <i>virtual</i> void whoAmI();
+};
+
+class Student : public Person{
+  public:
+    void whoAmI();
+};</code></pre>
+      </div>
+    </div>
+
+    <div id="example8" class="step" data-x="8000" data-y="3600">
+      <div style="width: 1100px; padding: 25px; padding-top: 100px" class="pull-right">
+        <pre><code style="font-size: 40px !important" class="lang-cpp">int main(){
+  Person person;
+  Student student;
+  person.whoAmI();
+  student.whoAmI();
+  return 0;
+}</pre></code>
+      </div>
+      <div style="width: 600px; padding: 25px;">
+      <pre><code style="font-size: 25px !important" class="lang-cpp">class Person{
+  protected:
+    int age;
+  public:
+    virtual void whoAmI();
+};
+
+class Student : public Person{
+  public:
+    void whoAmI();
+};
+
+void Person::whoAmI() {
+  cout << "Parent" << endl;
+}
+
+void Student::whoAmI() {
+  cout << "Student" << endl;
+}</code></pre>
+      </div>
+    </div>
+
+    <div id="example8_1" class="step" data-x="8000" data-y="3600" data-z="-1">
+      <div style="width: 1100px; padding: 25px; padding-top: 100px" class="pull-right">
+        <pre><code style="font-size: 40px !important" class="lang-cpp">int main(){
+  Person person;
+  Student student;
+  person.whoAmI(); // Parent
+  student.whoAmI(); // Student
+  return 0;
+}</pre></code>
+      </div>
+      <div style="width: 600px; padding: 25px;">
+      <pre><code style="font-size: 25px !important" class="lang-cpp">class Person{
+  protected:
+    int age;
+  public:
+    virtual void whoAmI();
+};
+
+class Student : public Person{
+  public:
+    void whoAmI();
+};
+
+void Person::whoAmI() {
+  cout << "Parent" << endl;
+}
+
+void Student::whoAmI() {
+  cout << "Student" << endl;
+}</code></pre>
+      </div>
+    </div>
+
+    <div id="example9" class="step" data-x="0" data-y="4800">
+      <div style="width: 1100px; padding: 25px; padding-top: 100px" class="pull-right">
+        <pre><code style="font-size: 40px !important" class="lang-cpp">int main(){
+  Student student;
+  Person* person = &student;
+  student.whoAmI();
+  person->whoAmI();
+  return 0;
+}</pre></code>
+      </div>
+      <div style="width: 600px; padding: 25px;">
+      <pre><code style="font-size: 25px !important" class="lang-cpp">class Person{
+  protected:
+    int age;
+  public:
+    virtual void whoAmI();
+};
+
+class Student : public Person{
+  public:
+    void whoAmI();
+};
+
+void Person::whoAmI() {
+  cout << "Parent" << endl;
+}
+
+void Student::whoAmI() {
+  cout << "Student" << endl;
+}</code></pre>
+      </div>
+    </div>
+
+    <div id="example9_1" class="step" data-x="0" data-y="4800" data-z="-1">
+      <div style="width: 1100px; padding: 25px; padding-top: 100px" class="pull-right">
+        <pre><code style="font-size: 40px !important" class="lang-cpp">int main(){
+  Student student;
+  Person* person = &student;
+  student.whoAmI(); // Student
+  person->whoAmI(); // Student
+  return 0;
+}</pre></code>
+      </div>
+      <div style="width: 600px; padding: 25px;">
+      <pre><code style="font-size: 25px !important" class="lang-cpp">class Person{
+  protected:
+    int age;
+  public:
+    virtual void whoAmI();
+};
+
+class Student : public Person{
+  public:
+    void whoAmI();
+};
+
+void Person::whoAmI() {
+  cout << "Parent" << endl;
+}
+
+void Student::whoAmI() {
+  cout << "Student" << endl;
+}</code></pre>
+      </div>
+    </div>
+
+    <div id="subclass3" class="step slide" data-x="2000" data-y="4800">
+      <p class="slidetitle"><b>Virtual Functions</b></p>
+      <p class="centertext">Virtual functions can be<br><b>redefined</b><br>within subclasses.</p>
+      <br>
+      <p>Do we always have to implement the function in the superclass?</p>
+    </div>
+
+    <div id="subclass3_1" class="step slide" data-x="2000" data-y="4800" data-z="-1">
+      <p class="slidetitle"><b>Virtual Functions</b></p>
+      <p class="centertext">Virtual functions can be<br><b>redefined</b><br>within subclasses.</p>
+      <br>
+      <p>Do we always have to implement the function in the superclass?<b> No! Make the superclass an <i>abstract</i> class with <i>pure virtual</i> functions</b></p>
+    </div>
+
+    <div id="classes4" class="step" data-x="4000" data-y="4800">
+      <div style="width: 850px; padding: 25px;" class="pull-right">
+        <pre><code style="font-size: 40px !important" class="lang-cpp">void Student::whoAmI() {
+  cout << "Student" << endl;
+}</pre></code>
+      </div>
+      <div style="width: 850px; padding: 25px;">
+      <pre><code style="font-size: 40px !important" class="lang-cpp">class Person{
+  protected:
+    int age;
+  public:
+    virtual void whoAmI()<i> = 0</i>;
+};
+
+class Student : public Person{
+  public:
+    void whoAmI();
+};</code></pre>
+      </div>
+    </div>
+
+    <div id="example10" class="step" data-x="6000" data-y="4800">
+      <div style="width: 1100px; padding: 25px; padding-top: 100px" class="pull-right">
+        <pre><code style="font-size: 40px !important" class="lang-cpp">int main(){
+  Student student;
+  Person person;
+  person.whoAmI();
+  student.whoAmI();
+  return 0;
+}</pre></code>
+      </div>
+      <div style="width: 600px; padding: 25px;">
+      <pre><code style="font-size: 25px !important" class="lang-cpp">class Person{
+  protected:
+    int age;
+  public:
+    virtual void whoAmI()  = 0;
+};
+
+class Student : public Person{
+  public:
+    void whoAmI();
+};
+
+void Student::whoAmI() {
+  cout << "Student" << endl;
+}</code></pre>
+      </div>
+    </div>
+
+    <div id="example10_1" class="step" data-x="6000" data-y="4800" data-z="-1">
+      <div style="width: 1100px; padding: 25px; padding-top: 100px" class="pull-right">
+        <pre><code style="font-size: 40px !important" class="lang-cpp">int main(){
+  Student student;
+  Person person; // cannot instantiate
+  person.whoAmI();
+  student.whoAmI();
+  return 0;
+}</pre></code>
+      </div>
+      <div style="width: 600px; padding: 25px;">
+      <pre><code style="font-size: 25px !important" class="lang-cpp">class Person{
+  protected:
+    int age;
+  public:
+    virtual void whoAmI()  = 0;
+};
+
+class Student : public Person{
+  public:
+    void whoAmI();
+};
+
+void Student::whoAmI() {
+  cout << "Student" << endl;
+}</code></pre>
+      </div>
+    </div>
+
+    <div id="example11" class="step" data-x="8000" data-y="4800">
+      <div style="width: 1100px; padding: 25px; padding-top: 100px" class="pull-right">
+        <pre><code style="font-size: 40px !important" class="lang-cpp">int main(){
+  Student student;
+  Person* person = &student;
+  student.whoAmI();
+  person->whoAmI();
+  return 0;
+}</pre></code>
+      </div>
+      <div style="width: 600px; padding: 25px;">
+      <pre><code style="font-size: 25px !important" class="lang-cpp">class Person{
+  protected:
+    int age;
+  public:
+    virtual void whoAmI()  = 0;
+};
+
+class Student : public Person{
+  public:
+    void whoAmI();
+};
+
+void Student::whoAmI() {
+  cout << "Student" << endl;
+}</code></pre>
+      </div>
+    </div>
+
+    <div id="example11_1" class="step" data-x="8000" data-y="4800" data-z="-1">
+      <div style="width: 1100px; padding: 25px; padding-top: 100px" class="pull-right">
+        <pre><code style="font-size: 40px !important" class="lang-cpp">int main(){
+  Student student;
+  Person* person = &student; // pointer ok
+  student.whoAmI(); // Student
+  person->whoAmI(); // Student
+  return 0;
+}</pre></code>
+      </div>
+      <div style="width: 600px; padding: 25px;">
+      <pre><code style="font-size: 25px !important" class="lang-cpp">class Person{
+  protected:
+    int age;
+  public:
+    virtual void whoAmI()  = 0;
+};
+
+class Student : public Person{
+  public:
+    void whoAmI();
+};
+
+void Student::whoAmI() {
+  cout << "Student" << endl;
+}</code></pre>
+      </div>
+    </div>
+
+    <div id="review" class="step slide" data-x="0" data-y="6000">
+      <p class="slidetitle"><b>Review</b></p>
+      <ul>
+        <li><b>Polymorphism</b> - class hierarchies</li>
+        <li><b><code>protected</code> keyword</b> - self & subclass access only</li>
+        <li><b>Function Overriding</b> - different code in superclass and subclass</li>
+        <li><b><code>virtual</code> keyword</b> - redefine functions in subclass</li>
+        <li><b>Abstract Class</b> - virtual function with no definition</li>
+        <ul>
+          <li>Cannot be instantiated!</li>
+        </ul>
+      </ul>
+    </div>
+
+    <div id="Upcoming" class="step slide" data-x="2000" data-y="6000">
+      <p class="slidetitle"><b>Next Steps</b></p>
+      <ul>
+        <li>Constructor Chaining</li>
+        <li>Multiple Inheritance</li>
+        <ul>
+          <li>The Diamond Problem</li>
+        </ul>
+        <li>Dynamic Allocation - <code>new</code> and <code>delete</code></li>
+        <li>Changing Type - <code>dynamic_cast</code></li>
+        <li>Generic Types & Templates</li>
+      </ul>
+    </div>
+
+    <div id="assignment" class="step slide" data-x="4000" data-y="6000">
+      <p class="slidetitle"><b>Assignment - Vehicles</b></p>
+      <ul>
+        <li>Vehicle (abstract)</li>
+        <ul>
+          <li>Car</li>
+          <ul>
+            <li>Truck</li>
+          </ul>
+          <li>Motorcycle</li>
+          <ul>
+            <li>Scooter</li>
+          </ul>
+        </ul>
+      </ul>
+      <p>Methods for vehicle type and tax rate<br>Practice with <code>virtual</code> functions and <code>protected</code> members</p>
+    </div>
+
+
+
+    <div id="overview" class="step" data-x="4000" data-y="3000" data-z="-1" data-scale="7.8">
+    </div>
+
+</div>
+
+<script src="/js/analytics.js"></script>
+<script src="/js/impress2.js"></script>
+<script>impress().init();</script>
+<script src="/js/jquery-1.10.2.min.js"></script>
+<script src="/js/TimeCircles.js"></script>
+<script src="/js/timer.js"></script>
+<script src="/js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

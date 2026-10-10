@@ -1,0 +1,309 @@
+<html lang="en">
+<head>
+  <BASE href="../">
+  <link href="favicon.ico" rel="shortcut icon">
+  <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+  <meta name="description" content="CIS 115 Fall 2013 Lecture 10" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 115 Fall 2013 Lecture 10</title>
+    <link href="css/impress.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 115</b><br><br>Lecture 10: Computer Graphics</p>
+    </div>
+
+    <div id="pdp1" class="step slide" data-x="1000" data-y="0">
+      <p class="centertext"><b>Steve Russell & PDP-1</b></p>
+      <img class="centerimg" height="600" src="cis115fall2013/images/lecture10/steve_russell_pdp1_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/PDP-1">Wikipedia</a></p>
+    </div>
+
+    <div id="spacewar" class="step slide" data-x="2000" data-y="0">
+      <p class="centertext"><b>Spacewar!</b></p>
+      <img class="centerimg" height="600" src="cis115fall2013/images/lecture10/spacewar_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Spacewar!">Wikipedia</a></p>
+    </div>
+
+    <div id="spacewar_vid" class="step" data-x="2000" data-y="-900">
+      <div id="7bzWnaH-0sg" data-id="7bzWnaH-0sg" class="youtube">
+        <a href="http://www.youtube.com/watch?v=7bzWnaH-0sg">Restored PDP-1 Playing Music and Spacewar - Youtube</a>
+      </div>
+    </div>
+
+    <div id="gyro" class="step slide" data-x="3000" data-y="0">
+      <p class="centertext"><b>Animations</b><br><br></p>
+      <img class="centerimg" width="850" src="cis115fall2013/images/lecture10/gyro_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/History_of_computer_animation">Wikipedia</a></p>
+    </div>
+
+    <div id="animation_vid" class="step" data-x="4000" data-y="0">
+      <div id="m8Rbl7JG4Ng" data-id="m8Rbl7JG4Ng" class="youtube">
+        <a href="http://www.youtube.com/watch?v=m8Rbl7JG4Ng">Simulation of a two-giro gravity attitude control system - Edward Zajac on Youtube</a>
+      </div>
+    </div>
+    
+    <div id="crt" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>Cathode Ray Tube (CRT)</b></p>
+      <img class="centerimg" height="600" src="cis115fall2013/images/lecture10/crt_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Cathode_ray_tube">Wikipedia</a></p>
+    </div>
+
+    <div id="descartes" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b>René Descartes</b></p>
+      <img class="centerimg" height="600" src="cis115fall2013/images/lecture10/descartes_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Ren%C3%A9_Descartes">Wikipedia</a></p>
+    </div>
+
+    <div id="cartesian" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>Cartesian Coordinates</b></p>
+      <img class="centerimg" height="600" src="cis115fall2013/images/lecture10/cartesian_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Cartesian_coordinate_system">Wikipedia</a></p>
+    </div>
+
+    <div id="display_coord" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>Display Coordinates</b></p>
+      <img class="centerimg" height="600" src="cis115fall2013/images/lecture10/display_coord.png">
+    </div>
+
+    <div id="pixel" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>Pixel</b></p>
+      <img class="centerimg" height="600" src="cis115fall2013/images/lecture10/pixel_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Pixel">Wikipedia</a></p>
+    </div>
+
+    <div id="3dgraphics" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>3D Graphics</b></p>
+      <img class="centerimg" height="600" src="cis115fall2013/images/lecture10/polygon_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/3D_modeling">Wikipedia</a></p>
+    </div>
+
+    <div id="wireframe" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b>Wireframe</b></p>
+      <div style="float:right">
+        <p>Edges</p>
+        <ol>
+          <li style="font-size:40px; line-height:44px">1 &rarr; 2</li>
+          <li style="font-size:40px; line-height:44px">2 &rarr; 3</li>
+          <li style="font-size:40px; line-height:44px">3 &rarr; 4</li>
+          <li style="font-size:40px; line-height:44px">4 &rarr; 1</li>
+          <li style="font-size:40px; line-height:44px">5 &rarr; 2</li>
+          <li style="font-size:40px; line-height:44px">6 &rarr; 7</li>
+          <li style="font-size:40px; line-height:44px">7 &rarr; 8</li>
+          <li style="font-size:40px; line-height:44px">8 &rarr; 5</li>
+          <li style="font-size:40px; line-height:44px">1 &rarr; 5</li>
+          <li style="font-size:40px; line-height:44px">2 &rarr; 6</li>
+          <li style="font-size:40px; line-height:44px">3 &rarr; 7</li>
+          <li style="font-size:40px; line-height:44px">4 &rarr; 8</li>
+        </ol>
+      </div>
+      <p>Vertices</p>
+      <ol>
+        <li style="font-size:40px; line-height:44px">1,1,1</li>
+        <li style="font-size:40px; line-height:44px">1,-1,1</li>
+        <li style="font-size:40px; line-height:44px">-1,-1,1</li>
+        <li style="font-size:40px; line-height:44px">-1,1,1</li>
+        <li style="font-size:40px; line-height:44px">1,1,-1</li>
+        <li style="font-size:40px; line-height:44px">1,-1,-1</li>
+        <li style="font-size:40px; line-height:44px">-1,1,-1</li>
+        <li style="font-size:40px; line-height:44px">-1,-1,-1</li>
+      </ol>      
+    </div>
+
+    <div id="wireframe2" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b>Wireframe</b></p>
+      <img class="centerimg" height="600" src="cis115fall2013/images/lecture10/wireframe.png">
+    </div>
+
+    <div id="suzanne" class="step slide" data-x="3000" data-y="1800">
+      <p class="centertext"><b>Suzanne</b></p>
+      <img class="centerimg" height="600" src="cis115fall2013/images/lecture10/suzanne_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Suzanne_(3D_model)#Suzanne">Wikipedia</a></p>
+    </div>
+
+    <div id="perspective" class="step slide" data-x="4000" data-y="1800">
+      <p class="centertext"><b>Perspective Projection</b></p>
+      <img class="centerimg" height="600" src="cis115fall2013/images/lecture10/perspective_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Graphical_projection">Wikipedia</a></p>
+    </div>
+
+    <div id="perspective_ex" class="step slide" data-x="0" data-y="2700">
+      <p class="centertext"><b>Perspective Projection</b></p>
+      <img class="centerimg" width="850" src="cis115fall2013/images/lecture10/ship_render_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Graphical_projection">Wikipedia</a></p>
+    </div>
+
+    <div id="ray_tracing" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>Ray Tracing</b></p>
+      <img class="centerimg" width="850" src="cis115fall2013/images/lecture10/ray_tracing_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Ray_tracing">Wikipedia</a></p>
+    </div>
+
+    <div id="ray_tracing_ex" class="step slide" data-x="2000" data-y="2700">
+      <p class="centertext"><b>Ray Tracing</b></p>
+      <img class="centerimg" width="800" src="cis115fall2013/images/lecture10/ray_tracing_ex_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Ray_tracing">Wikipedia</a></p>
+    </div>
+
+    <div id="shader" class="step slide" data-x="3000" data-y="2700">
+      <p class="centertext"><b>Shader</b><br><br></p>
+      <img class="centerimg" width="850" src="cis115fall2013/images/lecture10/shader_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Shader">Wikipedia</a></p>
+    </div>
+
+    <div id="gpu" class="step slide" data-x="4000" data-y="2700">
+      <p class="centertext"><b>Graphics Processor</b></p>
+      <img class="centerimg" width="850" src="cis115fall2013/images/lecture10/vidcard_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Graphics_processing_unit">Wikipedia</a></p>
+    </div>
+
+    <div id="animation" class="step slide" data-x="0" data-y="3600">
+      <p class="centertext"><b>Computer Animation</b></p>
+      <img class="centerimg" width="850" src="cis115fall2013/images/lecture10/animation_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Computer_animation">Wikipedia</a></p>
+    </div>
+
+    <div id="pixar" class="step" data-x="1000" data-y="3600">
+      <div id="lLnrn9Nw1iM" data-id="lLnrn9Nw1iM" class="youtube" data-start="42">
+        <a href="http://www.youtube.com/watch?v=lLnrn9Nw1iM">Tin Toy by Pixar on Youtube</a>
+      </div>
+    </div>
+
+    <div id="uncanny_valley" class="step slide" data-x="2000" data-y="3600">
+      <p class="centertext"><b>Uncanny Valley</b></p>
+      <img class="centerimg" height="600" src="cis115fall2013/images/lecture10/uncanny_valley_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Uncanny_valley">Wikipedia</a></p>
+    </div>
+
+    <div id="voxel" class="step slide" data-x="3000" data-y="3600">
+      <p class="centertext"><b>Voxel</b></p>
+      <img class="centerimg" height="600" src="cis115fall2013/images/lecture10/voxel_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Voxel">Wikipedia</a></p>
+    </div>
+
+    <div id="voxel_ex" class="step slide" data-x="4000" data-y="3600">
+      <p class="centertext"><b>Voxel Example</b></p>
+      <img class="centerimg" height="600" src="cis115fall2013/images/lecture10/voxel_render_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Voxel">Wikipedia</a></p>
+    </div>
+
+    <div id="minecraft" class="step slide" data-x="0" data-y="4500">
+      <p class="centertext"><b>Minecraft</b></p>
+      <img class="centerimg" width="850" src="cis115fall2013/images/lecture10/minecraft_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Minecraft">Wikipedia</a></p>
+    </div>
+
+    <div id="assignment" class="step slide" data-x="-825" data-y="-225" data-scale="0.5">
+      <p class="centertext">Assignments</p>
+      <ul>
+        <li>Read and be prepared to discuss:<ul>
+          <li><em>Blown to Bits</em> Chapter 1: Digital Explosion</li></ul></li>
+        <li>Blog 4: Cryptography - Due 9/29 10:00 PM</li>
+        <li>Scratch Chaocipher Project - Due 10/1 10:00 PM</li>
+      </ul>
+    </div>
+
+    <div id="blog" class="step slide" data-x="-825" data-y="225" data-scale="0.5">
+      <p class="centertext" style="font-size: 35px; line-height: 45px"><b>Blog 4: Cryptography</b></p>
+      <p style="font-size: 30px; line-height: 32px">Many systems today depend on cryptography that is assumed to be unbreakable with modern technology. However, imagine a world where that was no longer the case. Each time you purchase something on the internet, there would no longer be anything preventing someone from intercepting your information. The same would apply to sites such as Facebook, GMail, and even your banking or medical information. Anything you store on a computer could be accessed by anyone that wants to get it. Write about how you think that would affect our perception of technology and how we use it in our daily lives. Some thoughts to ponder:
+        <ul style="font-size: 30px; line-height: 31px">
+          <li>Would we stop shopping online, even if it is more convenient to do so?</li>
+          <li>Would we be less likely to share information on social media sites?</li>
+          <li>Would we insist that institutions such as banks or hospitals use only paper records, even though we understand that it will result in a rise in human errors?</li>
+          <li>Are there uses of technology which are popular today that would disappear in this world? Or are there uses that would become much more common?</li>
+        </ul>
+      </p>
+    </div>
+
+    <div id="activity" class="skip slide" data-x="-825" data-y="655" data-scale="0.5">
+      <p class="centertext"><b>Scratch Chaocipher</b></p>
+      <ul>
+        <li>Download starter file from K-State Online</li>
+        <li>Implement the missing parts of the chaochiper algorithm</li>
+        <li>Test the program by encoding and decoding text</li>
+        <li>Submit via K-State Online</li>
+        <li><b>Due Tuesday, October 1 10:00 PM</b></li>
+      </ul>
+    </div>
+
+    <div id="activity_1" class="step" data-x="-825" data-y="675" data-scale="0.5">
+    </div>
+
+    <div id="chaocipher2" class="step slide" data-x="-825" data-y="1125" data-scale="0.5">
+      <p class="centertext"><b>Chaocipher</b></p>
+      <ul>
+        <li>Developed by J.F. Byrne in 1918</li>
+        <li>Described in his 1953 autobiography</li>
+        <li>Machine could fit in a cigar box</li>
+        <li>Offered a reward to anyone who solved it</li>
+        <li>Remained unsolved until 2010, when his papers were released posthumously by his family</li>
+      </ul>
+    </div>
+
+    <div id="chaocipher" class="step slide" data-x="-825" data-y="1575" data-scale="0.5">
+      <p class="centertext"><b>Chaocipher Device</b></p>
+      <img class="centerimg" height="600" src="cis115fall2013/images/lecture9/chaocipher_cryptofound.jpg">
+      <p class="imagecredit">Image Source: <a href="http://www.cryptologicfoundation.org/content/Direct-Museum-Support/recentacquisitions.shtml">Cryptologicfoundation.org</a></p>
+    </div>
+
+    <div id="activity_2" class="step" data-x="-825" data-y="675" data-scale="0.5">
+    </div>
+
+
+    <div id="drawing" class="step slide" data-x="-825" data-y="2025" data-scale="0.5">
+      <p class="centertext"><b>Drawing in Scratch</b><br><br></p>
+      <ul>
+        <li>y = x</li>
+        <li>y = 2x</li>
+        <li>y = x<sup>2</sup></li>
+        <li>y = sin(x)</li>
+        <li>Hexagon?</li>
+        <li>Octogon?</li>
+    </div>
+
+    <div id="spirograph" class="step slide" data-x="-825" data-y="2475" data-scale="0.5">
+      <p class="centertext"><b>Scratch Spirograph</b></p>
+      <img class="centerimg" width="850" src="cis115fall2013/images/lecture10/spirograph_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Spirograph">Wikipedia</a></p>
+    </div>
+
+    <div id="spirograph2" class="step slide" data-x="-825" data-y="2925" data-scale="0.5">
+      <p class="centertext"><b>Spirograph Math</b></p>
+      <img class="centerimg" height="600" src="cis115fall2013/images/lecture10/spirograph_math_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Spirograph">Wikipedia</a></p>
+    </div>
+
+    <div id="spirograph3" class="step slide" data-x="-825" data-y="3375" data-scale="0.5">
+      <p class="centertext"><b>Spirograph Math</b></p>
+      <img class="centerimg" width="850" src="cis115fall2013/images/lecture10/spirograph_math.png">
+    </div>
+
+    <div id="overview" class="step" data-x="2000" data-y="2250" data-z="-1" data-scale="7.5">
+    </div>
+
+</div>
+
+<script src="js/analytics.js"></script>
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
+<script src="js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+</body>
+</html>

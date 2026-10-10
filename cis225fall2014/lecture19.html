@@ -1,0 +1,143 @@
+<html lang="en">
+<head>
+  <BASE href="../">
+  <link href="favicon.ico" rel="shortcut icon">
+  <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+  <meta name="description" content="CIS 225 Fall 2014 Lecture 19"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 225 Fall 2014 Lecture 19</title>
+    <link href="css/impress.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 225</b><br><br>Lecture 19 - Network Security</p>
+    </div>
+
+    <div id="security" class="step slide" data-x="1000" data-y="0">
+      <p class="centertext"><b>Network Security<br><br></b></p>
+      <ul>
+        <li>Authentication & Authorization</li>
+        <li>Intrusion Detection System</li>
+        <li>Encryption</li>
+        <li>Honeypots</li>
+        <li>Log Monitoring</li>
+        <li>NAT Routing</li>
+        <li>Firewalls</li>
+      </ul>
+    </div>
+
+    <div id="authentication" class="step slide" data-x="2000" data-y="0">
+      <p class="centertext"><b>Authentication & Authorization<br><br></b></p>
+      <ul>
+        <li>Verify that users or devices on the network are valid</li>
+        <li>Confirm that users are allowed to access resources</li>
+        <li>Enforced with ACLs, firewalls, etc.</li>
+      </ul>
+    </div>
+
+    <div id="ids" class="step slide" data-x="3000" data-y="0">
+      <p class="centertext"><b>Intrusion Detection System (IDS)<br><br></b></p>
+      <ul>
+        <li>Monitors network activity</li>
+        <li>Uses signatures or statistical anomalies to detect unwanted network activity</li>
+        <li>Can be programmed to automatically respond to detected threats</li>
+      </ul>
+    </div>
+
+    <div id="encryption" class="step slide" data-x="4000" data-y="0">
+      <p class="centertext"><b>Encryption<br><br></b></p>
+      <ul>
+        <li>Protect network traffic by encrypting it</li>
+        <li>Prevents eavesdroppers from listening in and intercepting data</li>
+      </ul>
+    </div>
+
+    <div id="honeypots" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>Honeypots<br><br></b></p>
+      <ul>
+        <li>Fake network resources left open</li>
+        <li>Any attempts to access are assumed to be malicious</li>
+        <li>Information gained is used to strengthen protection</li>
+      </ul>
+    </div>
+
+    <div id="log_monitor" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b>Log Monitoring<br><br></b></p>
+      <ul>
+        <li>Many network enabled programs are configured to log connections</li>
+        <li>Those logs can be analyzed to find unwanted connections</li>          
+      </ul>
+    </div>
+
+    <div id="nat" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>NAT Routing</b></p>
+      <ul>
+        <li>Network Address Translation</li>
+        <li>Multiple devices with different internal IP addresses share one public IP address</li>
+        <li>External attackers only see router (unless ports are forwarded)</li>
+        <li>Protects internal systems by not making them directly accessible externally</li>          
+      </ul>
+    </div>
+
+    <div id="firewalls" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>Firewalls<br><br></b></p>
+      <ul>
+        <li>Restrict network access to specific programs, ports, addresses, protocols, etc.</li>
+        <li>Can be employed on an entire network or each individual system (or both)</li>
+      </ul>
+    </div>
+
+    <div id="firewalls_vs_ids" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>Firewalls vs IDS<br><br></b></p>
+      <ul>
+        <li>Firewalls look at types of traffic, IDS looks at contents and meaning of traffic</li>
+        <li>Firewalls can only prevent unwanted connections, IDS can detect them already in progress</li>
+      </ul>
+    </div>
+
+    <div id="lab" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>Lab 9<br><br></b></p>
+      <ul>
+        <li>Turn on Firewalls</li>
+        <li>Create Firewall Rules to allow access to the following resources<ul>
+          <li>Remote Connection (SSH/RDP)</li>
+          <li>Shared Files (smb/Samba)</li>
+          <li>Web Server (apache/IIS)</li></ul>
+      </ul>
+    </div>
+
+    <div id="assignments" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b>Assignments<br><br></b></p>
+      <ul>
+        <li>Lab 9 - Network Security & Backups: Due 11/21 @ 12:30 PM<br>WARNING: A couple of steps may take <b>1 hour or more</b> to run; allow plenty of time to complete this lab</li>
+      </ul>
+    </div>
+    
+    <div id="overview" class="step" data-x="2000" data-y="1800" data-z="-1" data-scale="6">
+    </div>
+
+
+</div>
+
+<script src="js/analytics.js"></script>
+
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+
+</body>
+</html>

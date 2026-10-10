@@ -1,0 +1,246 @@
+<html lang="en">
+<head>
+    <link href="/favicon.ico" rel="shortcut icon">
+    <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+    <meta name="description" content="CIS 225 - Service & Process Management" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 225 - Service & Process Management</title>
+    <link href="/css/impress.css" rel="stylesheet" />
+    <link href="/css/TimeCircles.css" rel="stylesheet" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 225</b><br><br>Service & Process Management</p>
+    </div>
+
+    <div id="whatisservice" class="step" data-x="1000" data-y="0">
+      <p class="centertext">What is a Service?</p>
+    </div>
+
+    <div id="services" class="step slide" data-x="2000" data-y="0">
+      <p class="centertext"><b>Services</b><br><br></p>
+      <ul>
+        <li>Programs that run in the background on an operating system</li>
+        <li>Performs many important functions automatically</li>
+        <li>Consumes system resources</li>
+      </ul>
+    </div>
+
+    <div id="services_management" class="step" data-x="3000" data-y="0">
+      <p class="centertext"><b>Services Management</b></p>
+      <img class="centerimg" height="600" src="images/win_services.png">
+    </div>
+
+    <div id="services_properties" class="step" data-x="4000" data-y="0">
+      <p class="centertext"><b>Service Properties</b></p>
+      <img class="centerimg" height="600" src="images/win_services2.png">
+    </div>
+
+    <div id="services_startup" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>Startup Types</b><br><br></p>
+      <ul>
+        <li><b>Automatic</b> - Starts at system boot</li>
+        <li><b>Automatic (Delayed)</b> - Starts shortly after system boot</li>
+        <li><b>Manual</b> - Starts only when needed</li>
+        <li><b>Disabled</b> - Will not start/run at all</li>
+      </ul>
+    </div>
+
+    <div id="win8_pseudo_accounts" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b>Windows 10 Pseudo Accounts</b><br><br></p>
+      <ul>
+        <li><b>LocalSystem</b> - system-level tasks & services</li>
+        <li><b>LocalService</b> - fewer rights than LocalSystem</li>
+        <li><b>NetworkService</b> - fewer rights than LocalService, but allows network access</li>
+      </ul>
+    </div>
+
+    <div id="services_properties2" class="step" data-x="2000" data-y="900">
+      <p class="centertext"><b>Services Recovery</b></p>
+      <img class="centerimg" height="600" src="images/win_services3.png">
+    </div>
+
+    <div id="service_recovery" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>Recovery Options</b><br><br></p>
+      <ul>
+        <li><b>Take No Action</b></li>
+        <li><b>Restart the Service</b></li>
+        <li><b>Run a Program</b></li>
+        <li><b>Restart the Computer</b></li>
+      </ul>
+    </div>
+
+    <div id="common_services" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>Important Services</b></p>
+      <ul>
+        <li><b>Computer Browser</b> - Network file sharing</li>
+        <li><b>DHCP Client & DNS Client</b> - Network addressing</li>
+        <li><b>Microsoft Antimalware Service</b>
+        <li><b>Performance Logs & Alerts</b></li>
+        <li><b>Print Spooler</b></li>
+        <li><b>Windows Update</b></li>
+      </ul>
+    </div>
+
+    <div id="svchost" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>Service Host Process</b><br><br></p>
+      <ul>
+        <li><b>svchost.exe</b></li>
+        <li>Process that runs a number of system services</li>
+        <li>Helps conserve system resources (1 process instead of many)</li>
+        <li>Targeted by malware & viruses</li>
+      </ul>
+    </div>
+
+    <div id="daemon" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b>Linux Services - daemons</b><br><br></p>
+      <ul>
+        <li>Daemons run as background processes in Linux</li>
+        <li>Usually started by the <em>init</em> process at boot</li>
+        <li>Managed by systemd on most distros</li>
+        <li>Process names typically end in 'd'</li>
+      </ul>
+    </div>
+
+    <div id="init" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b>Starting Linux Services - init</b><br><br></p>
+      <ul>
+        <li>The <em>init</em> process is loaded first</li>
+        <li>It then loads the services for a particular runlevel</li>
+        <li>See /etc/init.d/ and /etc/rc*.d/ directories</li>
+      </ul>
+    </div>
+
+    <div id="upstart" class="step slide" data-x="3000" data-y="1800">
+      <p class="centertext"><b>Starting Linux Services - Upstart</b><br><br></p>
+      <ul>
+        <li>Currently in use in Ubuntu 14.04</li>
+        <li>Allows services to be started based on events</li>
+        <li>"greedy" loading</li>
+        <li>Can monitor and restart services</li>
+        <li>Very similar to Windows Service Management</li>
+      </ul>
+    </div>
+
+    <div id="systemd" class="step slide" data-x="4000" data-y="1800">
+      <p class="centertext"><b>Starting Linux Services - Systemd</b><br><br></p>
+      <ul>
+        <li>Implemented in Ubuntu 15.04+</li>
+        <li>"lazy" loading</li>
+        <li>Can monitor and restart services</li>
+        <li>Very similar to Windows Service Management</li>
+      </ul>
+    </div>
+
+    <div id="commands" class="step slide" data-x="5000" data-y="1800">
+      <p class="centertext"><b>Linux Daemon Commands</b><br><br></p>
+      <ul>
+        <li>init<ul>
+          <li>sudo /etc/init.d/apache2 start</li>
+          <li>start, stop, reload, restart, status</li>
+        </ul></li>
+        <li>Upstart<ul>
+          <li>sudo service ufw start</li>
+          <li>start, stop, status</li>
+        </ul></li>
+      </ul>
+    </div>
+
+    <div id="commands2" class="step slide" data-x="" data-y="2700">
+      <p class="centertext"><b>Linux Daemon Commands</b><br><br></p>
+      <ul>
+        <li>Systemd<ul>
+          <li>sudo systemctl start ufw</li>
+          <li>start, stop, reload, status</li>
+        </ul></li>
+      </ul>
+    </div>
+
+    <div id="whatisprocess" class="step" data-x="1000" data-y="2700">
+      <p class="centertext">What is a Process?</p>
+    </div>
+
+    <div id="process" class="step slide" data-x="2000" data-y="2700">
+      <p class="centertext"><b>Processes</b><br><br></p>
+      <ul>
+        <li>Computer program being executed</li>
+        <li>May contain multiple <em>threads</em> of execution</li>
+        <li>Consumes resources such as memory & processing time</li>
+      </ul>
+    </div>
+
+
+    <div id="task_manager" class="step slide" data-x="3000" data-y="2700">
+      <p class="centertext"><b>Task Manager</b></p>
+      <img class="centerimg" height="600" src="images/win_task.png">
+    </div>
+
+    <div id="process_info" class="step slide" data-x="4000" data-y="2700">
+      <p class="centertext"><b>Process Information</b><br><br></p>
+      <ul>
+        <li><b>PID</b> - Process ID</li>
+        <li><b>Memory Usage</b> - Process ID</li>
+        <li><b>Description</b> - Process ID</li>
+        <li><b>Image Path</b> - Process ID</li>
+        <li><b>Command Line</b> - Process ID</li>
+        <li><b>Ports</b> - Network Socket Ports</li>
+      </ul>
+    </div>
+
+    <div id="task_manager_lin" class="step slide" data-x="0" data-y="3600">
+      <p class="centertext"><b>Ubuntu System Monitor</b></p>
+      <img class="centerimg" height="600" src="images/ubuntu_proc.png">
+    </div>
+
+    <div id="task_manager_top" class="step slide" data-x="1000" data-y="3600">
+      <p class="centertext"><b>Ubuntu Processes - top</b><br><br></p>
+      <img class="centerimg" widht="850" src="images/ubuntu_proc2.png">
+    </div>
+
+    <div id="reading" class="step slide" data-x="2000" data-y="3600">
+      <p class="centertext"><b>Reading</b><br><br></p>
+      See Class Website: 
+      <p style="font-size:40px"><a href="/cis225fall2015/">http://people.cis.ksu.edu/~russfeld/cis225fall2015/</a></p>
+    </div>
+
+    <div id="assignments" class="step slide" data-x="3000" data-y="3600">
+      <p class="centertext"><b>Assignments</b><br><br></p>
+      <ul>
+        <li>Lab 3 - User Accounts & File Systems<br>Due 9/23 11:30 AM <b>Before Lecture!!</b></li>
+        <li><b>EXAM 1 - 9/30 During Class</b></li>
+        <li>Lab 4 - Services, Processes & Software<br>Due 10/5 11:30 AM <b>Before Lecture!!</b></li>
+      </ul>
+    </div>
+
+    <div id="overview" class="step" data-x="2000" data-y="1800" data-z="-1" data-scale="6">
+    </div>
+
+</div>
+
+<script src="/js/analytics.js"></script>
+<script src="/js/impress.js"></script>
+<script>impress().init();</script>
+<script src="/js/jquery-1.10.2.min.js"></script>
+<script src="/js/TimeCircles.js"></script>
+<script src="/js/timer.js"></script>
+<script src="/js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+
+</body>
+</html>

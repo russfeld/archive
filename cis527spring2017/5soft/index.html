@@ -1,0 +1,430 @@
+<html lang="en">
+<head>
+    <link href="/favicon.ico" rel="shortcut icon">
+    <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+    <meta name="description" content="CIS 527 - Services, Software & Security" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 527 - Services, Software & Security</title>
+    <link href="/css/impress.css" rel="stylesheet" />
+    <link href="/css/TimeCircles.css" rel="stylesheet" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 527</b><br><br>Services, Software & Security</p>
+    </div>
+
+    <div id="whatisservice" class="step" data-x="1000" data-y="0">
+      <p class="centertext">What is a Service?</p>
+    </div>
+
+    <div id="services" class="step slide" data-x="2000" data-y="0">
+      <p class="centertext"><b>Services</b><br><br></p>
+      <ul>
+        <li>Programs that run in the background on an operating system</li>
+        <li>Performs many important functions automatically</li>
+        <li>Consumes system resources</li>
+      </ul>
+    </div>
+
+    <div id="services_management" class="step" data-x="3000" data-y="0">
+      <p class="centertext"><b>Services Management</b></p>
+      <img class="centerimg" height="600" src="images/win_services.png">
+    </div>
+
+    <div id="services_properties" class="step" data-x="4000" data-y="0">
+      <p class="centertext"><b>Service Properties</b></p>
+      <img class="centerimg" height="600" src="images/win_services2.png">
+    </div>
+
+    <div id="services_startup" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>Startup Types</b><br><br></p>
+      <ul>
+        <li><b>Automatic</b> - Starts at system boot</li>
+        <li><b>Automatic (Delayed)</b> - Starts shortly after system boot</li>
+        <li><b>Manual</b> - Starts only when needed</li>
+        <li><b>Disabled</b> - Will not start/run at all</li>
+      </ul>
+    </div>
+
+    <div id="win8_pseudo_accounts" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b>Windows 10 Pseudo Accounts</b><br><br></p>
+      <ul>
+        <li><b>LocalSystem</b> - system-level tasks & services</li>
+        <li><b>LocalService</b> - fewer rights than LocalSystem</li>
+        <li><b>NetworkService</b> - fewer rights than LocalService, but allows network access</li>
+      </ul>
+    </div>
+
+    <div id="services_properties2" class="step" data-x="2000" data-y="900">
+      <p class="centertext"><b>Services Recovery</b></p>
+      <img class="centerimg" height="600" src="images/win_services3.png">
+    </div>
+
+    <div id="service_recovery" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>Recovery Options</b><br><br></p>
+      <ul>
+        <li><b>Take No Action</b></li>
+        <li><b>Restart the Service</b></li>
+        <li><b>Run a Program</b></li>
+        <li><b>Restart the Computer</b></li>
+      </ul>
+    </div>
+
+    <div id="common_services" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>Important Services</b></p>
+      <ul>
+        <li><b>Computer Browser</b> - Network file sharing</li>
+        <li><b>DHCP Client & DNS Client</b> - Network addressing</li>
+        <li><b>Microsoft Antimalware Service</b>
+        <li><b>Performance Logs & Alerts</b></li>
+        <li><b>Print Spooler</b></li>
+        <li><b>Windows Update</b></li>
+      </ul>
+    </div>
+
+    <div id="svchost" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>Service Host Process</b><br><br></p>
+      <ul>
+        <li><b>svchost.exe</b></li>
+        <li>Process that runs a number of system services</li>
+        <li>Helps conserve system resources (1 process instead of many)</li>
+        <li>Targeted by malware & viruses</li>
+      </ul>
+    </div>
+
+    <div id="daemon" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b>Linux Services - daemons</b><br><br></p>
+      <ul>
+        <li>Daemons run as background processes in Linux</li>
+        <li>Usually started by the <em>init</em> process at boot</li>
+        <li>Managed by systemd on most distros</li>
+        <li>Process names typically end in 'd'</li>
+      </ul>
+    </div>
+
+    <div id="init" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b>Starting Linux Services - init</b><br><br></p>
+      <ul>
+        <li>The <em>init</em> process is loaded first</li>
+        <li>It then loads the services for a particular runlevel</li>
+        <li>See /etc/init.d/ and /etc/rc*.d/ directories</li>
+      </ul>
+    </div>
+
+    <div id="upstart" class="step slide" data-x="3000" data-y="1800">
+      <p class="centertext"><b>Starting Linux Services - Upstart</b><br><br></p>
+      <ul>
+        <li>Ubuntu 14.04</li>
+        <li>Allows services to be started based on events</li>
+        <li>"greedy" loading</li>
+        <li>Can monitor and restart services</li>
+        <li>Very similar to Windows Service Management</li>
+      </ul>
+    </div>
+
+    <div id="systemd" class="step slide" data-x="4000" data-y="1800">
+      <p class="centertext"><b>Starting Linux Services - Systemd</b><br><br></p>
+      <ul>
+        <li>Implemented in Ubuntu 15.04+</li>
+        <li>"lazy" loading</li>
+        <li>Can monitor and restart services</li>
+        <li>Very similar to Windows Service Management</li>
+      </ul>
+    </div>
+
+    <div id="commands" class="step slide" data-x="5000" data-y="1800">
+      <p class="centertext"><b>Linux Daemon Commands</b><br><br></p>
+      <ul>
+        <li>init<ul>
+          <li>sudo /etc/init.d/apache2 start</li>
+          <li>start, stop, reload, restart, status</li>
+        </ul></li>
+        <li>Upstart<ul>
+          <li>sudo service ufw start</li>
+          <li>start, stop, status</li>
+        </ul></li>
+      </ul>
+    </div>
+
+    <div id="commands2" class="step slide" data-x="" data-y="2700">
+      <p class="centertext"><b>Linux Daemon Commands</b><br><br></p>
+      <ul>
+        <li>Systemd<ul>
+          <li>sudo systemctl start ufw</li>
+          <li>start, stop, reload, status</li>
+        </ul></li>
+      </ul>
+    </div>
+
+    <div id="whatisprocess" class="step" data-x="1000" data-y="2700">
+      <p class="centertext">What is a Process?</p>
+    </div>
+
+    <div id="process" class="step slide" data-x="2000" data-y="2700">
+      <p class="centertext"><b>Processes</b><br><br></p>
+      <ul>
+        <li>Computer program being executed</li>
+        <li>May contain multiple <em>threads</em> of execution</li>
+        <li>Consumes resources such as memory & processing time</li>
+      </ul>
+    </div>
+
+
+    <div id="task_manager" class="step slide" data-x="3000" data-y="2700">
+      <p class="centertext"><b>Task Manager</b></p>
+      <img class="centerimg" height="600" src="images/win_task.png">
+    </div>
+
+    <div id="process_info" class="step slide" data-x="4000" data-y="2700">
+      <p class="centertext"><b>Process Information</b><br><br></p>
+      <ul>
+        <li><b>PID</b> - Process ID</li>
+        <li><b>Memory Usage</b> - Process ID</li>
+        <li><b>Description</b> - Process ID</li>
+        <li><b>Image Path</b> - Process ID</li>
+        <li><b>Command Line</b> - Process ID</li>
+        <li><b>Ports</b> - Network Socket Ports</li>
+      </ul>
+    </div>
+
+    <div id="task_manager_lin" class="step slide" data-x="0" data-y="3600">
+      <p class="centertext"><b>Ubuntu System Monitor</b></p>
+      <img class="centerimg" height="600" src="images/ubuntu_proc.png">
+    </div>
+
+    <div id="task_manager_top" class="step slide" data-x="1000" data-y="3600">
+      <p class="centertext"><b>Ubuntu Processes - top</b><br><br></p>
+      <img class="centerimg" widht="850" src="images/ubuntu_proc2.png">
+    </div>
+
+
+        <div id="Software_Architecture" class="step slide" data-x="2000" data-y="3600">
+          <p class="centertext"><b>Windows Software Architecture<br><br></b></p>
+          <ul>
+            <li>Executable Image (.EXE)</li>
+            <li>Dynamic Link Library (.DLL)</li>
+            <li>Initialization File (.INI)</li>
+            <li>Registry Keys</li>
+            <li><em>Drivers</em></li>
+            <li><em>Services</em></li>
+          </ul>
+        </div>
+
+        <div id="exe" class="step slide" data-x="3000" data-y="3600">
+          <p class="centertext"><b>Executable Image (.EXE)<br><br></b></p>
+          <ul>
+            <li>Contains the actual executable code for an application</li>
+            <li>May also contain resources, graphics, fonts, etc.</li>
+            <li>Based on the old Unix COFF (Common Object File Format)</li>
+          </ul>
+        </div>
+
+        <div id="dll" class="step slide" data-x="4000" data-y="3600">
+          <p class="centertext"><b>Dynamic Link Library (.DLL)<br><br></b></p>
+          <ul>
+            <li>Shared library files used by programs</li>
+            <li>Uses same format as .EXE file</li>
+            <li>Programs can access same .DLL files simultaneously</li>
+          </ul>
+        </div>
+
+        <div id="ini" class="step slide" data-x="5000" data-y="3600">
+          <p class="centertext"><b>Initialization File (.INI)<br><br></b></p>
+          <ul>
+            <li>Informal standard for configuration files</li>
+            <li>Used extensively in Windows up to Windows ME for system & software settings</li>
+            <li>Structured text files</li>
+          </ul>
+        </div>
+
+        <div id="registry" class="step slide" data-x="6000" data-y="3600">
+          <p class="centertext"><b>Registry Keys<br><br></b></p>
+          <ul>
+            <li>Structured data storage for system settings</li>
+            <li>Key &lt;-&gt; Value pairs</li>
+            <li>Faster loading of settings</li>
+            <li>Allows multiple users to use a system simultaneously</li>
+          </ul>
+        </div>
+
+        <div id="install" class="step slide" data-x="0" data-y="4500">
+          <p class="centertext"><b>Windows Software Install Process<br><br></b></p>
+          <ul>
+            <li>Extract/expand files</li>
+            <li>Place files in location</li>
+            <li>Create registry keys</li>
+            <li>Install drivers/services</li>
+            <li>Create user data files</li>
+            <li>Create shortcuts</li>
+          </ul>
+        </div>
+
+        <div id="track_install" class="step" data-x="1000" data-y="4500">
+          <p class="centertext"><b>Tracking - Process Monitor</b></p>
+          <img class="centerimg" height="550" src="images/procmon.png">
+        </div>
+
+        <div id="track_install2" class="step" data-x="2000" data-y="4500">
+          <p class="centertext"><b>Tracking - InstallWatch Pro</b></p>
+          <img class="centerimg" height="550" src="images/installwatch.png">
+        </div>
+
+        <div id="track_install3" class="step" data-x="3000" data-y="4500">
+          <p class="centertext"><b>Installing - Thunderbird</b></p>
+          <img class="centerimg" height="600" src="images/thunderbird.png">
+        </div>
+
+        <div id="ubuntu_architecture" class="step slide" data-x="4000" data-y="4500">
+          <p class="centertext"><b>Ubuntu Software Architecture<br><br></b></p>
+          <ul>
+            <li>Binary Files</li>
+            <li>Shared Object Files (.SO)</li>
+            <li>Library Files</li>
+            <li>Settings Files</li>
+            <li>Documentation Files</li>
+            <li><em>Upstart/Systemd/init scripts</em></li>
+          </ul>
+        </div>
+
+        <div id="binary" class="step slide" data-x="5000" data-y="4500">
+          <p class="centertext"><b>Binary Files<br><br></b></p>
+          <ul>
+            <li>Contains the executable code for the application</li>
+            <li>Uses the ELF (Executable and Linkable Format)</li>
+            <li>Commonly used in many Unix-like systems</li>
+            <li>Usually stored in /bin folder</li>
+          </ul>
+        </div>
+
+        <div id="so" class="step slide" data-x="0" data-y="5400">
+          <p class="centertext"><b>Shared Object & Library Files<br><br></b></p>
+          <ul>
+            <li>Shared information or code used by multiple programs</li>
+            <li>Install once, use everywhere</li>
+            <li>May have to store multiple versions for different programs</li>
+            <li>Usually stored in /usr/lib</li>
+          </ul>
+        </div>
+
+        <div id="etc" class="step slide" data-x="1000" data-y="5400">
+          <p class="centertext"><b>Settings Files<br><br></b></p>
+          <ul>
+            <li>Configuration files used by programs</li>
+            <li>Text based, similar to .INI files</li>
+            <li>Usually stored in /etc for system-wide settings or in a hidden folder in ~/ (like ~/.thunderbird)</li>
+          </ul>
+        </div>
+
+        <div id="doc" class="step slide" data-x="2000" data-y="5400">
+          <p class="centertext"><b>Documentation Files<br><br></b></p>
+          <ul>
+            <li>Stores information about the software</li>
+            <li>Responds to 'man' command on terminal</li>
+            <li>Usually stored in /usr/share folder</li>
+          </ul>
+        </div>
+
+        <div id="package" class="step slide" data-x="3000" data-y="5400">
+          <p class="centertext"><b>Ubuntu Package Management<br><br></b></p>
+          <ul>
+            <li>Most software installed via "packages"</li>
+            <li>Packages are provided from a repository</li>
+            <li>Programs such as Synaptic or apt can install packages</li>
+            <li>Programs can also be installed from source</li>
+          </ul>
+        </div>
+
+        <div id="apt_cmds" class="step slide" data-x="4000" data-y="5400">
+          <p class="centertext"><b>Ubuntu Software Commands<br><br></b></p>
+          <ul>
+            <li>apt-get install (package)</li>
+            <li>apt-get update</li>
+            <li>apt-get upgrade</li>
+            <li>apt-get dist-upgrade</li>
+            <li>auto-apt run (command)</li>
+            <li>dpkg-reconfigure (package)</li>
+          </ul>
+        </div>
+
+
+        <div id="install_ubuntu" class="step slide" data-x="5000" data-y="5400">
+          <p class="centertext"><b>Ubuntu Software Install Process<br><br></b></p>
+          <ul>
+            <li>Extract/expand files</li>
+            <li>Place files in location</li>
+            <li>Create user data files (usually on first run)</li>
+            <li><em>Create startup scripts</em></li>
+          </ul>
+        </div>
+
+        <div id="track_install4" class="step" data-x="0" data-y="6300">
+          <p class="centertext"><b>Tracking - Synaptic</b></p>
+          <img class="centerimg" height="550" src="images/synaptic.png">
+        </div>
+
+        <div id="secure1" class="step slide" data-x="1000" data-y="6300">
+          <p class="centertext"><b>System Security</b><br><br></p>
+          <ol>
+            <li>Install system updates</li>
+            <li>Install antivirus software</li>
+            <li>Configure firewall</li>
+            <li>Set up users and passwords</li>
+          </ol>
+        </div>
+
+        <div id="secure2" class="step slide" data-x="2000" data-y="6300">
+          <p class="centertext"><b>Principle of Least Privilege (PoLP)</b></p>
+          <ul>
+            <li>Only allow access to programs and data to users who have a legitimate need</li>
+            <li>Do work on an account with limited permissions</li>
+            <li>Use an administrator account only when needed</li>
+            <li>Protect files restrictively</li>
+          </ul>
+        </div>
+
+
+
+
+
+
+    <div id="assignments" class="step slide" data-x="3000" data-y="6300">
+      <p class="centertext"><b>Assignments</b><br><br></p>
+      <ul>
+        <li>Lab 1 - Building Secure Workstations: Due Monday Jan 30th by 10:30 AM</li>
+      </ul>
+    </div>
+
+    <div id="overview" class="step" data-x="2500" data-y="3150" data-z="-1" data-scale="9.5">
+    </div>
+
+</div>
+
+<script src="/js/analytics.js"></script>
+<script src="/js/impress.js"></script>
+<script>impress().init();</script>
+<script src="/js/jquery-1.10.2.min.js"></script>
+<script src="/js/TimeCircles.js"></script>
+<script src="/js/timer.js"></script>
+<script src="/js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+
+
+
+</body>
+</html>

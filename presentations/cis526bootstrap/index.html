@@ -1,0 +1,442 @@
+<html lang="en">
+<head>
+    <link href="/favicon.ico" rel="shortcut icon">
+    <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+    <meta name="description" content="CIS 115 - Programming for the Web" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 526 - CSS Bootstrap</title>
+    <link href="/css/highlight/github.css" rel="stylesheet" />
+    <link href="/css/TimeCircles.css" rel="stylesheet" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/impress.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 526</b><br><br>CSS & Bootstrap</p>
+    </div>
+
+    <div id="cssgif" class="step" data-x="1000" data-y="0">
+      <img class="centerimg" height="600" src="images/familyguy_imgur.gif">
+      <p class="imagecredit">Image Source: <a href="https://i.imgur.com/Q3cUg29.gif">Imgur</a></p>
+    </div>
+
+    <div id="css" class="step slide" data-x="2000" data-y="0">
+      <p class="centertext"><b>Cascading Style Sheets</b></p>
+      <ul>
+        <li>First proposed in 1994</li>
+        <li>Style sheets had existed since the 1980s with SGML</li>
+        <li>Many standards, slow adoption</li>
+        <li>Browsers don't have uniform support</li>
+        <li>Modular standard; rules build on lower level modules</li>
+      </ul>
+    </div>
+
+    <div id="advantages" class="step" data-x="3000" data-y="0" data-z="100" data-rotate-y="-45">
+      <p class="centertext"><b>Advantages?</b></p>
+    </div>
+
+    <div id="disadvantages" class="step" data-x="3000" data-y="0" data-z="100" data-rotate-y="45">
+      <p class="centertext"><b>Disadvantages?</b></p>
+    </div>
+
+    <div id="frameworks" class="step slide" data-x="4000" data-y="0">
+      <p class="centertext"><b>CSS Frameworks</b></p>
+      <ul>
+        <li>Writing CSS by hand is time consuming</li>
+        <li>Standard look-and-feel desired</li>
+        <li>Focus on functionality first</li>
+        <li>Akin to drag-and-drop GUI creation</li>
+        <li>(Hopefully) well written, documented and supported</li>
+      </ul>
+    </div>
+
+    <div id="bootstrap" class="step" data-x="5000" data-y="0">
+      <img class="centerimg" height="600" src="images/bootstrap_wiki.png">
+      <p class="imagecredit">Image Source: <a href="https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)">Wikipedia</a></p>
+    </div>
+
+    <div id="bootstrap2" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>Bootstrap</b></p>
+      <ul>
+        <li>Originally called "Twitter Bootstrap"</li>
+        <li>Written to simplify and standardize front-end web development</li>
+        <li>Focus on front-end, mobile-first, responsive design</li>
+        <li>Version 3 is standard, uses 12-column grid system</li>
+        <li>Version 4 is complete rewrite, adds Flexbox for columns</li>
+      </ul>
+    </div>
+
+    <div id="normalize" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b><strike>Reset</strike> Normalize</b></p>
+      <ul>
+        <li>Browsers have different defaults</li>
+        <li>Use CSS to reset all of those to standard defaults</li>
+        <li>Normalize.css does better by preserving useful defaults while updating bad ones</li>
+        <li>Less clutter, well documented</li>
+        <li><a href="https://necolas.github.io/normalize.css/">https://necolas.github.io/normalize.css/</a></li>
+      </ul>
+    </div>
+
+    <div id="tryit" class="step" data-x="2000" data-y="900">
+      <p class="centertext"><a href="html5-test-page-master/">Without Normalize</a></p>
+      <br>
+      <p class="centertext"><a href="html5-test-page-master-normalize/">With Normalize</a></p>
+      <br>
+      <p class="imagecredit centertext">Demo Page Source: <a href="https://github.com/cbracco/html5-test-page">Chris Bracco on GitHub</a></p>
+    </div>
+
+    <div id="using_bootstrap" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>Using Bootstrap</b></p><br>
+      <ul>
+        <li>Include Bootstrap CSS in &lt;head></li>
+        <li>Include <a href="https://jquery.com/">jQuery</a> at end of &lt;body></li>
+        <li>Include <a href="http://tether.io/">Tether</a> after JQuery</li>
+        <li>Include Bootstrap JS after Tether</li>
+        <br>
+        <li>Start with the <a href="https://v4-alpha.getbootstrap.com/getting-started/introduction/">template</a></li>
+      </ul>
+    </div>
+
+    <div id="template" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b><a href="https://v4-alpha.getbootstrap.com/getting-started/introduction/">Template</a></b></p>
+      <pre><code style="font-size:23px; line-height:28px">&lt;!DOCTYPE html>
+&lt;html lang="en">
+  &lt;head>
+    &lt;!-- Required meta tags -->
+    &lt;meta charset="utf-8">
+    &lt;meta name="viewport" content="width=device-width,
+                        initial-scale=1, shrink-to-fit=no">
+
+    &lt;!-- Bootstrap CSS -->
+    &lt;link rel="stylesheet" href="https://maxcdn.bootstrap...">
+    &lt;link rel="stylesheet" href="style.css">
+  &lt;/head>
+  &lt;body>
+    &lt;h1>Hello, world!&lt;/h1>
+
+    &lt;!-- jQuery first, then Tether, then Bootstrap JS. -->
+    &lt;script src="https://code.jquery.com/...">&lt;/script>
+    &lt;script src="https://cdnjs.cloudflare.com/...">&lt;/script>
+    &lt;script src="https://maxcdn.bootstrapcdn.com/...">&lt;/script>
+    &lt;script src="script.js" type="text/javascript">&lt;/script>
+  &lt;/body>
+&lt;/html>
+</code></pre>
+    </div>
+
+    <div id="containers" class="step slide" data-x="5000" data-y="900">
+      <p class="centertext"><b><a href="https://v4-alpha.getbootstrap.com/layout/overview/#containers">Containers</a></b></p><br>
+      <pre><code style="font-size:23px; line-height:28px">&lt;div class="container">
+  &lt;h1>Hello, world!&lt;/h1>
+  &lt;div style="width: 100%; background: grey">
+    &lt;p>Some text for content&lt;/p>
+  &lt;/div>
+&lt;/div>
+</code></pre>
+<br>
+<pre><code style="font-size:23px; line-height:28px">&lt;div class="container-fluid">
+  &lt;h1>Hello, world!&lt;/h1>
+  &lt;div style="width: 100%; background: grey">
+    &lt;p>Some text for content&lt;/p>
+  &lt;/div>
+&lt;/div>
+</code></pre>
+    </div>
+
+    <div id="queries" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b><a href="https://v4-alpha.getbootstrap.com/layout/overview/#responsive-breakpoints">Media Queries</a></b></p><br>
+      <pre><code style="font-size:23px; line-height:28px">// Extra small devices (portrait phones, less than 576px)
+// No media query since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199px) { ... }
+
+// Apply styles starting from medium devices and up to extra large devices
+@media (min-width: 768px) and (max-width: 1199px) { ... }
+</code></pre>
+    </div>
+
+    <div id="columns" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b><a href="https://v4-alpha.getbootstrap.com/layout/grid/#how-it-works">12 Columns</a></b></p>
+      <pre><code style="font-size:23px; line-height:28px">&lt;!-- Stack the columns on mobile by making one full-width and
+the other half-width -->
+&lt;div class="row example">
+  &lt;div class="col col-md-8">.col .col-md-8&lt;/div>
+  &lt;div class="col-6 col-md-4">.col-6 .col-md-4&lt;/div>
+&lt;/div>
+
+&lt;!-- Columns start at 50% wide on mobile and bump up to 33.3%
+wide on desktop -->
+&lt;div class="row example">
+  &lt;div class="col-6 col-md-4">.col-6 .col-md-4&lt;/div>
+  &lt;div class="col-6 col-md-4">.col-6 .col-md-4&lt;/div>
+  &lt;div class="col-6 col-md-4">.col-6 .col-md-4&lt;/div>
+&lt;/div>
+
+&lt;!-- Columns are always 50% wide, on mobile and desktop -->
+&lt;div class="row example">
+  &lt;div class="col-6">.col-6&lt;/div>
+  &lt;div class="col-6">.col-6&lt;/div>
+&lt;/div>
+</code></pre>
+    </div>
+
+    <div id="columns2" class="step slide" data-x="1000" data-y="1800" data-rotate-y="180" data-z="-1">
+      <p class="centertext"><b><a href="https://v4-alpha.getbootstrap.com/layout/grid/#how-it-works">12 Columns</a></b></p><br>
+      <pre><code style="font-size:23px; line-height:28px">.example > div {
+  background-color: #888888;
+  padding: 10px;
+  border: 1px solid black;
+}
+</code></pre>
+    </div>
+
+    <div id="media_objects" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b><a href="https://v4-alpha.getbootstrap.com/layout/media-object/">Media Objects</a></b>
+      <pre><code style="font-size:23px; line-height:28px">&lt;div class="media">
+  &lt;img class="d-flex mr-3" src="http://placekitten.com/64/64" alt="image">
+  &lt;div class="media-body">
+    &lt;h5 class="mt-0">Media heading&lt;/h5>
+    Cras sit amet nibh libero, in gravida nulla. Nulla vel...
+
+    &lt;div class="media mt-3">
+      &lt;a class="d-flex pr-3" href="#">
+        &lt;img src="http://placekitten.com/64/64" alt="image">
+      &lt;/a>
+      &lt;div class="media-body">
+        &lt;h5 class="mt-0">Media heading&lt;/h5>
+        Cras sit amet nibh libero, in gravida nulla. Nulla ...
+      &lt;/div>
+    &lt;/div>
+  &lt;/div>
+&lt;/div>
+</code></pre>
+    </div>
+
+    <div id="responsive" class="step slide" data-x="3000" data-y="1800">
+      <p class="centertext"><b><a href="https://v43alpha.getbootstrap.com/layout/responsive-utilities/">Responsive Utilities</a></b></p><br>
+      <pre><code style="font-size:22px; line-height:28px">&lt;img class="hidden-lg-down" src="http://placekitten.com/1100/50"
+alt="image">
+&lt;img class="hidden-md-down" src="http://placekitten.com/900/50"
+alt="image">
+&lt;img class="hidden-sm-down" src="http://placekitten.com/700/50"
+alt="image">
+&lt;img class="hidden-xs-down" src="http://placekitten.com/500/50"
+alt="image">
+&lt;div class="visible-print-block">
+  &lt;h1>Here is some hidden text!&lt;/h1>
+&lt;/div>
+</code></pre>
+    </div>
+
+    <div id="code" class="step slide" data-x="4000" data-y="1800">
+      <p class="centertext"><b><a href="https://v4-alpha.getbootstrap.com/content/code/">Content - Code</a></b></p><br>
+      <pre><code style="font-size:23px; line-height:28px">&lt;p>This is a &lt;code>code&lt;/code> item&lt;/p>
+
+&lt;pre>&lt;code>This is a longer line of code
+It even line wraps! Be careful of spacing.&lt;/code>&lt;/pre>
+
+&lt;p>There is even a tag for variables like &lt;var>x&lt;/var>&lt;/p>
+
+&lt;p>And for indicating input &lt;kbd>cmds&lt;/kbd>&lt;/p>
+
+&lt;p>Sample output: &lt;samp>This is sample output&lt;/samp>&lt;/p>
+</code></pre>
+<br>
+<p style="font-size: 28px;"><a href="https://www.w3schools.com/html/html_computercode_elements.asp">https://www.w3schools.com/html/html_computercode_elements.asp</a></p>
+    </div>
+
+    <div id="alerts" class="step slide" data-x="0" data-y="2700">
+      <p class="centertext"><b><a href="https://v4-alpha.getbootstrap.com/components/alerts/">Components - Alert</a></b></p><br>
+      <pre><code style="font-size:23px; line-height:28px">&lt;div class="alert alert-success" role="alert">
+  &lt;strong>Well done!&lt;/strong> You successfully read this
+  important alert message.
+&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+  &lt;strong>Heads up!&lt;/strong> This alert needs your attention,
+  but it's not super important.
+&lt;/div>
+&lt;div class="alert alert-warning" role="alert">
+  &lt;strong>Warning!&lt;/strong> Better check yourself, you're
+  &lt;a href="#" class="alert-link">not looking too good&lt;/a>.
+&lt;/div>
+&lt;div class="alert alert-danger" role="alert">
+  &lt;strong>Oh snap!&lt;/strong> &lt;a href="#" class="alert-link">
+  Change a few things up&lt;/a> and try submitting again.
+&lt;/div></code></pre>
+    </div>
+
+    <div id="alerts2" class="step slide" data-x="0" data-y="2700" data-rotate-y="180" data-z="-1">
+      <p class="centertext"><b><a href="https://v4-alpha.getbootstrap.com/components/alerts/">Components - Dismissable Alert</a></b></p><br>
+      <pre><code style="font-size:23px; line-height:28px">&lt;div class="alert alert-warning alert-dismissible fade show"
+role="alert">
+  &lt;button type="button" class="close" data-dismiss="alert"
+  aria-label="Close">
+    &lt;span aria-hidden="true">&times;&lt;/span>
+  &lt;/button>
+  &lt;strong>Holy guacamole!&lt;/strong> You should check in on
+  some of those fields below.
+&lt;/div>
+</code></pre>
+    </div>
+
+    <div id="buttons" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b><a href="https://v4-alpha.getbootstrap.com/components/buttons/">Components - Buttons</a></b></p>
+      <pre><code style="font-size:22px; line-height:28px">&lt;!-- Provides extra visual weight and identifies the primary
+action in a set of buttons -->
+&lt;button type="button" class="btn btn-primary">Primary&lt;/button>
+&lt;!-- Secondary, outline button -->
+&lt;button type="button" class="btn btn-secondary">Secondary&lt;/button>
+&lt;!-- Indicates a successful or positive action -->
+&lt;button type="button" class="btn btn-success">Success&lt;/button>
+&lt;!-- Contextual button for informational alert messages -->
+&lt;button type="button" class="btn btn-info">Info&lt;/button>
+&lt;!-- Indicates caution should be taken with this action -->
+&lt;button type="button" class="btn btn-warning">Warning&lt;/button>
+&lt;!-- Indicates a dangerous or potentially negative action -->
+&lt;button type="button" class="btn btn-danger">Danger&lt;/button>
+&lt;!-- Deemphasize a button by making it look like a link while
+maintaining button behavior -->
+&lt;button type="button" class="btn btn-link">Link&lt;/button>
+</code></pre>
+    </div>
+
+    <div id="modal" class="step slide" data-x="2000" data-y="2700">
+      <p class="centertext"><b><a href="https://v4-alpha.getbootstrap.com/components/modal/">Components - Modal</a></b></p>
+      <pre><code style="font-size:20px; line-height:26px">&lt;div id="my_modal" class="modal fade">
+  &lt;div class="modal-dialog" role="document">
+    &lt;div class="modal-content">
+      &lt;div class="modal-header">
+        &lt;h5 class="modal-title">Modal title&lt;/h5>
+        &lt;button type="button" class="close" data-dismiss="modal"
+        aria-label="Close">
+          &lt;span aria-hidden="true">&times;&lt;/span>
+        &lt;/button>
+      &lt;/div>
+      &lt;div class="modal-body">
+        &lt;p>Modal body text goes here.&lt;/p>
+      &lt;/div>
+      &lt;div class="modal-footer">
+        &lt;button type="button" class="btn btn-primary">Save
+        changes&lt;/button>
+        &lt;button id="close_modal" type="button" class="btn btn-secondary"
+        data-dismiss="modal">Close&lt;/button>
+      &lt;/div>
+    &lt;/div>
+  &lt;/div>
+&lt;/div>
+&lt;button type="button" id="show_modal" class="btn btn-info">Show&lt;/button>
+</code></pre>
+    </div>
+
+    <div id="buttonclick" class="step slide" data-x="3000" data-y="2700">
+      <p class="centertext"><b><a href="https://api.jquery.com/click/">jQuery - Button Click</a></b></p><br>
+      <pre><code style="font-size:23px; line-height:28px">$('#show_modal').on('click', function(){
+
+  $('#my_modal').modal();
+
+});</code></pre>
+<br>
+<pre><code style="font-size:23px; line-height:28px">$('#close_modal').on('click', function(){
+
+  $('#my_modal').modal('hide');
+
+});
+</code></pre>
+    </div>
+
+    <div id="modal_message" class="step slide" data-x="4000" data-y="2700">
+      <p class="centertext"><b>Modal Message on Page Load</b></p>
+      <pre><code style="font-size:23px; line-height:28px">&lt;div id="message">
+  &lt;input type="hidden" id="message_flash" value="Text Here!">
+  &lt;input type="hidden" id="message_type_flash" value="success">
+&lt;/div>
+
+&lt;button id="show_message" class="btn btn-primary">Show Message!&lt;/button>
+</code></pre><br>
+<pre><code style="font-size:23px; line-height:28px">#message {
+  position: fixed;
+  top: 10px;
+  width: auto;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 1060;
+  -webkit-border-radius: 15px;
+     -moz-border-radius: 15px;
+          border-radius: 15px;
+}
+</code></pre>
+    </div>
+
+    <div id="modal_message2" class="step slide" data-x="4000" data-y="2700" data-rotate-y="180" data-z="-1">
+      <p class="centertext"><b>Modal Message on Page Load</b></p>
+      <pre><code style="font-size:20px; line-height:26px">var displayMessage = function(message, type){
+  var html = '&lt;div id="javascriptMessage" class="alert fade show
+      alert-dismissable alert-' + type + '">&lt;button type="button"
+      class="close" data-dismiss="alert" aria-label="Close">
+      &lt;span aria-hidden="true">&amp;times;&lt;/span>&lt;/button>
+      &lt;span class="h4">' + message + ' &lt;/span>&lt;/div>';
+  $('#message').append(html);
+  setTimeout(function() {
+  	$("#javascriptMessage").alert('close');
+  }, 3000);
+};
+
+$( document ).ready(function(){
+  $('#show_message').on('click', function(){
+    displayMessage("This is a problem!", "danger");
+  })
+
+  if($('#message_flash').length){
+    var message = $('#message_flash').val();
+    var type = $('#message_type_flash').val();
+    displayMessage(message, type);
+  }
+});
+</code></pre>
+    </div>
+
+
+
+    <div id="activity_2" class="step" data-x="-825" data-y="675" data-scale="0.5">
+    </div>
+
+    <div id="overview" class="step" data-x="2500" data-y="2000" data-z="-1" data-scale="7.5">
+    </div>
+
+</div>
+
+<script src="/js/analytics.js"></script>
+<script src="/js/impress.js"></script>
+<script>impress().init();</script>
+<script src="/js/jquery-1.10.2.min.js"></script>
+<script src="/js/TimeCircles.js"></script>
+<script src="/js/timer.js"></script>
+<script src="/js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

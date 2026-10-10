@@ -1,0 +1,613 @@
+<html lang="en">
+<head>
+    <link href="/favicon.ico" rel="shortcut icon">
+    <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+    <meta name="description" content="CIS 115 - Searching & Information Retrieval" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 115 - Searching & Information Retrieval</title>
+    <link href="/css/TimeCircles.css" rel="stylesheet" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/impress.css" rel="stylesheet" />
+    <style>
+      .table tbody tr td{
+        padding: 0px;
+      }
+    </style>
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 115</b><br><br>Searching & Information Retrieval</p>
+    </div>
+
+    <div id="kst8r" class="step slide" data-x="1000" data-y="0">
+      <p class="centertext"><b>kst8r</b><br><br></p>
+      <p>K-State's new social network!</p>
+      <ul>
+        <li>What features should it have?</li>
+        <li>What data do we need?</li>
+        <li>How should it be stored?</li>
+        <li>How can we retrieve it?</li>
+      </ul>
+    </div>
+
+    <div id="codd" class="step" data-x="2000" data-y="0">
+      <p class="centertext"><b>Edgar F. Codd</b></p>
+      <img class="centerimg" height="600" src="images/codd_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Edgar_F._Codd">Wikipedia</a></p>
+    </div>
+
+    <div id="relational" class="step" data-x="3000" data-y="0">
+      <p class="centertext"><b>Relational Database</b><br><br></p>
+      <img class="centerimg" width="850" src="images/relational_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Relational_database">Wikipedia</a></p>
+    </div>
+
+    <div id="example" class="step slide" data-x="4000" data-y="0">
+      <p class="centertext"><b>Relational Database</b><br><br></p>
+      <table class="table" style="width:100%">
+        <tr>
+          <td><b>userID</b></td>
+          <td><b>Name</b></td>
+          <td><b>Birthday</b></td>
+          <td><b>Major</b></td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">russfeld</td>
+          <td style="font-size:42px">Russell</td>
+          <td style="font-size:42px">May 10th</td>
+          <td style="font-size:42px">Comp. Sci</td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">johnsmith</td>
+          <td style="font-size:42px">John</td>
+          <td style="font-size:42px">June 1</td>
+          <td style="font-size:42px">Info. Sci</td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">miriamc</td>
+          <td style="font-size:42px">Miriam</td>
+          <td style="font-size:42px">February 2nd</td>
+          <td style="font-size:42px">Info. Sys</td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">gameguy</td>
+          <td style="font-size:42px">Jayson</td>
+          <td style="font-size:42px">Dec 26</td>
+          <td style="font-size:42px">computersci</td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">sharpie</td>
+          <td style="font-size:42px">Reily</td>
+          <td style="font-size:42px">Dec. 18th</td>
+          <td style="font-size:42px">IS</td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="normal" class="step slide" data-x="5000" data-y="0">
+      <p class="centertext"><b>Why Normalize Data?</b><br><br></p>
+      <ul>
+        <li>Avoid data anomalies</li>
+        <li>Make redesigning easier</li>
+        <li>Mirror real-world concepts</li>
+        <li>Simplify queries</li>
+      </ul>
+    </div>
+
+    <div id="example2" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>Relational Database</b><br><br></p>
+      <table class="table" style="width:100%">
+        <tr>
+          <td><b>userID</b></td>
+          <td><b>Name</b></td>
+          <td><b>Birthday</b></td>
+          <td><b>Major</b></td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">russfeld</td>
+          <td style="font-size:42px">Russell</td>
+          <td style="font-size:42px">May 10th</td>
+          <td style="font-size:42px">Comp. Sci</td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">johnsmith</td>
+          <td style="font-size:42px">John</td>
+          <td style="font-size:42px">June 1</td>
+          <td style="font-size:42px">Info. Sci</td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">smiller</td>
+          <td style="font-size:42px">Sheila</td>
+          <td style="font-size:42px">Sept. 26</td>
+          <td style="font-size:42px">Soft. Engg.</td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">gameguy</td>
+          <td style="font-size:42px">Jayson</td>
+          <td style="font-size:42px">Dec 26</td>
+          <td style="font-size:42px">computersci</td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">sharpie</td>
+          <td style="font-size:42px">Reily</td>
+          <td style="font-size:42px">Dec. 18th</td>
+          <td style="font-size:42px">IS</td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="one-to-one" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b>Related Tables</b></p>
+      <table class="table" style="width:100%">
+        <tr>
+          <td><b>userID</b></td>
+          <td><b>Name</b></td>
+          <td><b>Birthday</b></td>
+          <td style="background:#66CCCC"><b>Major</b></td>
+        </tr>
+        <tr>
+          <td style="font-size:35px">russfeld</td>
+          <td style="font-size:35px">Russell</td>
+          <td style="font-size:35px">May 10th</td>
+          <td style="font-size:35px; background:#66CCCC">1</td>
+        </tr>
+        <tr>
+          <td style="font-size:35px">johnsmith</td>
+          <td style="font-size:35px">John</td>
+          <td style="font-size:35px">June 1</td>
+          <td style="font-size:35px; background:#66CCCC">3</td>
+        </tr>
+        <tr>
+          <td style="font-size:35px">smiller</td>
+          <td style="font-size:35px">Sheila</td>
+          <td style="font-size:35px">Sept. 26</td>
+          <td style="font-size:35px; background:#66CCCC">2</td>
+        </tr>
+        <tr>
+          <td style="font-size:35px">gameguy</td>
+          <td style="font-size:35px">Jayson</td>
+          <td style="font-size:35px">Dec 26</td>
+          <td style="font-size:35px; background:#66CCCC">1</td>
+        </tr>
+        <tr>
+          <td style="font-size:35px">sharpie</td>
+          <td style="font-size:35px">Reily</td>
+          <td style="font-size:35px">Dec. 18th</td>
+          <td style="font-size:35px; background:#66CCCC">3</td>
+        </tr>
+      </table>
+      <p style="line-height: 35px"><br></p>
+      <table class="table" style="width:100%">
+        <tr>
+          <td style="background:#66CCCC"><b>majorID</b></td>
+          <td><b>Major</b></td>
+          <td><b>Abbreviation</b></td>
+        </tr>
+        <tr>
+          <td style="font-size:35px; background:#66CCCC">1</td>
+          <td style="font-size:35px">Computer Science</td>
+          <td style="font-size:35px">CS</td>
+        </tr>
+        <tr>
+          <td style="font-size:35px; background:#66CCCC">2</td>
+          <td style="font-size:35px">Software Engineering</td>
+          <td style="font-size:35px">SE</td>
+        </tr>
+        <tr>
+          <td style="font-size:35px; background:#66CCCC">3</td>
+          <td style="font-size:35px">Information Systems</td>
+          <td style="font-size:35px">IS</td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="phones" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>Storing Phone Numbers</b></p>
+      <table class="table" style="width:100%">
+        <tr>
+          <td><b>userID</b></td>
+          <td><b>Name</b></td>
+          <td><b>Phone1</b></td>
+          <td><b>Phone2</b></td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">johnsmith</td>
+          <td style="font-size:42px">John</td>
+          <td style="font-size:42px">555-1234</td>
+          <td style="font-size:42px"></td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">smiller</td>
+          <td style="font-size:42px">Sheila</td>
+          <td style="font-size:42px">555-5134</td>
+          <td style="font-size:42px"></td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">gameguy</td>
+          <td style="font-size:42px">Jayson</td>
+          <td style="font-size:42px">555-1235</td>
+          <td style="font-size:42px">555-5134</td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">sharpie</td>
+          <td style="font-size:42px">Reily</td>
+          <td style="font-size:42px">555-5134</td>
+          <td style="font-size:42px"></td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="many-to-one" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>Many-to-One?</b></p>
+      <table class="table" style="width:100%">
+        <tr>
+          <td><b>userID</b></td>
+          <td><b>Name</b></td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">johnsmith</td>
+          <td style="font-size:42px">John</td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">smiller</td>
+          <td style="font-size:42px">Sheila</td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">gameguy</td>
+          <td style="font-size:42px">Jayson</td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">sharpie</td>
+          <td style="font-size:42px">Reily</td>
+        </tr>
+      </table>
+      <p style="line-height: 35px"><br></p>
+      <table class="table" style="width:100%">
+        <tr>
+          <td><b>Phone</b></td>
+          <td><b>user1</b></td>
+          <td><b>user2</b></td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">555-1234</td>
+          <td style="font-size:42px">johnsmith</td>
+          <td style="font-size:42px"></td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">555-5134</td>
+          <td style="font-size:42px">smiller</td>
+          <td style="font-size:42px">gameguy</td>
+          <td style="font-size:42px">?sharpie?</td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">555-1235</td>
+          <td style="font-size:42px">gameguy</td>
+          <td style="font-size:42px"></td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="one-to-many" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>One-to-Many</b></p>
+      <table class="table" style="width:100%">
+        <tr>
+          <td style="background:#66CCCC"><b>userID</b></td>
+          <td><b>Name</b></td>
+        </tr>
+        <tr>
+          <td style="font-size:30px; background:#66CCCC">johnsmith</td>
+          <td style="font-size:30px">John</td>
+        </tr>
+        <tr>
+          <td style="font-size:30px; background:#66CCCC">smiller</td>
+          <td style="font-size:30px">Sheila</td>
+        </tr>
+        <tr>
+          <td style="font-size:30px; background:#66CCCC">gameguy</td>
+          <td style="font-size:30px">Jayson</td>
+        </tr>
+        <tr>
+          <td style="font-size:30px; background:#66CCCC">sharpie</td>
+          <td style="font-size:30px">Reily</td>
+        </tr>
+      </table>
+      <p style="line-height: 30px"><br></p>
+      <table class="table" style="width:100%">
+        <tr>
+          <td style="background:#66CCCC"><b>userID</b></td>
+          <td><b>phone</b></td>
+        </tr>
+        <tr>
+          <td style="font-size:30px; background:#66CCCC">johnsmith</td>
+          <td style="font-size:30px">555-1234</td>
+        </tr>
+        <tr>
+          <td style="font-size:30px; background:#66CCCC">smiller</td>
+          <td style="font-size:30px">555-5134</td>
+        </tr>
+        <tr>
+          <td style="font-size:30px; background:#66CCCC">gameguy</td>
+          <td style="font-size:30px">555-1235</td>
+        </tr>
+        <tr>
+          <td style="font-size:30px; background:#66CCCC">gameguy</td>
+          <td style="font-size:30px">555-5134</td>
+        </tr>
+        <tr>
+          <td style="font-size:30px; background:#66CCCC">sharpie</td>
+          <td style="font-size:30px">555-5134</td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="internet" class="step" data-x="5000" data-y="900">
+      <p class="centertext"><b>The World Wide Web</b></p>
+      <img class="centerimg" height="600" src="images/map_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="https://en.wikipedia.org/wiki/Information_theory">Wikipedia</a></p>
+    </div>
+
+    <div id="indexing0" class="step" data-x="-900" data-y="1800">
+      <p class="centertext"><b>Our World Wide Web</b></p>
+      <img class="centerimg" width="850" src="images/9alg0.png">
+      <p class="imagecredit">Image Source: <i>9 Algorithms that Changed the Future</i> by John MacCormick</a></p>
+    </div>
+
+    <div id="indexing1" class="step" data-x="0" data-y="1800">
+      <p class="centertext"><b>Indexing</b></p>
+      <img class="centerimg" width="850" src="images/9alg1.png">
+      <p class="imagecredit">Image Source: <i>9 Algorithms that Changed the Future</i> by John MacCormick</a></p>
+    </div>
+
+    <div id="indexing2" class="step" data-x="1000" data-y="1800">
+      <p class="centertext"><b>Word Location</b></p>
+      <img class="centerimg" width="850" src="images/9alg2.png">
+      <p class="imagecredit">Image Source: <i>9 Algorithms that Changed the Future</i> by John MacCormick</a></p>
+    </div>
+
+    <div id="indexalg" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b>Algorithm</b><br><br></p>
+      <pre style="font-size: 20px; line-height: 22px"><code style="line-height: 22px"><b>INPUT:</b> a two-word phrase of form,  "Word1 Word2"
+<b>OUTPUT:</b> an  AnswerList,  a list of the numbers of the Web pages that
+contain the phrase
+
+<b>ALGORITHM:</b>
+(0.  The  AnswerList  starts with nothing saved in it.)
+
+1. Extract from the table the list of  Page#-Position#  pairs for  Word1.  Call it  List1.
+
+2. Extract from the table the list of  Page#-Position#  pairs for  Word2.  Call it  List2.
+
+3. For each  page#-pos#  pair in List1,
+      search  List2  to see if there is a pair,  page#-(pos#+1).
+        (that is, the page# is the same and pos# differs by +1)
+      if yes, then include  page#  in the  AnswerList.
+      if no, then ignore this pair.
+
+4. Announce all the page numbers in  AnswerList</code></pre>
+    </div>
+
+    <div id="indexing3" class="step slide" data-x="3000" data-y="1800">
+      <p class="centertext"><b>Nearness</b><br><br></p>
+      <ul>
+        <li>Look up "cat sat" using the list</li>
+        <li>Look up:<ul>
+          <li>cat stood</li>
+          <li>"cat stood"</li>
+          <li>cat OR stood</li>
+        </ul></li>
+        <li>How would that algorithm change?</li>
+      </ul>
+    </div>
+
+    <div id="indexing4" class="step" data-x="4000" data-y="1800">
+      <p class="centertext"><b>Metawords</b></p>
+      <img class="centerimg" height="100" src="images/9alg3.png">
+      <img class="centerimg" height="505" src="images/9alg4.png">
+      <p class="imagecredit">Image Source: <i>9 Algorithms that Changed the Future</i> by John MacCormick</a></p>
+    </div>
+
+    <div id="indexing5" class="step slide" data-x="5000" data-y="1800">
+      <p class="centertext"><b>Ranking</b><br><br></p>
+      <ul>
+        <li>Which page is more likely to be about dogs? Cats? How could you tell?</li>
+        <li>How would you modify the algorithm to account for that?</li>
+      </ul>
+    </div>
+
+    <div id="altavista" class="step slide" data-x="0" data-y="2700">
+      <p class="centertext"><b>AltaVista</b></p>
+      <ul>
+        <li>Early web search engine with crawler and indexer</li>
+        <li>1996: 5 servers, 210 GB storage & 4GB RAM on main indexer</li>
+        <li>1998: 20 servers, 500 GB storage & 130 GB RAM, 13 million queries daily</li>
+        <li>Bought by Yahoo in in 2003, shut down in 2011</li>
+      </ul>
+    </div>
+
+    <div id="google1" class="step" data-x="1000" data-y="2700">
+      <img class="centerimg" width="850" src="images/google_stanford.png">
+      <p class="imagecredit">Image Source: <a href="http://ilpubs.stanford.edu:8090/361/">Stanford</a></p>
+    </div>
+
+    <div id="google2" class="step" data-x="2000" data-y="2700">
+      <p class="centertext"><b>Hyperlinks</b></p>
+      <img class="centerimg" width="850" src="images/9alg5.png">
+      <p class="imagecredit">Image Source: <i>9 Algorithms that Changed the Future</i> by John MacCormick</a></p>
+    </div>
+
+    <div id="google3" class="step" data-x="3000" data-y="2700">
+      <p class="centertext"><b>Who Wins?</b></p>
+      <img class="centerimg" width="850" src="images/9alg6.png">
+      <p class="imagecredit">Image Source: <i>9 Algorithms that Changed the Future</i> by John MacCormick</a></p>
+    </div>
+
+    <div id="google4" class="step" data-x="4000" data-y="2700">
+      <p class="centertext"><b>Authority</b></p>
+      <img class="centerimg" width="850" src="images/9alg7.png">
+      <p class="imagecredit">Image Source: <i>9 Algorithms that Changed the Future</i> by John MacCormick</a></p>
+    </div>
+
+    <div id="google5" class="step" data-x="5000" data-y="2700">
+      <p class="centertext"><b>Cycles</b></p>
+      <img class="centerimg" width="850" src="images/9alg8.png">
+      <p class="imagecredit">Image Source: <i>9 Algorithms that Changed the Future</i> by John MacCormick</a></p>
+    </div>
+
+    <div id="google6" class="step" data-x="-900" data-y="3600">
+      <p class="centertext"><b>Random Surfer</b></p>
+      <img class="centerimg" width="850" src="images/9alg9.png">
+      <p class="imagecredit">Image Source: <i>9 Algorithms that Changed the Future</i> by John MacCormick</a></p>
+    </div>
+
+    <div id="pr1" class="step slide" data-x="0" data-y="3600">
+      <p class="centertext"><b>Page Rank Example</b><br><br></p>
+      <img class="centerimg" width="850" src="images/pr_example_blank.png">
+      <p class="imagecredit">Image Source: <a href="http://www.cs.princeton.edu/~chazelle/courses/BIB/pagerank.htm">Ian Rogers - Princeton</a></p>
+    </div>
+
+    <div id="pr2" class="step slide" data-x="0" data-y="3600" data-rotate-y="180" data-z="-1">
+      <p class="centertext"><b>Page Rank Example</b><br><br></p>
+      <img class="centerimg" width="850" src="images/pr_example.gif">
+      <p class="imagecredit">Image Source: <a href="http://www.cs.princeton.edu/~chazelle/courses/BIB/pagerank.htm">Ian Rogers - Princeton</a></p>
+    </div>
+
+    <div id="google7" class="step" data-x="1000" data-y="3600">
+      <p class="centertext"><b>Simulate, Don't Calculate!</b></p>
+      <img class="centerimg" width="800" src="images/9alg10.png">
+      <p class="imagecredit">Image Source: <i>9 Algorithms that Changed the Future</i> by John MacCormick</a></p>
+      <p style="font-size: 30px; line-height: 32px">Find all paths with length < 5, calculate percentage of times each one appears (count appearances / total paths)</p>
+    </div>
+
+    <div id="google8" class="step slide" data-x="2000" data-y="3600">
+      <p class="centertext"><b>Problems?</b><br><br></p>
+      <ul>
+        <li>Web Spam</li>
+        <li>Computation Time</li>
+        <li>Non-textual Data</li>
+        <li>Structured Data</li>
+        <br>
+        <li>Others?</li>
+      </ul>
+    </div>
+
+    <div id="what" class="step" data-x="2000" data-y="4500">
+      <p class="centertext"><b>What is Web 2.0?</b></p>
+    </div>
+
+    <div id="long_tail" class="step" data-x="3000" data-y="4500">
+      <p class="centertext"><b>The Long Tail</b></p>
+      <img class="centerimg" width="850" src="images/long_tail_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Long_tail">Wikipedia</a></p>
+    </div>
+
+    <div id="compare" class="step slide" data-x="4000" data-y="4500">
+      <table style="width:100%" class="table">
+        <tr>
+          <td><b>Web 1.0</b></td>
+          <td><b>Web 2.0</b></td>
+        </tr>
+        <tr>
+          <td>Static web pages</td>
+          <td>Dynamic pages</td>
+        </tr>
+        <tr>
+          <td>Content from few</td>
+          <td>Content from many</td>
+        </tr>
+        <tr>
+          <td>Local software</td>
+          <td>Web software</td>
+        </tr>
+        <tr>
+          <td>Local storage</td>
+          <td>Web storage</td>
+        </tr>
+        <tr>
+          <td>Read only</td>
+          <td>Write / Collaborate</td>
+        </tr>
+        <tr>
+          <td>Text only</td>
+          <td>Multimedia</td>
+        </tr>
+        <tr>
+          <td>Individual thoughts</td>
+          <td>Collective thoughts</td>
+        </tr>
+        <tr>
+          <td>Propietary</td>
+          <td>Open / Shared</td>
+        </tr>
+      </table>
+      <p class="imagecredit">Source: <a href="http://newtoolsworkshop.wikispaces.com/What+is+2.0%3F">New Tools Workshop</a></p>
+    </div>
+
+    <div id="machine" class="step" data-x="5000" data-y="4500">
+      <div id="ApVQ1it4B04" data-id="NLlGopyXT_g" class="youtube">
+        <a href="http://www.youtube.com/watch?v=NLlGopyXT_g">The Machine is Us/ing Us on Youtube</a>
+      </div>
+    </div>
+
+    <div id="assignment" class="step slide" data-x="-825" data-y="-225" data-scale="0.5">
+      <p class="centertext"><b>Assignments</b><br><br></p>
+      <ul>
+        <li>Read and be prepared to discuss:<ul>
+          <li><em>9ALG 4:</em> Public Key Cryptography</li>
+        <li>Blog 6 - Due 11/14 10:00 PM</li>
+        <li><b>Wiki Draft</b> - Due 11/11 10:00 PM</li>
+      </ul>
+    </div>
+
+    <div id="blog" class="step slide" data-x="-825" data-y="225" data-scale="0.5">
+      <p class="centertext" style="font-size: 35px; line-height: 45px"><b>Blog 6: Computing Science & Mathematics</b></p>
+      <p style="font-size: 25px; line-height: 27px">As we embark on reading the last textbook, it should be very obvious by now that mathematics is a core aspect of Computing Science. In fact, most Computing Science departments and disciplines have a direct foundation in the study of mathematics. Here’s a good quote summing it up from Harold Abelson: <i>“Mathematics provides a framework for dealing precisely with notions of "what is". Computation provides a framework for dealing precisely with notions of "how to".”</i> For this article, write about how Computing Science and Mathematics are related. (Food for thought - Read up on <a href="https://en.wikipedia.org/wiki/Theoretical_computer_science">Theoretical Computer Science</a> and <a href="https://en.wikipedia.org/wiki/Applied_mathematics">Applied Mathematics</a>.) Things you can talk about:<br><br>
+        <ul style="font-size: 25px; line-height: 27px">
+          <li>What mathematical concepts are you most interested in? How do they relate to Computing Science?</li>
+          <li>Which algorithms do you think are most closely tied to mathematics? Which ones only make sense when applied to a computer?</li>
+          <li>What areas of theoretical computer science do you find most interesting? Why are those interesting to you?</li>
+          <li>What have you read in the textbooks so far that relates closely to mathematics?</li>
+          <li>Who are some major historical figures that are important to both mathematics and Computing Science? Why do you think they are important in both fields?</li>
+        </ul>
+      </p>
+    </div>
+
+    <div id="activity" class="skip slide" data-x="-825" data-y="655" data-scale="0.5">
+      <p class="centertext"><b>Wiki Draft</b></p>
+    </div>
+
+    <div id="activity_1" class="step" data-x="-825" data-y="675" data-scale="0.5">
+    </div>
+
+    <div id="activity_2" class="step" data-x="-825" data-y="675" data-scale="0.5">
+    </div>
+
+    <div id="overview" class="step" data-x="2000" data-y="2250" data-z="-1" data-scale="7.5">
+    </div>
+
+</div>
+
+<script src="/js/analytics.js"></script>
+<script src="/js/impress.js"></script>
+<script>impress().init();</script>
+<script src="/js/jquery-1.10.2.min.js"></script>
+<script src="/js/TimeCircles.js"></script>
+<script src="/js/timer.js"></script>
+<script src="/js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+</body>
+</html>

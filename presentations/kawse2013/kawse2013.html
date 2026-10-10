@@ -1,0 +1,248 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <BASE href="../../">
+  <link href="favicon.ico" rel="shortcut icon">
+  <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+  <meta name="description" content="KAWSE 2013 Presentation" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>KAWSE 2013 Presentation</title>
+    <link href="css/impress.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="-1100" data-y="-1500">
+        <p>Weather Forecasting<br />with<br />High Performance Computing</p>
+    </div>
+
+    <div id="quote" class="step" data-x="0" data-y="-1500" style="text-align:center; font-size:55px">
+        <p>"The trouble with weather forecasting <br>
+        is that it’s <b>right</b> too often for us <br>
+        to <i>ignore</i> it <br>
+        and <b>wrong</b> too often for us <br>
+        to <i>rely</i> on it.”<br><br>
+        -<a href="http://patricklyoung.net/about-patrick/" target="_blank">Patrick L. Young</a></p>
+    </div>
+    
+    <div id="map" class="step" data-x="1100" data-y="-1500">
+    	<p class="centertext">This map from <a href="http://www.weather.com/maps/activity/boatbeach/index_large.html">Weather.com</a> shows winds across the United States.
+    	<img src="presentations/images/kawse2013/weathermap.jpg" style="align:center" height="600">
+    </div>
+    
+    <div id="arrows" class="step" data-x="775" data-y="-1125" data-scale="0.2">
+    	<p class="centertext">Each one of these arrows requires large amounts of processing power to produce</p>
+    </div>
+    
+    <div id="arrows2" class="step" data-x="1300" data-y="-1125" data-scale="0.2">
+    	<p class="centertext">Each arrow can be produced independently of the others</p>
+    </div>
+    
+    <div id="computer" class="step slide" data-x="-1100" data-y="-650">
+    	<img src="presentations/images/kawse2013/server.png" style="float:right" height="700">
+    	<p>This is a computer<br><br>
+    	It can do<br>
+    	<b>billions</b> of calculations<br>
+    	per second...</p>
+    </div>
+    
+    <div id="onlyone" class="step" data-x="-815" data-y="-280" data-scale="0.2">
+    	<p>But it can only do <b><i>one</i></b> thing at a time!</p>
+    </div>
+    
+    <div id="singlecomp" class="step" data-x="1100" data-y="-1000" data-z="65" data-scale="0.4" data-rotate-x="-45">
+    	<p class="centertext">It would take a single computer <b><i>DAYS</i></b> to create this map</p>
+    </div> 
+
+    <div id="resolution" class="step" data-x="1100" data-y="-810" data-scale="0.4">
+        <p class="centertext">We could make it faster by reducing the resolution...<br><br><br><br><br></p>
+    </div> 
+
+    <div id="resolutionimg" class="skip" data-x="1100" data-y="-750" data-scale="0.4">
+        <img src="presentations/images/kawse2013/resolution.png" class="centerimg" height="400">
+        <p class="imagecredit"><a href="http://www.nrcm.ucar.edu/docs/nrcm-briefing.pdf">Image Credit: NCAR</a></p>
+    </div>
+
+    <div id="best" class="step" data-x="1260" data-y="-750" data-scale="0.21">
+    </div>
+
+    <div id="better" class="step" data-x="1100" data-y="-750" data-scale="0.21">
+    </div>
+
+    <div id="notgood" class="step" data-x="940" data-y="-750" data-scale="0.21">
+    </div>
+
+    <div id="resolutionbad" class="step" data-x="1100" data-y="-750" data-scale="0.4">
+        <p class="centertext"><br><br><br><br><br><br><br><br>...but that makes the forecast less accurate</p>
+    </div>
+       
+    <div id="howfix" class="step" data-x="-580" data-y="-650" data-scale="0.3" data-rotate="-90" data-rotate-y="45">
+    	<p style="white-space:pre;text-align:center;">How can we<br><b>quickly</b> and <i>accurately</i><br>forecast the weather<br>using today's technology?</p>
+    </div>
+    
+    <div id="computers" class="step" data-x="1500" data-y="500" data-scale="3">
+    	<table style="margin-left:auto; margin-right:auto;">
+    		<tr>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    		</tr>
+    		<tr>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    		</tr>
+    		<tr>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    		</tr>
+    		<tr>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    			<td><img src="presentations/images/kawse2013/server.png" style="float:right" height="150"></td>
+    		</tr>
+    	</table>
+    </div>
+    
+    <div id="hpc" class="step" data-x="1500" data-y="1650" data-rotate-x="-45">
+    	<p class="centertext">We can use<br><b>High Performance Computing</b><br>to spread the calculations<br>across many computers</p>
+    </div>
+    
+    <div id="today" class="step" data-x="1500" data-y="200" data-rotate-x="-45" data-z="-1450" data-scale="0.2">
+    	<p class="centertext">Today, you'll see first-hand how it works!</p>
+    </div>
+
+    <div id="wherehpc" class="step" data-x="-1100" data-y="775" data-scale="1.5">
+        <p class="centertext"><b>High Performance Computing</b><br>has many uses...<br><br><br><br><br><br><br><br><br></p>
+    </div>
+
+    <div id="watson" class="step" data-x="-1100" data-y="550" data-scale="0.3">
+        <img src="presentations/images/kawse2013/watson.jpg" class="centerimg" height="500">
+        <p class="imagecredit"><a href="http://hothardware.com/News/IBMs-Watson-To-Help-Medical-Patients-In-Real-Life-Situations/">Image Credit: Hot Hardware</a></p>
+        <p class="centertext">When Watson isn't beating people at Jeopardy...</p>
+    </div>
+
+    <div id="watson_health" class="step" data-x="-800" data-y="550" data-scale="0.3">
+        <p class="centertext">it is busy studying medicine to help diagnose illnesses</p>
+        <img src="presentations/images/kawse2013/doctor_watson.jpg" class="centerimg" height="500">
+        <p class="imagecredit"><a href="http://www.industrytap.com/supercomputer-watson-increasing-medial-diagnoses-accuracy/1314">Image Credit: Industry Tap</a></p>
+    </div>
+
+    <div id="bluegene" class="step" data-x="-1400" data-y="550" data-scale="0.3">
+        <img src="presentations/images/kawse2013/bluegene.jpg" class="centerimg" height="550">
+        <p class="imagecredit"><a href="http://en.wikipedia.org/wiki/Blue_Gene">Image Credit: Wikipedia</a></p>
+        <p class="centertext">Blue Gene installations like this one are busy sequencing the human genome</p>
+    </div>
+
+    <div id="cosmos" class="step" data-x="500" data-y="6500" data-z="0" data-scale="7">
+        <div style="position:relative;height:1000;width:1000;">
+            <img src="presentations/images/kawse2013/cosmos.jpg" style="position:relative;left:0;top:0" height="1000">
+            <p style="text-align:center;color:white;position:absolute;left:0;top:0;white-space:pre"><br><br>      ...and simulating the <i>entire cosmos</i>!</p>
+        </div>
+        <p class="imagecredit"><a href="http://en.wikipedia.org/wiki/File:Hubble_ultra_deep_field_high_rez_edit1.jpg">Image Credit: Wikipedia</a></p>
+    </div>
+
+    <div id="nasa" class="step" data-x="-1100" data-y="800" data-scale="0.3">
+        <img src="presentations/images/kawse2013/nasa_columbia.jpg" class="centerimg" height="500">
+        <p class="imagecredit"><a href="https://en.wikipedia.org/wiki/File:Columbia_Supercomputer_-_NASA_Advanced_Supercomputing_Facility.jpg">Image Credit: Wikipedia</a></p>
+        <p class="centertext">At NASA, they are using supercomputers like the <i>Columbia</i> shown here...</p>
+    </div>
+
+    <div id="rockets" class="step" data-x="-1400" data-y="800" data-scale="0.3">
+        <img src="presentations/images/kawse2013/ares.jpg" class="centerimg" height="550">
+        <p class="imagecredit"><a href="http://www.nas.nasa.gov/projects/projects.html">Image Credit: NASA</a></p>
+        <p class="centertext">to do everything from rocket science...</p>
+    </div>
+
+    <div id="oceans" class="step" data-x="-800" data-y="800" data-scale="0.3">
+        <p class="centertext">to simulating ocean currents<br>across the globe!</p>
+        <img src="presentations/images/kawse2013/ocean.jpg" class="centerimg" height="500">
+        <p class="imagecredit"><a href="http://www.nas.nasa.gov/publications/articles/feature_ecco.html">Image Credit: NASA</a></p>
+    </div>
+
+    <div id="yousaw" class="step" data-x="-1400" data-y="1050" data-scale="0.3">
+        <p class="centertext" style="white-space:pre">The<br><a href="http://www2.cisl.ucar.edu/">National Center for Atmospheric Research</a><br>operates several<br><b>High Performance Computing</b> systems</p>
+        <img src="presentations/images/kawse2013/ncar_logo.jpg" height="300">
+    </div>
+
+    <div id="wyoming" class="step" data-x="-1100" data-y="1050" data-scale="0.3">
+        <p class="centertext">Including a new system in <a href="http://www2.ucar.edu/atmosnews/news/nwsc-fact-sheet">Wyoming</a><br>with over 1.5 PETAFLOPS<br>(quadrillion calculations / sec)<br>of computing power!</p>
+        <img src="presentations/images/kawse2013/yellowstone_computers.jpg" class="centerimg" height="400">
+        <p class="imagecredit"><a href="http://www2.ucar.edu/atmosnews/news/nwsc-multimedia-gallery">Image Credit: NCAR</a></p>
+    </div>
+
+    <div id="world" class="step" data-x="-800" data-y="1050" data-scale="0.3">
+        <img src="presentations/images/kawse2013/world.jpg" class="centerimg" height="600">
+        <p class="imagecredit"><a href="http://www2.ucar.edu/atmosnews/news/nwsc-multimedia-gallery">Image Credit: NCAR</a></p>
+        <p class="centertext">It can simulate weather on a <i>global</i> scale</p>
+    </div>
+
+   <div id="twisterdata" class="step" data-x="-1100" data-y="1600" data-scale="1.0">
+        <p class="centertext"><a href="http://www.twisterdata.com/index.php?prog=forecast&model=RAP&grid=255&parameter=RH&level=2&unit=M_ABOVE_GROUND&maximize=n&mode=loopmaps&sounding=n&output=image&view=large&archive=false">TwisterData.com</a> has maps that are created from all that data</p>
+        <img src="presentations/images/kawse2013/twisterdata.png" class="centerimg" height="600">
+        <p class="imagecredit"><a href="http://www.twisterdata.com">Image Credit: TwisterData.com</a></p>
+    </div>
+
+    <div id="overview" class="step" data-x="500" data-y="0" data-scale="5">
+    </div>
+
+</div>
+
+<script src="js/analytics.js"></script>
+
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+
+</body>
+</html>

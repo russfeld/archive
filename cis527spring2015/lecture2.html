@@ -1,0 +1,221 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <BASE href="../">
+  <link href="favicon.ico" rel="shortcut icon">
+  <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+  <meta name="description" content="CIS 527 Spring 2015 Lecture 2" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 527 Spring 2015 Lecture 2</title>
+    <link href="css/impress.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 527</b><br><br>Lecture 2 - OS Installation & Configuration</p>
+    </div>
+
+    <div id="early_computers" class="step slide" data-x="1000" data-y="0">
+        <p class="centertext"><b>Early Computers</b></p>
+        <img class="centerimg" height="600" src="cis527spring2015/images/lecture2/mark2_wiki.jpg">
+        <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Manchester_Mark_1">Wikipedia</a></p>
+    </div>
+
+    <div id="resident_monitor" class="step slide" data-x="2000" data-y="0">
+        <p class="centertext"><b>Resident Monitor</b></p>
+        <img class="centerimg" height="600" src="cis527spring2015/images/lecture2/resident_monitor_ust.gif">
+        <p class="imagecredit">Image Source: <a href="http://ielm.ust.hk/dfaculty/ajay/courses/alp/ieem110/lecs/os/os.html">Dr Joneja, Hong Kong UST</a></p>
+    </div>
+
+    <div id="early_os" class="step slide" data-x="3000" data-y="0">
+        <p class="centertext"><b>Early OS - OS/360</b></p>
+        <img class="centerimg" height="600" src="cis527spring2015/images/lecture2/system_360_nasa_wiki.jpg">
+        <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/System/360">Wikipedia</a></p>
+    </div>
+
+    <div id="unix" class="step slide" data-x="4000" data-y="0">
+        <p class="centertext"><b>Unix</b></p>
+        <img class="centerimg" height="600" src="cis527spring2015/images/lecture2/thompson_ritchie_wiki.jpg">
+        <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Unix">Wikipedia</a></p>
+    </div>
+
+    <div id="os" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>PC Operating Systems<br><br></b></p>
+      <img class="centerimg" width="850" src="cis527spring2015/images/lecture2/windows_logo_wiki.png">
+      <p><br></p>
+      <img class="centerimg" width="850" src="cis527spring2015/images/lecture2/ubuntu_logo_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Microsoft_Windows">Wikipedia</a> and <a href="http://en.wikipedia.org/wiki/Ubuntu_(operating_system)">Wikipedia</a></p>
+    </div>
+
+    <div id="windows" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b>Microsoft Windows</b></p>
+        <ul>
+            <li>Originally released in 1985</li>
+            <li>Started as an extension of MS-DOS</li>
+            <li>Windows 95 hit it BIG (57% market share in 1998)</li>
+            <li>Windows 7 most popular operating system today (47%)</li>
+            <li>Windows has 90% global market share (all versions)</li>
+        </ul>
+    </div>
+
+    <div id="osx" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>OS X</b></p>
+        <ul>
+            <li>Based on BSD version of Unix and developments at NeXT</li>
+            <li>Originally released in 2001</li>
+            <li>Uses an open-source core called Darwin</li>
+            <li>10.5 and later versions have Unix 03 certification (comply with the Unix standard)</li>
+        </ul>
+    </div>
+
+    <div id="linux" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>GNU/Linux</b></p>
+        <ul>
+            <li>Developed by Linus Torvalds in 1991</li>
+            <li>Open source replacement for Unix</li>
+            <li>GNU refers to the entire OS, Linux refers primarily to the core</li>
+            <li>Linux runs on many platforms</li>
+            <li>&lt; 2% market share on desktops,<br>79% on mobile devices (Android)</li>
+            <li>95% of top 500 supercomputers</li>
+        </ul>
+    </div>
+
+    <div id="virtualization" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>Virtualization</b></p>
+        <ul>
+            <li>Computer program that acts like generic hardware</li>
+            <li>Allows one (or more) operating systems to run within a host OS</li>
+            <li>Takes advantage of more powerful hardware</li>
+            <li>10:1 ratio of virtual machines to hardware common</li>
+        </ul>
+    </div>
+
+    <div id="os_diagram" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>Architecture</b></p>
+      <img class="centerimg" height="600" src="cis527spring2015/images/lecture2/os_diagram1_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Operating_system">Wikipedia</a></p>
+    </div>
+
+    <div id="kernel_diagram" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b>Kernel</b></p>
+      <img class="centerimg" height="600" src="cis527spring2015/images/lecture2/kernel_diagram_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Operating_system">Wikipedia</a></p>
+    </div>
+
+    <div id="os_components" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b>OS Components<br><br></b></p>
+      <ul>
+        <li>Graphical User Interface (GUI)
+          <ul>
+            <li>Run program</li>
+            <li>Manage system settings</li>
+            <li>Interact with devices</li>
+          </ul>
+        </li>
+        <li>Command Line Interface (CLI)</li>
+        <li>Program Management</li>
+      </ul>
+    </div>
+
+    <div id="os_types" class="step slide" data-x="3000" data-y="1800">
+        <p class="centertext"><b>OS Types<br><br></b></p>
+        <ul>    
+            <li>Real Time</li>
+            <li>Multi-user</li>
+            <li>Multi-tasking</li>
+            <li>Single-tasking</li>
+            <li>Distributed</li>
+            <li>Embedded</li>
+        </ul>
+    </div>
+
+    <div id="os_features" class="step slide" data-x="4000" data-y="1800">
+        <p class="centertext"><b>OS Features<br><br></b></p>
+        <ul>
+            <li>Process Management</li>
+            <li>Memory Management</li>
+            <li>Virtual Memory</li>
+            <li>Multitasking</li>
+            <li>File Systems</li>
+            <li>Device Drivers</li>
+            <li>Network Interfaces</li>
+        </ul>
+    </div>
+
+
+    <div id="installation" class="step slide" data-x="0" data-y="2700">
+      <p class="centertext"><b>Installation<br><br></b></p>
+      <ol>
+        <li>Partition the disk</li>
+        <li>Copy installation files</li>
+        <li>Extract & install</li>
+        <li>Configure basic settings</li>
+        <li>Reboot</li>
+      </ol>
+    </div>
+
+    <div id="virtual" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>VMWare Workstation</b></p>
+      <img class="centerimg" width="850" src="cis527spring2015/images/lecture2/vmware.png">
+    </div>
+
+    <div id="disks" class="step slide" data-x="2000" data-y="2700">
+        <p class="centertext"><b>Disks<br><br></b></p>
+        <ul>
+            <li>Disks are separated into <b>partitions</b></li>
+            <li>Partitions contain a file system</li>
+            <li>Operating systems are installed to a single partition</li>
+            <li>Other partitions may be used for storage, virtual memory</li>
+        </ul>
+    </div>
+
+    <div id="os_config" class="step slide" data-x="3000" data-y="2700">
+        <p class="centertext"><b>Initial Configuration<br><br></b></p>
+        <ul>
+            <li>Disk Partitions - single 60GB</li>
+            <li>Computer Name - CIS527&lt;W,U&gt;_&lt;your_eID&gt; (ex: CIS527W_russfel)</li>
+            <li>Initial User - cis527</li>
+            <li>Virtual Memory - defaults</li>
+        </ul>
+    </div>
+
+    <div id="assignments" class="step slide" data-x="4000" data-y="2700">
+        <p class="centertext"><b>Assignments</b></p>
+        <ul>
+            <li>Lab 1 - Secure Workstations - Due Monday, Feb 9th by 12:30 PM</li>
+            <li>Build secure Windows & Linux using VMWare Workstation</li>
+            <li>Turn in:<ul>
+                <li>CIS Transient Storage</li>
+                <li>via Storage Media <i>before</i> class Monday Feb 9th</li>
+                </ul></li> 
+        </ul>
+    </div>
+
+
+    <div id="overview" class="step" data-x="2000" data-y="1500" data-scale="6">
+    </div>
+
+</div>
+
+<script src="js/analytics.js"></script>
+
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+
+</body>
+</html>

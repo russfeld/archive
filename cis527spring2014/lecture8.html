@@ -1,0 +1,313 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <BASE href="../">
+  <link href="favicon.ico" rel="shortcut icon">
+  <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+  <meta name="description" content="CIS 527 Spring 2014 Lecture 8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 527 Spring 2014 Lecture 8</title>
+    <link href="css/impress.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 527</b><br><br>Lecture 8 - Puppet 2</p>
+    </div>
+
+    <div id="puppet_attrib" class="step" data-x="1000" data-y="0">
+      <p class="centertext"><b>Learning Puppet</b><br><br></p>
+      <p>Much of this lecture's content is adapted from the Learning Puppet series on <a href="http://docs.puppetlabs.com/learning/">http://docs.puppetlabs.com/learning/</a></p>
+    </div>
+
+    <div id="variables" class="step slide" data-x="2000" data-y="0">
+      <p class="centertext"><b>Variables</b><br><br></p>
+      <pre><code>$my_variable = "A bunch of text"
+notify {$my_variable:}</code></pre>
+    </div>
+
+    <div id="variables_2" class="step slide" data-x="3000" data-y="0">
+      <p class="centertext"><b>Variable Notes</b><br><br></p>
+      <ul>
+        <li>Always starts with a dollar sign $</li>
+        <li>Assign with an equals sign =</li>
+        <li>Can hold strings, numbers, arrays, booleans, etc.</li>
+        <li>Can use variables as any value inside a resource declaration, including the title</li>
+      </ul>
+    </div>
+
+    <div id="variables_3" class="step slide" data-x="4000" data-y="0">
+      <p class="centertext"><b>Variable Notes</b><br><br></p>
+      <ul>
+        <li>Variables are interpolated in double-quoted strings<br><pre><code>$username = "russfeld"
+notify {"Your home directory is /home/${username}": }</code></pre></li>
+        <li>Variables can only be assigned once</li>
+      </ul>
+    </div>
+
+    <div id="variables_learn" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>Learn More</b><br><br></p>
+      <ul>
+        <li><a href="http://docs.puppetlabs.com/puppet/latest/reference/lang_variables.html">http://docs.puppetlabs.com/puppet/<br>latest/reference/lang_variables.html</a></li><br>
+        <li><a href="http://docs.puppetlabs.com/puppet/latest/reference/lang_datatypes.html">http://docs.puppetlabs.com/puppet/<br>latest/reference/lang_datatypes.html</a></li>
+      </ul>
+    </div>
+
+    <div id="facts" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b>Facts</b><br><br></p>
+      <ul>
+        <li>Puppet uses Facter to learn about systems</li>
+        <li>Facter "facts" are stored as variables</li>
+        <li>Facts can be used in manifest files</li>
+      </ul>
+    </div>
+
+
+    <div id="facts_1" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>Facter</b><br><br></p>
+      <pre><code>#> facter -p</code></pre>
+    </div>
+
+    <div id="facts_2" class="step slide" data-x="2000" data-y="900" data-z="-1">
+      <p class="centertext"><b>Facter</b><br><br></p>
+      <pre><code>#> facter -p</code></pre><br>
+      <code style="line-height:55px"><pre>architecture => i386
+bios_version => 6.00
+block_devices => sda
+domain => localdomain
+id => root
+...</pre></code>
+    </div>
+
+    <div id="list_facts" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>Facter</b><br><br></p>
+      <p>List of facts</li>
+      <ul>
+        <li><a href="http://docs.puppetlabs.com/facter/latest/core_facts.html">http://docs.puppetlabs.com/facter/<br>latest/core_facts.html</a></li>
+        <li>You can also write your own if needed</li>
+      </ul>
+    </div>
+
+    <div id="conditionals" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>Conditionals</b><br><br></p>
+      <code style="font-size:50px; line-height:60px"><pre>if &lt;boolean&gt; {
+    &lt;code&gt;
+}
+elsif &lt;boolean&gt; {
+    &lt;code&gt;
+} 
+else {
+    &lt;code&gt;
+}</pre></code>
+    </div>
+
+    <div id="booleans" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>Booleans</b><br><br></p>
+      <code style="font-size:50px; line-height:60px"><pre>$boolean = "false"
+if $boolean {
+    notify{"This is true":}
+}
+else {
+    notify{"This is false":}
+}</pre></code>
+    </div>
+
+    <div id="booleans_2" class="step slide" data-x="0" data-y="1800" data-z="-1">
+      <p class="centertext"><b>Booleans</b><br><br></p>
+      <code style="font-size:50px; line-height:60px"><pre>$boolean = "false"
+if $boolean {
+    notify{"This is true":}
+}
+else {
+    notify{"This is false":}
+}
+
+Notify: This is true</pre></code>
+    </div>
+
+    <div id="booleans" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b>Booleans</b><br><br></p>
+      <ul>
+        <li>All facts are strings</li>
+        <li>All non-empty strings are true</li>
+        <li>Use str2bool(&lt;string&gt;)</li>
+      </ul>
+    </div>
+
+        <div id="booleans_fix" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b>Booleans</b><br><br></p>
+      <code style="font-size:50px; line-height:60px"><pre>$boolean = "false"
+if str2bool("$boolean") {
+    notify{"This is true":}
+}
+else {
+    notify{"This is false":}
+}</pre></code>
+    </div>
+
+    <div id="booleans_fix2" class="step slide" data-x="2000" data-y="1800" data-z="-1">
+      <p class="centertext"><b>Booleans</b><br><br></p>
+      <code style="font-size:50px; line-height:60px"><pre>$boolean = "false"
+if str2bool("$boolean") {
+    notify{"This is true":}
+}
+else {
+    notify{"This is false":}
+}
+
+Notify: This is false</pre></code>
+    </div>
+
+    <div id="case" class="step slide" data-x="3000" data-y="1800">
+      <p class="centertext"><b>Case Statement</b><br><br></p>
+      <code style="font-size:40px; line-height:60px"><pre>case $operatingsystem {
+  centos: { $apache = "httpd" }
+  # Note that these matches 
+  # are case-insensitive.
+  redhat: { $apache = "httpd" }
+  debian: { $apache = "apache2" }
+  ubuntu: { $apache = "apache2" }
+  default: { fail("Unrecognized OS") }
+}</pre></code>
+    </div>
+
+    <div id="case2" class="step slide" data-x="4000" data-y="1800">
+      <p class="centertext"><b>Case Statement</b><br><br></p>
+      <code style="font-size:40px; line-height:60px"><pre>case $operatingsystem {
+  centos, redhat: { $apache = "httpd" }
+  debian, ubuntu: { $apache = "apache2" }
+  default: { fail("Unrecognized OS") }
+}</pre></code>
+      <p>Can also use Regular Expressions</p>
+    </div>
+
+    <div id="select" class="step slide" data-x="0" data-y="2700">
+      <p class="centertext"><b>Case Statement</b><br><br></p>
+      <code style="font-size:40px; line-height:60px"><pre>$apache = $operatingsystem ? {
+  centos                => 'httpd',
+  redhat                => 'httpd',
+  /(?i)(ubuntu|debian)/ => 'apache2',
+  default               => undef,
+}</pre></code>
+    </div>
+
+    <div id="classes" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>Classes</b><br><br></p>
+      <code style="font-size:40px; line-height:60px"><pre>class my_class {
+  notify {"This does something":}
+}
+
+include my_class</pre></code>
+    </div>
+
+    <div id="classes2" class="step slide" data-x="2000" data-y="2700">
+      <p class="centertext"><b>Classes</b><br><br></p>
+      <ul>
+        <li>Classes can contain any Puppet code</li>
+        <li>Names must be all lowercase, with numbers and underscores allowed</li>
+        <li>Classes are <em>defined</em> to make them available, and <em>declared</em> to be evaluated</li>
+      </ul>
+    </div>
+
+    <div id="scope" class="step slide" data-x="3000" data-y="2700">
+      <p class="centertext"><b>Variable Scope</b><br><br></p>
+      <ul>
+        <li>Classes create a new variable scope</li>
+        <li>Use $&lt;class_name&gt;::&lt;var_name&gt; to access</li>
+        <li>They <em>cannot</em> be assigned outside the declaring class</li>
+      </ul>
+    </div>
+
+    <div id="modules" class="step slide" data-x="4000" data-y="2700">
+      <p class="centertext"><b>Modules</b><br><br></p>
+      <ul>
+        <li>You can separate classes into <em>modules</em> for organization</li>
+        <li>Each module has a specific file structure</li>
+        <li>Modules are automatically loaded by Puppet from certain folders</li>
+        <li>/etc/puppetlabs/puppet/puppet.conf</li>
+      </ul>
+    </div>
+
+    <div id="module_struct" class="step slide" data-x="0" data-y="3600">
+      <p class="centertext"><b>Module Structure</b><br><br></p>
+      <code style="font-size:50px; line-height:60px"><pre>/etc/puppetlabs/puppet/modules/
+  module_name/
+    manifests/
+      init.pp
+    files/
+    templates/
+    lib/</pre></code>
+    </div>
+
+    <div id="module_struct2" class="step slide" data-x="1000" data-y="3600">
+      <p class="centertext"><b>Module Structure</b><br><br></p>
+      <ul>
+        <li>init.pp must contain a single class definition with the <em>same name</em> as the module</li>
+        <li>Modules can contain other classes, files, and templates</li>
+      </ul>
+    </div>
+
+    <div id="site" class="step slide" data-x="2000" data-y="3600">
+      <p class="centertext"><b>Site Manifest</b><br><br></p>
+      <p>/etc/puppetlabs/puppet/manifests/site.pp</p>
+      <ul>
+        <li>Global manifest file for client/server</li>
+        <li>Includes class / module declarations</li>
+      </ul>
+      <br>
+      <code style="font-size:50px; line-height:60px"><pre>include ntp
+include apache
+include mysql</pre></code>
+    </div>
+
+    <div id="forge" class="step slide" data-x="3000" data-y="3600">
+      <p class="centertext"><b>Puppet Forge</b><br><br></p>
+      <ul>
+        <li>Lots of modules available free online</li>
+        <li><a href="http://forge.puppetlabs.com">http://forge.puppetlabs.com/</a></li>
+        <li>Don't reinvent the wheel; make it better</li>
+      </ul>
+    </div>
+
+    <div id="assignments" class="step slide" data-x="-825" data-y="-225" data-scale="0.5">
+        <p class="centertext"><b>Assignments</b></p>
+        <ul>
+            <li>Lab Help Session Friday 9 - 10 AM!</li>
+            <li>Lab 2 - Configuration Management - Due Sunday, Feb 23th by 11:59 PM</li>
+            <li>Automate configuration using Puppet</li>
+            <li>Turn in:<ul>
+                <li>CIS Transient Storage</li>
+                <li>via Storage Media in class Monday Feb 24th</li>
+                </ul></li> 
+        </ul>
+    </div>
+
+
+    <div id="overview" class="step" data-x="2000" data-y="1800" data-scale="7.0">
+    </div>
+
+
+</div>
+
+<script src="js/analytics.js"></script>
+
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+
+</body>
+</html>

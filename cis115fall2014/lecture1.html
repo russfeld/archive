@@ -1,0 +1,257 @@
+<html lang="en">
+<head>
+  <BASE href="../">
+  <link href="favicon.ico" rel="shortcut icon">
+  <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+  <meta name="description" content="CIS 115 Fall 2014 Lecture 1" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 115 Fall 2014 Lecture 1</title>
+    <link href="css/impress.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 115</b><br><br>Lecture 1: What is Computing Science?</p>
+    </div>
+
+    <div id="code_org" class="step" data-x="-500" data-y="-900">
+      <div id="nKIu9yen5nc" data-id="nKIu9yen5nc" class="youtube" data-start="0">
+        <a href="http://www.youtube.com/watch?v=nKIu9yen5nc">Code.org Video</a>
+      </div>
+    </div>
+
+    <div id="questions_skip" class="skip" data-x="1000" data-y="0">
+      <p class="centertext" style="font-size: 72px; line-height: 1.5">Who?<br>What?<br>When?<br>Where?<br>Why?</p>
+    </div>
+
+    <div id="questions" class="step" data-x="1000" data-y="0">
+
+    </div>
+
+    <div id="how" class="step" data-x="1000" data-y="400" data-z="75" data-rotate-x="-45">
+      <p class="centertext" style="font-size: 90px">How?</p>
+    </div>
+
+    <div id="howcan" class="step slide" data-x="2000" data-y="0">
+      <p class="centertext" style="font-size: 72px">How?<br><br></p>
+      <p>How can we make things:</p>
+      <ul>
+        <li>Faster?</li>
+        <li>Better?</li>
+        <li>More efficient?</li>
+        <li>More accurate?</li>
+        <li>More secure?</li>
+      </ul>
+    </div>
+
+    <div id="questions2" class="step" data-x="1000" data-y="0">
+
+    </div>
+
+    <div id="what" class="step" data-x="1000" data-y="-90" data-scale="0.25">
+
+    </div>
+
+    <div id="equation" class="step slide" data-x="500" data-y="-900">
+      <img class="centerimg" width="900" src="cis115fall2014/images/lecture1/equation_wiki.png">
+      <img width="400" src="cis115fall2014/images/lecture1/equation2_wiki.png">
+      <p class="imagecredit">Images from Wikimedia Commons</p>
+    </div>
+
+    <div id="logtable" class="step" data-x="1500" data-y="-900">
+      <img class="centerimg" width="900" src="cis115fall2014/images/lecture1/logtable_wiki.png">
+      <p class="imagecredit">Image from Wikimedia Commons</p>
+    </div>
+
+    <div id="questions3" class="step" data-x="1000" data-y="0">
+
+    </div>
+
+    <div id="where" class="step" data-x="1000" data-y="130" data-scale="0.25">
+
+    </div>
+
+    <div id="mathematicians" class="step" data-x="0" data-y="-1800">
+        <p>John Napier - <em>log</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jacob Bernoulli - <em>e</em></p>
+        <img width="450" src="cis115fall2014/images/lecture1/napier_wiki.png">
+        <img style="float: right" width="450" src="cis115fall2014/images/lecture1/bernoulli_wiki.png">
+    </div>
+
+    <div id="taylorseries" class="step slide" data-x="1000" data-y="-1800">
+      <img class="centerimg" width="900" src="cis115fall2014/images/lecture1/taylorseries_wiki.png">
+      <p class="imagecredit">Image from Wikimedia Commons</p>
+    </div>
+
+    <div id="newton" class="step" data-x="2000" data-y="-1800">
+      <p class="centertext" style="font-size: 72px">Divided Differences</p>
+      <p class="centertext">Sir Isaac Newton</p>
+      <img class="centerimg" height="500" src="cis115fall2014/images/lecture1/newton_wiki.png">
+      <p class="imagecredit">Image from Wikimedia Commons</p>
+    </div>
+
+    <div id="div_diff" class="step slide" data-x="3000" data-y="-1800">
+      <p class="centertext"><b>Divided Differences</b></p>
+      <p class="centertext" style="font-size: 40px; line-height: 50px">P(x) = 2x<sup>2</sup> - 3x + 2</p>
+      <table style="width:100%">
+        <tr>
+          <td>x&nbsp;&nbsp;&nbsp;</td>
+          <td>P(x)</td>
+          <td>D1(x)</td>
+          <td>D2(x)</td>
+        </tr>
+        <tr style="background:#BBBBBB">
+          <td>0</td>
+          <td>2</td>
+          <td>-1</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>-3</td>
+          <td>4</td>
+        </tr>
+        <tr style="background:#BBBBBB">
+          <td>2</td>
+          <td>4</td>
+          <td>7</td>
+          <td><b>*4*</b></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>11</td>
+          <td><b>*11*</b></td>
+          <td>4</td>
+        </tr>
+        <tr style="background:#BBBBBB">
+          <td>4</td>
+          <td><b>*22*</b></td>
+          <td>15</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>37</td>
+          <td>19</td>
+          <td>4</td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="questions4" class="step" data-x="1000" data-y="0">
+
+    </div>
+
+    <div id="what2" class="step" data-x="1000" data-y="-90" data-scale="0.25">
+
+    </div>
+
+    <div id="computer" class="step" data-x="-500" data-y="900">
+      <p class="centertext">Computer (noun):<br>A person who makes calculations</p>
+      <img class="centerimg" height="500" src="cis115fall2014/images/lecture1/computer_wiki.png">
+      <p class="imagecredit">Image from Wikimedia Commons</p>
+    </div>
+
+    <div id="babbage_skip" class="skip" data-x="500" data-y="900">
+      <p class="centertext">Charles Babbage</p>
+      <img class="centerimg" height="600" src="cis115fall2014/images/lecture1/babbage_wiki.png">
+      <p class="imagecredit">Image from Wikimedia Commons</p>
+    </div>
+
+    <div id="babbage" class="step" data-x="500" data-y="900">
+
+    </div>
+
+    <div id="difference_video" class="step" data-x="1500" data-y="900">
+      <div class="youtube" id="0anIyVGeWOI" data-id="0anIyVGeWOI" data-start="6">
+        <a href="http://www.youtube.com/watch?v=0anIyVGeWOI">Babbage's Difference Engine No. 2 on YouTube</a>
+      </div>
+    </div>
+
+    <div id="difference" class="step" data-x="2500" data-y="900">
+      <p class="centertext">Difference Engine</p>
+      <img class="centerimg" height="600" src="cis115fall2014/images/lecture1/diffengine_wiki.png">
+      <p class="imagecredit">Image from Wikimedia Commons</p>
+    </div>
+
+    <div id="analytical" class="step" data-x="-500" data-y="1800">
+      <p class="centertext">Analytical Engine</p>
+      <img class="centerimg" height="600" src="cis115fall2014/images/lecture1/analyticalengine_wiki.png">
+      <p class="imagecredit">Image from Wikimedia Commons</p>
+    </div>
+
+    <div id="cards" class="step" data-x="500" data-y="1800">
+      <p class="centertext">Input Cards</p>
+      <img class="centerimg" height="600" src="cis115fall2014/images/lecture1/cards_wiki.png">
+      <p class="imagecredit">Image from Wikimedia Commons</p>
+    </div>
+
+    <div id="mill" class="step" data-x="1500" data-y="1800">
+      <p class="centertext">The Mill</p>
+      <img class="centerimg" height="600" src="cis115fall2014/images/lecture1/mill_wiki.png">
+      <p class="imagecredit">Image from Wikimedia Commons</p>
+    </div>
+
+    <div id="store" class="step" data-x="2500" data-y="1800">
+      <p class="centertext">The Store</p>
+      <img class="centerimg" height="600" src="cis115fall2014/images/lecture1/store_wiki.png">
+      <p class="imagecredit">Image from Wikimedia Commons</p>
+    </div>
+
+    <div id="babbage2" class="step" data-x="500" data-y="900">
+
+    </div>
+
+    <div id="fatherofcomputer" class="step" data-x="500" data-y="1100" data-z="90" data-rotate-x="-30">
+      <p class="centertext"><br><br><br><br><br><br><br><br>Father of the Modern Computer</p>
+    </div>
+
+    <div id="assignment" class="step slide" data-x="-825" data-y="-225" data-scale="0.5">
+      <p class="centertext"><b>Assignments</b><br><br></p>
+      <ul>
+        <li>Read and be prepared to discuss:<ul>
+          <li>Syllabus (K-State Online)</li>
+          <li>Class Assignments (K-State Online)<ul>
+            <li>Online Blog</li>
+            <li>Video Project</li>
+            <li>Topic Research</li>
+            <li>Textbook Section</li>
+          </ul></ul></li>
+      </ul>
+    </div>
+
+    <div id="activity" class="step slide" data-x="-825" data-y="225" data-scale="0.5">
+      <p class="centertext">Get a CIS Account<br><br></p>
+      <ul>
+        <li><a href="http://support.cis.ksu.edu/UserGuide/Accounts">CIS Accounts Page</a><br><p style="font-size: 40px">http://support.cis.ksu.edu/UserGuide/Accounts</p></li>
+        <li><a href="http://password.cis.ksu.edu">CIS Password Reset</a><br>http://password.cis.ksu.edu</li>
+      </ul>
+    </div>
+
+    <div id="overview" class="step" data-x="1000" data-y="0" data-z="-1" data-scale="6">
+    </div>
+
+</div>
+
+<script src="js/analytics.js"></script>
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+</body>
+</html>

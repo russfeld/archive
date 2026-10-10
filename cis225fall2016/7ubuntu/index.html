@@ -1,0 +1,238 @@
+<html lang="en">
+<head>
+    <link href="/favicon.ico" rel="shortcut icon">
+    <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+    <meta name="description" content="CIS 225 - Ubuntu" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 225 - Ubuntu</title>
+    <link href="/css/impress.css" rel="stylesheet" />
+    <link href="/css/TimeCircles.css" rel="stylesheet" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 225</b><br><br>Ubuntu 16.04 In-Depth</p>
+    </div>
+
+    <div id="ubu14" class="step" data-x="1000" data-y="0">
+      <img class="centerimg" width="900" src="images/ubuntu14.png">
+    </div>
+
+    <div id="ubu4" class="step" data-x="2000" data-y="0">
+      <img class="centerimg" width="900" src="images/ubuntu4_wiki.png">
+      <p class="imagecredit">Image Source: <a href="https://en.wikipedia.org/wiki/List_of_Ubuntu_releases">Wikipedia</a></p>
+    </div>
+
+    <div id="history" class="step slide" data-x="3000" data-y="0">
+      <p class="centertext"><b>Ubuntu History</b></p>
+      <ul>
+        <li>Based on the Debian Linux system</li>
+        <li>4.10 - Warty Warthog (Oct. 2004)</li>
+        <li>New releases every 6 months</li>
+        <li>14.04 - Trusty Tahr (LTS): 5 years of security updates</li>
+        <li>15.10 - Wily Warewolf</li>
+        <li><b>16.04 - Xenial Xerus (LTS)</b></li>
+      </ul>
+    </div>
+
+    <div id="linux_kernel" class="step" data-x="4000" data-y="0">
+      <img class="centerimg" width="900" src="images/linuxarch_wiki.svg">
+      <p class="imagecredit">Image Source: <a href="https://en.wikipedia.org/wiki/Linux_distribution">Wikipedia</a></p>
+    </div>
+
+    <div id="linux_tree" class="skip" data-x="5000" data-y="1700">
+      <img class="centerimg" width="900" src="images/linuxtimeline_wiki.svg">
+      <p class="imagecredit">Image Source: <a href="https://en.wikipedia.org/wiki/Linux_distribution">Wikipedia</a></p>
+    </div>
+
+    <div id="linux_tree2" class="step" data-x="5000" data-y="0"></div>
+
+    <div id="linux_tree3" class="step" data-x="5000" data-y="700"></div>
+
+    <div id="linux_tree4" class="step" data-x="5000" data-y="1400"></div>
+
+    <div id="linux_tree5" class="step" data-x="5000" data-y="2100"></div>
+
+    <div id="linux_tree6" class="step" data-x="5000" data-y="2800"></div>
+
+    <div id="linux_tree7" class="step" data-x="5000" data-y="3400"></div>
+
+    <div id="history1" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>What is Linux?</b></p>
+      <ul>
+        <li>A free operating system kernel written to be compatible with Unix</li>
+        <li>Most use GNU implementations of core Unix utilities and programs</li>
+        <li>Linux Distributions tie a certain kernel to certain programs, utilities, and display managers</li>
+      </ul>
+    </div>
+
+    <div id="history2" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b>Linux History</b></p>
+      <ul>
+        <li>1971 - Unix released by Bell Labs</li>
+        <li>1983 - Richard Stallman creates GNU project to create free Unix utilities</li>
+        <li>1990 - GNU kernel project stalled</li>
+        <li>1991 - Linus Torvalds develops a kernel for use with GNU tools</li>
+        <li>1992 - Linux released under GPL License</li>
+      </ul>
+    </div>
+
+    <div id="history3" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>Linux History</b></p>
+      <ul>
+        <li>1993 - Slackware & Debian created</li>
+        <li>1994 - Version 1.0 of the kernel</li>
+        <li>1994 - Red Hat & SUSE released</li>
+        <li>1996 - Version 2.0, multiprocessor support</li>
+        <li>1998 - Compaq, IBM, & Oracle support Linux</li>
+      </ul>
+    </div>
+
+    <div id="parts" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>Major Ubuntu Components</b></p>
+      <ul>
+        <li>GNOME Desktop with Unity</li>
+        <li>System Settings</li>
+        <li>Software Center</li>
+        <li>File System Layout</li>
+        <li>Configuration Files</li>
+        <li>The <em>Dreaded</em> Terminal</li>
+        <li>Mir, Wayland, Upstart, Init, etc.</li>
+      </ul>
+    </div>
+
+    <div id="ubusettings" class="step" data-x="4000" data-y="900">
+      <img class="centerimg" width="900" src="images/ubuntusettings.png">
+    </div>
+
+    <div id="ubusoftware" class="step" data-x="0" data-y="1800">
+      <img class="centerimg" width="900" src="images/ubuntusoftware.png">
+    </div>
+
+    <div id="ubufs" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b>Filesystem Layout</b></p>
+      <ul>
+        <li>bin - Binary utilities</li>
+        <li>dev - Devices (as files!)</li>
+        <li>etc - Configuration files</li>
+        <li>home - User files</li>
+        <li>lib - Shared libraries</li>
+        <li>usr - User Programs</li>
+        <li>var - Variable data (logs)</li>
+      </ul>
+    </div>
+
+    <div id="fsimg" class="skip" data-x="2000" data-y="2100">
+      <img class="centerimg" width="900" src="images/filesys_geekstuff.png">
+      <p class="imagecredit">Image Source: <a href="http://www.thegeekstuff.com/2010/09/linux-file-system-structure/">Geek Stuff</a></p>
+    </div>
+
+    <div id="fsimg1" class="step" data-x="2000" data-y="1800"></div>
+
+    <div id="fsimg2" class="step" data-x="2000" data-y="2400"></div>
+
+    <div id="configs" class="step slide" data-x="3000" data-y="1800">
+      <p class="centertext"><b>Configuration Files</b><br><br></p>
+      <ul>
+        <li>Most Linux programs store configuration in text files</li>
+        <li>They can be found in /etc</li>
+        <li>Usually requires administrator access to edit them</li>
+        <li>MAKE BACKUPS! BE CAREFUL!</li>
+      </ul>
+    </div>
+
+    <div id="terminal" class="step" data-x="4000" data-y="1800">
+      <img class="centerimg" width="900" src="images/terminal.png">
+    </div>
+
+    <div id="other" class="step slide" data-x="0" data-y="2700">
+      <p class="centertext"><b>Other Stuff</b></p>
+      <ul>
+        <li>X.org - Library for displaying GUI</li>
+        <li>Wayland - Replacing X on most distros</li>
+        <li>Mir - Ubuntu's replacement</li>
+        <li>init - System startup process</li>
+        <li>Upstart - Ubuntu's init replacement</li>
+        <li>systemd - New startup process, most distros (incl. Ubuntu) use it now</li>
+      </ul>
+    </div>
+
+    <div id="boot1" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>Ubuntu Boot Process</b></p>
+      <ul>
+        <li>BIOS looks for a bootloader in first sector of the disk</li>
+        <li>Typically either GRUB or LILO</li>
+        <li>The bootloader loads the kernel and the initial ramdisk (initrd)</li>
+        <li>The root filesystem is found, mounted, and init/upstart/systemd start loading processes</li>
+      </ul>
+    </div>
+
+    <div id="boot2" class="step slide" data-x="3000" data-y="2700">
+      <p class="centertext"><b>Ubuntu Boot Process</b></p>
+      <ul>
+        <li>The X window system is started</li>
+        <li>The desktop environment is loaded (GNOME, KDE, etc.)</li>
+        <li>Other services are loaded in parallel</li>
+        <li>The system is ready for use</li>
+      </ul>
+    </div>
+
+    <div id="tasks" class="step slide" data-x="4000" data-y="2700">
+      <p class="centertext"><b>Ubuntu Tasks</b></p>
+      <ul>
+        <li>Set Computer Name</li>
+        <li>Manage Installed Programs</li>
+        <li>User Accounts</li>
+        <li>VMWare Tools</li>
+        <li>Internet Access</li>
+        <li>Software Updates</li>
+        <li>Boot Configuration</li>
+      </ul>
+    </div>
+
+    <div id="reading" class="step slide" data-x="0" data-y="3600">
+      <p class="centertext"><b>Reading</b><br><br></p>
+      See Class Website:
+      <p style="font-size:40px"><a href="/cis225fall2016/">http://people.cis.ksu.edu/~russfeld/cis225fall2016/</a></p>
+    </div>
+
+    <div id="assignments" class="step slide" data-x="1000" data-y="3600">
+      <p class="centertext"><b>Assignments</b><br><br></p>
+      <ul>
+        <li>Lab 2 - Virtualization, OS Install & Config<br>Due 9/12 11:30 AM <b>Before Lecture!!</b></li>
+      </ul>
+    </div>
+
+    <div id="overview" class="step" data-x="2000" data-y="1800" data-z="-1" data-scale="6">
+    </div>
+
+</div>
+
+<script src="/js/analytics.js"></script>
+<script src="/js/impress.js"></script>
+<script>impress().init();</script>
+<script src="/js/jquery-1.10.2.min.js"></script>
+<script src="/js/TimeCircles.js"></script>
+<script src="/js/timer.js"></script>
+<script src="/js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+
+
+
+</body>
+</html>

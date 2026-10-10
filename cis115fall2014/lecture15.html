@@ -1,0 +1,352 @@
+<html lang="en">
+<head>
+  <BASE href="../">
+  <link href="favicon.ico" rel="shortcut icon">
+  <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+  <meta name="description" content="CIS 115 Fall 2014 Lecture 15" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 115 Fall 2014 Lecture 15</title>
+    <link href="css/impress.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 115</b><br><br>Lecture 15: HTML & CSS</p>
+    </div>
+
+    <div id="berners_lee" class="step slide" data-x="1000" data-y="0">
+      <p class="centertext"><b>Tim Berners-Lee</b></p>
+      <img class="centerimg" height="600" src="cis115fall2014/images/lecture15/berners_lee_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Tim_Berners-Lee">Wikipedia</a></p>
+    </div> 
+
+    <div id="versions" class="step slide" data-x="2000" data-y="0">
+      <p class="centertext"><b>HTML Versions</b><br><br></p>
+      <ul>
+        <li>1995 - HTML 2.0</li>
+        <li>1997 - HTML 3.2</li>
+        <li>1997-98 - HTML 4.0</li>
+        <li>2000 - HTML 4.01</li>
+        <li>2014 - HTML5</li>
+      </ul>
+    </div>
+
+    <div id="html5" class="step slide" data-x="3000" data-y="0">
+      <img class="centerimg" height="680" src="cis115fall2014/images/lecture15/html5_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Html5">Wikipedia</a></p>
+    </div> 
+
+
+    <div id="assignment" class="step slide" data-x="-825" data-y="-225" data-scale="0.5">
+      <p class="centertext"><b>Assignments</b></p><br>
+      <ul>
+        <li>Read and be prepared to discuss:<ul>
+          <li><em>Tubes</em> Chapter 5: Cities of Light</li></ul></li>
+        <li>Blog 7: TBD - Due 10/20 10:00 PM</li>
+        <li>HTML & CSS Website: Due 10/20 10:00 PM</li>
+      </ul>
+    </div>
+
+    <div id="blog" class="step slide" data-x="-825" data-y="225" data-scale="0.5">
+      <p class="centertext" style="font-size: 35px; line-height: 45px"><b>Blog 7: TBD</b></p>
+        <p style="font-size: 30px; line-height: 32px">TBD</p>
+        <ul style="font-size: 30px; line-height: 31px">
+          <li>TBD</li>
+        </ul>
+    </div>
+
+    <div id="activity" class="skip slide" data-x="-825" data-y="655" data-scale="0.5">
+      <p class="centertext"><b>Create your own Website!</b></p>
+      <p>Create a webpage that has:</p>
+      <ul>
+        <li>A header &lt;h1&gt;</li>
+        <li>3 paragraphs &lt;p&gt;</li>
+        <li>1 list &lt;ul&gt; or &lt;ol&gt; with 3 list items &lt;li&gt;</li>
+        <li>1 working link to your favorite site <br>&lt;a href="http://www.google.com"&gt;</li>
+        <li>Valid HTML5 - <a href="http://validator.w3.org">http://validator.w3.org</a></li>
+      </ul>
+      <p class="centertext"><a href="http://www.w3schools.com/html">http://www.w3schools.com/html</a></p>
+    </div>
+
+    <div id="activity_1" class="step" data-x="-825" data-y="675" data-scale="0.5">
+    </div>
+
+    <div id="website" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>Creating your own Website</b><br><br></p>
+      <ul>
+        <li>Get a Webserver</li>
+        <li>Connect to the Webserver</li>
+        <li>Create a Homepage</li>
+        <li>Write your HTML</li>
+        <li>Save and Visit your Site</li>
+      </ul>
+    </div>
+
+    <div id="website2" class="step slide" data-x="0" data-y="1800" data-z="-1">
+      <p class="centertext"><b>Creating your own Website</b><br><br></p>
+      <ul>
+        <li>Get a Webserver &#x2713; CIS Linux!</li>
+        <li>Connect to the Webserver</li>
+        <li>Create a Homepage</li>
+        <li>Write your HTML</li>
+        <li>Save and Visit your Site</li>
+      </ul>
+    </div>
+
+    <div id="putty" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>Connecting to the Server</b><br>Windows Users - PuTTY</p>
+      <img class="centerimg" height="400" src="cis115fall2014/images/lecture15/putty_wiki.png">
+      <p class="centertext"><a href="http://www.putty.org">http://www.putty.org</a></p>
+    </div>
+
+    <div id="putty_screenshot" class="step slide" data-x="1000" data-y="900">
+      <img class="centerimg" height="550" src="cis115fall2014/images/lecture15/putty_screenshot.png">
+      <p class="centertext">Host Name: cislinux.cis.ksu.edu</p>
+    </div>
+
+    <div id="putty_security" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>Server Security</b></p>
+      <img class="centerimg" height="600" src="cis115fall2014/images/lecture15/putty_security.png">
+    </div>
+
+    <div id="shell" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>Linux Terminal</b></p>
+      <img class="centerimg" height="600" src="cis115fall2014/images/lecture15/terminal.png">
+    </div>
+
+    <div id="terminal" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>Connecting to the Server</b><br>Mac/Linux Users - Terminal</p>
+      <img class="centerimg" height="400" src="cis115fall2014/images/lecture15/terminal_logo.png">
+      <p class="centertext">Applications > Utilities > Terminal</p>
+    </div>
+
+    <div id="sshterm" class="step slide" data-x="4000" data-y="1800">
+      <p class="centertext"><b>SSH on Terminal</b></p>
+      <p class="centertext">ssh &lt;your_eID&gt;@cislinux.cis.ksu.edu</p>
+      <img class="centerimg" height="550" src="cis115fall2014/images/lecture15/terminal_shell.png">
+    </div>
+
+    <div id="linuxcmds" class="step slide" data-x="3000" data-y="1800">
+      <p class="centertext"><b>Simple Linux Commands</b><p>
+      <ul>
+        <li><span style="font-family:monospace, monospace;">pwd</span> - present working directory</li>
+        <li><span style="font-family:monospace, monospace;">cd &lt;dir&gt;</span> - change directory</li>
+        <li><span style="font-family:monospace, monospace;">ls</span> - list files in a directory</li>
+        <li><span style="font-family:monospace, monospace;">mv &lt;src&gt; &lt;dest&gt;</span> - move files</li>
+        <li><span style="font-family:monospace, monospace;">cp &lt;src&gt; &lt;dest&gt;</span> - copy files</li>
+        <li><span style="font-family:monospace, monospace;">rm &lt;file&gt;</span> - remove file</li>
+        <li><span style="font-family:monospace, monospace;">cat &lt;file&gt;</span> - print file</li>
+      </ul>
+    </div>
+
+    <div id="website3" class="step slide" data-x="0" data-y="1800" data-z="-1.5">
+      <p class="centertext"><b>Creating your own Website</b><br><br></p>
+      <ul>
+        <li>Get a Webserver &#x2713; CIS Linux!</li>
+        <li>Connect to the Webserver &#x2713;</li>
+        <li>Create a Homepage</li>
+        <li>Write your HTML</li>
+        <li>Save and Visit your Site</li>
+      </ul>
+    </div>
+
+    <div id="editing" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b>Editing Files</b><br><br></p>
+      <p style="font-family:monospace, monospace;">nano &lt;file&gt;<br><br></p>
+      <p style="font-family:monospace, monospace;">cd ~<br>mkdir public_html<br>cd public_html<br>nano index.html</p>
+    </div>
+
+    <div id="nano" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b>Nano Text Editor</b></p>
+      <img class="centerimg" height="600" src="cis115fall2014/images/lecture15/nano.png">
+    </div>
+
+    <div id="website4" class="step slide" data-x="0" data-y="1800" data-z="-2">
+      <p class="centertext"><b>Creating your own Website</b><br><br></p>
+      <ul>
+        <li>Get a Webserver &#x2713; CIS Linux!</li>
+        <li>Connect to the Webserver &#x2713;</li>
+        <li>Create a Homepage &#x2713;</li>
+        <li>Write your HTML</li>
+        <li>Save and Visit your Site</li>
+      </ul>
+    </div>
+
+    <div id="html_page" class="step slide" data-x="0" data-y="2700">
+      <p class="centertext"><b>Your First HTML Page</b><br><br></p>
+      <pre><code style="font-size:50px; line-height:55px">&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;title>Homepage&lt;/title>
+  &lt;/head>
+  &lt;body>
+    Hello World!
+  &lt;/body>
+&lt;/html></code></pre>
+    </div>
+
+    <div id="html_tags" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>HTML Tags</b><br><br></p>
+      <ul>
+        <li><span style="font-family:monospace, monospace;">&lt;html></span> - Page content</li>
+        <li><span style="font-family:monospace, monospace;">&lt;head&gt;</span> - Page header (not displayed)</li>
+        <li><span style="font-family:monospace, monospace;">&lt;title></span> - Site title (top of window)</li>
+        <li><span style="font-family:monospace, monospace;">&lt;body&gt;</span> - Site Content (displayed)</li>
+      </ul>
+    </div>
+
+    <div id="website5" class="step slide" data-x="0" data-y="1800" data-z="-2.5">
+      <p class="centertext"><b>Creating your own Website</b><br><br></p>
+      <ul>
+        <li>Get a Webserver &#x2713; CIS Linux!</li>
+        <li>Connect to the Webserver &#x2713;</li>
+        <li>Create a Homepage &#x2713;</li>
+        <li>Write your HTML &#x2713;</li>
+        <li>Save and Visit your Site</li>
+      </ul>
+    </div>
+
+    <div id="saving" class="step slide" data-x="2000" data-y="2700">
+      <p class="centertext"><b>Saving in Nano</b><br><br></p>
+      <ul>
+        <li>Press CTRL + X to save the file</li>
+        <li>Press Y to save the changes</li>
+        <li>Press ENTER to keep the previous file name<ul>
+          <li>Or you can change the name to something else and "Save as"</li>
+        </ul></li>
+      </ul>
+    </div>    
+
+    <div id="visit" class="step slide" data-x="3000" data-y="2700">
+      <p class="centertext"><b>Visiting your Webpage</b><br><br></p>
+      <p>http://people.cis.ksu.edu/~&lt;your_eID&gt;<br><br></p>
+      <p><a href=".">http://people.cis.ksu.edu/~russfeld</a></p>
+    </div>  
+
+    <div id="problems" class="step slide" data-x="4000" data-y="2700">
+      <p class="centertext"><b>Problems?</b><br><br></p>
+      <p><a href="http://support.cis.ksu.edu/UserGuide/PersonalWebPages">http://support.cis.ksu.edu/UserGuide/<br>PersonalWebPages</a></p>
+      <p>File Access Permissions:</p>
+      <ul>
+          <li><span style="font-family:monospace, monospace;">chmod 711 ~</span></li>
+          <li><span style="font-family:monospace, monospace;">chmod 755 ~/public_html</span></li>
+          <li><span style="font-family:monospace, monospace; font-size:40px">chmod 644 ~/public_html/index.html</span></li>
+      </ul>
+    </div> 
+
+    <div id="website6" class="step slide" data-x="0" data-y="1800" data-z="-3">
+      <p class="centertext"><b>Creating your own Website</b><br><br></p>
+      <ul>
+        <li>Get a Webserver &#x2713; CIS Linux!</li>
+        <li>Connect to the Webserver &#x2713;</li>
+        <li>Create a Homepage &#x2713;</li>
+        <li>Write your HTML &#x2713;</li>
+        <li>Save and Visit your Site &#x2713;</li>
+      </ul>
+    </div>
+
+    <div id="html_tags2" class="step slide" data-x="-1000" data-y="3600">
+      <p class="centertext"><b>HTML Tags</b></p>
+      <ul>
+        <li><span style="font-family:monospace, monospace;">&lt;h1></span> - Header</li>
+        <li><span style="font-family:monospace, monospace;">&lt;p&gt;</span> - Paragraph</li>
+        <li><span style="font-family:monospace, monospace;">&lt;br></span> - Line Break</li>
+        <li><span style="font-family:monospace, monospace;">&lt;a&gt;</span> - Anchor (link)</li>
+        <li><span style="font-family:monospace, monospace;">&lt;ol&gt;</span> - Ordered (numbered) list</li>
+        <li><span style="font-family:monospace, monospace;">&lt;ul></span> - Unordered (bulleted) list</li>
+        <li><span style="font-family:monospace, monospace;">&lt;li&gt;</span> - List item</li>
+      </ul>
+    </div>
+
+    <div id="html_tags3" class="step slide" data-x="0" data-y="3600">
+      <p class="centertext"><b>HTML Lists</b></p>
+      <pre><code style="font-size:50px; line-height:55px">&lt;ol>
+  &lt;li>Item 1&lt;/li>
+  &lt;li>Item 2&lt;/li>
+  &lt;li>Item 3&lt;/li>
+&lt;/ol></code></pre>
+      <br>
+      <ol>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+      </ol>
+    </div>
+
+    <div id="links" class="step slide" data-x="1000" data-y="3600">
+      <p class="centertext"><b>Clickable Links</b><br><br></p>
+      <p style="font-size:45px;">&lt;a href="http://cis.ksu.edu"&gt;Click me&lt;/a&gt;<br><br></p>
+      <p class="centertext"><a href="http://cis.ksu.edu">Click Me</a></p>
+    </div>
+
+    <div id="css" class="step slide" data-x="2000" data-y="3600">
+      <p class="centertext"><b>Cascading Style Sheets</b><br><br></p>
+      <ul>
+        <li>Add a little style to your site</li>
+        <li>Change fonts, colors, styles, and layout of any HTML element</li>
+      </ul>
+    </div>
+
+    <div id="add_css" class="step slide" data-x="3000" data-y="3600">
+      <p class="centertext"><b>Adding CSS to a Page</b><br><br></p>
+      <p>Add the following to your page header<br><br></p>
+      <p style="font-size:45px;">&lt;link rel="stylesheet" href="fancy.css" type="text/css" /><br><br></p>
+    </div>
+
+    <div id="styles" class="step slide" data-x="4000" data-y="3600">
+      <p class="centertext"><b>Sample CSS</b></p>
+      <pre><code style="font-size:29px">a {
+    text-decoration: none;
+    padding: 0 0.1em;
+    background: rgba(220,212,231,0.5);
+    text-shadow: -1px -1px 2px rgba(100,100,100,0.9);
+    border-radius: 0.2em;
+}
+
+a:hover,
+a:focus {
+    background: rgba(189,169,207,1);
+    text-shadow: -1px -1px 2px rgba(100,100,100,0.5);
+}</code></pre>
+    </div>
+
+    <div id="add_style" class="step slide" data-x="-825" data-y="1125" data-scale="0.5">
+      <p class="centertext"><b>Add Some Style</b><br><br></p>    
+      <ul>
+        <li>Create a CSS file and add it to your site</li>
+        <li>Change the font of your paragraphs, change the color of your headers</li>
+      </ul>
+      <p class="centertext"><a href="http://w3schools.com/css/">http://w3schools.com/css/</a></p>
+    </div>
+
+    <div id="activity_2" class="step" data-x="-825" data-y="675" data-scale="0.5">
+    </div>
+
+    <div id="overview" class="step" data-x="1500" data-y="2000" data-z="-1" data-scale="6.5">
+    </div>
+
+</div>
+
+<script src="js/analytics.js"></script>
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
+<script src="js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+</body>
+</html>

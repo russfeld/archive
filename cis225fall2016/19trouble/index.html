@@ -1,0 +1,278 @@
+<html lang="en">
+<head>
+    <link href="/favicon.ico" rel="shortcut icon">
+    <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+    <meta name="description" content="CIS 225 - Troubleshooting & Maintenance" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 225 - Troubleshooting & Maintenance</title>
+    <link href="/css/impress.css" rel="stylesheet" />
+    <link href="/css/TimeCircles.css" rel="stylesheet" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 225</b><br><br>Troubleshooting & Maintenance</p>
+    </div>
+
+    <div id="xkcd" class="step" data-x="1000" data-y="0">
+      <img class="centerimg" height="680" src="images/xkcd.png">
+      <p class="imagecredit">Image Source: <a href="http://xkcd.com/627/">XKCD</a></p>
+    </div>
+
+    <div id="windows" class="step slide" data-x="2000" data-y="0">
+      <p class="centertext"><b>Windows Troubleshooting</b><br><br></p>
+      <ul>
+        <li>Safe Mode</li>
+        <li>Boot from Repair CD</li>
+        <li>Blue Screen Errors</li>
+        <li>System Restore</li>
+        <li>Task Manager</li>
+        <li>Startup Processes</li>
+        <li>Password Reset</li>
+      </ul>
+      <p class="imagecredit">List Source: <a href="http://lifehacker.com/5628396/the-basic-guide-to-troubleshooting-common-windows-pc-problems">Lifehacker</a></p>
+    </div>
+
+    <div id="vmware_fix" class="step slide" data-x="3000" data-y="0">
+      <p class="centertext"><b>VMWare Boot Delay</b><br><br></p>
+      <p>To change boot options in VMWare:</p>
+      <ul>
+        <li>Open the .vmx file in a Text Editor</li>
+        <li>Add the following to the file<br><pre><code style="font-size:55px; line-height:60px">bios.bootdelay = 10000</code></pre></li>
+        <li>Save the file</li>
+        <li>Press ESC at loading screen to open boot menu</li>
+      </ul>
+    </div>
+
+    <div id="safe_mode" class="step slide" data-x="4000" data-y="0">
+      <p class="centertext"><b>Safe Mode</b></p>
+      <p>Used to troubleshoot problems preventing Windows from starting normally</p>
+      <ul>
+        <li>Windows 95 - 7: Press F8 before Windows loading screen</li>
+        <li>Windows 8 - 10: Hold SHIFT while clicking Restart</li>
+        <li><a href="http://www.howtogeek.com/107511/how-to-boot-into-safe-mode-on-windows-8-the-easy-way/">Guide from How-To Geek</a></li>
+      </ul>
+    </div>
+
+    <div id="boot_from_cd" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>Boot from Repair CD</b><br><br></p>
+      <p>Helps fix problems stopping Windows from booting at all</p>
+      <ul>
+        <li>Insert the Installation CD</li>
+        <li>Choose "Repair my Computer"</li>
+        <li><a href="http://www.howtogeek.com/107511/how-to-boot-into-safe-mode-on-windows-8-the-easy-way/">Guide from How-To Geek</a></li>
+      </ul>
+    </div>
+
+    <div id="blue_screen" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b>Blue Screen Errors</b><br><br></p>
+      <p>Usually driver or system file related issues</p>
+      <ul>
+        <li><a href="http://msdn.microsoft.com/en-us/library/windows/hardware/hh994433%28v=vs.85%29.aspx">Check Error Code online</a></li>
+        <li>Check Windows Error Logs</li>
+        <li>Verify System Files</li>
+        <li>Use System Restore</li>
+        <li><a href="http://support.microsoft.com/kb/315263">Advanced: Analyze minidump files</a></li>
+      </ul>
+    </div>
+
+    <div id="error_logs" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>Windows Error Logs</b><br><br></p>
+      <p>Stores important information about events on Windows</p>
+      <ul>
+        <li>Go to Control Panel and search for "Log"</li>
+        <li>Click "View Event Logs"</li>
+        <li>Click "Windows Logs" on the left</li>
+        <li>Click "System" on the left</li>
+      </ul>
+    </div>
+
+    <div id="error_logs_2" class="step" data-x="3000" data-y="900">
+      <img class="centerimg" width="850" src="images/windows_error_logs.png">
+    </div>
+
+    <div id="verify_files" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>System File Check</b><br><br></p>
+      <p>Ensure system files haven't been corrupted</p>
+      <ul>
+        <li>Open a Command Prompt as Administrator</li>
+        <li>Run the following command<br><pre><code style="font-size:55px; line-height:60px">sfc /scannow</code></pre></li>
+        <li>Wait for the results</li>
+      </ul>
+    </div>
+
+    <div id="system_restore" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>System Restore</b></p>
+      <p>Restore core system files from a backup</p>
+      <ul>
+        <li>Open Control Panel and search for "Recovery"</li>
+        <li>Choose the "Recovery" option, then choose "Open System Restore"</li>
+        <li>Choose a time before the error, then choose to restore</li>
+      </ul>
+    </div>
+
+    <div id="minidump" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b>Analyze Minidump</b><br><br></p>
+      <ul>
+        <li>Minidump files store information about the system state when a crash occurs</li>
+        <li>Programs can analyze the data to see what caused the crash</li>
+        <li>Good last resort</li>
+      </ul>
+    </div>
+
+    <div id="task_manager" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b>Task Manager</b><br><br></p>
+      <ul>
+        <li>See which processes are using resources</li>
+        <li>Find and stop processes causing slowness or issues</li>
+      </ul>
+      <p>Also recommend using <a href="http://technet.microsoft.com/en-us/sysinternals/bb896653.aspx">Process Explorer</a> from Sysinternals</p>
+      <p><a href="http://live.sysinternals.com">http://live.sysinternals.com</a></p>
+    </div>
+
+    <div id="startup" class="step slide" data-x="3000" data-y="1800">
+      <p class="centertext"><b>Startup Processes</b><br><br></p>
+      <ul>
+        <li>Look at processes that run at boot time</li>
+        <li>Easily remove unneeded processes</li>
+      </ul>
+      <p>Recommend using <a href="http://technet.microsoft.com/en-us/sysinternals/bb963902">Autoruns</a> from Sysinternals</p>
+      <p><a href="http://live.sysinternals.com">http://live.sysinternals.com</a></p>
+    </div>
+
+    <div id="password_reset" class="step slide" data-x="4000" data-y="1800">
+      <p class="centertext"><b>Reset Passwords</b></p>
+      <ul>
+        <li>Passwords stored in the Windows Registry as a hashed value</li>
+        <li>Can easily replace passwords with known hash</li>
+        <li>Only defense is physical security or encryption</li>
+      </ul>
+      <p>Recommend using <a href="http://pogostick.net/~pnh/ntpasswd/">Offline NT Password & Registry Editor</a> from Peter Nordahl</p>
+    </div>
+
+    <div id="ubuntu" class="step slide" data-x="0" data-y="2700">
+      <p class="centertext"><b>Ubuntu Troubleshooting</b><br><br></p>
+      <ul>
+        <li>Single User Mode</li>
+        <li>Boot from Repair CD</li>
+        <li>System Logs</li>
+        <li>Process Management</li>
+        <li>Startup Processes</li>
+        <li>Password Reset</li>
+      </ul>
+      <p class="imagecredit">List Source: <a href="http://lifehacker.com/5628396/the-basic-guide-to-troubleshooting-common-windows-pc-problems">Lifehacker</a></p>
+    </div>
+
+    <div id="single_user" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>Single-User Mode</b></p>
+      <p>Allows you to operate the system as the root user</p>
+      <ul>
+        <li>Hold SHIFT while Ubuntu is booting</li>
+        <li>Choose "Advanced Options for Ubuntu"</li>
+        <li>Choose a kernel with "(recovery mode)" at the end</li>
+        <li>After some text, choose the "root" option</li>
+      </ul>
+    </div>
+
+    <div id="recovery_cd" class="step slide" data-x="2000" data-y="2700">
+      <p class="centertext"><b>Recovery CD</b><br><br></p>
+      <ul>
+        <li>The installation CD also boots to a full Ubuntu system</li>
+        <li>Can use the same troubleshooting tools you would have on a working system</li>
+        <li>Can even install software!</li>
+      </ul>
+    </div>
+
+    <div id="system_log" class="step slide" data-x="3000" data-y="2700">
+      <p class="centertext"><b>System Logs</b></p>
+      <ul>
+        <li>Store information about system events</li>
+        <li>Stored in /var/log directory</li>
+        <li>Important logs:<ul>
+          <li>auth.log - user logons</li>
+          <li>dmesg - driver messages</li>
+          <li>dpkg.log - software installation</li>
+          <li>kern.log - kernel messages</li>
+          <li>syslog - system messages</li>
+        </ul></li>
+      </ul>
+    </div>
+
+    <div id="processes" class="step slide" data-x="4000" data-y="2700">
+      <p class="centertext"><b>Processes</b><br><br></p>
+      <ul>
+        <li>ps -A - view ALL system processes</li>
+        <li>top - view top processes</li>
+        <li>pstree - view process tree</li>
+        <li>kill &lt;pid&gt; - stop a process by pid</li>
+        <li>Force a process to stop<br><pre><code style="font-size:55px; line-height:60px">sudo kill -9 &lt;pid&gt;</code></pre></li>
+        <li>pkill &lt;command&gt; - kill process by name</li>
+      </ul>
+    </div>
+
+    <div id="startup_processes" class="step slide" data-x="0" data-y="3600">
+      <p class="centertext"><b>Startup Processes</b><br><br></p>
+      <ul>
+        <li>Click Applications and find Startup Applications</li>
+        <li>You can manage some applications here</li>
+        <li>To show ALL applications, see <a href="https://help.ubuntu.com/community/ShowHiddenStartupApplications">this site</a></li>
+        <li>For other services, it's <em>complicated</em></li>
+      </ul>
+    </div>
+
+    <div id="password_reset_lin"class="step slide" data-x="1000" data-y="3600">
+      <p class="centertext"><b>Ubuntu Password Reset</b><br><br></p>
+      <ul>
+        <li>Start in Single User Mode</li>
+        <li>Get to a root console</li>
+        <li>Use the following commands:<br><pre><code style="font-size:55px; line-height:60px">mount -o rw,remount /
+passwd &lt;username&gt;</code></pre></li>
+        <li>Can't remember your username:<br><pre><code style="font-size:55px; line-height:60px">ls /home</code></pre></li>
+      </ul>
+    </div>
+
+    <div id="reading" class="step slide" data-x="2000" data-y="3600">
+      <p class="centertext"><b>Reading</b><br><br></p>
+      See Class Website:
+      <p style="font-size:40px"><a href="/cis225fall2016/">http://people.cis.ksu.edu/~russfeld/cis225fall2016/</a></p>
+    </div>
+
+    <div id="assignments" class="step slide" data-x="3000" data-y="3600">
+      <p class="centertext"><b>Assignments</b><br><br></p>
+      <ul>
+        <li>Lab 8 - Troubleshooting & Maintenance<br>Due 10/31 12:30 PM</li>
+      </ul>
+    </div>
+
+    <div id="overview" class="step" data-x="2000" data-y="2000" data-z="-1" data-scale="6.5">
+    </div>
+
+
+</div>
+
+<script src="/js/analytics.js"></script>
+<script src="/js/impress.js"></script>
+<script>impress().init();</script>
+<script src="/js/jquery-1.10.2.min.js"></script>
+<script src="/js/TimeCircles.js"></script>
+<script src="/js/timer.js"></script>
+<script src="/js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+
+</body>
+</html>

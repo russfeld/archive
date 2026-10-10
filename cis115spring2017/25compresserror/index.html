@@ -1,0 +1,533 @@
+<html lang="en">
+<head>
+    <link href="/favicon.ico" rel="shortcut icon">
+    <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+    <meta name="description" content="CIS 115 - Compression & Error Checking" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 115 - Compressions & Error Checking</title>
+    <link href="/css/TimeCircles.css" rel="stylesheet" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/impress.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 115</b><br><br>Compression & Error Checking</p>
+    </div>
+
+    <div id="compression1" class="step" data-x="1000" data-y="0">
+      <p class="centertext"><b>What is Compression?<br>Why is it useful?</b><br><br></p>
+    </div>
+
+    <div id="compression2" class="step slide" data-x="2000" data-y="0">
+      <p class="centertext"><b>Compression</b><br><br></p>
+      <ul>
+        <li>Resources are expensive<ul>
+          <li>Storage space</li>
+          <li>Transmission bandwidth</li>
+          <li>Time to read/send</li>
+        </ul></li>
+        <li>Does require more computation; can be a tradeoff</li>
+      </ul>
+    </div>
+
+    <div id="rle" class="step slide" data-x="3000" data-y="0">
+      <p class="centertext"><b>Run Length Encoding</b><br><br></p>
+      <ul>
+        <li>Find "runs" (repeated sequences) in data</li>
+        <li>Replace them with a shorter version</li>
+        <li>Usually the sequence and a count</li>
+      </ul>
+    </div>
+
+    <div id="rle2" class="step slide" data-x="4000" data-y="0">
+      <p class="centertext"><b>RLE Example</b><br><br></p>
+      <pre style="font-family: monospace; font-size: 65px">WWWWWWWWWWWWBWWWW
+WWWWWWWWBBBWWWWWW
+WWWWWWWWWWWWWWWWW
+WBWWWWWWWWWWWWWWW</pre>
+      <p class="imagecredit">Image Source: <a href="https://en.wikipedia.org/wiki/Run-length_encoding">Wikipedia</a></p>
+    </div>
+
+    <div id="rle3" class="step slide" data-x="5000" data-y="0">
+      <p class="centertext"><b>RLE Example</b><br><br></p>
+      <pre style="font-family: monospace; font-size: 65px">WWWWWWWWWWWWBWWWW
+WWWWWWWWBBBWWWWWW
+WWWWWWWWWWWWWWWWW
+WBWWWWWWWWWWWWWWW
+12W1B12W3B24W1B15W</pre>
+      <p class="imagecredit">Image Source: <a href="https://en.wikipedia.org/wiki/Run-length_encoding">Wikipedia</a></p>
+    </div>
+
+    <div id="rle4" class="step" data-x="0" data-y="900">
+      <p class="centertext"><b>Wait, isn't text just numbers (ASCII)?<br><br>How can we tell which numbers are text and which are not?</b><br><br></p>
+    </div>
+
+    <div id="rle5" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b>RLE Example</b><br><br></p>
+      <pre style="font-family: monospace; font-size: 65px">WWWWWWWWWWWWBWWWW
+WWWWWWWWBBBWWWWWW
+WWWWWWWWWWWWWWWWW
+WBWWWWWWWWWWWWWWW</pre>
+      <p class="imagecredit">Image Source: <a href="https://en.wikipedia.org/wiki/Run-length_encoding">Wikipedia</a></p>
+    </div>
+
+    <div id="rle6" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>Escape Coding</b><br><br></p>
+      <pre style="font-family: monospace; font-size: 65px">WWWWWWWWWWWWBWWWW
+WWWWWWWWBBBWWWWWW
+WWWWWWWWWWWWWWWWW
+WBWWWWWWWWWWWWWWW
+WW12BWW12BB3WW24BWW15</pre>
+      <p class="imagecredit">Image Source: <a href="https://en.wikipedia.org/wiki/Run-length_encoding">Wikipedia</a></p>
+    </div>
+
+    <div id="hc" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>Huffman Coding</b><br><br></p>
+      <ul>
+        <li>Count the occurrences of each character</li>
+        <li>Make a binary tree with the data</li>
+        <li>The paths of the tree give the codes</li>
+      </ul>
+    </div>
+
+    <div id="hc1" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>Huffman Example</b></p>
+      <pre style="font-family: monospace; font-size: 65px">THIS IS AN EXAMPLE OF<br>A HUFFMAN TREE
+288 bits (8 * 36)</pre>
+      <p class="imagecredit">Image Source: <a href="https://en.wikipedia.org/wiki/Huffman_coding">Wikipedia</a></p>
+    </div>
+
+    <div id="hc2" class="step slide" data-x="5000" data-y="900">
+      <p class="centertext"><b>Huffman Example</b></p>
+      <pre style="font-family: monospace; font-size: 65px">THIS IS AN EXAMPLE OF<br>A HUFFMAN TREE</pre>
+      <ul style="-webkit-columns: 3">
+        <li>space: 7</li>
+        <li>a: 4</li>
+        <li>e: 4</li>
+        <li>f: 3</li>
+        <li>h: 2</li>
+        <li>i: 2</li>
+        <li>m: 2</li>
+        <li>n: 2</li>
+        <li>s: 2</li>
+        <li>t: 2</li>
+        <li>l: 1</li>
+        <li>o: 1</li>
+        <li>p: 1</li>
+        <li>r: 1</li>
+        <li>u: 1</li>
+        <li>x: 1</li>
+      </ul>
+      <p class="imagecredit">Image Source: <a href="https://en.wikipedia.org/wiki/Huffman_coding">Wikipedia</a></p>
+    </div>
+
+    <div id="hc3" class="step" data-x="0" data-y="1800">
+      <p class="centertext" style="font-size:49px; line-height:60px;"><b>Huffman Example</b></p>
+      <img class="centerimg" height="600" src="images/huffman_wiki.svg">
+      <p class="imagecredit">Image Source: <a href="https://en.wikipedia.org/wiki/Huffman_coding">Wikipedia</a></p>
+    </div>
+
+    <div id="hc4" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b>Huffman Example</b></p>
+      <pre style="font-family: monospace; font-size: 65px">THIS IS AN EXAMPLE OF<br>A HUFFMAN TREE
+0110 1010 1000 1011
+111 1000 1011 111
+010 0010 111 000 10010
+... (135 bits)
+</pre>
+      <p class="imagecredit">Image Source: <a href="https://en.wikipedia.org/wiki/Huffman_coding">Wikipedia</a></p>
+    </div>
+
+    <div id="ec" class="step" data-x="2000" data-y="1800">
+      <p class="centertext"><b>What is Error Checking?<br>Why is it useful?</b><br><br></p>
+    </div>
+
+    <div id="ec" class="step" data-x="2000" data-y="1800">
+      <p class="centertext"><b>What is Error Checking?<br>Why is it useful?</b><br><br></p>
+    </div>
+
+    <div id="ec1" class="step slide" data-x="3000" data-y="1800">
+      <p class="centertext"><b>Intuition - Squeezing</b></p>
+      <pre style="font-family: monospace; font-size: 65px">Hello there</pre>
+      <pre style="font-family: monospace; font-size: 65px; letter-spacing: -25px">Hello there</pre>
+      <br>
+      <pre style="font-family: monospace; font-size: 65px">Hello ghere</pre>
+      <pre style="font-family: monospace; font-size: 65px; letter-spacing: -25px">Hello ghere</pre>
+    </div>
+
+    <div id="ec2" class="step slide" data-x="4000" data-y="1800">
+      <p class="centertext"><b>Simple - Addition</b></p>
+      <pre style="font-family: monospace; font-size: 65px">Hello there
+
+72 101 108 108 111 32
+116 104 101 114 101 33
+= 1101
+      </pre>
+    </div>
+
+    <div id="ec3" class="step slide" data-x="5000" data-y="1800">
+      <p class="centertext"><b>Simple - Addition</b><br><br></p>
+      <ul>
+        <li>If we only have the sum, can we recover the original?</li>
+        <li>How well does this detect errors?</li>
+        <li>Are there errors it cannot detect?</li>
+        <li>1101 is larger than 8 bits. How should we handle that?</li>
+        <li>Can we do better?</li>
+      </ul>
+    </div>
+
+    <div id="ec4" class="step slide" data-x="0" data-y="2700">
+      <p class="centertext"><b>Better - Pinpoint</b></p>
+      <pre style="font-family: monospace; font-size: 65px">4837543622563997</pre>
+      <table class="table">
+        <tr>
+          <td>4</td>
+          <td>8</td>
+          <td>3</td>
+          <td>7</td>
+          <td bgcolor="#ABABAB">?</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>4</td>
+          <td>3</td>
+          <td>6</td>
+          <td bgcolor="#ABABAB">?</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>2</td>
+          <td>5</td>
+          <td>6</td>
+          <td bgcolor="#ABABAB">?</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>9</td>
+          <td>9</td>
+          <td>7</td>
+          <td bgcolor="#ABABAB">?</td>
+        </tr>
+        <tr>
+          <td bgcolor="#ABABAB">?</td>
+          <td bgcolor="#ABABAB">?</td>
+          <td bgcolor="#ABABAB">?</td>
+          <td bgcolor="#ABABAB">?</td>
+          <td bgcolor="#000000"></td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="ec5" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>Better - Pinpoint</b></p>
+      <table class="table">
+        <tr>
+          <td>4</td>
+          <td>8</td>
+          <td>3</td>
+          <td>7</td>
+          <td bgcolor="#ABABAB">2</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>4</td>
+          <td>3</td>
+          <td>6</td>
+          <td bgcolor="#ABABAB">8</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>2</td>
+          <td>5</td>
+          <td>6</td>
+          <td bgcolor="#ABABAB">5</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>9</td>
+          <td>9</td>
+          <td>7</td>
+          <td bgcolor="#ABABAB">8</td>
+        </tr>
+        <tr>
+          <td bgcolor="#ABABAB">4</td>
+          <td bgcolor="#ABABAB">3</td>
+          <td bgcolor="#ABABAB">0</td>
+          <td bgcolor="#ABABAB">6</td>
+          <td bgcolor="#000000"></td>
+        </tr>
+      </table>
+      <pre style="font-family: monospace; font-size: 60px">483725436822565399784306</pre>
+    </div>
+
+    <div id="ec6" class="step slide" data-x="2000" data-y="2700">
+      <p class="centertext"><b>Better - Pinpoint</b></p>
+      <pre style="font-family: monospace; font-size: 60px">483725436827565399784306</pre>
+      <table class="table">
+        <tr>
+          <td>4</td>
+          <td>8</td>
+          <td>3</td>
+          <td>7</td>
+          <td bgcolor="#ABABAB">2</td>
+          <td bgcolor="#CDABAB">2</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>4</td>
+          <td>3</td>
+          <td>6</td>
+          <td bgcolor="#ABABAB">8</td>
+          <td bgcolor="#CDABAB">8</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>7</td>
+          <td>5</td>
+          <td>6</td>
+          <td bgcolor="#ABABAB">5</td>
+          <td bgcolor="#CDABAB">0</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>9</td>
+          <td>9</td>
+          <td>7</td>
+          <td bgcolor="#ABABAB">8</td>
+          <td bgcolor="#CDABAB">8</td>
+        </tr>
+        <tr>
+          <td bgcolor="#ABABAB">4</td>
+          <td bgcolor="#ABABAB">3</td>
+          <td bgcolor="#ABABAB">0</td>
+          <td bgcolor="#ABABAB">6</td>
+          <td bgcolor="#000000"></td>
+          <td bgcolor="#000000"></td>
+        </tr>
+        <tr>
+          <td bgcolor="#CDABAB">4</td>
+          <td bgcolor="#CDABAB">8</td>
+          <td bgcolor="#CDABAB">0</td>
+          <td bgcolor="#CDABAB">6</td>
+          <td bgcolor="#000000"></td>
+          <td bgcolor="#000000"></td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="fl1" class="step slide" data-x="3000" data-y="2700">
+      <p class="centertext"><b>Better - Fletcher's Checksum</b><br><br></p>
+      <pre style="font-family: monospace; font-size: 25px">INPUT:  a data word (e.g., a sequence of ASCII-numbers)
+OUTPUT: two checksums for the word, each sized to fit
+        in one byte
+
+ALGORITHM:
+1. divide the  Word  into a sequence of equally-sized
+   blocks, b<sub>1</sub> b<sub>2</sub> ... b<sub>n</sub>
+2. define two checksums, starting at  C1 = 0  and  C2 = 0
+3. for each block, b<sub>i</sub>,
+        add  b<sub>i</sub> to  C1
+        add the new value of  C1  to  C2
+4.  compute  Checksum1 = C1 mod 255 and
+    Checksum2 = C2 mod 255
+5.  return  Checksum1  and  Checksum2</pre>
+    </div>
+
+    <div id="fl2" class="step slide" data-x="4000" data-y="2700">
+      <p class="centertext"><b>Better - Fletcher's Checksum</b></p><pre style="font-family: monospace; font-size: 33px">72 101 108 108 111 32 116 104 101 114 101 33</pre>
+      <table class="table">
+        <tr>
+          <td>Block</td>
+          <td>C1</td>
+          <td>C2</td>
+        </tr>
+        <tr>
+          <td>72</td>
+          <td>72</td>
+          <td>72</td>
+        </tr>
+        <tr>
+          <td>101</td>
+          <td>173</td>
+          <td>245</td>
+        </tr>
+        <tr>
+          <td>108</td>
+          <td>281</td>
+          <td>526</td>
+        </tr>
+        <tr>
+          <td>108</td>
+          <td>389</td>
+          <td>915</td>
+        </tr>
+        <tr>
+          <td bgcolor="#ABABAB">Total:</td>
+          <td bgcolor="#ABABAB">1101 (81)</td>
+          <td bgcolor="#ABABAB">7336 (96)</td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="fl3" class="step slide" data-x="5000" data-y="2700">
+      <p class="centertext"><b>Testing Fletcher's</b><br><br></p>
+      <ul>
+        <li>72 101 108</li>
+        <li>72 108 101</li>
+        <li>74 99 108</li>
+        <li>72 101 0 108</li>
+        <br>
+        <li>Which ones does it catch?</li>
+      </ul>
+    </div>
+
+    <div id="better" class="step" data-x="0" data-y="3600">
+      <p class="centertext"><b>Can we do better?</b></p>
+    </div>
+
+    <div id="crc" class="step slide" data-x="1000" data-y="3600">
+      <p class="centertext"><b>Cyclic Redundancy Check (CRC)</b></p>
+      <pre style="font-family: monospace; font-size: 25px">Input: 010100001001
+Check: 1011
+
+    010100001001
+XOR  1011
+    ------------
+        10001001
+    XOR 1011
+       ---------
+        00111001
+      XOR 1011
+         -------
+           10101
+       XOR 1011
+          ------
+   Checksum: 011</pre>
+    </div>
+
+    <div id="hash" class="step slide" data-x="2000" data-y="3600">
+      <p class="centertext"><b>Hash Codes</b></p>
+      <pre style="font-family: monospace; font-size: 25px">Choose a "hash base", b (e.g., b= 2 or b= 10 or b= 37)
+
+For a word of integers of length n+1:
+    w =  x<sub>0</sub> x<sub>1</sub> x<sub>2</sub> ... x<sub>n-1</sub> x<sub>n</sub>,
+
+Compute this hash number:
+    hash(w) =  (x<sub>0</sub> * b<sup>n</sup>) + (x<sub>1</sub> * b<sup>n-1</sup>) + (x<sub>2</sub> * b<sup>n-2</sup>) + ...
+               (x<sub>n-1</sub> * b<sup>1</sup>) + x<sub>n</sub>
+             </pre>
+    </div>
+
+    <div id="hash2" class="step slide" data-x="3000" data-y="3600">
+      <p class="centertext"><b>Hash Codes</b></p>
+      <pre style="font-family: monospace; font-size: 25px">For  word = 4 5 6,
+when  b = 10,
+     hash(word) = (4 * 10<sup>2</sup>) + (5 * 10<sup>1</sup>) + 6  =
+     400 + 50 + 6  =  456
+when b = 100,
+     hash(word) = (4 * 100<sup>2</sup>) + (5 * 100<sup>1</sup>) + 6  =
+     40000 + 500 + 6  =  40506
+when b = 5,
+     hash(word) = (4 * 5<sup>2</sup>) + (5 * 5<sup>1</sup>) + 6  =
+     100 + 20 + 6  =  126
+when b = 2,
+     hash(word) = 16 + 10 + 6 =  32
+when b = 1,
+     hash(word) = 4 + 5 + 6 = 15
+             </pre>
+    </div>
+
+    <div id="hash3" class="step slide" data-x="4000" data-y="3600">
+      <p class="centertext"><b>Hash Codes</b></p>
+      <pre style="font-family: monospace; font-size: 25px">For word = 12 33 08,
+when b = 10,
+     hash(word) = (12 * 10<sup>2</sup>) + (33 * 10<sup>1</sup>) + 8  =
+     1200 + 330 + 8  =  1538
+when b = 100,
+     hash(word) = (12 * 100<sup>2</sup>) + (33 * 100<sup>1</sup>) + 8  =
+     120000 + 3300 + 8  =  123308
+when b = 5,
+     hash(word) = (12 * 5<sup>2</sup>) + (33 * 5<sup>1</sup>) + 8  =
+     300 + 165 + 8  =  473
+when b = 2,
+     hash(word) = 48 + 66 + 8 =  122
+       </pre>
+    </div>
+
+    <div id="ham" class="step slide" data-x="5000" data-y="3600">
+      <p class="centertext"><b>Hamming Codes</b></p>
+      <pre style="font-family: monospace; font-size: 25px">BIT#:    1       2        3  4       5  6  7
+        -------------------------------------------
+PURPOSE: P<sub>3,5,7</sub>  P<sub>3,6,7</sub>   D  P<sub>5,6,7</sub>  D  D  D
+
+where  D  is a data bit, and
+P<sub>a,b,c,...</sub>  is the parity bit for data bits at  a,b,c,...
+
+Examples:
+DATA 3 5 6 7  P<sub>3,5,7</sub>  P<sub>3,6,7</sub>  P<sub>5,6,7</sub>   HAMMING CODE
+------------------------------------------------------
+     0 1 0 0     1       0       1     1 0 0 1 1 0 0
+
+     1 0 1 1     0       1       0     0 1 1 0 0 1 1
+      </pre>
+    </div>
+
+    <div id="assignment" class="step slide" data-x="-825" data-y="-225" data-scale="0.5">
+      <p class="centertext"><b>Assignments</b><br><br></p>
+      <ul>
+        <li>Read and be prepared to discuss:<ul>
+          <li><em>9ALG 7:</em> Data Compression</li>
+        <li>Blog 7 - Due 5/1 10:00 PM</li>
+        <li>Cryptography - Due 4/18 10:00 PM</li>
+        <li>Mars Rover - Due 4/25 10:00 PM</li>
+        <li>Video Game - Due 5/4 10:00 PM</li>
+      </ul>
+    </div>
+
+    <div id="blog" class="step slide" data-x="-825" data-y="225" data-scale="0.5">
+      <p class="centertext" style="font-size: 35px; line-height: 45px"><b>Blog 7: 9 Algorithms - Making Meaning</b></p>
+      <p style="font-size: 29px; line-height: 33px">Now that we’ve finished reading the last textbook, it is time to step back and think about what we read. Write about your reactions to it and what you learned from it. I’d recommend almost treating this like an in-depth book review for others who are interested in reading the book, but don’t mind some spoilers. Some questions I’d like you to answer:
+        <ul style="font-size: 29px; line-height: 33px">
+          <li>How did you feel reading this book? Engaged? Bored? Interested?</li>
+          <li>What was the most interesting thing you learned?</li>
+          <li>Were there any parts of the book you didn’t like?</li>
+          <li>Were there any terms or concepts that you looked up (Googled) to find more information about? What were they? What did you find?</li>
+          <li>Did this book help explain things you didn’t know about computers?</li>
+          <li>Did this book leave you with any questions unanswered?</li>
+          <li>Would you recommend this book to a friend that wanted to know more about computers?</li>
+          <li>What is significant about this book? Why do you think it was chosen as a textbook?</li>
+        </ul>
+      </p>
+    </div>
+
+    <div id="overview" class="step" data-x="2500" data-y="2250" data-z="-1" data-scale="7">
+    </div>
+
+
+</div>
+
+<script src="/js/analytics.js"></script>
+<script src="/js/impress.js"></script>
+<script>impress().init();</script>
+<script src="/js/jquery-1.10.2.min.js"></script>
+<script src="/js/TimeCircles.js"></script>
+<script src="/js/timer.js"></script>
+<script src="/js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+</body>
+</html>

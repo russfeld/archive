@@ -1,0 +1,207 @@
+<html lang="en">
+<head>
+  <BASE href="../">
+  <link href="favicon.ico" rel="shortcut icon">
+  <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+  <meta name="description" content="CIS 225 Fall 2013 Lecture 8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 225 Fall 2013 Lecture 8</title>
+    <link href="css/impress.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 225</b><br><br>Lecture 8: Scripting and Automation 2</p>
+    </div>
+
+    <div id="review_sh" class="step slide" data-x="1000" data-y="0">
+      <p class="centertext"><b>Review</b><br><br></p>
+      <ul>
+        <li>Printing Text</li>
+        <li>Accepting Parameters</li>
+        <li>If Statements</li>
+        <li>Looping</li>
+        <li>Environment Variables</li>
+      </ul>
+    </div>
+
+    <div id="select" class="step slide" data-x="2000" data-y="0">
+      <p class="centertext"><b>Select Statement</b></p>
+      <pre><code style="font-size:33px; line-height:35px">#!/bin/bash
+#simplemenu.sh
+OPTIONS="Build Run Clean Quit"
+select opt in $OPTIONS; do
+  if [ "$opt" = "Build" ]; then
+    echo "Building project..."
+  elif [ "$opt" = "Run" ]; then
+    echo "Running project..."
+  elif [ "$opt" = "Clean" ]; then
+    echo "Cleaning project..."
+  elif [ "$opt" = "Quit" ]; then
+    echo "Exiting..."
+    break
+  else
+    echo "Invalid Input"
+  fi
+done
+exit 0</code></pre>
+    </div>
+
+    <div id="select_screenshot" class="step slide" data-x="3000" data-y="0">
+      <p class="centertext"><b>Select Statement</b></p>
+      <img class="centerimg" width="850" src="cis225fall2013/images/lecture8/ubuntu_select.png">
+    </div>
+
+    <div id="user_input" class="step slide" data-x="4000" data-y="0">
+      <p class="centertext"><b>User Input</b><br><br></p>
+      <pre><code style="font-size:39px; line-height:43px">#!/bin/bash
+#simpleinput.sh
+echo "Input your name and press [ENTER]"
+read name
+echo "Welcome $name!"
+exit 0</code></pre>
+    </div>
+
+    <div id="input_screenshot" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>User Input</b><br><br></p>
+      <img class="centerimg" width="850" src="cis225fall2013/images/lecture8/ubuntu_userinput.png">
+    </div>
+
+    <div id="cron" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b>Scheduling Tasks - Cron</b><br><br></p>
+      <p>Cron allows you to schedule tasks to run a specific times<br>Very useful for tasks that need done regularly</p>
+    </div>
+
+    <div id="cron_howto" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>Cron HowTo</b><br><br></p>
+      <pre><code style="font-size:45px; line-height:43px">$ crontab -e</code></pre>
+      <p>Edit the current cron schedule<br><br></p>
+      <pre><code style="font-size:45px; line-height:43px">$ crontab -l</code></pre>
+      <p>View the current cron schedule<br><br></p>
+      <pre><code style="font-size:45px; line-height:43px">$ sudo crontab -e</code></pre>
+      <p>Edit the root cron schedule</p>
+    </div>
+
+    <div id="crontab" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>Crontab</b><br><br></p>
+      <img class="centerimg" width="850" src="cis225fall2013/images/lecture8/ubuntu_crontab.png">
+    </div>
+
+    <div id="crontab_times" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>Crontab Timing</b></p>
+      <ul>
+        <li>m h dom mon dow</li>
+        <li>15 5 * * 0 - 5:15 AM every Sunday (0)</li>
+        <li>*/10 8 - 16 * * 1-5 - every 10 min 8AM - 5PM weekdays</li>
+        <li>0 0 1 1 1 - run at 12:00 AM every January 1 and every Monday</li>
+        <li>@reboot - run once, after system starts</li>
+    </div>
+
+    <div id="powershell_menu" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>PowerShell Menu</b></p>
+      <pre><code style="font-size:22px; line-height:24px">$title = "Select Options"
+$message = "Choose an option to perform"
+$build = New-Object `
+  System.Management.Automation.Host.ChoiceDescription `
+  "&Build", "Build the project"
+$run = New-Object `
+  System.Management.Automation.Host.ChoiceDescription `
+  "&Run", "Run the project"
+$clean = New-Object `
+  System.Management.Automation.Host.ChoiceDescription `
+  "&Clean", "Clean the project"
+$quit = New-Object `
+  System.Management.Automation.Host.ChoiceDescription `
+  "&Quit", "Quit"
+$options = `
+  [System.Management.Automation.Host.ChoiceDescription[]] `
+  ($build, $run, $clean, $quit)
+$result = $host.ui.PromptForChoice($title, $message, $options, 0)
+switch ($result)
+{
+    0 {"You selected Build"}
+    1 {"You selected Run"}
+    2 {"You selected Clean"}
+    3 {"You selected Quit"}
+}</code></pre>
+    </div>
+
+    <div id="powershell_menu_ex" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b>PowerShell Menu</b><br><br></p>
+      <img class="centerimg" width="850" src="cis225fall2013/images/lecture8/windows_menu.png">
+    </div>
+
+    <div id="powershell_input" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b>PowerShell Input</b><br><br></p>
+      <pre><code style="font-size:35px; line-height:37px">$name = Read-Host `
+    "Input your name and press [ENTER]"
+Write-Host "Welcome $name!"</code></pre>
+    </div>
+
+    <div id="powershell_input_ex" class="step slide" data-x="3000" data-y="1800">
+      <p class="centertext"><b>PowerShell Input</b><br><br></p>
+      <img class="centerimg" width="850" src="cis225fall2013/images/lecture8/windows_input.png">
+    </div>
+
+    <div id="windows_schedule_task" class="step slide" data-x="4000" data-y="1800">
+      <p class="centertext"><b>Windows Task Scheduler</b></p>
+      <img class="centerimg" width="850" src="cis225fall2013/images/lecture8/windows_schedule.png">
+    </div>
+
+    <div id="windows_create_task" class="step slide" data-x="0" data-y="2700">
+      <p class="centertext"><b>Windows Create Task</b></p>
+      <img class="centerimg" height="600" src="cis225fall2013/images/lecture8/windows_newtask.png">
+    </div>
+
+    <div id="windows_create_task2" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>Windows Create Task</b></p>
+      <img class="centerimg" height="600" src="cis225fall2013/images/lecture8/windows_newtask2.png">
+    </div>
+
+    <div id="windows_create_task3" class="step slide" data-x="2000" data-y="2700">
+      <p class="centertext"><b>Windows Create Task</b></p>
+      <img class="centerimg" height="600" src="cis225fall2013/images/lecture8/windows_newtask3.png">
+    </div>
+
+    <div id="reading" class="step slide" data-x="3000" data-y="2700">
+      <p class="centertext"><b>Reading<br><br></b></p>
+      <ul>
+        <li>PowerShell Cookbook - Chapters 23</li>
+        <li>Linux Shell Scripting Cookbook - Chapter 6</li>
+      </ul>
+    </div>
+
+    <div id="assignments" class="step slide" data-x="4000" data-y="2700">
+      <p class="centertext"><b>Assignments<br><br></b></p>
+      <ul>
+        <li>Lab 4 - Scripting 2: Due 9/30 @ 11:59 PM</li>
+      </ul>
+    </div>
+    
+    <div id="overview" class="step" data-x="2000" data-y="1500" data-z="-1" data-scale="5">
+    </div>
+
+
+</div>
+
+<script src="js/analytics.js"></script>
+
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+
+</body>
+</html>

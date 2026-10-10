@@ -1,0 +1,342 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <BASE href="../">
+  <link href="favicon.ico" rel="shortcut icon">
+  <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+  <meta name="description" content="CIS 527 Spring 2014 Lecture 4" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 527 Spring 2014 Lecture 4</title>
+    <link href="css/impress.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 527</b><br><br>Lecture 4 - Processes, Services & Software</p>
+    </div>
+
+    <div id="process" class="step slide" data-x="1000" data-y="0">
+        <p class="centertext"><b>Computer Process</b></p>
+        <img class="centerimg" height="600" src="cis527spring2014/images/lecture4/process_threads_wiki.png">
+        <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Thread_(computing)">Wikipedia</a></p>
+    </div>
+
+    <div id="lifecycle" class="step slide" data-x="2000" data-y="0">
+        <p class="centertext"><b>Process Lifecycle</b></p>
+        <img class="centerimg" height="600" src="cis527spring2014/images/lecture4/lifecycle_wiki.png">
+        <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Process_(computing)">Wikipedia</a></p>
+    </div>
+
+    <div id="process_info" class="step slide" data-x="3000" data-y="0">
+      <p class="centertext"><b>Process Information</b><br><br></p>
+      <ul>
+        <li><b>PID</b> - Process ID</li>
+        <li><b>Memory Usage</b></li>
+        <li><b>Description</b></li>
+        <li><b>Image Path</b> - Location of executable</li>
+        <li><b>Command Line</b> - Full arguments provided to executable</li>
+        <li><b>Ports</b> - Network communication ports</li>
+      </ul>
+    </div>
+
+    <div id="task_manager" class="step slide" data-x="4000" data-y="0">
+      <p class="centertext"><b>Task Manager</b></p>
+      <img class="centerimg" height="600" src="cis527spring2014/images/lecture4/win_task.png">
+    </div>
+
+    <div id="procexp" class="step slide" data-x="5000" data-y="0">
+      <p class="centertext"><b>Process Explorer</b></p>
+      <img class="centerimg" height="600" src="cis527spring2014/images/lecture4/win_procexp.png">
+    </div>
+
+    <div id="task_manager_lin" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>Ubuntu System Monitor</b></p>
+      <img class="centerimg" height="600" src="cis527spring2014/images/lecture4/ubuntu_proc.png">
+    </div>
+
+    <div id="task_manager_top" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b>Ubuntu Processes - top</b></p>
+      <img class="centerimg" width="850" src="cis527spring2014/images/lecture4/ubuntu_proc2.png">
+    </div>
+
+    <div id="whatisservice" class="step" data-x="2000" data-y="900">
+      <p class="centertext">What is a Service?</p>
+    </div>
+
+    <div id="services" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>Services</b><br><br></p>
+      <ul>
+        <li>Programs that run in the background on an operating system</li>
+        <li>Performs many important functions automatically</li>
+        <li>Consumes system resources</li>
+      </ul>
+    </div> 
+
+    <div id="daemon" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>Linux Services - daemons</b><br><br></p>
+      <ul>
+        <li>Term comes from <a href="http://en.wikipedia.org/wiki/Maxwell%27s_demon">Maxwell's demon</a></li>
+        <li>Daemons run as background processes in Linux</li>
+        <li>Usually started by the <em>init</em> process at boot</li>
+        <li>Process names typically end in 'd'</li>
+      </ul>
+    </div>   
+
+    <div id="common_services" class="step slide" data-x="5000" data-y="900">
+      <p class="centertext"><b>Important Services - Windows</b></p>
+      <ul>
+        <li><b>Computer Browser</b> - Network file sharing</li>
+        <li><b>DHCP Client & DNS Client</b> - Network addressing</li>
+        <li><b>Microsoft Antimalware Service</b>
+        <li><b>Performance Logs & Alerts</b></li>
+        <li><b>Print Spooler</b></li>
+        <li><b>Windows Update</b></li>
+      </ul>
+    </div>
+
+    <div id="common_services2" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>Important Services - Linux</b><br><br></p>
+      <ul>
+        <li><b>init</b> - Initial Process</li>
+        <li><b>sshd</b> - Secure Shell Server</li>
+        <li><b>rsyslogd</b> - System Logs</li>
+        <li><b>cupsd</b> - Printing System</li>
+        <li><b>smbd</b> - Samba Server</li>
+        <li><b>cron</b> - Scheduled Tasks</li>
+      </ul>
+    </div>
+
+    <div id="svchost" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b>Service Host Process</b><br><br></p>
+      <ul>
+        <li><b>svchost.exe</b></li>
+        <li>Process that runs a number of system services</li>
+        <li>Helps conserve system resources (1 process instead of many)</li>
+        <li>Targeted by malware & viruses</li>
+      </ul>
+    </div>
+
+    <div id="svchost2" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b>Service Host Process</b><br><br></p>
+      <img class="centerimg" width="850" src="cis527spring2014/images/lecture4/win_services4.png">
+    </div>
+
+    <div id="services_management" class="step slide" data-x="3000" data-y="1800">
+      <p class="centertext"><b>Services Management</b></p>
+      <img class="centerimg" height="600" src="cis527spring2014/images/lecture4/win_services.png">
+    </div>
+
+    <div id="services_properties" class="step slide" data-x="4000" data-y="1800">
+      <p class="centertext"><b>Service Properties</b></p>
+      <img class="centerimg" height="600" src="cis527spring2014/images/lecture4/win_services2.png">
+    </div>
+
+    <div id="services_startup" class="step slide" data-x="5000" data-y="1800">
+      <p class="centertext"><b>Startup Types</b><br><br></p>
+      <ul>
+        <li><b>Automatic</b> - Starts at system boot</li>
+        <li><b>Automatic (Delayed)</b> - Starts shortly after system boot</li>
+        <li><b>Manual</b> - Starts only when needed</li>
+        <li><b>Disabled</b> - Will not start/run at all</li>
+      </ul>
+    </div>
+
+    <div id="win8_pseudo_accounts" class="step slide" data-x="0" data-y="2700">
+      <p class="centertext"><b>Windows 8 Pseudo Accounts</b><br><br></p>
+      <ul>
+        <li><b>LocalSystem</b> - system-level tasks & services</li>
+        <li><b>LocalService</b> - fewer rights than LocalSystem</li>
+        <li><b>NetworkService</b> - fewer rights than LocalService, but allows network access</li>
+      </ul>
+    </div>
+
+    <div id="services_properties2" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>Services Recovery</b></p>
+      <img class="centerimg" height="600" src="cis527spring2014/images/lecture4/win_services3.png">
+    </div>
+
+    <div id="service_recovery" class="step slide" data-x="2000" data-y="2700">
+      <p class="centertext"><b>Recovery Options</b><br><br></p>
+      <ul>
+        <li><b>Take No Action</b></li>
+        <li><b>Restart the Service</b></li>
+        <li><b>Run a Program</b></li>
+        <li><b>Restart the Computer</b></li>
+      </ul>
+    </div>
+
+    <div id="init" class="step slide" data-x="3000" data-y="2700">
+      <p class="centertext"><b>Starting Linux Services - init</b><br><br></p>
+      <ul>
+        <li>The <em>init</em> process is loaded first</li>
+        <li>It then loads the services for a particular runlevel</li>
+        <li>See /etc/init.d/ and /etc/rc*.d/ directories</li>
+      </ul>
+    </div>
+
+    <div id="upstart" class="step slide" data-x="4000" data-y="2700">
+      <p class="centertext"><b>Starting Linux Services - Upstart</b><br><br></p>
+      <ul>
+        <li>Allows services to be started based on events or triggers</li>
+        <li>Can monitor and restart services</li>
+        <li>Very similar to Windows Service Management</li>
+        <li>See /etc/init directory</li>
+      </ul>
+    </div>
+
+    <div id="runlevels" class="step slide" data-x="5000" data-y="2700">
+      <p class="centertext"><b>Linux Runlevels</b><br><br></p>
+      <ul>
+        <li>Define different modes of operation</li>
+        <li>Typically seven levels used</li>
+        <li>Runlevel 0 = shutdown</li>
+        <li>Runlevel 1 = single-user mode</li>
+        <li>Runlevel 6 = restart</li>
+        <li>Check documentation for exact details</li>
+      </ul>
+    </div>
+
+    <div id="commands" class="step slide" data-x="0" data-y="3600">
+      <p class="centertext"><b>Linux Daemon Commands</b><br><br></p>
+      <ul>
+        <li>init<ul>
+          <li><pre><code>sudo /etc/init.d/apache2 start</code></pre></li>
+          <li><pre><code>start, stop, reload, restart, status</code></pre></li>
+        </ul></li>
+        <li>Upstart<ul>
+          <li><pre><code>sudo service ufw start</code></pre></li>
+          <li><pre><code>start, stop, status</code></pre></li>
+        </ul></li>
+      </ul>
+    </div>
+
+    <div id="Software_Architecture" class="step slide" data-x="1000" data-y="3600">
+      <p class="centertext"><b>Windows Software Architecture<br><br></b></p>
+      <ul>
+        <li>Executable Image (.EXE)</li>
+        <li>Dynamic Link Library (.DLL)</li>
+        <li>Initialization File (.INI)</li>
+        <li>Registry Keys</li>
+        <li><em>Drivers</em></li>
+        <li><em>Services</em></li>
+      </ul>
+    </div>
+
+    <div id="dll" class="step slide" data-x="2000" data-y="3600">
+      <p class="centertext"><b>Dynamic Link Library (.DLL)<br><br></b></p>
+      <ul>
+        <li>Shared library files used by programs</li>
+        <li>Uses same format as .EXE file</li>
+        <li>Programs can access same .DLL files simultaneously</li>
+      </ul>
+    </div>
+
+    <div id="locations1" class="step slide" data-x="3000" data-y="3600">
+      <p class="centertext"><b>Installation Locations<br><br></b></p>
+      <ul>
+        <li>C:\Program Files</li>
+        <li>C:\Program Data - global data files</li>
+        <li>%UserProfile%\AppData - user data files</li>
+        <li>C:\Windows\system32 - drivers & dlls</li>
+      </ul>
+    </div>
+
+    <div id="ubuntu_architecture" class="step slide" data-x="4000" data-y="3600">
+      <p class="centertext"><b>Ubuntu Software Architecture<br><br></b></p>
+      <ul>
+        <li>Binary Files</li>
+        <li>Shared Object Files (.SO)</li>
+        <li>Library Files</li>
+        <li>Settings Files</li>
+        <li>Documentation Files</li>
+        <li><em>Upstart/init scripts</em></li>
+      </ul>
+    </div>
+
+    <div id="so" class="step slide" data-x="5000" data-y="3600">
+      <p class="centertext"><b>Shared Object & Library Files<br><br></b></p>
+      <ul>
+        <li>Shared information or code used by multiple programs</li>
+        <li>Install once, use everywhere</li>
+        <li>May have to store multiple versions for different programs</li>
+        <li>Usually stored in /usr/lib</li>
+      </ul>
+    </div>
+
+    <div id="locations2" class="step slide" data-x="0" data-y="4500">
+      <p class="centertext"><b>Installation Locations<br><br></b></p>
+      <ul>
+        <li>/usr/bin - Binary Files</li>
+        <li>/usr/lib - Shared Object Files</li>
+        <li>/usr/share - Documentation</li>
+        <li>/var/log - Log Files</li>
+        <li>/etc/&lt;app&gt; - Global Settings</li>
+        <li>~/.&lt;app&gt; - User Settings</li>
+      </ul>
+    </div>
+
+    <div id="track_install" class="step slide" data-x="1000" data-y="4500">
+      <p class="centertext"><b>Tracking - Process Monitor</b></p>
+      <p class="centertext"><a href="http://technet.microsoft.com/en-us/sysinternals/bb896645.aspx">Download Link</a></p>
+      <img class="centerimg" height="550" src="cis527spring2014/images/lecture4/procmon.png">
+    </div>
+
+    <div id="track_install2" class="step slide" data-x="2000" data-y="4500">
+      <p class="centertext"><b>Tracking - InstallWatch Pro</b></p>
+      <p class="centertext"><a href="http://www.freewarebb.com/files/file/11562-installwatch-pro/">Download Link</a></p>
+      <img class="centerimg" height="550" src="cis527spring2014/images/lecture4/installwatch.png">
+    </div>
+
+    <div id="track_install3" class="step slide" data-x="3000" data-y="4500">
+      <p class="centertext"><b>Installing - Thunderbird</b></p>
+      <img class="centerimg" height="600" src="cis527spring2014/images/lecture4/thunderbird.png">
+    </div>
+
+    <div id="track_install4" class="step slide" data-x="4000" data-y="4500">
+      <p class="centertext"><b>Tracking - Synaptic</b></p>
+      <img class="centerimg" height="550" src="cis527spring2014/images/lecture4/synaptic.png">
+    </div>
+
+
+
+
+    <div id="assignments" class="step slide" data-x="5000" data-y="4500">
+        <p class="centertext"><b>Assignments</b></p>
+        <ul>
+            <li>Lab 1 - Secure Workstations - Due Sunday, Feb 9th by 11:59 PM</li>
+            <li>Build secure Windows & Linux using VMWare Workstation</li>
+            <li>Turn in:<ul>
+                <li>CIS Transient Storage</li>
+                <li>via Storage Media in class Monday Feb 10th</li>
+                </ul></li> 
+        </ul>
+    </div>
+
+
+    <div id="overview" class="step" data-x="2500" data-y="2350" data-scale="7.5">
+    </div>
+
+</div>
+
+<script src="js/analytics.js"></script>
+
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+
+</body>
+</html>

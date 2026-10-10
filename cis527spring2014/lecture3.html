@@ -1,0 +1,263 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <BASE href="../">
+  <link href="favicon.ico" rel="shortcut icon">
+  <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+  <meta name="description" content="CIS 527 Spring 2014 Lecture 3" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 527 Spring 2014 Lecture 3</title>
+    <link href="css/impress.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 527</b><br><br>Lecture 3 - User Management</p>
+    </div>
+
+    <div id="time_share" class="step slide" data-x="1000" data-y="0">
+        <p class="centertext"><b>Time Share</b></p>
+        <img class="centerimg" height="600" src="cis527spring2014/images/lecture3/time_share_wiki.jpg">
+        <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Time_share">Wikipedia</a></p>
+    </div>
+
+    <div id="time_sharing_system" class="step slide" data-x="2000" data-y="0">
+        <p class="centertext"><b>Time-Sharing System</b></p>
+        <img class="centerimg" height="600" src="cis527spring2014/images/lecture3/cdc6600_wiki.jpg">
+        <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/CDC_6600">Wikipedia</a></p>
+    </div>
+
+    <div id="users" class="step slide" data-x="3000" data-y="0">
+      <p class="centertext"><b>User Accounts</b><br><br></p>
+      <ul>
+        <li>Allows multiple people to share resources</li>
+        <li>Each user can have different permissions</li>
+        <li>Aids in auditing (who did what)</li>
+        <li>Protects system from unauthorized use</li>
+      </ul>
+    </div>
+
+    <div id="authorize_authenticate" class="step slide" data-x="4000" data-y="0">
+      <p class="centertext"><b>Authentication vs. Authorization</b><br><br></p>
+      <ul>
+        <li><b>Authentication</b> - Confirming a user is who he or she claims to be (logging in)</li>
+        <li><b>Authorization</b> - Allow an authenticated user access to specific resources</li>
+        <li>Authentication <b>DOES NOT IMPLY</b> Authorization</li>
+      </ul>
+    </div>
+
+    <div id="authenticate" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>Authentication Methods</b><br><br></p>
+      <p>One or more of the following factors</p>
+      <ul>
+        <li>Ownership factors - something user has</li>
+        <li>Knowledge factors - something user knows</li>
+        <li>Inheritance factors - something user is or does</li>
+      </ul>
+    </div>
+
+    <div id="multi_factor" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b>Multi-factor Authentication</b></p>
+      <img class="centerimg" height="600" src="cis527spring2014/images/lecture3/secureid_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Multi-factor_authentication">Wikipedia</a></p>
+    </div>
+
+    <div id="user_accounts" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>OS User Accounts</b><br><br></p>
+      <ul>
+        <li>Identifier: UID/SID</li>
+        <li>Username</li>
+        <li>Password</li>
+        <li>Home Directory</li>
+        <li>Scripts</li>
+        <li>Groups</li>
+      </ul>
+    </div>
+
+    <div id="uid" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>Identifier</b></p>
+      <ul>
+        <li>Windows: Security Identifier (SID)</li>
+        <li>S-1-5-<b>21-3623811015-3361044348-30300820</b>-<em>1013</em></li>
+        <li>Duplicates possible (but rare)</li>
+        <br>
+        <li>Linux: User Identifier (UID)</li>
+        <li>Integer values, sequentially assigned</li>
+        <li>Superuser is <em>always</em> 0</li>
+      </ul>
+    </div>
+
+    <div id="homedir" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>Home Directory</b><br><br></p>
+      <ul>
+        <li>Windows: C:\Users\&lt;username&gt;</li>
+        <li>Location stored in registry</li>
+        <br>
+        <li>Linux: /home/&lt;username&gt;</li>
+        <li>Location stored in /etc/passwd</li>
+      </ul>
+    </div>
+
+    <div id="homedir_win" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>Home Directory in Registry</b></p>
+      <img class="centerimg" width="870" src="cis527spring2014/images/lecture3/homedir_registry.png">
+    </div>
+
+    <div id="scripts" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b>Logon Scripts</b><br><br></p>
+      <ul>
+        <li>Windows: Group Policy</li>
+        <li>Can use exe, bat, vbscript, etc.</li>
+        <br>
+        <li>Linux: ~/.config/autostart</li>
+        <li>Can use any valid terminal command</li>
+      </ul>
+    </div>
+
+    <div id="groups" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b>Groups</b><br><br></p>
+      <ul>
+        <li>Used to simplify access control and management</li>
+        <li>Users can belong to zero, one or many groups</li>
+        <li>Can assign permissions to groups</li>
+      </ul>
+    </div>
+
+    <div id="groups2" class="step slide" data-x="3000" data-y="1800">
+      <p class="centertext"><b>Groups</b><br><br></p>
+      <ul>
+        <li>Windows: Stored in registry or domain</li>
+        <br>
+        <li>Linux: /etc/group</li>
+        <br>
+        <li>Groups usually stored as list of users in each group</li>
+      </ul>
+    </div>
+
+    <div id="admin" class="step slide" data-x="4000" data-y="1800">
+      <p class="centertext"><b>Administrative User</b><br><br></p>
+      <ul>
+        <li>Windows: Administrator</li>
+        <li>Disabled by default, no password</li>
+        <li>Hidden except in safe mode</li>
+        <br>
+        <li>Linux: root</li>
+        <li>The 'sudo' command allows normal users to become root</li>
+      </ul>
+    </div>
+
+    <div id="sudo" class="step slide" data-x="0" data-y="2700">
+      <p class="centertext"><b>sudo</b><br><br></p>
+      <ul>
+        <li>Short for "super user do"</li>
+        <li>Allows regular users to run commands as root</li>
+        <li>User and rights listed in /etc/sudoers</li>
+        <li>Add users to the "sudo" or "admin" group to give them access</li>
+      </ul>
+    </div>
+
+    <div id="ubuntu_accounts2" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>/etc/passwd</b></p>
+      <img class="centerimg" width="850" src="cis527spring2014/images/lecture3/lin_2.png">
+    </div>
+
+    <div id="ubuntu_accounts3" class="step slide" data-x="2000" data-y="2700">
+      <p class="centertext"><b>/etc/shadow</b></p>
+      <img class="centerimg" width="850" src="cis527spring2014/images/lecture3/lin_3.png">
+    </div>
+
+    <div id="win8_pseudo_accounts" class="step slide" data-x="3000" data-y="2700">
+      <p class="centertext"><b>Windows 8 Pseudo Accounts</b></p>
+      <ul>
+        <li>LocalSystem - system-level tasks & services</li>
+        <li>LocalService - fewer rights than LocalSystem</li>
+        <li>NetworkService - fewer rights than LocalService, but allows network access</li>
+      </ul>
+    </div>
+
+    <div id="win8_default_groups" class="step slide" data-x="4000" data-y="2700">
+      <p class="centertext"><b>Windows 8 Default Groups</b></p>
+      <ul>
+        <li>Administrators - complete access</li>
+        <li>Event Log Readers - read event logs</li>
+        <li>Guests - access system only</li>
+        <li>Power Users - <em>not used</em></li>
+        <li>Remote Desktop Users - log on remotely</li>
+        <li>Users - normal users</li>
+      </ul>
+      <p>Many others, refer to documentation</p>
+    </div>
+
+    <div id="commands" class="step slide" data-x="0" data-y="3600">
+      <p class="centertext"><b>Linux Commands</b></p>
+      <ul>
+        <li style="font-size: 50px; line-height:56px">groupadd - add a group</li>
+        <li style="font-size: 50px; line-height:56px">groupdel - remove a group</li>
+        <li style="font-size: 50px; line-height:56px">groupmod - modify group</li>
+        <li style="font-size: 50px; line-height:56px">gpasswd - change group administrator or password</li>
+        <li style="font-size: 50px; line-height:56px">useradd - add a user</li>
+        <li style="font-size: 50px; line-height:56px">userdel - remove a user</li>
+        <li style="font-size: 50px; line-height:56px">usermod - modify a user</li>
+        <li style="font-size: 50px; line-height:56px"><b>adduser - easy new user</b></li>
+        <li style="font-size: 50px; line-height:56px">passwd - change password</li>
+      </ul>
+    </div>
+
+    <div id="win8_control" class="step slide" data-x="1000" data-y="3600">
+      <p class="centertext"><b>Windows 8 Accounts</b></p>
+      <p class="centertext" style="font-size:40px">Control Panel</p>
+      <img class="centerimg" width="850" src="cis527spring2014/images/lecture3/win8_1.png">
+    </div>
+
+    <div id="win8_manage" class="step slide" data-x="2000" data-y="3600">
+      <p class="centertext"><b>Windows 8 Accounts</b></p>
+      <p class="centertext" style="font-size:40px">Computer Management</p>
+      <img class="centerimg" width="850" src="cis527spring2014/images/lecture3/win8_2.png">
+    </div>
+
+    <div id="ubuntu_accounts" class="step slide" data-x="3000" data-y="3600">
+      <p class="centertext"><b>Ubuntu Accounts</b></p>
+      <p class="centertext" style="font-size:40px">System Settings</p>
+      <img class="centerimg" width="850" src="cis527spring2014/images/lecture3/lin_1.png">
+    </div>
+
+    <div id="assignments" class="step slide" data-x="4000" data-y="3600">
+        <p class="centertext"><b>Assignments</b></p>
+        <ul>
+            <li>Lab 1 - Secure Workstations - Due Sunday, Feb 9th by 11:59 PM</li>
+            <li>Build secure Windows & Linux using VMWare Workstation</li>
+            <li>Turn in:<ul>
+                <li>CIS Transient Storage</li>
+                <li>via Storage Media in class Monday Feb 10th</li>
+                </ul></li> 
+        </ul>
+    </div>
+
+
+    <div id="overview" class="step" data-x="2000" data-y="1800" data-scale="6.5">
+    </div>
+
+</div>
+
+<script src="js/analytics.js"></script>
+
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+
+</body>
+</html>

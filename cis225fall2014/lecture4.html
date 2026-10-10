@@ -1,0 +1,166 @@
+<html lang="en">
+<head>
+  <BASE href="../">
+  <link href="favicon.ico" rel="shortcut icon">
+  <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+  <meta name="description" content="CIS 225 Fall 2013 Lecture 4" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 225 Fall 2013 Lecture 4</title>
+    <link href="css/impress.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 225</b><br><br>Lecture 4: OS Architecture & Installation</p>
+    </div>
+
+    <div id="os" class="step slide" data-x="1000" data-y="0">
+      <p class="centertext"><b>Operating Systems<br><br></b></p>
+      <img class="centerimg" width="850" src="cis225fall2013/images/lecture4/windows_logo_wiki.png">
+      <p><br></p>
+      <img class="centerimg" width="850" src="cis225fall2013/images/lecture4/ubuntu_logo_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Microsoft_Windows">Wikipedia</a> and <a href="http://en.wikipedia.org/wiki/Ubuntu_(operating_system)">Wikipedia</a></p>
+    </div>
+
+    <div id="os_diagram" class="step slide" data-x="2000" data-y="0">
+      <p class="centertext"><b>Architecture</b></p>
+      <img class="centerimg" height="600" src="cis225fall2013/images/lecture4/os_diagram1_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Operating_system">Wikipedia</a></p>
+    </div>
+
+    <div id="kernel_diagram" class="step slide" data-x="3000" data-y="0">
+      <p class="centertext"><b>Kernel</b></p>
+      <img class="centerimg" height="600" src="cis225fall2013/images/lecture4/kernel_diagram_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Operating_system">Wikipedia</a></p>
+    </div>
+
+    <div id="os_components" class="step slide" data-x="4000" data-y="0">
+      <p class="centertext"><b>OS Components<br><br></b></p>
+      <ul>
+        <li>Graphical User Interface (GUI)
+          <ul>
+            <li>Run program</li>
+            <li>Manage system settings</li>
+            <li>Interact wtih devices</li>
+          </ul>
+        </li>
+        <li>Command Line Interface (CLI)</li>
+        <li>Program Management</li>
+      </ul>
+    </div>
+
+    <div id="wingui" class="step slide" data-x="500" data-y="900" data-rotate-y="45">
+      <p class="centertext"><b>Windows 8 GUI<br><br></b></p>
+      <img class="centerimg" width="850" src="cis225fall2013/images/lecture4/win8_gui_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Microsoft_Windows">Wikipedia</a></p>
+    </div>
+
+    <div id="lingui" class="step slide" data-x="1500" data-y="900" data-rotate-y="-45">
+      <p class="centertext"><b>Ubuntu 13.04 GUI<br><br></b></p>
+      <img class="centerimg" width="850" src="cis225fall2013/images/lecture4/ubuntu_gui_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Ubuntu_(operating_system)">Wikipedia</a></p>
+    </div>
+
+    <div id="winprog" class="step slide" data-x="2500" data-y="900" data-rotate-y="45">
+      <p class="centertext"><b>Windows 8 Settings</b></p>
+      <img class="centerimg" hieght="850" src="cis225fall2013/images/lecture4/win8_settings.png">
+    </div>
+
+    <div id="linprog" class="step slide" data-x="3500" data-y="900" data-rotate-y="-45">
+      <p class="centertext"><b>Ubuntu 13.04 Settings</b></p>
+      <img class="centerimg" height="600" src="cis225fall2013/images/lecture4/ubuntu_settings.png">
+    </div>
+
+    <div id="wincli" class="step slide" data-x="500" data-y="1800" data-rotate-y="45">
+      <p class="centertext"><b>PowerShell</b></p>
+      <img class="centerimg" height="600" src="cis225fall2013/images/lecture4/win8_cli.png">
+    </div>
+
+    <div id="lincli" class="step slide" data-x="1500" data-y="1800" data-rotate-y="-45">
+      <p class="centertext"><b>Bash Terminal</b></p>
+      <img class="centerimg" width="850" src="cis225fall2013/images/lecture4/ubuntu_cli.png">
+    </div>
+
+    <div id="winfs" class="step slide" data-x="2500" data-y="1800" data-rotate-y="45">
+      <p class="centertext"><b>Windows Root Filesystem</b></p>
+      <img class="centerimg" height="600" src="cis225fall2013/images/lecture4/windows_rootfs.png">
+    </div>
+
+    <div id="winufs" class="step slide" data-x="2750" data-y="1800" data-rotate-y="45" data-scale="0.05">
+      <p class="centertext"><b>Windows User Filesystem</b></p>
+      <img class="centerimg" height="600" src="cis225fall2013/images/lecture4/windows_userfs.png">
+    </div>
+
+    <div id="linfs" class="step slide" data-x="3500" data-y="1800" data-rotate-y="-45">
+      <p class="centertext"><b>Ubuntu Root Filesystem</b></p>
+      <img class="centerimg" width="850" src="cis225fall2013/images/lecture4/ubuntu_rootfs.png">
+    </div>
+
+    <div id="linufs" class="step slide" data-x="3400" data-y="1730" data-rotate-y="-45" data-scale="0.05">
+      <p class="centertext"><b>Ubuntu User Filesystem</b></p>
+      <img class="centerimg" height="600" src="cis225fall2013/images/lecture4/ubuntu_userfs.png">
+    </div>
+
+    <div id="installation" class="step slide" data-x="0" data-y="2700">
+      <p class="centertext"><b>Installation<br><br></b></p>
+      <ol>
+        <li>Partition the disk</li>
+        <li>Copy installation files</li>
+        <li>Extract & install</li>
+        <li>Configure basic settings</li>
+        <li>Reboot</li>
+      </ol>
+    </div>
+
+    <div id="virtual" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>VMWare Workstation</b></p>
+      <img class="centerimg" width="850" src="cis225fall2013/images/lecture4/vmware.png">
+    </div>
+
+    <div id="drivers" class="step slide" data-x="2000" data-y="2700">
+      <p class="centertext"><b>Drivers</b></p>
+      <img class="centerimg" height="600" src="cis225fall2013/images/lecture4/device_manager.png">
+    </div>
+
+    <div id="reading" class="step slide" data-x="3000" data-y="2700">
+      <p class="centertext"><b>Reading<br><br></b></p>
+      <ul>
+        <li>Windows 8 - Chapter 2</li>
+        <li>Ubuntu 14.04 - Chapter 9</li>
+      </ul>
+    </div>
+
+    <div id="assignments" class="step slide" data-x="4000" data-y="2700">
+      <p class="centertext"><b>Assignments<br><br></b></p>
+      <ul>
+        <li>Lab 1 - Hardware: Due 9/8 @<br>11:30 AM <b>About an hour ago</b></li>
+        <li>Lab 2 - OS Installation & Configuration: Due 9/15 @ 11:30 AM <b>Before Class</b></li>
+      </ul>
+    </div>
+
+    <div id="overview" class="step" data-x="2000" data-y="1500" data-z="-1" data-scale="6">
+    </div>
+
+</div>
+
+<script src="js/analytics.js"></script>
+
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+
+</body>
+</html>

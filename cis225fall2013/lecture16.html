@@ -1,0 +1,183 @@
+<html lang="en">
+<head>
+  <BASE href="../">
+  <link href="favicon.ico" rel="shortcut icon">
+  <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+  <meta name="description" content="CIS 225 Fall 2013 Lecture 16"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 225 Fall 2013 Lecture 16</title>
+    <link href="css/impress.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 225</b><br><br>Lecture 16 - Software Security</p>
+    </div>
+
+    <div id="eval" class="step slide" data-x="1000" data-y="0">
+      <p class="centertext"><b>Software Evaluation<br><br></b></p>
+      <ul>
+        <li>You work for a healthcare company</li>
+        <li>You receive a request to install unknown software on a system</li>
+        <br>
+        <li>How do you ensure the software is safe to use?</li>
+        <li>What are the risks?</li>
+      </ul>
+    </div>
+
+    <div id="reputable_src" class="step slide" data-x="2000" data-y="0">
+      <p class="centertext"><b>Reputable Sources<br><br></b></p>
+      <ul>
+        <li>Verify the software comes from a well-known source</li>
+        <li>Do they create other programs?</li>
+        <li>Have they been reviewed?</li>
+      </ul>
+    </div>
+
+    <div id="support" class="step slide" data-x="3000" data-y="0">
+      <p class="centertext"><b>Support Offerings<br><br></b></p>
+      <ul>
+        <li>What does the company offer for support?</li>
+        <li>Is there an active user community?</li>
+        <li>Are there common problems reports in forums</li>
+        <li>Can you request in-person help if major issues arise?</li>
+      </ul>
+    </div>
+
+    <div id="history" class="step slide" data-x="4000" data-y="0">
+      <p class="centertext"><b>Company History & Coding<br><br></b></p>
+      <ul>
+        <li>Does the company have a history of software issues?</li>
+        <li>Do they have proper coding practices in place (code reviews, secure processes, etc.)?</li>
+        <li>Are they frequently issuing security fixes? (Is that a good thing or a bad thing?)</li>
+      </ul>
+    </div>
+
+    <div id="sign" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>Code Signing<br><br></b></p>
+      <ul>
+        <li>Similar to Web Security certificates</li>
+        <li>Allows publishers to verify that the software came from them</li>
+        <li>Can be subverted if the root certificate is compromised</li>
+        <li>Ex: Windows WQHL Drivers</li>
+      </ul>
+    </div>
+
+    <div id="checksum" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b>Checksum Verification<br><br></b></p>
+      <ul>
+        <li>Many sites provide checksums for software that can be downloaded</li>
+        <li>Verifying the checksum ensures that it hasn't been changed or corrupted</li>
+      </ul>
+    </div>
+
+    <div id="extra_software" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>Extra Software<br><br></b></p>
+      <ul>
+        <li>Many less-reputable programs install extra software (toolbars, adware, malware, etc.)</li>
+        <li>Those programs may be MUCH worse than the actual program installed</li>
+        <li>Read installers CAREFULLY!</li>
+        <li>Use system monitoring tools to see what changes during installation</li>
+      </ul>
+    </div>
+
+    <div id="data" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>Data Storage & Access<br><br></b></p>
+      <ul>
+        <li>Where does the program store data?</li>
+        <li>Is it encrypted or plain-text?</li>
+        <li>What data does it request?</li>
+        <li>How does it use the data?</li>
+      </ul>
+    </div>
+
+    <div id="network_mon" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>Monitor Network<br><br></b></p>
+      <ul>
+        <li>Once software is installed, it usually has full network access</li>
+        <li>Use tools such as TCPView and netstat to monitor network connections</li>
+        <li>Look for connections to random servers or large data throughput</li>
+      </ul>
+    </div>
+
+    <div id="network" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>Network Usage<br><br></b></p>
+      <ul>
+        <li>What data does it send through the network?</li>
+        <li>Is the data encrypted or plain-text?</li>
+        <li>What protocols and ports does it use?</li>
+      </ul>
+    </div>
+
+
+    <div id="license" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b><a href="http://www.makeuseof.com/tag/10-ridiculous-eula-clauses-agreed/">Read License Agreement</a><br><br></b></p>
+      <ul>
+        <li>Read the license agreement; it may surprise you</li>
+        <li>Make sure you understand EVERYTHING that it covers</li>
+        <li>Acknowledge the rights you are giving away</li>
+      </ul>
+    </div>
+
+    <div id="testbed" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b>Use Testbeds<br><br></b></p>
+      <ul>
+        <li>Test the software on a variety of systems</li>
+        <li>Spend time testing (don't just install and review)</li>
+        <li>Test on a variety of systems and configurations</li>
+        <li>Roll out in stages in large organizations</li>
+      </ul>
+    </div>
+
+    <div id="updates" class="step slide" data-x="3000" data-y="1800">
+      <p class="centertext"><b>Install Updates<br><br></b></p>
+      <ul>
+        <li>Install updates provided by the manufacturer</li>
+        <li>Test updates before installing</li>
+        <li>Monitor the system and report bugs</li>
+      </ul>
+    </div>
+
+    <div id="reading" class="step slide" data-x="0" data-y="2700">
+      <p class="centertext"><b>Reading<br><br></b></p>
+      <ul>
+        <li>Windows 8 - Chapter 15</li>
+        <li>Ubuntu Unleashed - Chapter 16</li>
+      </ul>
+    </div>
+
+    <div id="assignments" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>Assignments<br><br></b></p>
+      <ul>
+        <li>Lab 7 - Software Configuration & Security: Due 10/28 @ 11:59 PM</li>
+        <li>Exam 2 - Thursday 11/6</li>
+      </ul>
+    </div>
+    
+    <div id="overview" class="step" data-x="2000" data-y="2000" data-z="-1" data-scale="6.5">
+    </div>
+
+
+</div>
+
+<script src="js/analytics.js"></script>
+
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+
+</body>
+</html>

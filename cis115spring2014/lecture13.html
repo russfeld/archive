@@ -1,0 +1,325 @@
+<html lang="en">
+<head>
+  <BASE href="../">
+  <link href="favicon.ico" rel="shortcut icon">
+  <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+  <meta name="description" content="CIS 115 Spring 2014 Lecture 13" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 115 Spring 2014 Lecture 13</title>
+    <link href="css/impress.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 115</b><br><br>Lecture 13: How the Internet Works</p>
+    </div>
+
+    <div id="circuit" class="step slide" data-x="1000" data-y="0">
+      <p class="centertext"><b>Circuit Switching</b></p>
+      <img class="centerimg" height="600" src="cis115spring2014/images/lecture13/switchboard_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Telephone_switchboard">Wikipedia</a></p>
+    </div>
+
+    <div id="circuit1" class="step slide" data-x="2000" data-y="0">
+      <br><br><br>
+      <img class="centerimg" width="850" src="cis115spring2014/images/lecture13/circuit1.png">
+    </div>
+
+    <div id="circuit2" class="step slide" data-x="3000" data-y="0">
+      <br><br><br>
+      <img class="centerimg" width="850" src="cis115spring2014/images/lecture13/circuit2.png">
+    </div>
+
+    <div id="circuit3" class="step slide" data-x="4000" data-y="0">
+      <img class="centerimg" width="850" src="cis115spring2014/images/lecture13/circuit3.png">
+    </div>
+
+    <div id="baran" class="step slide" data-x="5000" data-y="0">
+      <p class="centertext"><b>Packet Switching - Paul Baran</b></p>
+      <img class="centerimg" height="600" src="cis115spring2014/images/lecture13/baran_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Paul_Baran">Wikipedia</a></p>
+    </div>
+
+    <div id="packet1" class="step slide" data-x="0" data-y="900">
+      <img class="centerimg" width="850" src="cis115spring2014/images/lecture13/packet1.png">
+    </div>
+
+    <div id="packet2" class="step slide" data-x="1000" data-y="900">
+      <img class="centerimg" width="850" src="cis115spring2014/images/lecture13/packet2.png">
+    </div>
+    
+    <div id="osi" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>7 Layer OSI Network Model</b></p>
+      <ul>
+        <li>Application</li>
+        <li>Presentation</li>
+        <li>Session</li>
+        <li>Transport - TCP/UDP</li>
+        <li>Network - IPv4/IPv6</li>
+        <li>Data Link  - Ethernet</li>
+        <li>Physical - 100BASE-T</li>
+      </ul>
+    </div>
+
+    <div id="encapsulation" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>Encapsulation</b></p>
+      <img class="centerimg" height="600" src="cis115spring2014/images/lecture13/encapsulation_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Encapsulation_%28networking%29">Wikipedia</a></p>
+    </div>
+
+    <div id="nic" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>Physical - 100BASE-T</b></p>
+      <img class="centerimg" height="600" src="cis115spring2014/images/lecture13/nic_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Ethernet_card">Wikipedia</a></p>
+    </div>
+
+    <div id="ethernet" class="step slide" data-x="5000" data-y="900">
+      <p class="centertext"><b>Data Link - Ethernet</b></p>
+      <img class="centerimg" height="600" src="cis115spring2014/images/lecture13/ethernet_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Ethernet">Wikipedia</a></p>
+    </div>
+
+    <div id="ipv4" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>Network - IPv4</b><br><br></p>
+      <table style="width:100%" class="table">
+        <tr><td colspan="2"><b>IPv4 Packet Structure</b></td></tr>
+        <tr><td>Version Info</td><td>Length</td></tr>
+        <tr><td>Packet ID</td><td>Flags & Offset</td></tr>
+        <tr><td>Protocol & TTL</td><td>Checksum</td></tr>
+        <tr><td colspan="2">Source IP Address</td></tr>
+        <tr><td colspan="2">Destination IP Address</td></tr>
+        <tr><td colspan="2">Data...</td></tr>
+      </table>
+    </div>
+
+    <div id="ipv4vsipv6" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b>IPv4 vs. IPv6</b><br><br></p>
+      <p class="centertext">IPv4: 32 bit Addresses<br>2<sup>32</sup> = 4,294,967,296<br><br></p>
+      <p class="centertext">IPv6: 128 bit Addresses<br>2<sup>128</sup> = 340,282,366,920,938,463,463,<br>374,607,431,768,211,456<br>or 340 Undecillion addresses</p>
+    </div>
+
+    <div id="ipv6" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b>Network - IPv6</b></p>
+      <img class="centerimg" height="600" src="cis115spring2014/images/lecture13/ipv6_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Ipv6">Wikipedia</a></p>
+    </div>
+
+    <div id="map" class="step slide" data-x="3000" data-y="1800">
+      <img class="centerimg" height="680" src="cis115spring2014/images/lecture13/map_of_the_internet_xkcd.jpg">
+      <p class="imagecredit">Image Source: <a href="http://xkcd.com/195/">XKCD</a></p>
+    </div>
+
+    <div id="tcp" class="step slide" data-x="4000" data-y="1800">
+      <p class="centertext"><b>Transport - TCP</b><br><br></p>
+      <table style="width:100%" class="table">
+        <tr><td colspan="2"><b>TCP Packet Structure</b></td></tr>
+        <tr><td>Source Port</td><td>Dest. Port</td></tr>
+        <tr><td colspan="2">Sequence Number</td></tr>
+        <tr><td colspan="2">Acknowledgement Number</td></tr>
+        <tr><td>Options</td><td>Length</td></tr>
+        <tr><td>Checksum</td><td>Urgent</td></tr>
+        <tr><td colspan="2">Data...</td></tr>
+      </table>
+    </div>
+
+    <div id="udp" class="step slide" data-x="5000" data-y="1800">
+      <p class="centertext"><b>Transport - UDP</b><br><br></p>
+      <table style="width:100%" class="table">
+        <tr><td colspan="2"><b>UDP Packet Structure</b></td></tr>
+        <tr><td>Source Port</td><td>Dest. Port</td></tr>
+        <tr><td>Length</td><td>Checksum</td></tr>
+        <tr><td colspan="2">Data...</td></tr>
+      </table>
+    </div>
+
+    <div id="tcpvsudp" class="step slide" data-x="0" data-y="2700">
+      <p class="centertext"><b>TCP vs. UDP</b><br><br></p>
+      <table style="width:100%" class="table">
+        <tr><td><b>TCP</b></td><td><b>UDP</b></td></tr>
+        <tr><td>Connection Oriented</td><td>Connectionless</td></tr>
+        <tr><td>Reliable</td><td>Unreliable</td></tr>
+        <tr><td>Acknowledge</td><td>No Acknowledge</td></tr>
+      </table>
+    </div>
+
+    <div id="application" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>Applications</b><br><br></p>
+      <ul>
+        <li>POP/SMTP/IMAP - Email</li>
+        <li>HTTP/FTP - World Wide Web</li>
+        <li>DNS/DHCP - Network Setup</li>
+        <li>SSH/RDP/Telnet - Connections</li>
+      </ul>
+    </div>
+
+    <div id="dns" class="step slide" data-x="2000" data-y="2700">
+      <p class="centertext"><b>Domain Name System (DNS)</b><br><em>"Phonebook for the Internet"</em><br><br></p>
+      <ul>
+        <li>www.ksu.edu &rarr; 129.130.8.49</li>
+        <li>www.google.com &rarr; 74.125.227.116</li>
+        <li>www.ibm.com &rarr; 129.42.60.216</li>
+        <li>www.yahoo.com &rarr; 98.138.253.109</li>
+      </ul>
+    </div>
+
+    <div id="dns_space" class="step slide" data-x="3000" data-y="2700">
+      <img class="centerimg" height="680" src="cis115spring2014/images/lecture13/dns_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Dns">Wikipedia</a></p>
+    </div>
+
+    <div id="dns_lookup" class="step slide" data-x="4000" data-y="2700">
+      <p class="centertext"><b>DNS Lookup</b><br><br></p>
+      <img class="centerimg" width="850" src="cis115spring2014/images/lecture13/dns_lookup.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Dns">Wikipedia</a></p>
+    </div>
+
+    <div id="dhcp" class="step slide" data-x="5000" data-y="2700">
+      <p class="centertext"><b>Dynamic Host Configuration Protocol (DHCP)</b></p>
+      <img class="centerimg" height="550" src="cis115spring2014/images/lecture13/dhcp_tech_juice.jpg">
+      <p class="imagecredit">Image Source: <a href="http://www.tech-juice.org/2011/06/21/the-dhcp-protocol-for-ipv4-explained/">Tech Juice</a></p>
+    </div>
+
+    <div id="http" class="step slide" data-x="0" data-y="3600">
+      <p class="centertext"><b>HyperText Transfer Protocol (HTTP)</b></p>
+      <img class="centerimg" height="550" src="cis115spring2014/images/lecture13/http_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">Wikipedia</a></p>
+    </div>
+
+    <div id="http_ex" class="step slide" data-x="1000" data-y="3600">
+      <img class="centerimg" width="880" src="cis115spring2014/images/lecture13/http_telnet_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">Wikipedia</a></p>
+    </div>
+
+    <div id="http_comm" class="step slide" data-x="2000" data-y="3600">
+      <p class="centertext"><b>HTTP Commands</b><br><br></p>
+      <ul>
+        <li>GET</li>
+        <li>POST</li>
+        <li>HEAD</li>
+        <li>PUT</li>
+        <li>DELETE</li>
+      </ul>
+    </div>
+
+    <div id="http_status2" class="step slide" data-x="3000" data-y="3600">
+      <p class="centertext"><b>HTTP Status Codes</b><br><br></p>
+      <ul>
+        <li>200</li>
+        <li>301</li>
+        <li>403</li>
+        <li>404</li>
+        <li>500</li>
+        <li>503</li>
+      </ul>
+    </div>
+
+    <div id="http_status3" class="step slide" data-x="3000" data-y="3600" data-z="-1">
+      <p class="centertext"><b>HTTP Status Codes</b><br><br></p>
+      <ul>
+        <li>200 - OK</li>
+        <li>301 - Moved Permanently</li>
+        <li>403 - Forbidden</li>
+        <li>404 - Not Found</li>
+        <li>500 - Internal Server Error</li>
+        <li>503 - Service Unavailable</li>
+      </ul>
+    </div>
+
+    <div id="assignment" class="step slide" data-x="-825" data-y="-225" data-scale="0.5">
+      <p class="centertext">Assignments</p>
+      <ul>
+        <li>Read and be prepared to discuss:<ul>
+          <li><em>Tubes</em> Chapter 4: The Whole Internet</li></ul></li>
+        <li>Blog 6: Web Technologies - Due 3/10 10:00 PM</li>
+        <li>Scratch Chaocipher Project - Due 3/12 10:00 PM</li>
+      </ul>
+    </div>
+
+    <div id="blog" class="step slide" data-x="-825" data-y="225" data-scale="0.5">
+      <p class="centertext" style="font-size: 35px; line-height: 45px"><b>Blog 6: Web Technologies</b></p>
+      <p style="font-size: 30px; line-height: 32px">While many people regard the internet as a single entity that is incomprehensible, we as computer scientists understand that it is actually made up of lots of underlying technologies and systems all combined together to bring life to the internet. Choose a technology related to the internet and tell us more about it. Try to think outside the box and find a technology no one else will write about. Here are some questions to ask yourself as you research it:
+        <ul style="font-size: 30px; line-height: 31px">
+          <li>Where did it come from?</li>
+          <li>Who created it? When did they create it?</li>
+          <li>What was it originally created for? Is that how it is used today?</li>
+          <li>Are there any other related technologies?</li>
+          <li>How is it used today? How does it work?</li>
+          <li>Are there any privacy or security issues with this technology?</li>
+        </ul>
+      </p>
+    </div>
+
+    <div id="activity" class="skip slide" data-x="-825" data-y="655" data-scale="0.5">
+      <p class="centertext"><b>Packet Switching Activity</b><br><br></p>
+      <ul>
+        <li>Each server has a secret number</li>
+        <li>Try to guess each server's secret number by playing the "Higher/Lower" game over HTTP</li>
+        <li>Server with the most correct numbers when time runs out wins!</li>
+      </ul>
+    </div>
+
+    <div id="activity_1" class="step" data-x="-825" data-y="675" data-scale="0.5">
+    </div>
+
+    <div id="act1" class="step slide" data-x="-825" data-y="1125" data-scale="0.5">
+      <p class="centertext"><b>DHCP Request</b></p>
+      <img class="centerimg" width="850" src="cis115spring2014/images/lecture13/Slide1.png">
+    </div>
+
+    <div id="act2" class="step slide" data-x="-825" data-y="1575" data-scale="0.5">
+      <p class="centertext"><b>DHCP Response</b></p>
+      <img class="centerimg" width="850" src="cis115spring2014/images/lecture13/Slide2.png">
+    </div>
+
+    <div id="act3" class="step slide" data-x="-825" data-y="2025" data-scale="0.5">
+      <p class="centertext"><b>DNS Lookup</b></p>
+      <img class="centerimg" width="850" src="cis115spring2014/images/lecture13/Slide3.png">
+    </div>
+
+    <div id="act4" class="step slide" data-x="-825" data-y="2475" data-scale="0.5">
+      <p class="centertext"><b>DNS Response</b></p>
+      <img class="centerimg" width="850" src="cis115spring2014/images/lecture13/Slide4.png">
+    </div>
+
+    <div id="act5" class="step slide" data-x="-825" data-y="2925" data-scale="0.5">
+      <p class="centertext"><b>HTTP Request</b></p>
+      <img class="centerimg" width="850" src="cis115spring2014/images/lecture13/Slide5.png">
+    </div>
+
+    <div id="act6" class="step slide" data-x="-825" data-y="3375" data-scale="0.5">
+      <p class="centertext"><b>HTTP Response</b></p>
+      <img class="centerimg" width="850" src="cis115spring2014/images/lecture13/Slide6.png">
+    </div>
+
+    <div id="activity_2" class="step" data-x="-825" data-y="675" data-scale="0.5">
+    </div>
+
+    <div id="overview" class="step" data-x="2250" data-y="2000" data-z="-1" data-scale="7">
+    </div>
+
+
+</div>
+
+<script src="js/analytics.js"></script>
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
+<script src="js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+</body>
+</html>

@@ -1,0 +1,197 @@
+<html lang="en">
+<head>
+    <link href="/favicon.ico" rel="shortcut icon">
+    <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+    <meta name="description" content="CIS 225 - Virtual Machines & OS Installation" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 225 - Virtual Machines & OS Installation</title>
+    <link href="/css/impress.css" rel="stylesheet" />
+    <link href="/css/TimeCircles.css" rel="stylesheet" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 225</b><br><br>Virtual Machines & OS Installation</p>
+    </div>
+
+    <div id="virtualization" class="step slide" data-x="1000" data-y="0">
+      <p class="centertext"><b>Virtualization<br><br></b></p>
+      <ul>
+        <li>Using software to emulate hardware functions</li>
+        <li>Run multiple operating systems on a single host computer</li>
+        <li>Migrate systems between hardware setups</li>
+      </ul>
+    </div>
+
+    <div id="vm_before" class="step" data-x="2000" data-y="0">
+      <img class="centerimg" height="600" src="images/vmware-before.png">
+      <p class="imagecredit">Image Source: <a href="https://www.vmware.com/pdf/virtualization.pdf">VMWare</a></p>
+    </div>
+
+    <div id="vm_after" class="step" data-x="3000" data-y="0">
+      <img class="centerimg" height="600" src="images/vmware-after.png">
+      <p class="imagecredit">Image Source: <a href="https://www.vmware.com/pdf/virtualization.pdf">VMWare</a></p>
+    </div>
+
+    <div id="vm_hosted" class="step" data-x="4000" data-y="0">
+      <img class="centerimg" height="600" src="images/vmware-hosted.png">
+      <p class="imagecredit">Image Source: <a href="https://www.vmware.com/pdf/virtualization.pdf">VMWare</a></p>
+    </div>
+
+    <div id="vm_bare" class="step" data-x="0" data-y="900">
+      <img class="centerimg" height="600" src="images/vmware-bare.png">
+      <p class="imagecredit">Image Source: <a href="https://www.vmware.com/pdf/virtualization.pdf">VMWare</a></p>
+    </div>
+
+    <div id="virtualization3" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b>Old & Busted<br><br></b></p>
+      <ul>
+        <li>One operating system per server</li>
+        <li>One server per application</li>
+        <li>Storage per-server</li>
+        <li>Lots of servers</li>
+        <li>Redundancy is difficult</li>
+      </ul>
+    </div>
+
+    <div id="virtualization2" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>New Hotness<br><br></b></p>
+      <ul>
+        <li>Many operating systems on a single physical server</li>
+        <li>One virtual machine per application</li>
+        <li>Shared, virtual storage pools</li>
+        <li>Fewer physical servers</li>
+        <li>Easy redundancy</li>
+      </ul>
+    </div>
+
+    <div id="virtual" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>VMWare Workstation</b></p>
+      <img class="centerimg" width="850" src="images/vmware.png">
+    </div>
+
+    <div id="others" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>Other Virtual Machines<br><br></b></p>
+      <ul>
+        <li>Oracle VirtualBox</li>
+        <li>Hyper-V</li>
+        <li>KVM & Qemu</li>
+        <li>Parallels</li>
+        <li>Virtual PC</li>
+        <li>Xen</li>
+      </ul>
+    </div>
+
+    <div id="others2" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>Cloud Providers<br><br></b></p>
+      <ul>
+        <li>Digital Ocean</li>
+        <li>Azure</li>
+        <li>AWS (Amazon Web Services)</li>
+        <li>OpenStack</li>
+        <li>Rackspace</li>
+        <li>Linode</li>
+      </ul>
+    </div>
+
+
+    <div id="os" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b>Operating Systems<br><br></b></p>
+      <img class="centerimg" width="850" src="images/windows_logo_wiki.png">
+      <p><br></p>
+      <img class="centerimg" width="850" src="images/ubuntu_logo_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Microsoft_Windows">Wikipedia</a> and <a href="http://en.wikipedia.org/wiki/Ubuntu_(operating_system)">Wikipedia</a></p>
+    </div>
+
+    <div id="os_diagram" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b>Architecture</b></p>
+      <img class="centerimg" height="600" src="images/os_diagram1_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Operating_system">Wikipedia</a></p>
+    </div>
+
+    <div id="kernel_diagram" class="step slide" data-x="3000" data-y="1800">
+      <p class="centertext"><b>Kernel</b></p>
+      <img class="centerimg" height="600" src="images/kernel_diagram_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Operating_system">Wikipedia</a></p>
+    </div>
+
+    <div id="os_components" class="step slide" data-x="4000" data-y="1800">
+      <p class="centertext"><b>OS Components<br><br></b></p>
+      <ul>
+        <li>Graphical User Interface (GUI)
+          <ul>
+            <li>Run program</li>
+            <li>Manage system settings</li>
+            <li>Interact wtih devices</li>
+          </ul>
+        </li>
+        <li>Command Line Interface (CLI)</li>
+        <li>Program Management</li>
+      </ul>
+    </div>
+
+    <div id="installation" class="step slide" data-x="0" data-y="2700">
+      <p class="centertext"><b>Installation<br><br></b></p>
+      <ol>
+        <li>Partition the disk</li>
+        <li>Copy installation files</li>
+        <li>Extract & install</li>
+        <li>Configure basic settings</li>
+        <li>Reboot</li>
+      </ol>
+    </div>
+
+
+
+    <div id="drivers" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>Drivers</b></p>
+      <img class="centerimg" height="600" src="images/device_manager.png">
+    </div>
+
+    <div id="reading" class="step slide" data-x="2000" data-y="2700">
+      <p class="centertext"><b>Reading</b><br><br></p>
+      See Class Website: 
+      <p style="font-size:40px"><a href="/cis225fall2015/">http://people.cis.ksu.edu/~russfeld/cis225fall2015/</a></p>
+    </div>
+
+    <div id="assignments" class="step slide" data-x="3000" data-y="2700">
+      <p class="centertext"><b>Assignments</b><br><br></p>
+      <ul>
+        <li>Lab 1 - Computer Hardware:<br>Due 9/9 11:30 AM <b>Before Lecture!!</b></li>
+        <li>Lab 2 - Virtualization, OS Install & Config<br>Due 9/16 11:30 AM <b>Before Lecture!!</b>
+      </ul>
+    </div>
+
+    <div id="overview" class="step" data-x="2000" data-y="1500" data-z="-1" data-scale="6">
+    </div>
+
+</div>
+
+<script src="/js/analytics.js"></script>
+<script src="/js/impress.js"></script>
+<script>impress().init();</script>
+<script src="/js/jquery-1.10.2.min.js"></script>
+<script src="/js/TimeCircles.js"></script>
+<script src="/js/timer.js"></script>
+<script src="/js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+
+
+
+</body>
+</html>

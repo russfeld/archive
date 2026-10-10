@@ -1,0 +1,248 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <BASE href="../">
+  <link href="favicon.ico" rel="shortcut icon">
+  <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+  <meta name="description" content="CIS 527 Spring 2015 Lecture 8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 527 Spring 2015 Lecture 8</title>
+    <link href="css/impress.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 527</b><br><br>Lecture 9 - Puppet Enterprise</p>
+    </div>
+
+    <div id="puppet_attrib" class="step" data-x="1000" data-y="0">
+      <p class="centertext"><b>Learning Puppet</b><br><br></p>
+      <p>Much of this lecture's content is adapted from the Learning Puppet series on <a href="http://docs.puppetlabs.com/learning/">http://docs.puppetlabs.com/learning/</a></p>
+    </div>
+
+    <div id="puppet-single" class="step" data-x="2000" data-y="0">
+      <p class="centertext"><b>Single Puppet</b></p>
+      <img class="centerimg" height="600" src="cis527spring2015/images/lecture9/compile_puppet.png">
+      <p class="imagecredit">Image Credit: <a href="https://docs.puppetlabs.com/learning/agent_master_basic.html">Puppet Labs</a></p>
+    </div>
+
+    <div id="puppet-server" class="step" data-x="3000" data-y="0">
+      <p class="centertext"><b>Agent/Master Mode</b></p>
+      <img class="centerimg" height="600" src="cis527spring2015/images/lecture9/server_puppet.png">
+      <p class="imagecredit">Image Credit: <a href="https://docs.puppetlabs.com/learning/agent_master_basic.html">Puppet Labs</a></p>
+    </div>
+
+    <div id="today" class="step slide" data-x="4000" data-y="0">
+      <p class="centertext"><b>Today's Plan</b><br><br></p>
+      <ol>
+        <li>Set up the Puppet Learning VM</li>
+        <li>Duplicate the VM for an Agent and Server configuration</li>
+        <li>Reconfigure one VM as an Agent
+        <li>Get the two VMs to communicate</li>
+        <li>Install a module on the server and apply it on the client</li>
+      </ol>
+    </div>
+
+    <div id="setup" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>1. Set up the Puppet Learning VM</b><br><br></p>
+      <ol>
+        <li>It is on the Transient drive in the installers folder</li>
+        <li>Copy it to your folder on the transient drive or a local drive</li>
+        <li>Unzip the file (this may take a bit)</li>
+      </ol>
+    </div>
+
+    <div id="duplicate" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b>2. Duplicate VM</b><br><br></p>
+      <ol>
+        <li>Make sure your VM is off</li>
+        <li>Copy the file on disk</li>
+        <li>Open it in VMWare</li>
+        <li>Make sure both are set to NAT networking</li>
+        <li>Start both VMs</li>
+      </ol>
+    </div>
+
+    <div id="reconfigure" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>3. Reconfigure VM</b><br><br></p>
+        <pre><code style="font-size:28px">wget http://docs.puppetlabs.com/learning/
+            files/learningpuppet.tar.gz
+tar -xzf learningpuppet.tar.gz
+mv learningpuppet /etc/puppetlabs/puppet/modules/
+puppet apply -e "class {'learningpuppet::makeagent':}"</code></pre>
+    </div>
+
+    <div id="communicate" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>4. Communication</b></p>
+      <ol>
+        <li>Ping by IP address<ul>
+            <li><pre><code>facter ipaddress_eth0</code></pre></li></ul></li>
+        <li>Reach the puppet master by name<br>
+            <pre><code>&lt;ip_address&gt; learn.localdomain learn
+puppet.localdomain puppet</code></pre></li>
+        <li>Firewalls are off</li>
+        <li>Synchronized clocks<ul>
+            <li><pre><code>date -u</code></pre></li></ul></li>
+      </ol>
+    </div>
+
+    <div id="puppet_agent" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>Puppet Agent</b><br><br></p>
+      <p>Puppet agent command runs in 2 modes:</p>
+      <ul>
+        <li>Daemon mode</li>
+        <li>Run and quit</li>
+      </ul>
+      <br>
+      <p>You can stop it by running <pre><code>/etc/init.d/pe-puppet stop</code></pre></p>      
+    </div>
+
+    <div id="puppet_agent_2" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>First Try</b><br><br></p>
+      <p>Let's try it by running:<pre><code style="font-size:45px">puppet agent --test</code></pre></p>     
+    </div>
+
+    <div id="puppet_agent_3" class="step slide" data-x="0" data-y="1800" data-z="-1">
+      <p class="centertext"><b>First Try</b><br><br></p>
+      <p>Let's try it by running:</p><pre><code style="font-size:45px">puppet agent --test</code></pre><br><pre style="line-height:27px"><code style="font-size:23px; line-height:20px">[root@agent1 ~]# puppet agent --test
+info: Creating a new SSL key for agent1.localdomain
+warning: peer certificate won't be verified in this SSL session
+info: Caching certificate for ca
+info: Creating a new SSL certificate request for agent1.localdomain
+info: Certificate Request fingerprint (md5): FD:E7:41:C9:2C:B7:5C:27:11:0C:8F:9C:1D:F6:F9:46
+Exiting; no certificate found and waitforcert is disabled</code></pre>  
+    </div>
+
+    <div id="puppet_agent_4" class="step slide" data-x="1000" data-y="1800" data-z="-1">
+      <p class="centertext"><b>What Happened?</b><br><br></p>
+      <ul>
+        <li>Puppet secures communications between the master and agents with SSL</li>
+        <li>Since our agent doesn't have a valid certificate, it won't work</li>
+        <li>We must sign our certificate to continue</li>
+      </ul>     
+    </div>
+
+    <div id="puppet_agent_5" class="step slide" data-x="2000" data-y="1800" data-z="0">
+      <p class="centertext"><b>Signing SSL Certificates</b></p>
+      <p>On the Master VM:</p>
+      <pre><code style="font-size:25px">puppet cert list</pre></code>    
+    </div>
+
+    <div id="puppet_agent_51" class="step slide" data-x="2000" data-y="1800" data-z="-1">
+      <p class="centertext"><b>Signing SSL Certificates</b></p>
+      <p>On the Master VM:</p>
+      <pre><code style="font-size:25px">puppet cert list
+agent1.localdomain (FD:E7:41:C9:2C:B7:5C:27:11:0C:8F:9C:1D:F6:F9:46)</pre></code>    
+    </div>
+
+    <div id="puppet_agent_52" class="step slide" data-x="2000" data-y="1800" data-z="-2">
+      <p class="centertext"><b>Signing SSL Certificates</b></p>
+      <p>On the Master VM:</p>
+      <pre><code style="font-size:25px">puppet cert list  
+agent1.localdomain (FD:E7:41:C9:2C:B7:5C:27:11:0C:8F:9C:1D:F6:F9:46)
+
+puppet cert sign agent1.localdomain</pre></code>
+    </div>
+
+    <div id="puppet_agent_53" class="step slide" data-x="2000" data-y="1800" data-z="-3">
+      <p class="centertext"><b>Signing SSL Certificates</b></p>
+      <p>On the Master VM:</p>
+      <pre><code style="font-size:25px">puppet cert list 
+agent1.localdomain (FD:E7:41:C9:2C:B7:5C:27:11:0C:8F:9C:1D:F6:F9:46)
+
+puppet cert sign agent1.localdomain 
+notice: Signed certificate request for agent1.localdomain
+notice: Removing file Puppet::SSL::CertificateRequest ...</pre></code> 
+    </div>
+
+    <div id="puppet_agent_6" class="step slide" data-x="3000" data-y="1800" data-z="-1">
+      <p class="centertext"><b>Try Again</b><br><br></p>
+      <pre><code style="font-size:45px">puppet agent --test</code></pre><br><pre style="line-height:27px"><code style="font-size:23px; line-height:20px">[root@agent1 ~]# puppet agent --test
+warning: peer certificate won't be verified in this SSL session
+info: Caching certificate for agent1.localdomain
+info: Retrieving plugin
+info: Caching certificate_revocation_list for ca
+info: Loading facts in facter_dot_d
+info: Caching catalog for agent1.localdomain
+info: Applying configuration version '1326210629'
+notice: Finished catalog run in 0.11 seconds</code></pre>  
+    </div>
+
+    <div id="puppet_agent_7" class="step slide" data-x="4000" data-y="1800" data-z="-3">
+      <p class="centertext"><b>Configuring the site.pp file</b></p>
+      <ul>
+        <li>Install the NTP module from Puppet Forge:<br><pre><code>puppet module install puppetlabs-ntp</code></pre></li>
+        <li>/etc/puppetlabs/puppet/manifests/site.pp:<br><pre style="line-height:32px"><code>node 'agent1.localdomain' {
+# Note the quotes around the name! 
+  class {'ntp':
+    servers => [ "ntp-1.ksu.edu dynamic", 
+      "ntp-2.ksu.edu dynamic", ],
+  }
+}</code></pre>
+    </div>
+
+    <div id="puppet_agent_8" class="step slide" data-x="0" data-y="2700" data-z="-1">
+      <p class="centertext"><b>Apply on Agent</b><br><br></p>
+      <pre><code style="font-size:45px">puppet agent --test</code></pre><br><pre style="line-height:27px"><code style="font-size:23px; line-height:20px">[root@agent1 ~]# puppet agent --test
+info: Retrieving plugin
+info: Loading facts in facter_dot_d
+notice: /Stage[main]/Ntp/Package[ntp]/ensure: created
++# Managed by puppet class { "ntp": servers => [ ... ] }
+info: ntp.conf: Scheduling refresh of Service[ntp]
+notice: /Stage[main]/Ntp/Service[ntp]: Triggered 'refresh' from 1 events
+notice: Finished catalog run in 32.74 seconds</code></pre>  
+    </div>
+
+    <div id="puppet_next" class="step slide" data-x="1000" data-y="2700" data-z="-1">
+      <p class="centertext"><b>What's Next?</b><br><br></p>
+      <ul>
+        <li>Add more modules</li>
+        <li>Add more agents</li>
+        <li>Customize configuration for different types of agents</li>
+        <li>Test, test, test</li>
+        <li>Enjoy your new stress-free life!</li>
+      </ul>
+    </div>
+
+    <div id="assignments" class="step slide" data-x="-825" data-y="-225" data-scale="0.5">
+        <p class="centertext"><b>Assignments</b></p>
+        <ul>
+            <li>Lab Help Session Friday 9 - 10 AM!</li>
+            <li>Lab 2 - Configuration Management - Due Monday, Feb 23rd by 12:30 PM</li>
+            <li>Automate configuration using Puppet</li>
+            <li>Turn in:<ul>
+                <li>CIS Transient Storage</li>
+                <li>via Storage Media in class Monday Feb 23rd</li>
+                </ul></li> 
+        </ul>
+    </div>
+
+
+    <div id="overview" class="step" data-x="2000" data-y="1800" data-scale="7.0">
+    </div>
+
+
+</div>
+
+<script src="js/analytics.js"></script>
+
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+
+</body>
+</html>

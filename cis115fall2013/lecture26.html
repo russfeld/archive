@@ -1,0 +1,495 @@
+<html lang="en">
+<head>
+  <BASE href="../">
+  <link href="favicon.ico" rel="shortcut icon">
+  <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+  <meta name="description" content="CIS 115 Fall 2013 Lecture 26" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 115 Fall 2013 Lecture 26</title>
+    <link href="css/impress.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 115</b><br><br>Lecture 26: Databases, Bioinformatics & Genomics</p>
+    </div>
+
+    <div id="kst8r" class="step slide" data-x="1000" data-y="0">
+      <p class="centertext"><b>kst8r</b><br><br></p>
+      <p>K-State's new social network!</p>
+      <ul>
+        <li>What features should it have?</li>
+        <li>What data do we need?</li>
+        <li>How should it be stored?</li>
+        <li>How can we retrieve it?</li>
+      </ul>
+    </div>
+
+    <div id="codd" class="step slide" data-x="2000" data-y="0">
+      <p class="centertext"><b>Edgar F. Codd</b></p>
+      <img class="centerimg" height="630" src="cis115fall2013/images/lecture26/codd_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Edgar_F._Codd">Wikipedia</a></p>
+    </div>    
+
+    <div id="relational" class="step slide" data-x="3000" data-y="0">
+      <p class="centertext"><b>Relational Database</b><br><br></p>
+      <img class="centerimg" width="850" src="cis115fall2013/images/lecture26/relational_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Relational_database">Wikipedia</a></p>
+    </div> 
+
+    <div id="exampl" class="step slide" data-x="4000" data-y="0">
+      <p class="centertext"><b>Relational Database</b><br><br></p>
+      <table class="table" style="width:100%">
+        <tr>
+          <td><b>userID</b></td>
+          <td><b>Name</b></td>
+          <td><b>Birthday</b></td>
+          <td><b>Major</b></td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">russfeld</td>
+          <td style="font-size:42px">Russell</td>
+          <td style="font-size:42px">May 10th</td>
+          <td style="font-size:42px">Comp. Sci</td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">johnsmith</td>
+          <td style="font-size:42px">John</td>
+          <td style="font-size:42px">June 1</td>
+          <td style="font-size:42px">Info. Sci</td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">smiller</td>
+          <td style="font-size:42px">Sheila</td>
+          <td style="font-size:42px">Sept. 26</td>
+          <td style="font-size:42px">Soft. Engg.</td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">gameguy</td>
+          <td style="font-size:42px">Jayson</td>
+          <td style="font-size:42px">Dec 26</td>
+          <td style="font-size:42px">computersci</td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">sharpie</td>
+          <td style="font-size:42px">Reily</td>
+          <td style="font-size:42px">Dec. 18th</td>
+          <td style="font-size:42px">IS</td>
+        </tr>
+      </table>
+    </div> 
+
+    <div id="normal" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>Database Normalization</b><br><br></p>
+      <ul>
+        <li>Avoid modification anomalies</li>
+        <li>Minimize errors when redesigning</li>
+        <li>Mirror real-world concepts</li>
+        <li>Avoid problems with different types of queries</li>
+      </ul>
+    </div> 
+
+    <div id="example" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b>Relational Database</b><br><br></p>
+      <table class="table" style="width:100%">
+        <tr>
+          <td><b>userID</b></td>
+          <td><b>Name</b></td>
+          <td><b>Birthday</b></td>
+          <td><b>Major</b></td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">russfeld</td>
+          <td style="font-size:42px">Russell</td>
+          <td style="font-size:42px">May 10th</td>
+          <td style="font-size:42px">Comp. Sci</td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">johnsmith</td>
+          <td style="font-size:42px">John</td>
+          <td style="font-size:42px">June 1</td>
+          <td style="font-size:42px">Info. Sci</td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">smiller</td>
+          <td style="font-size:42px">Sheila</td>
+          <td style="font-size:42px">Sept. 26</td>
+          <td style="font-size:42px">Soft. Engg.</td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">gameguy</td>
+          <td style="font-size:42px">Jayson</td>
+          <td style="font-size:42px">Dec 26</td>
+          <td style="font-size:42px">computersci</td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">sharpie</td>
+          <td style="font-size:42px">Reily</td>
+          <td style="font-size:42px">Dec. 18th</td>
+          <td style="font-size:42px">IS</td>
+        </tr>
+      </table>
+    </div> 
+
+    <div id="one-to-one" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>Related Tables</b></p>
+      <table class="table" style="width:100%">
+        <tr>
+          <td><b>userID</b></td>
+          <td><b>Name</b></td>
+          <td><b>Birthday</b></td>
+          <td style="background:#66CCCC"><b>Major</b></td>
+        </tr>
+        <tr>
+          <td style="font-size:35px">russfeld</td>
+          <td style="font-size:35px">Russell</td>
+          <td style="font-size:35px">May 10th</td>
+          <td style="font-size:35px; background:#66CCCC">1</td>
+        </tr>
+        <tr>
+          <td style="font-size:35px">johnsmith</td>
+          <td style="font-size:35px">John</td>
+          <td style="font-size:35px">June 1</td>
+          <td style="font-size:35px; background:#66CCCC">3</td>
+        </tr>
+        <tr>
+          <td style="font-size:35px">smiller</td>
+          <td style="font-size:35px">Sheila</td>
+          <td style="font-size:35px">Sept. 26</td>
+          <td style="font-size:35px; background:#66CCCC">2</td>
+        </tr>
+        <tr>
+          <td style="font-size:35px">gameguy</td>
+          <td style="font-size:35px">Jayson</td>
+          <td style="font-size:35px">Dec 26</td>
+          <td style="font-size:35px; background:#66CCCC">1</td>
+        </tr>
+        <tr>
+          <td style="font-size:35px">sharpie</td>
+          <td style="font-size:35px">Reily</td>
+          <td style="font-size:35px">Dec. 18th</td>
+          <td style="font-size:35px; background:#66CCCC">3</td>
+        </tr>
+      </table>
+      <p style="line-height: 35px"><br></p>
+      <table class="table" style="width:100%">
+        <tr>
+          <td style="background:#66CCCC"><b>majorID</b></td>
+          <td><b>Major</b></td>
+          <td><b>Abbreviation</b></td>
+        </tr>
+        <tr>
+          <td style="font-size:35px; background:#66CCCC">1</td>
+          <td style="font-size:35px">Computer Science</td>
+          <td style="font-size:35px">CS</td>
+        </tr>
+        <tr>
+          <td style="font-size:35px; background:#66CCCC">2</td>
+          <td style="font-size:35px">Software Engineering</td>
+          <td style="font-size:35px">SE</td>
+        </tr>
+        <tr>
+          <td style="font-size:35px; background:#66CCCC">3</td>
+          <td style="font-size:35px">Information Systems</td>
+          <td style="font-size:35px">IS</td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="phones" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>Storing Phone Numbers</b></p>
+      <table class="table" style="width:100%">
+        <tr>
+          <td><b>userID</b></td>
+          <td><b>Name</b></td>
+          <td><b>Phone1</b></td>
+          <td><b>Phone2</b></td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">johnsmith</td>
+          <td style="font-size:42px">John</td>
+          <td style="font-size:42px">555-1234</td>
+          <td style="font-size:42px"></td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">smiller</td>
+          <td style="font-size:42px">Sheila</td>
+          <td style="font-size:42px">555-5134</td>
+          <td style="font-size:42px"></td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">gameguy</td>
+          <td style="font-size:42px">Jayson</td>
+          <td style="font-size:42px">555-1235</td>
+          <td style="font-size:42px">555-5134</td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">sharpie</td>
+          <td style="font-size:42px">Reily</td>
+          <td style="font-size:42px">555-5134</td>
+          <td style="font-size:42px"></td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="many-to-one" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>Many-to-One?</b></p>
+      <table class="table" style="width:100%">
+        <tr>
+          <td><b>userID</b></td>
+          <td><b>Name</b></td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">johnsmith</td>
+          <td style="font-size:42px">John</td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">smiller</td>
+          <td style="font-size:42px">Sheila</td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">gameguy</td>
+          <td style="font-size:42px">Jayson</td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">sharpie</td>
+          <td style="font-size:42px">Reily</td>
+        </tr>
+      </table>
+      <p style="line-height: 35px"><br></p>
+      <table class="table" style="width:100%">
+        <tr>
+          <td><b>Phone</b></td>
+          <td><b>user1</b></td>
+          <td><b>user2</b></td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">555-1234</td>
+          <td style="font-size:42px">johnsmith</td>
+          <td style="font-size:42px"></td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">555-5134</td>
+          <td style="font-size:42px">smiller</td>
+          <td style="font-size:42px">gameguy</td>
+          <td style="font-size:42px">?sharpie?</td>
+        </tr>
+        <tr>
+          <td style="font-size:42px">555-1235</td>
+          <td style="font-size:42px">gameguy</td>
+          <td style="font-size:42px"></td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="one-to-many" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>One-to-Many</b></p>
+      <table class="table" style="width:100%">
+        <tr>
+          <td style="background:#66CCCC"><b>userID</b></td>
+          <td><b>Name</b></td>
+        </tr>
+        <tr>
+          <td style="font-size:30px; background:#66CCCC">johnsmith</td>
+          <td style="font-size:30px">John</td>
+        </tr>
+        <tr>
+          <td style="font-size:30px; background:#66CCCC">smiller</td>
+          <td style="font-size:30px">Sheila</td>
+        </tr>
+        <tr>
+          <td style="font-size:30px; background:#66CCCC">gameguy</td>
+          <td style="font-size:30px">Jayson</td>
+        </tr>
+        <tr>
+          <td style="font-size:30px; background:#66CCCC">sharpie</td>
+          <td style="font-size:30px">Reily</td>
+        </tr>
+      </table>
+      <p style="line-height: 30px"><br></p>
+      <table class="table" style="width:100%">
+        <tr>
+          <td style="background:#66CCCC"><b>userID</b></td>
+          <td><b>phone</b></td>
+        </tr>
+        <tr>
+          <td style="font-size:30px; background:#66CCCC">johnsmith</td>
+          <td style="font-size:30px">555-1234</td>
+        </tr>
+        <tr>
+          <td style="font-size:30px; background:#66CCCC">smiller</td>
+          <td style="font-size:30px">555-5134</td>
+        </tr>
+        <tr>
+          <td style="font-size:30px; background:#66CCCC">gameguy</td>
+          <td style="font-size:30px">555-1235</td>
+        </tr>
+        <tr>
+          <td style="font-size:30px; background:#66CCCC">gameguy</td>
+          <td style="font-size:30px">555-5134</td>
+        </tr>
+        <tr>
+          <td style="font-size:30px; background:#66CCCC">sharpie</td>
+          <td style="font-size:30px">555-5134</td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="different" class="step slide" data-x="1000" data-y="1800">
+      <img class="centerimg" width="850" src="cis115fall2013/images/lecture26/different.jpg">
+    </div> 
+
+    <div id="bioinformatics" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b>Bioinformatics</b><br><br></p>
+      <p><b>Interdisciplinary</b> field that focuses on <b>developing</b> and <b>improving</b> methods for <b>storing, retrieving, organizing</b> and <b>analyzing biological data</b></p>
+    </div>
+
+    <div id="genomics" class="step slide" data-x="3000" data-y="1800">
+      <p class="centertext"><b>Genomics</b><br><br></p>
+      <p>Discipline that applies methods to <b>sequence, assemble</b> and <b>analyze</b> the <b>function</b> and <b>structure</b> of <b>genomes</b>, a <em>complete</em> set of DNA within a single cell of an organism</p>
+    </div>  
+
+    <div id="cdc" class="step slide" data-x="4000" data-y="1800">
+      <img class="centerimg" height="630" src="cis115fall2013/images/lecture26/cdc_wiki.svg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Centers_for_Disease_Control_and_Prevention">Wikipedia</a></p>
+    </div> 
+
+    <div id="spread1" class="step slide" data-x="0" data-y="2700">
+      <img class="centerimg" width="850" src="cis115fall2013/images/lecture26/spread1.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Centers_for_Disease_Control_and_Prevention">Wikipedia</a></p>
+    </div> 
+
+    <div id="spread2" class="step slide" data-x="1000" data-y="2700">
+      <img class="centerimg" width="850" src="cis115fall2013/images/lecture26/spread2.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Centers_for_Disease_Control_and_Prevention">Wikipedia</a></p>
+    </div> 
+
+    <div id="spread3" class="step slide" data-x="2000" data-y="2700">
+      <img class="centerimg" width="850" src="cis115fall2013/images/lecture26/spread3.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Centers_for_Disease_Control_and_Prevention">Wikipedia</a></p>
+    </div> 
+
+    <div id="quarantine" class="step slide" data-x="3000" data-y="2700">
+      <img class="centerimg" width="850" src="cis115fall2013/images/lecture26/quarantine_bldgblog.jpg">
+      <p class="imagecredit">Image Source: <a href="http://bldgblog.blogspot.com/2009/10/isolation-or-quarantine-interview-with.html">BLDG BLOG</a></p>
+    </div> 
+
+    <div id="clean" class="step slide" data-x="4000" data-y="2700">
+      <img class="centerimg" width="850" src="cis115fall2013/images/lecture26/clean_scragz_flickr.jpg">
+      <p class="imagecredit">Image Source: <a href="http://www.flickr.com/photos/scragz/2715873958/">scragz on Flickr</a></p>
+    </div> 
+
+    <div id="chart" class="step slide" data-x="0" data-y="3600">
+      <p class="centertext"><b>Death Tolls</b></p>
+      <img class="centerimg" width="850" src="cis115fall2013/images/lecture26/chart.png">
+    </div>
+
+    <div id="rcj1" class="step slide" data-x="1000" data-y="3600">
+      <p class="centertext"><b>RCJ1 Virus</b></p>
+      <img class="centerimg" width="850" src="cis115fall2013/images/lecture26/virus_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/HIV/AIDS">Wikipedia</a></p>
+    </div>
+
+    <div id="replication" class="step slide" data-x="2000" data-y="3600">
+      <p class="centertext"><b>Virus Replication</b></p>
+      <img class="centerimg" height="600" src="cis115fall2013/images/lecture26/replication_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Virus">Wikipedia</a></p>
+    </div>
+
+    <div id="DNA" class="step slide" data-x="3000" data-y="3600">
+      <p class="centertext"><b>Virus Replication</b></p>
+      <img class="centerimg" height="600" src="cis115fall2013/images/lecture26/dna_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/DNA_replication">Wikipedia</a></p>
+    </div>
+
+    <div id="finding" class="step slide" data-x="4000" data-y="3600">
+      <p class="centertext"><b>Finding Virus DNA</b><br><br></p>
+      <ul>
+        <li>Compare DNA samples of people infected with the virus to samples of people without the virus</li>
+        <li>If you find discrepancies, it could be<ul>
+          <li>Genetic differences between people</li>
+          <li><b>The Virus!!</b></li>
+        </ul>
+      </ul>
+    </div>
+
+    <div id="help" class="step slide" data-x="0" data-y="4500">
+      <p class="centertext"><b>We need your help!</b><br><br></p>
+      <ul>
+        <li>We have samples from infected individuals and genomes taken before the outbreak</li>
+        <li>Compare the infected samples with the good ones and find suspect DNA mutations. They could be the virus!</li>
+      </ul>
+    </div>
+    
+    <div id="problem" class="step slide" data-x="1000" data-y="4500">
+      <p class="centertext"><b>Process</b><br><br></p>
+      <ul>
+        <li>Choose a pattern from the virus genome</li>
+        <li>Calculate its <b>complement</b></li>
+        <li>See if that <b>complement</b> exists in the <b>human genome</b></li>
+        <li>If not, then it may be part of the <b>virus</b></li>
+      </ul>
+    </div>
+
+    <div id="genome1" class="step slide" data-x="2000" data-y="4500">
+      <img class="centerimg" height="650" src="cis115fall2013/images/lecture26/genome1.png">
+    </div>
+
+    <div id="genome2" class="step slide" data-x="3000" data-y="4500">
+      <img class="centerimg" height="650" src="cis115fall2013/images/lecture26/genome2.png">
+    </div>
+
+    <div id="genome3" class="step slide" data-x="4000" data-y="4500">
+      <img class="centerimg" width="850" src="cis115fall2013/images/lecture26/genome3.png">
+    </div>
+
+    <div id="assignment" class="step slide" data-x="-825" data-y="-225" data-scale="0.5">
+      <p class="centertext">Assignments</p>
+      <ul>
+        <li>Textbook Rough Draft - Due Friday 11/22 10:00 PM via KSOL or email</li>
+        <li>Blog 12: Textbook Review: Making Meaning -  <b>Due 12/1 10:00 PM</b></li>
+      </ul>
+    </div>
+
+    <div id="blog" class="step slide" data-x="-825" data-y="225" data-scale="0.5">
+      <p class="centertext" style="font-size: 35px; line-height: 45px"><b>Blog 12: Textbook Review - Making Meaning</b></p>
+      <p style="font-size: 32px; line-height: 35px">Now that we’ve (almost) finished reading the textbooks, it is time to step back and think about what we read. Choose one of the three textbooks for this course and write about your reactions to it and what you learned from it. I’d recommend almost treating this like an in-depth book review for others who are interested in reading the book, but don’t mind some spoilers. Some questions I’d like you to answer:</p>
+      <ul style="font-size: 35px; line-height: 37px">
+        <li>How did you feel reading this book? Engaged? Bored? Interested?</li>
+        <li>What was the most interesting thing you learned?</li>
+        <li>Were there any parts of the book you didn’t like?</li>
+        <li>Were there any terms or concepts that you looked up (Googled) to find more information about? What were they? What did you find?</li>
+        <li>Did this book help explain things you didn’t know about computers?</li>
+        <li>Would you recommend this book to a friend that wanted to know more about computers?</li>
+      </ul>
+    </div>
+
+    <div id="overview" class="step" data-x="2000" data-y="2250" data-z="-1" data-scale="7.5">
+    </div>
+
+
+</div>
+
+<script src="js/analytics.js"></script>
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
+<script src="js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+</body>
+</html>

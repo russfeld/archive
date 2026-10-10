@@ -1,0 +1,716 @@
+<html lang="en">
+<head>
+  <BASE href="../">
+  <link href="favicon.ico" rel="shortcut icon">
+  <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+  <meta name="description" content="CIS 115 Spring 2015 Lecture 4" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 115 Spring 2015 Lecture 4</title>
+    <link href="css/impress.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 115</b><br><br>Lecture 4: Bits and Boolean Algebra</p>
+    </div>
+
+    <div id="redgreen_boolean" class="step" data-x="1000" data-y="0">
+      <div id="uSP7pkEYcPA" data-id="uSP7pkEYcPA" class="youtube" data-start="452">
+        <a href="https://www.youtube.com/watch?v=uSP7pkEYcPA">Red Green - Boolean Logic on YouTube</a>
+      </div>
+    </div>
+    
+    <div id="aristotle" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>Aristotle</b></p>
+      <img class="centerimg" height="600" src="cis115spring2015/images/lecture4/aristotle_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Aristotle">Wikipedia</a></p>
+    </div>
+
+    <div id="aristotelian_logic" class="skip slide" data-x="1000" data-y="880">
+      <p class="centertext"><b>Aristotelian Logic<br><br></b></p>
+      <ul>
+        <li>Premise:<br>All men are mortal<br>Socrates is a man<br><br></li>
+        <li>Conclusion:<br>Therefore, Socrates is mortal</li>
+      </ul>
+    </div>
+
+    <div id="aristotelian_logic_1" class="step" data-x="900" data-y="700" data-scale=".7">
+
+    </div>
+
+    <div id="aristotelian_logic_2" class="step" data-x="1000" data-y="900">
+
+    </div>
+
+    <div id="boole" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>George Boole</b></p>
+      <img class="centerimg" height="600" src="cis115spring2015/images/lecture4/boole_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/George_Boole">Wikipedia</a></p>
+    </div>
+
+    <div id="boole_book" class="step slide" data-x="-825" data-y="3000" data-scale="0.5">
+      <p class="centertext"><a href="http://gutenberg.org/ebooks/15114"><b>The Laws of Thought</b></a></p>
+      <img class="centerimg" height="600" src="cis115spring2015/images/lecture4/boolebook_gutenberg.png">
+      <p class="imagecredit">Image Source: <a href="http://gutenberg.org/ebooks/15114">Project Gutenberg</a></p>
+    </div>
+
+    <div id="boolean_logic" class="skip slide" data-x="1000" data-y="1780">
+      <p class="centertext"><b>Boolean Logic<br><br></b></p>
+      <ul>
+        <li>Premise:<br>A &and; B<br>B &and; C<br><br></li>
+        <li>Conclusion:<br>A &and; C</li>
+      </ul>
+      <p style="font-size:30px; line-height:40px"><br><b>Note:</b> This translation is somewhat flawed, but I'll leave that to a later course in logic or philosophy to describe why.</p>
+    </div>
+
+    <div id="boolean_logic_1" class="step" data-x="900" data-y="1600" data-scale=".7">
+
+    </div>
+
+    <div id="boolean_logic_2" class="step" data-x="1000" data-y="1800">
+
+    </div>
+
+    <div id="boolean_symbols" class="skip slide" data-x="2750" data-y="430" data-scale="2">
+      <p class="centertext"><b>Boolean Symbols<br><br></b></p>
+      <p style="font-size:100px">&and;&nbsp;&nbsp;&amp;&amp;<br><br>&or;&nbsp;&nbsp;||<br><br>&nbsp;&oplus;<br><br>&not;&nbsp;&nbsp;!</p>
+    </div>
+
+    <div id="boolean_symbols_1" class="step" data-x="2750" data-y="450" data-scale="2">
+
+    </div>
+
+    <div id="and" class="step" data-x="2125" data-y="90" data-scale="0.5">
+      <p class="centertext" style="font-size:100px"><b>And</b><br><br><br><br><br></p>
+    </div>
+
+    <div id="and_2" class="step" data-x="2650" data-y="100" data-scale="0.4">
+      <p class="centertext" style="font-size:80px"><b>A &and; B</b></p>
+      <img class="centerimg" height="600" src="cis115spring2015/images/lecture4/and_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Logical_conjunction">Wikipedia</a></p>
+    </div>
+
+    <div id="and_3" class="step" data-x="3175" data-y="100" data-scale="0.4">
+      <p class="centertext" style="font-size:80px"><b>A &and; B &and; C</b></p>
+      <img class="centerimg" height="600" src="cis115spring2015/images/lecture4/and2_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Logical_conjunction">Wikipedia</a></p>
+    </div>
+
+    <div id="boolean_symbols_2" class="step" data-x="2750" data-y="450" data-scale="2">
+
+    </div>
+
+    <div id="or" class="step" data-x="2050" data-y="420" data-scale="0.5">
+      <p class="centertext" style="font-size:100px"><b>Or</b><br><br><br><br><br><br><br></p>
+    </div>
+
+    <div id="or_2" class="step" data-x="2650" data-y="400" data-scale="0.4">
+      <p class="centertext" style="font-size:80px"><b>A &or; B</b></p>
+      <img class="centerimg" height="600" src="cis115spring2015/images/lecture4/or_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Logical_disjunction">Wikipedia</a></p>
+    </div>
+
+    <div id="or_3" class="step" data-x="3175" data-y="400" data-scale="0.4">
+      <p class="centertext" style="font-size:80px"><b>A &or; B &or; C</b></p>
+      <img class="centerimg" height="600" src="cis115spring2015/images/lecture4/or2_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Logical_disjunction">Wikipedia</a></p>
+    </div>
+
+    <div id="boolean_symbols_3" class="step" data-x="2750" data-y="450" data-scale="2">
+
+    </div>
+
+    <div id="xor" class="step" data-x="2010" data-y="735" data-scale="0.4">
+      <p class="centertext" style="font-size:80px"><b>Exclusive Or (XOR)</b><br><br><br><br><br><br><br></p>
+    </div>
+
+    <div id="xor_2" class="step" data-x="2650" data-y="700" data-scale="0.4">
+      <p class="centertext" style="font-size:80px"><b>A &oplus; B</b></p>
+      <img class="centerimg" height="600" src="cis115spring2015/images/lecture4/xor_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Exclusive_or">Wikipedia</a></p>
+    </div>
+
+    <div id="xor_3" class="step" data-x="3175" data-y="700" data-scale="0.4">
+      <p class="centertext" style="font-size:80px"><b>A &oplus; B &oplus; C</b></p>
+      <img class="centerimg" height="600" src="cis115spring2015/images/lecture4/xor2_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Exclusive_or">Wikipedia</a></p>
+    </div>
+
+    <div id="boolean_symbols_4" class="step" data-x="2750" data-y="450" data-scale="2">
+
+    </div>
+
+    <div id="not" class="step" data-x="2020" data-y="1000" data-scale="0.5">
+      <p class="centertext" style="font-size:100px"><b>Not</b><br><br><br><br><br><br></p>
+    </div>
+
+    <div id="not_2" class="step" data-x="2650" data-y="1000" data-scale="0.4">
+      <p class="centertext" style="font-size:80px"><b>&not; A</b></p>
+      <img class="centerimg" height="280" src="cis115spring2015/images/lecture4/not_wiki.png">
+      <p class="centertext" style="font-size:80px"><b>&not; B</b></p>
+      <img class="centerimg" height="280" src="cis115spring2015/images/lecture4/notB_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Negation">Wikipedia</a></p>
+    </div>
+
+    <div id="not_3" class="step" data-x="3175" data-y="1000" data-scale="0.4">
+      <p class="centertext" style="font-size:80px"><b>&not; B</b></p>
+      <img class="centerimg" height="600" src="cis115spring2015/images/lecture4/not2_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Negation">Wikipedia</a></p>
+    </div>
+
+    <div id="boolean_symbols_5" class="step" data-x="2750" data-y="450" data-scale="2">
+
+    </div>
+
+    <div id="boolean_truth" class="skip slide" data-x="0" data-y="2680">
+      <p class="centertext"><b>Truth<br><br></b></p>
+      <ul>
+        <li>Premise:<br>A &and; B &rarr; TRUE<br>B &and; C &rarr; TRUE<br><br></li>
+        <li>Conclusion:<br>A &and; C &rarr; TRUE</li>
+      </ul>
+    </div>
+
+    <div id="boolean_truth_1" class="step" data-x="-100" data-y="2500" data-scale=".7">
+
+    </div>
+
+    <div id="boolean_truth_2" class="step" data-x="0" data-y="2700">
+
+    </div>
+
+    <div id="boolean_truth2" class="skip slide" data-x="1000" data-y="2680">
+      <p class="centertext"><b>Truth<br><br></b></p>
+      <ul>
+        <li>Premise:<br>A &and; B &rarr; TRUE<br>B &and; C &rarr; FALSE<br><br></li>
+        <li>Conclusion:<br>A &and; C &rarr; FALSE</li>
+      </ul>
+    </div>
+
+    <div id="boolean_truth2_1" class="step" data-x="900" data-y="2500" data-scale=".7">
+
+    </div>
+
+    <div id="boolean_truth2_2" class="step" data-x="1000" data-y="2700">
+
+    </div>
+
+    <div id="demorgan" class="step slide" data-x="0" data-y="3600">
+      <p class="centertext"><b>Augustus De Morgan</b></p>
+      <img class="centerimg" height="600" src="cis115spring2015/images/lecture4/demorgan_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Augustus_De_Morgan">Wikipedia</a></p>
+    </div>
+
+    <div id="demorgans_law" class="step slide" data-x="1000" data-y="3600">
+      <p class="centertext"><b>De Morgan's Law</b></p>
+      <p><br>Negation (inverse) of a logic statement</p>
+      <p><br>&not; ( A &and; B ) = ( &not; A ) &or; ( &not; B)</p>
+      <p>&not; ( A &or; B ) = ( &not; A ) &and; ( &not; B)</p>
+      <p><br>Distribute the negative (&not;) then swap ands (&and;) and ors (&or;)
+    </div>
+
+    <div id="boolean_algebra" class="step slide" data-x="2250" data-y="1800">
+      <p class="centertext"><b>Boolean Algebra</b><br><br></p>
+      <ul>
+        <li>&or; works like addition ( &plus; )</li>
+        <li>&not; works like negation ( &minus; )</li>
+        <li>&and; works like multiplication ( &times; )</li>
+        <li>Associative: (A &and; B) &and; C = A &and; (B &and; C)</li>
+        <li>Commutative: (A &and; B) = (B &and; A)</li>   
+        <li>Distributive:<br>A &and; (B &or; C) = (A &and; B) &or; (A &and; C)</li>
+      </ul>
+    </div>
+
+    <div id="peirce" class="step slide" data-x="2250" data-y="2700">
+      <p class="centertext"><b>Logic via Electrical Switches?</b><br>Charles Sanders Peirce</p>
+      <img class="centerimg" height="500" src="cis115spring2015/images/lecture4/peirce_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Charles_Sanders_Peirce">Wikipedia</a></p>
+    </div>
+
+    <div id="shannon" class="step slide" data-x="3250" data-y="2700">
+      <p class="centertext"><b>Claude Shannon</b></p>
+      <img class="centerimg" height="600" src="cis115spring2015/images/lecture4/shannon_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Claude_Shannon">Wikipedia</a></p>
+    </div>
+
+    <div id="shannon_thesis" class="step slide" data-x="3250" data-y="1800">
+      <p class="centertext"><a href="http://hdl.handle.net/1721.1/11173"><b>A Symbolic Analysis of Relay and Switching Circuits</b></a></p>
+      <img class="centerimg" height="400" src="cis115spring2015/images/lecture4/shannonthesis_mit.png">
+      <p class="imagecredit">Image Source: <a href="http://hdl.handle.net/1721.1/11173">MIT</a></p>
+      <p style="font-size:35px; line-height:40px">"...possibly the most important, and also the most famous, master's thesis of the century."<br> - Psychologist Howard Gardner (via <a href="http://en.wikipedia.org/wiki/A_Symbolic_Analysis_of_Relay_and_Switching_Circuits">Wikipedia</a>)</p>
+    </div>
+
+    <div id="logic_gates" class="step slide" data-x="4500" data-y="0">
+      <p class="centertext"><b>Logic Gates</b><br><br></p>
+      <table style="width:100%">
+        <tr>
+          <td><p class="centertext">AND</p> <img height="100" src="cis115spring2015/images/lecture4/andgate_wiki.png"></td>
+          <td><p class="centertext">OR</p> <img height="100" src="cis115spring2015/images/lecture4/orgate_wiki.png"></td>
+          <td><p class="centertext">XOR</p> <img height="100" src="cis115spring2015/images/lecture4/xorgate_wiki.png"></td>
+          <td><p class="centertext">NOT</p> <img height="100" src="cis115spring2015/images/lecture4/notgate_wiki.png"></td>
+        </tr>
+        <tr>
+          <td><br></td>
+        </tr>
+        <tr>
+          <td><p class="centertext">NAND</p> <img height="100" src="cis115spring2015/images/lecture4/nandgate_wiki.png"></td>
+          <td><p class="centertext">NOR</p> <img height="100" src="cis115spring2015/images/lecture4/norgate_wiki.png"></td>
+          <td><p class="centertext">XNOR</p> <img height="100" src="cis115spring2015/images/lecture4/xnorgate_wiki.png"></td>
+          <td></td>
+        </tr>
+      </table>
+      <p style="font-size:35px; line-height:40px"><br>Note: The little circle at the end of the NOT gate is the only part that matters.</p>
+    </div>
+
+    <div id="boolean_values" class="step slide" data-x="4500" data-y="900">
+      <p class="centertext"><b>Boolean Values</b><br><br></p>
+      <table style="width:100%">
+        <tr>
+          <th><p class="centertext">Boolean</p></th>
+          <th><p class="centertext">Binary</p></th>
+          <th><p class="centertext">Electrical</p></th>
+        </tr>
+        <tr>
+          <td><p class="centertext">TRUE</p></td>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">ON</p></td>
+        </tr>
+        <tr>
+          <td><p class="centertext">FALSE</p></td>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">OFF</p></td>
+        </tr>
+      </table>
+      <p style="font-size:35px; line-height:40px"><br><br>Note: These values are traditionally used in theory. In many electronic systems and programming languages these values may be reversed for various reasons. Check the manual!</p>
+    </div>
+
+    <div id="example1" class="step slide" data-x="4250" data-y="1575" data-scale="0.5">
+      <p class="centertext" style="font-size:30px; line-height:35px">Example 1</p>
+      <table style="width:100%">
+        <tr>
+          <th><p class="centertext">A</p></th>
+          <th><p class="centertext">B</p></th>
+          <th><p class="centertext">C</p></th>
+          <th><p class="centertext">OUT</p></th>
+        </tr>
+        <tr style="background:#BBBBBB">
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">0</p></td>
+        </tr>
+        <tr>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">0</p></td>
+        </tr>
+        <tr style="background:#BBBBBB">
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">0</p></td>
+        </tr>
+        <tr>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">1</p></td>
+        </tr>
+        <tr style="background:#BBBBBB">
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">0</p></td>
+        </tr>
+        <tr>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">1</p></td>
+        </tr>
+        <tr style="background:#BBBBBB">
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">0</p></td>
+        </tr>
+        <tr>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">1</p></td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="example1soln" class="step slide" data-x="4750" data-y="1575" data-scale="0.5">
+      <p class="centertext">(A &and; C) &or; (B &and; C)<br><br></p>
+      <img width="425" src="cis115spring2015/images/lecture4/ex1-Venn.png">
+      <img style="float: right" width="425" src="cis115spring2015/images/lecture4/ex1-Gates1.png">
+      <p class="centertext"><br>C &and; (A &or; B) works as well</p>
+    </div>
+
+    <div id="example2" class="step slide" data-x="4250" data-y="2025" data-scale="0.5">
+      <p class="centertext" style="font-size:30px; line-height:35px">Example 2</p>
+      <table style="width:100%">
+        <tr>
+          <th><p class="centertext">A</p></th>
+          <th><p class="centertext">B</p></th>
+          <th><p class="centertext">C</p></th>
+          <th><p class="centertext">OUT</p></th>
+        </tr>
+        <tr style="background:#BBBBBB">
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">0</p></td>
+        </tr>
+        <tr>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">1</p></td>
+        </tr>
+        <tr style="background:#BBBBBB">
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">1</p></td>
+        </tr>
+        <tr>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">1</p></td>
+        </tr>
+        <tr style="background:#BBBBBB">
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">0</p></td>
+        </tr>
+        <tr>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">0</p></td>
+        </tr>
+        <tr style="background:#BBBBBB">
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">0</p></td>
+        </tr>
+        <tr>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">0</p></td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="example2soln" class="step slide" data-x="4750" data-y="2025" data-scale="0.5">
+      <p class="centertext">&not;A &and; ( B &or; C )<br><br></p>
+      <img width="425" src="cis115spring2015/images/lecture4/ex2-Venn.png">
+      <img style="float: right" width="425" src="cis115spring2015/images/lecture4/ex2-Gates.png">
+      <p class="centertext"><br>( &not;A &and; B) &or; ( &not;A &and; C) works as well</p>
+    </div>
+
+    <div id="example3" class="step slide" data-x="4250" data-y="2475" data-scale="0.5">
+      <p class="centertext" style="font-size:30px; line-height:35px">Example 3</p>
+      <table style="width:100%">
+        <tr>
+          <th><p class="centertext">A</p></th>
+          <th><p class="centertext">B</p></th>
+          <th><p class="centertext">C</p></th>
+          <th><p class="centertext">OUT</p></th>
+        </tr>
+        <tr style="background:#BBBBBB">
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">0</p></td>
+        </tr>
+        <tr>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">0</p></td>
+        </tr>
+        <tr style="background:#BBBBBB">
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">0</p></td>
+        </tr>
+        <tr>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">1</p></td>
+        </tr>
+        <tr style="background:#BBBBBB">
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">0</p></td>
+        </tr>
+        <tr>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">1</p></td>
+        </tr>
+        <tr style="background:#BBBBBB">
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">0</p></td>
+        </tr>
+        <tr>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">0</p></td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="example3soln" class="step slide" data-x="4750" data-y="2475" data-scale="0.5">
+      <p class="centertext">( A &oplus; B ) &and; C<br><br></p>
+      <img width="425" src="cis115spring2015/images/lecture4/ex3-Venn.png">
+      <img style="float: right" width="425" src="cis115spring2015/images/lecture4/ex3-Gates.png">
+      <p class="centertext">(A &and; C) &oplus; (B &and; C) works</p>
+      <p class="centertext">(A &and; &not;B &and; C) &or; (&not;A &and; B &and; C) works</p>
+    </div>
+
+    <div id="example4" class="step slide" data-x="4250" data-y="2925" data-scale="0.5">
+      <p class="centertext" style="font-size:30px; line-height:35px">Example 4</p>
+      <table style="width:100%">
+        <tr>
+          <th><p class="centertext">A</p></th>
+          <th><p class="centertext">B</p></th>
+          <th><p class="centertext">C</p></th>
+          <th><p class="centertext">OUT</p></th>
+        </tr>
+        <tr style="background:#BBBBBB">
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">1</p></td>
+        </tr>
+        <tr>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">1</p></td>
+        </tr>
+        <tr style="background:#BBBBBB">
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">1</p></td>
+        </tr>
+        <tr>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">1</p></td>
+        </tr>
+        <tr style="background:#BBBBBB">
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">1</p></td>
+        </tr>
+        <tr>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">1</p></td>
+        </tr>
+        <tr style="background:#BBBBBB">
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">0</p></td>
+          <td><p class="centertext">0</p></td>
+        </tr>
+        <tr>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">1</p></td>
+          <td><p class="centertext">1</p></td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="example4soln" class="step slide" data-x="4750" data-y="2925" data-scale="0.5">
+      <p class="centertext">&not; ( A &and; B &and; &not;C )<br><br></p>
+      <img width="425" src="cis115spring2015/images/lecture4/ex4-Venn.png">
+      <img style="float: right" width="425" src="cis115spring2015/images/lecture4/ex4-Gates.png">
+      <p class="centertext">By De Morgan's Law<br>( &not;A &or; &not;B &or; C ) works as well</p>
+    </div>
+
+    <div id="universal" class="step slide" data-x="4500" data-y="3600">
+      <p class="centertext"><b>Universal Logic Gates</b></p>
+      <img class="centerimg" height="600" src="cis115spring2015/images/lecture4/ti7400_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Universal_logic_gate#Universal_logic_gates">Wikipedia</a></p>
+    </div> 
+
+    <div id="adder" class="step slide" data-x="3500" data-y="3600">
+      <p class="centertext"><b>Universal Logic Gates - Adder</b></p>
+      <img class="centerimg" height="300" src="cis115spring2015/images/lecture4/adder1.svg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Adder_(electronics)">Wikipedia</a></p>
+      <img class="centerimg" height="300" src="cis115spring2015/images/lecture4/adder2.png">
+      <p class="imagecredit">Image Source: <a href="http://www.schoolphysics.co.uk/age16-19/Electronics/Logic%20gates/text/Adder_and_halfadder/index.html">schoolphysics.co.uk</a></p>
+    </div> 
+
+    <div id="finitestatemachines" class="step slide" data-x="2500" data-y="3600">
+      <p class="centertext"><b>Next Steps</b></p>
+      <ul>
+        <li>Programming</li>
+        <li>Finite State Machines</li>
+      <img class="centerimg" height="400" src="cis115spring2015/images/lecture4/fsm_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Finite-state_machine">Wikipedia</a></p>
+    </div> 
+
+    <div id="assignment" class="step slide" data-x="-825" data-y="-225" data-scale="0.5">
+      <p class="centertext">Assignments<br><br></p>
+      <ul>
+        <li>Read and be prepared to discuss:<ul>
+          <li><em>Pattern on the Stone</em> Chapter 3: Programming</li></ul></li>
+        <li>Blog 1: Personal Biography - Due 2/2 10PM</li>
+        <li>Scratch Bank Project - Due 2/10 10PM</li>
+      </ul>
+    </div>
+
+    <div id="blog" class="step slide" data-x="-825" data-y="225" data-scale="0.5">
+      <p class="centertext"><b>Blog 1: Personal Biography</b></p>
+      <p style="font-size: 35px; line-height: 45px">Tell us a little about yourself. This is your chance to let us know who you are and what interests you. Some questions you can answer to get you started are below, but feel free to be as creative and expressive as possible introducing yourself.<br><br>
+        <ul style="font-size: 35px; line-height: 45px">
+          <li>Where are you from?</li>
+          <li>Why did you choose to come to Kansas State?</li>
+          <li>What interests you about Computing Science?</li>
+          <li>Do you have any hobbies?</li>
+          <li>What is your family like?</li>
+          <li>Have you had any interesting jobs or experiences?</li>
+          <li>What do you want to do after you graduate?</li>
+        </ul>
+      </p>
+    </div>
+
+    <div id="activity" class="skip slide" data-x="-825" data-y="655" data-scale="0.5">
+      <p class="centertext"><b>Scratch Project (Part 1)<br><br></b></p>
+      <ol>
+        <li>Download the starter file from KSOL</li>
+        <li>Follow the instructions to complete the project</li>
+      </ol>
+      <p class="centertext"><b>Due: Feb. 10th, 10:00 PM</b></p>
+    </div>
+
+    <div id="activity_1" class="step" data-x="-825" data-y="675" data-scale="0.5">
+    </div>
+
+    <div id="boolean_scratch" class="step slide" data-x="-825" data-y="1125" data-scale="0.5">
+      <p class="centertext"><b>Booleans in Scratch</b><br><br></p>
+      <table class="centerimg" style="width:75%">
+        <tr>
+          <td>And <img style="float: right" height="75" src="cis115spring2015/images/lecture4/scratch_and.png"></td>
+        </tr>
+        <tr><td><br></td></tr>
+        <tr>
+          <td>Or <img style="float: right" height="75" src="cis115spring2015/images/lecture4/scratch_or.png"></td>
+        </tr>
+        <tr><td><br></td></tr>
+        <tr>
+          <td>Not <img style="float: right" height="75" src="cis115spring2015/images/lecture4/scratch_not.png"></td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="boolean_scratch_values" class="step slide" data-x="-825" data-y="1575" data-scale="0.5">
+      <p class="centertext"><b>Getting Boolean Values</b><br><br></p>
+      <table class="centerimg" style="width:95%">
+        <tr height="100">
+          <td>Less Than <img style="float: right" height="75" src="cis115spring2015/images/lecture4/scratch_less.png"></td>
+        </tr>
+        <tr height="100">
+          <td>Greater Than <img style="float: right" height="75" src="cis115spring2015/images/lecture4/scratch_greater.png"></td>
+        </tr>
+        <tr height="100">
+          <td>Equals <img style="float: right" height="75" src="cis115spring2015/images/lecture4/scratch_equals.png"></td>
+        </tr>
+        <tr height="100">
+          <td>Mouse Down <img style="float: right" height="75" src="cis115spring2015/images/lecture4/scratch_mousedown.png"></td>
+        </tr>
+        <tr height="100">
+          <td>Key Pressed <img style="float: right" height="65" src="cis115spring2015/images/lecture4/scratch_keypressed.png"></td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="using_booleans_scratch" class="step slide" data-x="-825" data-y="2025" data-scale="0.5">
+      <p class="centertext"><b>Using Boolean Values</b><br><br></p>
+      <table class="centerimg" style="width:75%">
+        <tr height="250">
+          <td>If block <img style="float: right" height="200" src="cis115spring2015/images/lecture4/scratch_if.png"></td>
+        </tr>
+        <tr height="250">
+          <td>If Else block<img style="float: right" height="200" src="cis115spring2015/images/lecture4/scratch_ifelse.png"></td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="scratch_variables" class="step slide" data-x="-825" data-y="2475" data-scale="0.5">
+      <p class="centertext"><b>Scratch Variables</b><br><br></p>
+      <table class="centerimg" style="width:95%">
+        <tr height="100">
+          <td>Variable <img style="float: right" height="75" src="cis115spring2015/images/lecture4/scratch_variable.png"></td>
+        </tr>
+        <tr height="100">
+          <td>Set Variable <img style="float: right" height="75" src="cis115spring2015/images/lecture4/scratch_setvar.png"></td>
+        </tr>
+        <tr height="100">
+          <td>Change Variable <img style="float: right" height="75" src="cis115spring2015/images/lecture4/scratch_changevar.png"></td>
+        </tr>
+        <tr height="100">
+          <td>Show Variable <img style="float: right" height="75" src="cis115spring2015/images/lecture4/scratch_showvar.png"></td>
+        </tr>
+        <tr height="100">
+          <td>Hide Variable <img style="float: right" height="75" src="cis115spring2015/images/lecture4/scratch_hidevar.png"></td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="activity_2" class="step" data-x="-825" data-y="675" data-scale="0.5">
+    </div>
+
+    <div id="overview" class="step" data-x="2000" data-y="1800" data-z="-1" data-scale="6.5">
+    </div>
+
+</div>
+
+<script src="js/analytics.js"></script>
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
+<script src="js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+</body>
+</html>

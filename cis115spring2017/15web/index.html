@@ -1,0 +1,381 @@
+<html lang="en">
+<head>
+    <link href="/favicon.ico" rel="shortcut icon">
+    <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+    <meta name="description" content="CIS 115 - Programming for the Web" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 115 - Interactive Web Programming</title>
+    <link href="/css/highlight/github.css" rel="stylesheet" />
+    <link href="/css/TimeCircles.css" rel="stylesheet" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/impress.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 115</b><br><br>Interactive Web Programming</p>
+    </div>
+
+    <div id="assignment" class="step slide" data-x="-825" data-y="-225" data-scale="0.5">
+      <p class="centertext"><b>Assignments</b><br><br></p>
+      <ul>
+        <li>Read and be prepared to discuss:<ul>
+          <li><em>Tubes</em> Chapter 5: Cities of Light</li></ul></li>
+        <li><b>Topic Research Project! - Due 3/17 10:00 PM</b></li>
+        <li>Blog 4: The Filter Bubble - Due 3/13 10:00 PM</li>
+      </ul>
+    </div>
+
+    <div id="blog" class="step slide" data-x="-825" data-y="225" data-scale="0.5">
+      <p class="centertext" style="font-size: 35px; line-height: 45px"><b>Blog 4: The Filter Bubble</b></p>
+      <p style="font-size: 23px; line-height: 25px">The Filter Bubble (<a href="https://en.wikipedia.org/wiki/Filter_bubble">https://en.wikipedia.org/wiki/Filter_bubble</a>) is a phenomenon on the internet where personalized algorithms present users only with information or opinions that match her or his own thoughts. Because of this, internet users can become isolated in their own little worlds, where everything they see and hear agrees with an reinforces their own ideals and belief. For this blog post, we want you to challenge yourself a bit to see exactly what others are seeing. Here's what we'd like you to do:<br><br></p>
+        <ol style="font-size: 23px; line-height: 25px">
+          <li>Find someone (a friend, family member, roommate, fellow student, etc.) who has different thoughts and opinions than your own. It doesn't have to be purely politically based; they may like different games, movies, websites, books as well.</li>
+          <li>Using their personal computer (with their permission and while they are present), browse the web for a little bit. Do a few searches on Google or Amazon, check out the recommended videos on Youtube or Netflix, see what ads are appearing on different sites, etc. If you do this on a shared computer or lab computer, have them log in to a few sites and search around for a bit like they normally would before handing it over to you.</li>
+          <li>Then, do the same steps on your own machine or while logged in to your own accounts, and record the differences.</li>
+          <li>Bonus - Use private browsing or incognito mode and repeat those steps again. Is it different?</li>
+        </ol>
+        <p style="font-size: 23px; line-height: 25px"><br>Write about your experiences and what you find. Make sure you reference back to the textbooks and other websites to help you explain why this is happening.
+      </p>
+    </div>
+
+    <div id="activity" class="skip slide" data-x="-825" data-y="655" data-scale="0.5">
+      <p class="centertext"><b>Create your own Website!</b></p>
+      <p>Create a webpage that has:</p>
+      <ul>
+        <li>2 pages: index & about</li>
+        <li>4 CSS directives</li>
+        <li>Various HTML5 elements</li>
+        <li>Valid HTML5 - <a href="http://validator.w3.org">http://validator.w3.org</a></li>
+        <li><b>JavaScript Tic Tac Toe Game</b></li>
+        <li>Project 5 - Due 10/18</li>
+      </ul>
+      <p class="centertext"><a href="http://www.w3schools.com/html">http://www.w3schools.com/html</a></p>
+    </div>
+
+    <div id="activity_1" class="step" data-x="-825" data-y="675" data-scale="0.5">
+    </div>
+
+    <div id="tech" class="step slide" data-x="1000" data-y="0">
+      <p class="centertext"><b>Core Web 2.0 Technologies</b><br><br></p>
+      <ul>
+        <li>DOM</li>
+        <li>Javascript</li>
+        <li>AJAX</li>
+        <li>JSON</li>
+      </ul>
+    </div>
+
+    <div id="dom" class="step slide" data-x="2000" data-y="0">
+      <p class="centertext"><b>Document Object Model (DOM)</b></p>
+      <img class="centerimg" height="600" src="images/dom_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Document_object_model">Wikipedia</a></p>
+    </div>
+
+    <div id="dom2" class="step slide" data-x="3000" data-y="0">
+      <p class="centertext"><b>Document Object Model (DOM)</b></p>
+      <img class="centerimg" height="600" src="images/dom2_wiki.svg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Document_object_model">Wikipedia</a></p>
+    </div>
+
+    <div id="html_page" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>HTML - tictactoe.html</b><br><br></p>
+      <pre><code style="font-size:23px; line-height:28px">&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;title>Tic Tac Toe&lt;/title>
+    &lt;link href="fancy.css" type="text/css" rel="stylesheet"/>
+  &lt;/head>
+  &lt;body>
+      &lt;h1>Play TicTacToe&lt;/h1>
+      &lt;!-- table goes here -->
+  &lt;/body>
+&lt;/html></code></pre>
+    </div>
+
+    <div id="table1" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b>Table - tictactoe.html</b></p>
+      <pre><code style="font-size:23px; line-height:28px">&lt;table>
+  &lt;tbody>
+    &lt;tr>
+      &lt;td>&lt;/td>
+      &lt;td>&lt;/td>
+      &lt;td>&lt;/td>
+    &lt;/tr>
+    &lt;tr>
+      &lt;td>&lt;/td>
+      &lt;td>&lt;/td>
+      &lt;td>&lt;/td>
+    &lt;/tr>
+    &lt;tr>
+      &lt;td>&lt;/td>
+      &lt;td>&lt;/td>
+      &lt;td>&lt;/td>
+    &lt;/tr>
+  &lt;/tbody>
+&lt;/table></code></pre>
+    </div>
+
+    <div id="style1" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>Styles - fancy.css</b><br><br></p>
+      <pre><code style="font-size:45px; line-height:55px">td {
+  border: 5px solid black;
+  width: 100px;
+  height: 100px;
+  font-size: 80px;
+  text-align: center;
+  font-family: sans;
+}</code></pre>
+    </div>
+
+    <div id="table2" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>Div - tictactoe.html</b><br><br></p>
+      <pre><code style="font-size:23px; line-height:28px">&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;title>Tic Tac Toe&lt;/title>
+    &lt;link href="fancy.css" type="text/css" rel="stylesheet"/>
+  &lt;/head>
+  &lt;body>
+      &lt;h1>Play TicTacToe&lt;/h1>
+
+      &lt;div id="turn">x's Turn&lt;/div>
+
+      &lt;table>
+          &lt;!-- rest of table here -->
+      &lt;table>
+  &lt;/body>
+&lt;/html></code></pre>
+    </div>
+
+    <div id="style2" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>Styles - fancy.css</b></p>
+      <pre><code style="font-size:30px; line-height:35px">td {
+  border: 5px solid black;
+  width: 100px;
+  height: 100px;
+  font-size: 80px;
+  text-align: center;
+  font-family: sans;
+}
+<b>
+#turn {
+  font-weight: bold;
+  text-transform: capitalize;
+  text-align: center;
+  font-size: 16pt;
+  background-color: #777777;
+  width: 340px;
+}</b>
+</code></pre>
+    </div>
+
+    <div id="style3" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>Borders - fancy.css</b></p>
+      <pre><code style="font-size:30px; line-height:35px">
+td:nth-child(1) {
+  border-left: none;
+}
+
+td:nth-child(3) {
+  border-right: none;
+}
+
+tr:nth-child(1) > td {
+  border-top: none;
+}
+
+tr:nth-child(3) > td {
+  border-bottom: none;
+}</code></pre>
+    </div>
+
+    <div id="sample1" class="step" data-x="1000" data-y="1800">
+      <img class="centerimg" height="600" src="images/sample1.png">
+    </div>
+
+    <div id="eich" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b>Brendan Eich</b></p>
+      <img class="centerimg" height="600" src="images/eich_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="https://en.wikipedia.org/wiki/Brendan_Eich">Wikipedia</a></p>
+    </div>
+
+
+    <div id="js" class="step slide" data-x="3000" data-y="1800">
+      <p class="centertext"><b>JavaScript (1995)</b><br><br></p>
+      <ul>
+        <li>Originally called "LiveScript"</li>
+        <li>Used to manipulate the DOM after the page has loaded</li>
+        <li>Makes the web page much more interactive for the user</li>
+        <li>Unrelated to the Java programming language</li>
+      </ul>
+    </div>
+
+    <div id="jquery" class="step slide" data-x="4000" data-y="1800">
+      <p class="centertext"><b>JQuery (1995)</b><br><br></p>
+      <ul>
+        <li>Cross-Platform JavaScript Library</li>
+        <li>Much easier to use than raw JavaScript</li>
+        <li>Designed to aid in manipulating the DOM</li>
+        <li>Has many plugins and libraries available</li>
+      </ul>
+    </div>
+<!--
+    <div id="jquerycode" class="step" data-x="0" data-y="2700">
+      <p class="centertext"><b>code.jquery.com</b><br><br></p>
+      <img class="centerimg" width="850" src="images/jquery.png">
+      <p class="imagecredit">Image Source: <a href="http://code.jquery.com">JQuery</a></p>
+    </div>-->
+
+    <div id="html3" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>Script - tictactoe.html</b></p>
+      <pre><code style="font-size:21px; line-height:28px">&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;title>Tic Tac Toe&lt;/title>
+    &lt;link href="fancy.css" type="text/css" rel="stylesheet"/>
+  &lt;/head>
+  &lt;body>
+      &lt;h1>Play TicTacToe&lt;/h1>
+
+      &lt;div id="turn">x's Turn&lt;/div>
+
+      &lt;table>
+        &lt;!-- rest of table here -->
+      &lt;/table>
+
+      &lt;script src="http://code.jquery.com/jquery-3.1.1.js">&lt;/script>
+      &lt;script src="script.js" type="text/javascript">&lt;/script>
+
+  &lt;/body>
+&lt;/html></code></pre>
+    </div>
+
+    <div id="html4" class="step slide" data-x="2000" data-y="2700">
+      <p class="centertext"><b>Code - script.js</b></p>
+      <pre><code style="font-size:32px; line-height:34px">var turn = "x";
+
+$('td').on('click', function(){
+  var $square = $(this);
+
+  if($square.text() == ""){
+    $square.text(turn);
+
+    if(turn == "x"){
+      turn = "o";
+    }else{
+      turn = "x";
+    }
+
+    $('#turn').text(turn + "'s turn");
+
+  }
+});
+</code></pre>
+    </div>
+
+    <div id="sample2" class="step" data-x="3000" data-y="2700">
+      <img class="centerimg" height="600" src="images/test.gif">
+    </div>
+
+    <div id="ajax" class="step slide" data-x="0" data-y="3600">
+      <p class="centertext"><b>AJAX (2005)</b><br><br></p>
+      <ul>
+        <li>Asynchronous Javascript and XML</li>
+        <li>Allows scripts on a webpage to send and receive data in the background without reloading the page</li>
+        <li>XML not required; may use JSON instead</li>
+      </ul>
+    </div>
+
+    <div id="xml" class="step slide" data-x="1000" data-y="3600">
+      <p class="centertext"><b>Extensible Markup Language (XML)</b></p>
+      <pre><code style="font-size:25px; line-height:30px">&lt;person>
+   &lt;firstName>John&lt;/firstName>
+   &lt;lastName>Smith&lt;/lastName>
+   &lt;age>25&lt;/age>
+   &lt;address>
+      &lt;city>New York&lt;/city>
+      &lt;postalCode>10021&lt;/postalCode>
+      &lt;state>NY&lt;/state>
+      &lt;streetAddress>21 2nd Street&lt;/streetAddress>
+   &lt;/address>
+   &lt;phoneNumbers>
+      &lt;element>
+         &lt;number>212 555-1234&lt;/number>
+         &lt;type>home&lt;/type>
+      &lt;/element>
+      &lt;element>
+         &lt;number>646 555-4567&lt;/number>
+         &lt;type>fax&lt;/type>
+      &lt;/element>
+   &lt;/phoneNumbers></code></pre>
+    </div>
+
+    <div id="json" class="step slide" data-x="2000" data-y="3600">
+      <p class="centertext"><b>JavaScript Object Notation (JSON)</b></p>
+      <pre><code style="font-size:25px; line-height:30px">{
+    "firstName": "John",
+    "lastName": "Smith",
+    "age": 25,
+    "address": {
+        "streetAddress": "21 2nd Street",
+        "city": "New York",
+        "state": "NY",
+        "postalCode": 10021
+    },
+    "phoneNumbers": [
+        {
+            "type": "home",
+            "number": "212 555-1234"
+        },
+        {
+            "type": "fax",
+            "number": "646 555-4567"
+        }
+    ]
+}</code></pre>
+    </div>
+
+
+    <div id="machine" class="step" data-x="3000" data-y="3600">
+      <div id="ApVQ1it4B04" data-id="NLlGopyXT_g" class="youtube">
+        <a href="http://www.youtube.com/watch?v=NLlGopyXT_g">The Machine is Us/ing Us on Youtube</a>
+      </div>
+    </div>
+
+
+    <div id="activity_2" class="step" data-x="-825" data-y="675" data-scale="0.5">
+    </div>
+
+    <div id="overview" class="step" data-x="2500" data-y="2000" data-z="-1" data-scale="7.5">
+    </div>
+
+</div>
+
+<script src="/js/analytics.js"></script>
+<script src="/js/impress.js"></script>
+<script>impress().init();</script>
+<script src="/js/jquery-1.10.2.min.js"></script>
+<script src="/js/TimeCircles.js"></script>
+<script src="/js/timer.js"></script>
+<script src="/js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

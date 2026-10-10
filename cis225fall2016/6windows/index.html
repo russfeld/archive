@@ -1,0 +1,151 @@
+<html lang="en">
+<head>
+    <link href="/favicon.ico" rel="shortcut icon">
+    <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+    <meta name="description" content="CIS 225 - Windows" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 225 - Windows</title>
+    <link href="/css/impress.css" rel="stylesheet" />
+    <link href="/css/TimeCircles.css" rel="stylesheet" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 225</b><br><br>Windows 10 In-Depth</p>
+    </div>
+
+    <div id="win10desktop" class="step" data-x="1000" data-y="0">
+      <img class="centerimg" width="900" src="images/win10desktop_wiki.png">
+      <p class="imagecredit">Image Source: <a href="https://en.wikipedia.org/wiki/Microsoft_Windows">Wikipedia</a></p>
+    </div>
+
+    <div id="win3desktop" class="step" data-x="2000" data-y="0">
+      <img class="centerimg" width="900" src="images/win3desktop_wiki.png">
+      <p class="imagecredit">Image Source: <a href="https://en.wikipedia.org/wiki/Microsoft_Windows">Wikipedia</a></p>
+    </div>
+
+    <div id="win_history" class="step slide" data-x="3000" data-y="0">
+      <p class="centertext"><b>Windows History</b></p>
+      <ul>
+        <li>Originally a graphical shell for MS-DOS</li>
+        <li>Written in C, C++ and Assembly</li>
+        <li>Windows 95 was a huge success</li>
+        <li>Windows NT became Windows 2000, XP</li>
+        <li>Windows 10 is latest, runs on everything</li>
+      </ul>
+    </div>
+
+    <div id="win_tree" class="step" data-x="4000" data-y="0">
+      <img class="centerimg" width="900" src="images/wintree_wiki.png">
+      <p class="imagecredit">Image Source: <a href="https://en.wikipedia.org/wiki/Microsoft_Windows">Wikipedia</a></p>
+    </div>
+
+    <div id="win_components" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>Major Windows Components<br><br></b></p>
+      <ul>
+        <li>Start Menu</li>
+        <li>Control Panel</li>
+        <li>File System Layout</li>
+        <li>Registry</li>
+      </ul>
+    </div>
+
+    <div id="winstart" class="step" data-x="1000" data-y="900">
+      <img class="centerimg" width="900" src="images/win10start_wiki.png">
+      <p class="imagecredit">Image Source: <a href="https://en.wikipedia.org/wiki/Start_menu">Wikipedia</a></p>
+    </div>
+
+    <div id="winsetting" class="step" data-x="2000" data-y="900">
+      <img class="centerimg" width="900" src="images/win10settings.png">
+    </div>
+
+    <div id="wincontrol" class="step" data-x="3000" data-y="900">
+      <img class="centerimg" width="900" src="images/win10control.png">
+    </div>
+
+    <div id="winregistry" class="step" data-x="4000" data-y="900">
+      <img class="centerimg" width="900" src="images/registry_wiki.png">
+      <p class="imagecredit">Image Source: <a href="https://en.wikipedia.org/wiki/Windows_Registry">Wikipedia</a></p>
+    </div>
+
+    <div id="startup" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>Windows NT Startup</b></p>
+      <ul style="font-size: 45px !important; line-height: 50px">
+        <li>BIOS looks in the first sector for a bootloader (NTLDR)</li>
+        <li>NTLDR checks for hiberfil.sys. If so, resumes from hibernation</li>
+        <li>NTLDR check for boot.ini, displays boot menu to the user</li>
+        <li>NTLDR reads uses ntdetect.com to scan for hardware & collect info</li>
+        <li>The kernel is loaded, given hardware info, and assumes control</li>
+      </ul>
+    </div>
+
+    <div id="startup2" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b>Windows 10 Startup<br><br></b></p>
+      <ul style="font-size: 45px !important; line-height: 50px">
+        <li>Windows Boot Manager is started via EFI</li>
+        <li>It reads the Boot Configuration Data (BCD) from disk</li>
+        <li>BCD is stored on a special EFI partition in the same file format as the registry</li>
+        <li>Using that, it loads winload.exe to load the kernel and device drivers</li>
+        <li>The kernel assumes control</li>
+      </ul>
+    </div>
+
+    <div id="tasks" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b>Windows 10 Tasks</b></p>
+      <ul>
+        <li>Set Computer Name</li>
+        <li>Manage Installed Programs</li>
+        <li>User Accounts</li>
+        <li>VMWare Tools</li>
+        <li>Internet Access</li>
+        <li>Windows Updates</li>
+        <li>Boot Configuration</li>
+      </ul>
+    </div>
+
+    <div id="reading" class="step slide" data-x="3000" data-y="1800">
+      <p class="centertext"><b>Reading</b><br><br></p>
+      See Class Website:
+      <p style="font-size:40px"><a href="/cis225fall2016/">http://people.cis.ksu.edu/~russfeld/cis225fall2016/</a></p>
+    </div>
+
+    <div id="assignments" class="step slide" data-x="4000" data-y="1800">
+      <p class="centertext"><b>Assignments</b><br><br></p>
+      <ul>
+        <li>Lab 2 - Virtualization, OS Install & Config<br>Due 9/12 11:30 AM <b>Before Lecture!!</b>
+      </ul>
+    </div>
+
+    <div id="overview" class="step" data-x="2000" data-y="1500" data-z="-1" data-scale="6">
+    </div>
+
+</div>
+
+<script src="/js/analytics.js"></script>
+<script src="/js/impress.js"></script>
+<script>impress().init();</script>
+<script src="/js/jquery-1.10.2.min.js"></script>
+<script src="/js/TimeCircles.js"></script>
+<script src="/js/timer.js"></script>
+<script src="/js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+
+
+
+</body>
+</html>

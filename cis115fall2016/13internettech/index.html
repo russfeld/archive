@@ -1,0 +1,333 @@
+<html lang="en">
+<head>
+    <link href="/favicon.ico" rel="shortcut icon">
+    <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+    <meta name="description" content="CIS 115 - How the Internet Works" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 115 - How the Internet Works</title>
+    <link href="/css/TimeCircles.css" rel="stylesheet" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/impress.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 115</b><br><br>How the Internet Works</p>
+    </div>
+
+    <div id="circuit" class="step slide" data-x="1000" data-y="0">
+      <p class="centertext"><b>Circuit Switching</b></p>
+      <img class="centerimg" height="600" src="images/switchboard_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Telephone_switchboard">Wikipedia</a></p>
+    </div>
+
+    <div id="circuit1" class="step slide" data-x="2000" data-y="0">
+      <br><br><br>
+      <img class="centerimg" width="850" src="images/circuit1.png">
+    </div>
+
+    <div id="circuit2" class="step slide" data-x="3000" data-y="0">
+      <br><br><br>
+      <img class="centerimg" width="850" src="images/circuit2.png">
+    </div>
+
+    <div id="circuit3" class="step slide" data-x="4000" data-y="0">
+      <img class="centerimg" width="850" src="images/circuit3.png">
+    </div>
+
+    <div id="baran" class="step slide" data-x="5000" data-y="0">
+      <p class="centertext"><b>Packet Switching - Paul Baran</b></p>
+      <img class="centerimg" height="600" src="images/baran_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Paul_Baran">Wikipedia</a></p>
+    </div>
+
+        <div id="video" class="step" data-x="6000" data-y="0">
+      <div id="CoeHrKB5Fa4" data-id="CoeHrKB5Fa4" class="youtube" data-start="355">
+        <a href="http://www.youtube.com/watch?v=CoeHrKB5Fa4">Paul Baran - Packet Switching</a>
+      </div>
+    </div>
+
+    <div id="packet1" class="step slide" data-x="0" data-y="900">
+      <img class="centerimg" width="850" src="images/packet1.png">
+    </div>
+
+    <div id="packet2" class="step slide" data-x="1000" data-y="900">
+      <img class="centerimg" width="850" src="images/packet2.png">
+    </div>
+
+    <div id="osi" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>7 Layer OSI Network Model</b></p>
+      <ul>
+        <li>Application</li>
+        <li>Presentation</li>
+        <li>Session</li>
+        <li>Transport - TCP/UDP</li>
+        <li>Network - IPv4/IPv6</li>
+        <li>Data Link  - Ethernet</li>
+        <li>Physical - 100BASE-T</li>
+      </ul>
+    </div>
+
+    <div id="encapsulation" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>Encapsulation</b></p>
+      <img class="centerimg" height="600" src="images/encapsulation_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Encapsulation_%28networking%29">Wikipedia</a></p>
+    </div>
+
+    <div id="nic" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>Physical - 100BASE-T</b></p>
+      <img class="centerimg" height="600" src="images/nic_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Ethernet_card">Wikipedia</a></p>
+    </div>
+
+    <div id="ethernet" class="step slide" data-x="5000" data-y="900">
+      <p class="centertext"><b>Data Link - Ethernet</b></p>
+      <img class="centerimg" height="600" src="images/ethernet_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Ethernet">Wikipedia</a></p>
+    </div>
+
+    <div id="ipv4" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>Network - IPv4</b></p>
+      <table style="width:100%" class="table">
+        <tr><td colspan="2"><b>IPv4 Packet Structure</b></td></tr>
+        <tr><td>Version Info</td><td>Length</td></tr>
+        <tr><td>Packet ID</td><td>Flags & Offset</td></tr>
+        <tr><td>Protocol & TTL</td><td>Checksum</td></tr>
+        <tr><td colspan="2">Source IP Address</td></tr>
+        <tr><td colspan="2">Destination IP Address</td></tr>
+        <tr><td colspan="2">Data...</td></tr>
+      </table>
+    </div>
+
+    <div id="ipv4vsipv6" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b>IPv4 vs. IPv6</b><br><br></p>
+      <p class="centertext">IPv4: 32 bit Addresses<br>2<sup>32</sup> = 4,294,967,296<br><br></p>
+      <p class="centertext">IPv6: 128 bit Addresses<br>2<sup>128</sup> = 340,282,366,920,938,463,463,<br>374,607,431,768,211,456<br>or 340 Undecillion addresses</p>
+    </div>
+
+    <div id="ipv6" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b>Network - IPv6</b></p>
+      <img class="centerimg" height="600" src="images/ipv6_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Ipv6">Wikipedia</a></p>
+    </div>
+
+    <div id="map" class="step slide" data-x="3000" data-y="1800">
+      <img class="centerimg" height="680" src="images/map_of_the_internet_xkcd.jpg">
+      <p class="imagecredit">Image Source: <a href="http://xkcd.com/195/">XKCD</a></p>
+    </div>
+
+    <div id="tcp" class="step slide" data-x="4000" data-y="1800">
+      <p class="centertext"><b>Transport - TCP</b></p>
+      <table style="width:100%" class="table">
+        <tr><td colspan="2"><b>TCP Packet Structure</b></td></tr>
+        <tr><td>Source Port</td><td>Dest. Port</td></tr>
+        <tr><td colspan="2">Sequence Number</td></tr>
+        <tr><td colspan="2">Acknowledgement Number</td></tr>
+        <tr><td>Options</td><td>Length</td></tr>
+        <tr><td>Checksum</td><td>Urgent</td></tr>
+        <tr><td colspan="2">Data...</td></tr>
+      </table>
+    </div>
+
+    <div id="udp" class="step slide" data-x="5000" data-y="1800">
+      <p class="centertext"><b>Transport - UDP</b><br><br></p>
+      <table style="width:100%" class="table">
+        <tr><td colspan="2"><b>UDP Packet Structure</b></td></tr>
+        <tr><td>Source Port</td><td>Dest. Port</td></tr>
+        <tr><td>Length</td><td>Checksum</td></tr>
+        <tr><td colspan="2">Data...</td></tr>
+      </table>
+    </div>
+
+    <div id="tcpvsudp" class="step slide" data-x="0" data-y="2700">
+      <p class="centertext"><b>TCP vs. UDP</b><br><br></p>
+      <table style="width:100%" class="table">
+        <tr><td><b>TCP</b></td><td><b>UDP</b></td></tr>
+        <tr><td>Connection Oriented</td><td>Connectionless</td></tr>
+        <tr><td>Reliable</td><td>Unreliable</td></tr>
+        <tr><td>Acknowledge</td><td>No Acknowledge</td></tr>
+      </table>
+    </div>
+
+    <div id="application" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>Applications</b><br><br></p>
+      <ul>
+        <li>POP/SMTP/IMAP - Email</li>
+        <li>HTTP/FTP - World Wide Web</li>
+        <li>DNS/DHCP - Network Setup</li>
+        <li>SSH/RDP/Telnet - Connections</li>
+      </ul>
+    </div>
+
+    <div id="dns" class="step slide" data-x="2000" data-y="2700">
+      <p class="centertext"><b>Domain Name System (DNS)</b><br><em>"Phonebook for the Internet"</em><br><br></p>
+      <ul>
+        <li>www.ksu.edu &rarr; 129.130.8.49</li>
+        <li>www.google.com &rarr; 74.125.227.116</li>
+        <li>www.ibm.com &rarr; 129.42.60.216</li>
+        <li>www.yahoo.com &rarr; 98.138.253.109</li>
+      </ul>
+    </div>
+
+    <div id="dns_space" class="step slide" data-x="3000" data-y="2700">
+      <img class="centerimg" height="680" src="images/dns_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Dns">Wikipedia</a></p>
+    </div>
+
+    <div id="dns_lookup" class="step slide" data-x="4000" data-y="2700">
+      <p class="centertext"><b>DNS Lookup</b><br><br></p>
+      <img class="centerimg" width="850" src="images/dns_lookup.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Dns">Wikipedia</a></p>
+    </div>
+
+    <div id="dhcp" class="step slide" data-x="5000" data-y="2700">
+      <p class="centertext"><b>Dynamic Host Configuration Protocol (DHCP)</b></p>
+      <img class="centerimg" height="550" src="images/dhcp_tech_juice.jpg">
+      <p class="imagecredit">Image Source: <a href="http://www.tech-juice.org/2011/06/21/the-dhcp-protocol-for-ipv4-explained/">Tech Juice</a></p>
+    </div>
+
+    <div id="http" class="step slide" data-x="0" data-y="3600">
+      <p class="centertext"><b>HyperText Transfer Protocol (HTTP)</b></p>
+      <img class="centerimg" height="550" src="images/http_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">Wikipedia</a></p>
+    </div>
+
+    <div id="http_ex" class="step slide" data-x="1000" data-y="3600">
+      <img class="centerimg" width="880" src="images/http_telnet_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">Wikipedia</a></p>
+    </div>
+
+    <div id="http_comm" class="step slide" data-x="2000" data-y="3600">
+      <p class="centertext"><b>HTTP Commands</b><br><br></p>
+      <ul>
+        <li>GET</li>
+        <li>POST</li>
+        <li>HEAD</li>
+        <li>PUT</li>
+        <li>DELETE</li>
+      </ul>
+    </div>
+
+    <div id="http_status2" class="step slide" data-x="3000" data-y="3600">
+      <p class="centertext"><b>HTTP Status Codes</b><br><br></p>
+      <ul>
+        <li>200</li>
+        <li>301</li>
+        <li>403</li>
+        <li>404</li>
+        <li>500</li>
+        <li>503</li>
+      </ul>
+    </div>
+
+    <div id="http_status3" class="step slide" data-x="3000" data-y="3600" data-z="-1" style="z-index: -1">
+      <p class="centertext"><b>HTTP Status Codes</b><br><br></p>
+      <ul>
+        <li>200 - OK</li>
+        <li>301 - Moved Permanently</li>
+        <li>403 - Forbidden</li>
+        <li>404 - Not Found</li>
+        <li>500 - Internal Server Error</li>
+        <li>503 - Service Unavailable</li>
+      </ul>
+    </div>
+
+    <div id="assignment" class="step slide" data-x="-825" data-y="-225" data-scale="0.5">
+      <p class="centertext"><b>Assignments</b><br><br></p>
+      <ul>
+        <li>Read and be prepared to discuss:<ul>
+          <li><em>Tubes</em> Chapter 3: Only Connect</li></ul></li>
+        <li><b>Topic Research Project! - Due 10/14 10:00 PM</b></li>
+        <li>Scratch HPC - Due 10/4 10:00 PM</li>
+        <li>Blog 4: TBD - Due 10/17 10:00 PM</li>
+      </ul>
+    </div>
+
+    <div id="blog" class="step slide" data-x="-825" data-y="225" data-scale="0.5">
+      <p class="centertext" style="font-size: 35px; line-height: 45px"><b>Blog 4: The Filter Bubble</b></p>
+      <p style="font-size: 23px; line-height: 25px">The Filter Bubble (<a href="https://en.wikipedia.org/wiki/Filter_bubble">https://en.wikipedia.org/wiki/Filter_bubble</a>) is a phenomenon on the internet where personalized algorithms present users only with information or opinions that match her or his own thoughts. Because of this, internet users can become isolated in their own little worlds, where everything they see and hear agrees with an reinforces their own ideals and belief. For this blog post, we want you to challenge yourself a bit to see exactly what others are seeing. Here's what we'd like you to do:<br><br></p>
+        <ol style="font-size: 23px; line-height: 25px">
+          <li>Find someone (a friend, family member, roommate, fellow student, etc.) who has different thoughts and opinions than your own. It doesn't have to be purely politically based; they may like different games, movies, websites, books as well.</li>
+          <li>Using their personal computer (with their permission and while they are present), browse the web for a little bit. Do a few searches on Google or Amazon, check out the recommended videos on Youtube or Netflix, see what ads are appearing on different sites, etc. If you do this on a shared computer or lab computer, have them log in to a few sites and search around for a bit like they normally would before handing it over to you.</li>
+          <li>Then, do the same steps on your own machine or while logged in to your own accounts, and record the differences.</li>
+          <li>Bonus - Use private browsing or incognito mode and repeat those steps again. Is it different?</li>
+        </ol>
+        <p style="font-size: 23px; line-height: 25px"><br>Write about your experiences and what you find. Make sure you reference back to the textbooks and other websites to help you explain why this is happening.
+      </p>
+    </div>
+
+    <div id="activity" class="skip slide" data-x="-825" data-y="655" data-scale="0.5">
+      <p class="centertext"><b>Packet Switching Activity</b><br><br></p>
+      <ul>
+        <li>Each server has a secret number</li>
+        <li>Try to guess each server's secret number by playing the "Higher/Lower" game over HTTP</li>
+        <li>Server with the most correct numbers when time runs out wins!</li>
+      </ul>
+    </div>
+
+    <div id="activity_1" class="step" data-x="-825" data-y="675" data-scale="0.5">
+    </div>
+
+    <div id="act1" class="step slide" data-x="-825" data-y="1125" data-scale="0.5">
+      <p class="centertext"><b>DHCP Request</b></p>
+      <img class="centerimg" width="850" src="images/Slide1.png">
+    </div>
+
+    <div id="act2" class="step slide" data-x="-825" data-y="1575" data-scale="0.5">
+      <p class="centertext"><b>DHCP Response</b></p>
+      <img class="centerimg" width="850" src="images/Slide2.png">
+    </div>
+
+    <div id="act3" class="step slide" data-x="-825" data-y="2025" data-scale="0.5">
+      <p class="centertext"><b>DNS Lookup</b></p>
+      <img class="centerimg" width="850" src="images/Slide3.png">
+    </div>
+
+    <div id="act4" class="step slide" data-x="-825" data-y="2475" data-scale="0.5">
+      <p class="centertext"><b>DNS Response</b></p>
+      <img class="centerimg" width="850" src="images/Slide4.png">
+    </div>
+
+    <div id="act5" class="step slide" data-x="-825" data-y="2925" data-scale="0.5">
+      <p class="centertext"><b>HTTP Request</b></p>
+      <img class="centerimg" width="850" src="images/Slide5.png">
+    </div>
+
+    <div id="act6" class="step slide" data-x="-825" data-y="3375" data-scale="0.5">
+      <p class="centertext"><b>HTTP Response</b></p>
+      <img class="centerimg" width="850" src="images/Slide6.png">
+    </div>
+
+    <div id="activity_2" class="step" data-x="-825" data-y="675" data-scale="0.5">
+    </div>
+
+    <div id="overview" class="step" data-x="2750" data-y="2000" data-z="-1" data-scale="7.5">
+    </div>
+
+
+</div>
+
+<script src="/js/analytics.js"></script>
+<script src="/js/impress.js"></script>
+<script>impress().init();</script>
+<script src="/js/jquery-1.10.2.min.js"></script>
+<script src="/js/TimeCircles.js"></script>
+<script src="/js/timer.js"></script>
+<script src="/js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+</body>
+</html>

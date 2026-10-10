@@ -1,0 +1,451 @@
+<html lang="en">
+<head>
+    <link href="/favicon.ico" rel="shortcut icon">
+    <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+    <meta name="description" content="CIS 225 - Networking" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 225 - Networking</title>
+    <link href="/css/impress.css" rel="stylesheet" />
+    <link href="/css/TimeCircles.css" rel="stylesheet" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 225</b><br><br>Networking</p>
+    </div>
+
+    <div id="packet1" class="step slide" data-x="1000" data-y="0">
+      <img class="centerimg" width="850" src="images/packet1.png">
+    </div>
+
+    <div id="osi" class="step slide" data-x="2000" data-y="0">
+      <p class="centertext"><b>7 Layer OSI Network Model</b></p>
+      <ul>
+        <li>Application</li>
+        <li>Presentation</li>
+        <li>Session</li>
+        <li>Transport - TCP/UDP</li>
+        <li>Network - IPv4/IPv6</li>
+        <li>Data Link  - Ethernet</li>
+        <li>Physical - 100BASE-T</li>
+      </ul>
+    </div>
+
+    <div id="nic" class="step slide" data-x="3000" data-y="0">
+      <p class="centertext"><b>Physical - 100BASE-T</b></p>
+      <img class="centerimg" height="600" src="images/nic_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Ethernet_card">Wikipedia</a></p>
+    </div>
+
+    <div id="ethernet" class="step slide" data-x="4000" data-y="0">
+      <p class="centertext"><b>Data Link - Ethernet</b></p>
+      <img class="centerimg" height="600" src="images/ethernet_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Ethernet">Wikipedia</a></p>
+    </div>
+
+    <div id="ipv4" class="step slide" data-x="5000" data-y="0">
+      <p class="centertext"><b>Network - IPv4</b></p>
+      <table style="width:100%" class="table">
+        <tr><td colspan="2"><b>IPv4 Packet Structure</b></td></tr>
+        <tr><td>Version Info</td><td>Length</td></tr>
+        <tr><td>Packet ID</td><td>Flags & Offset</td></tr>
+        <tr><td>Protocol & TTL</td><td>Checksum</td></tr>
+        <tr><td colspan="2">Source IP Address</td></tr>
+        <tr><td colspan="2">Destination IP Address</td></tr>
+        <tr><td colspan="2">Data...</td></tr>
+      </table>
+    </div>
+
+    <div id="ipv4vsipv6" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>IPv4 vs. IPv6</b><br><br></p>
+      <p class="centertext">IPv4: 32 bit Addresses<br>2<sup>32</sup> = 4,294,967,296<br><br></p>
+      <p class="centertext">IPv6: 128 bit Addresses<br>2<sup>128</sup> = 340,282,366,920,938,463,463,<br>374,607,431,768,211,456<br>or 340 Undecillion addresses</p>
+    </div>
+
+    <div id="ipv6" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b>Network - IPv6</b></p>
+      <img class="centerimg" height="600" src="images/ipv6_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Ipv6">Wikipedia</a></p>
+    </div>
+
+    <div id="interfaces" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>Network Interfaces</b><br><br></p>
+      <ul>
+        <li>Localhost</li>
+        <li>Ethernet Adapter</li>
+        <li>Wireless Adapter</li>
+      </ul>
+    </div>
+
+    <div id="localhost" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>Localhost</b><br><br></p>
+      <ul>
+        <li>a.k.a Loopback Adapter (lo)</li>
+        <li>IP Address: 127.0.0.1</li>
+        <li>DNS Name: localhost</li>
+        <li>Defined in Software</li>
+        <li>Allows a system to access itself via nework protocols</li>
+      </ul>
+    </div>
+
+    <div id="adapters" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>Network Adapters</b><br><br></p>
+      <ul>
+        <li>Physical hardware connections to a network</li>
+        <li>Includes Wired (Ethernet) and Wireless adapters</li>
+        <li>Each adapter may have 1 or more IP addresses</li>
+      </ul>
+    </div>
+
+    <div id="win_devicemgr" class="step slide" data-x="5000" data-y="900">
+      <p class="centertext"><b>Windows Network Adapters</b><br>Device Manager</p>
+      <img class="centerimg" height="550" src="images/win_adapters1.png">
+    </div>
+
+    <div id="win_cpl" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>Windows Network Adapters</b><br>Network Connections</p>
+      <img class="centerimg" width="850" src="images/win_adapters2.png">
+    </div>
+
+    <div id="ubuntu_hosts" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b>Ubuntu Network Adapters</b><br>/etc/hosts</p>
+      <img class="centerimg" height="200" src="images/ubuntu_adapters1.png">
+      <p class="centertext">/etc/network/interfaces</p>
+      <img class="centerimg" height="200" src="images/ubuntu_adapters2.png">
+    </div>
+
+    <div id="ubuntu_interfaces" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b>Ubuntu Network Adapters</b><br>
+      <img class="centerimg" height="550" src="images/ubuntu_adapters3.png">
+    </div>
+
+    <div id="ip_addresses" class="step slide" data-x="3000" data-y="1800">
+      <p class="centertext"><b>IP Addresses</b><br><br></p>
+      <ul>
+        <li>Unique Identifier on a Network</li>
+        <li>Used for packet routing</li>
+        <li>3 common configurations<ul>
+          <li>Automatic - DHCP</li>
+          <li>Manual - Static IP Addresses</li>
+          <li>Automatic Private IP Addressing (APIPA)</li>
+        </ul></li>
+      </ul>
+    </div>
+
+    <div id="ip_addresses_components" class="step slide" data-x="4000" data-y="1800">
+      <p class="centertext"><b>IP Address Components</b><br><br></p>
+      <ul>
+        <li><b>IP Address</b> - The identifier of this computer</li>
+        <li><b>Subnet Mask</b> - The subnet this computer belongs to</li>
+        <li><b>Default Gateway</b> - The IP address of the "way out"</li>
+      </ul>
+    </div>
+
+    <div id="reserved" class="step slide" data-x="5000" data-y="1800">
+      <p class="centertext"><b>Reserved IP Address Sections</b><br><br></p>
+      <ul>
+        <li>192.168.0.0 - 192.168.255.254 (255.255.0.0)</li>
+        <li>172.16.0.0 - 172.31.255.254 (255.240.0.0)</li>
+        <li>10.0.0.0 - 10.255.255.254 (255.0.0.0)</li>
+        <li>169.254.0.0 - 169.254.255.254 (APIPA)
+      </ul>
+    </div>
+
+    <div id="dhcp" class="step slide" data-x="0" data-y="2700">
+      <p class="centertext"><b>Dynamic Host Configuration Protocol (DHCP)</b></p>
+      <img class="centerimg" height="550" src="images/dhcp_tech_juice.jpg">
+      <p class="imagecredit">Image Source: <a href="http://www.tech-juice.org/2011/06/21/the-dhcp-protocol-for-ipv4-explained/">Tech Juice</a></p>
+    </div>
+
+    <div id="dhclient" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>Ubuntu - dhclient</b><br><br></p>
+      <img class="centerimg" width="850" src="images/dhclient.png">
+    </div>
+
+    <div id="manual" class="step slide" data-x="2000" data-y="2700">
+      <p class="centertext"><b>Manual Configuration</b><br><br></p>
+      <ul>
+        <li>Manually enter IP address information for hosts</li>
+        <li>Normally used on servers and core network devices</li>
+        <li>More control, but more work to make changes</li>
+      </ul>
+    </div>
+
+    <div id="apipa" class="step slide" data-x="3000" data-y="2700">
+      <p class="centertext"><b>Automatic Private IP Addressing (APIPA)</b><br><br></p>
+      <ul>
+        <li>When all else fails, your system will assign an address that is non-routable</li>
+        <li>If your IP is like 169.254.x.x then something is not working correctly</li>
+      </ul>
+    </div>
+
+    <div id="win_ip_config" class="step slide" data-x="4000" data-y="2700">
+      <p class="centertext"><b>Windows IP Configuration</b></p>
+      <img class="centerimg" height="600" src="images/win_ipconfig.png">
+    </div>
+
+    <div id="ubuntu_ip_config" class="step slide" data-x="5000" data-y="2700">
+      <p class="centertext"><b>Ubuntu IP Configuration</b></p>
+      <img class="centerimg" height="600" src="images/ubuntu_ipconfig.png">
+    </div>
+
+    <div id="commands" class="step slide" data-x="0" data-y="3600">
+      <p class="centertext"><b>Windows Diagnostic Commands</b><br><br></p>
+      <ul>
+        <li><span style="font-family:monospace, monospace;">ping</span> - contact IP addresses and DNS names</li>
+        <li><span style="font-family:monospace, monospace;">tracert</span> - trace route between hosts</li>
+        <li><span style="font-family:monospace, monospace;">ipconfig</span> - access IP configuration</li>
+      </ul>
+    </div>
+
+    <div id="ipconfig" class="step slide" data-x="1000" data-y="3600">
+      <p class="centertext"><b>ipconfig</b><br><br></p>
+      <ul>
+        <li><span style="font-family:monospace, monospace;">ipconfig /release</span></li>
+        <li><span style="font-family:monospace, monospace;">ipconfig /renew</span></li>
+        <li><span style="font-family:monospace, monospace;">ipconfig /all</span></li>
+        <li><span style="font-family:monospace, monospace;">ipconfig /flushdns</span></li>
+        <li><span style="font-family:monospace, monospace;">ipconfig /displaydns</span></li>
+      </ul>
+    </div>
+
+    <div id="ubuntu_commands" class="step slide" data-x="2000" data-y="3600">
+      <p class="centertext"><b>Ubuntu Diagnostic Commands</b><br><br></p>
+      <ul>
+        <li><span style="font-family:monospace, monospace;">ping</span> - contact IP addresses and DNS names</li>
+        <li><span style="font-family:monospace, monospace;">traceroute</span> - trace route between hosts</li>
+        <li><span style="font-family:monospace, monospace;">ifconfig</span> - access IP configuration</li>
+        <li><span style="font-family:monospace, monospace;">mtr</span> - combine ping and traceroute</li>
+      </ul>
+    </div>
+
+    <div id="tcp" class="step slide" data-x="3000" data-y="3600">
+      <p class="centertext"><b>Transport - TCP</b></p>
+      <table style="width:100%" class="table">
+        <tr><td colspan="2"><b>TCP Packet Structure</b></td></tr>
+        <tr><td>Source Port</td><td>Dest. Port</td></tr>
+        <tr><td colspan="2">Sequence Number</td></tr>
+        <tr><td colspan="2">Acknowledgement Number</td></tr>
+        <tr><td>Options</td><td>Length</td></tr>
+        <tr><td>Checksum</td><td>Urgent</td></tr>
+        <tr><td colspan="2">Data...</td></tr>
+      </table>
+    </div>
+
+    <div id="udp" class="step slide" data-x="4000" data-y="3600">
+      <p class="centertext"><b>Transport - UDP</b><br><br></p>
+      <table style="width:100%" class="table">
+        <tr><td colspan="2"><b>UDP Packet Structure</b></td></tr>
+        <tr><td>Source Port</td><td>Dest. Port</td></tr>
+        <tr><td>Length</td><td>Checksum</td></tr>
+        <tr><td colspan="2">Data...</td></tr>
+      </table>
+    </div>
+
+    <div id="tcpvsudp" class="step slide" data-x="5000" data-y="3600">
+      <p class="centertext"><b>TCP vs. UDP</b><br><br></p>
+      <table style="width:100%" class="table">
+        <tr><td><b>TCP</b></td><td><b>UDP</b></td></tr>
+        <tr><td>Connection Oriented</td><td>Connectionless</td></tr>
+        <tr><td>Reliable</td><td>Unreliable</td></tr>
+        <tr><td>Acknowledge</td><td>No Acknowledge</td></tr>
+      </table>
+    </div>
+
+    <div id="ports" class="step slide" data-x="0" data-y="4500">
+      <p class="centertext"><b>Ports</b></p>
+      <ul>
+        <li>Individual connection points for each application on a computer</li>
+        <li>65535 possible ports (2<sup>16</sup>)</li>
+        <li>Around 250 are "well known" ports with widely accepted uses for incoming connections</li>
+        <li>Outgoing connections use high numbered "ephemeral" ports</li>
+      </ul>
+    </div>
+
+    <div id="wkports" class="step slide" data-x="1000" data-y="4500">
+      <p class="centertext"><b>Well Known Ports</b><br>/etc/services</p>
+      <ul>
+        <li>21 - FTP</li>
+        <li>22 - SSH</li>
+        <li>25 - SMTP</li>
+        <li>80 - HTTP</li>
+        <li>443 - HTTPS</li>
+        <li>3389 - Remote Desktop</li>
+      </ul>
+    </div>
+
+    <div id="tcpview" class="step slide" data-x="2000" data-y="4500">
+      <p class="centertext"><b>Windows - Sysinternals TCPView</b>
+      <img class="centerimg" height="600" src="images/tcpview.png">
+    </div>
+
+    <div id="netstat" class="step slide" data-x="3000" data-y="4500">
+      <p class="centertext"><b>Ubuntu - netstat</b>
+      <img class="centerimg" width="850" src="images/netstat.png">
+    </div>
+
+    <div id="sharing" class="step slide" data-x="4000" data-y="4500">
+      <p class="centertext"><b>Sharing<br><br></b></p>
+      <ul>
+        <li>Accessing files from one computer on another</li>
+        <li>Building block of small networks</li>
+        <li>Can also share printers, internet connections</li>
+      </ul>
+    </div>
+
+    <div id="windows" class="step slide" data-x="5000" data-y="4500">
+      <p class="centertext"><b>Windows Sharing<br><br></b></p>
+      <ul>
+        <li>Uses Server Message Block (SMB) Application Layer Protocol</li>
+        <li>Based on the Common Internet File System (CIFS)</li>
+        <li>Uses ports 137-139, 445</li>
+      </ul>
+    </div>
+
+    <div id="ubuntu" class="step slide" data-x="0" data-y="5400">
+      <p class="centertext"><b>Ubuntu Sharing<br><br></b></p>
+      <ul>
+        <li>Samba package enables Ubuntu to communicate using SMB</li>
+        <li>Ubuntu can then share files with Windows and vice-versa</li>
+      </ul>
+    </div>
+
+    <div id="security" class="step slide" data-x="1000" data-y="5400">
+      <p class="centertext"><b>Network Security<br><br></b></p>
+      <ul>
+        <li>Authentication & Authorization</li>
+        <li>Intrusion Detection System</li>
+        <li>Encryption</li>
+        <li>Honeypots</li>
+        <li>Log Monitoring</li>
+        <li>NAT Routing</li>
+        <li>Firewalls</li>
+      </ul>
+    </div>
+
+    <div id="authentication" class="step slide" data-x="2000" data-y="5400">
+      <p class="centertext"><b>Authentication & Authorization<br><br></b></p>
+      <ul>
+        <li>Verify that users or devices on the network are valid</li>
+        <li>Confirm that users are allowed to access resources</li>
+        <li>Enforced with ACLs, firewalls, etc.</li>
+      </ul>
+    </div>
+
+    <div id="ids" class="step slide" data-x="3000" data-y="5400">
+      <p class="centertext"><b>Intrusion Detection System (IDS)<br><br></b></p>
+      <ul>
+        <li>Monitors network activity</li>
+        <li>Uses signatures or statistical anomalies to detect unwanted network activity</li>
+        <li>Can be programmed to automatically respond to detected threats</li>
+      </ul>
+    </div>
+
+    <div id="encryption" class="step slide" data-x="4000" data-y="5400">
+      <p class="centertext"><b>Encryption<br><br></b></p>
+      <ul>
+        <li>Protect network traffic by encrypting it</li>
+        <li>Prevents eavesdroppers from listening in and intercepting data</li>
+      </ul>
+    </div>
+
+    <div id="honeypots" class="step slide" data-x="5000" data-y="5400">
+      <p class="centertext"><b>Honeypots<br><br></b></p>
+      <ul>
+        <li>Fake network resources left open</li>
+        <li>Any attempts to access are assumed to be malicious</li>
+        <li>Information gained is used to strengthen protection</li>
+      </ul>
+    </div>
+
+    <div id="log_monitor" class="step slide" data-x="0" data-y="6300">
+      <p class="centertext"><b>Log Monitoring<br><br></b></p>
+      <ul>
+        <li>Many network enabled programs are configured to log connections</li>
+        <li>Those logs can be analyzed to find unwanted connections</li>
+      </ul>
+    </div>
+
+    <div id="nat" class="step slide" data-x="1000" data-y="6300">
+      <p class="centertext"><b>NAT Routing</b></p>
+      <ul>
+        <li>Network Address Translation</li>
+        <li>Multiple devices with different internal IP addresses share one public IP address</li>
+        <li>External attackers only see router (unless ports are forwarded)</li>
+        <li>Protects internal systems by not making them directly accessible externally</li>
+      </ul>
+    </div>
+
+    <div id="firewalls" class="step slide" data-x="2000" data-y="6300">
+      <p class="centertext"><b>Firewalls<br><br></b></p>
+      <ul>
+        <li>Restrict network access to specific programs, ports, addresses, protocols, etc.</li>
+        <li>Can be employed on an entire network or each individual system (or both)</li>
+      </ul>
+    </div>
+
+    <div id="firewalls_vs_ids" class="step slide" data-x="3000" data-y="6300">
+      <p class="centertext"><b>Firewalls vs IDS<br><br></b></p>
+      <ul>
+        <li>Firewalls look at types of traffic, IDS looks at contents and meaning of traffic</li>
+        <li>Firewalls can only prevent unwanted connections, IDS can detect them already in progress</li>
+      </ul>
+    </div>
+
+    <div id="lab" class="step slide" data-x="4000" data-y="6300">
+      <p class="centertext"><b>Lab 5</b></p>
+      <ul>
+        <li>Confirm you can ping back and forth</li>
+        <li>Set up sharing to and from each virtual machine</li>
+        <li>Turn on Firewalls</li>
+        <li>Create Firewall Rules to allow access to the following resources<ul>
+          <li>Remote Connection (SSH/RDP)</li>
+          <li>Shared Files (smb/Samba)</li>
+          <li>Web Server (apache/IIS)</li></ul>
+      </ul>
+    </div>
+
+    <div id="reading" class="step slide" data-x="5000" data-y="6300">
+      <p class="centertext"><b>Reading</b><br><br></p>
+      See Class Website:
+      <p style="font-size:40px"><a href="/cis225fall2016/">http://people.cis.ksu.edu/~russfeld/cis225fall2016/</a></p>
+    </div>
+
+    <div id="assignments" class="step slide" data-x="6000" data-y="6300">
+      <p class="centertext"><b>Assignments</b><br><br></p>
+      <ul>
+        <li>Lab 5 - Networking<br>Due 10/10 12:30 PM</li>
+      </ul>
+    </div>
+
+    <div id="overview" class="step" data-x="2500" data-y="3150" data-z="-1" data-scale="9.5">
+    </div>
+
+</div>
+
+<script src="/js/analytics.js"></script>
+<script src="/js/impress.js"></script>
+<script>impress().init();</script>
+<script src="/js/jquery-1.10.2.min.js"></script>
+<script src="/js/TimeCircles.js"></script>
+<script src="/js/timer.js"></script>
+<script src="/js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+
+</body>
+</html>

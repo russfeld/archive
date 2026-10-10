@@ -1,0 +1,317 @@
+<html lang="en">
+<head>
+  <BASE href="../">
+  <link href="favicon.ico" rel="shortcut icon">
+  <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+  <meta name="description" content="CIS 115 Fall 2014 Lecture 17" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 115 Fall 2014 Lecture 17</title>
+    <link href="css/impress.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 115</b><br><br>Lecture 17: Cryptography</p>
+    </div>
+
+    <div id="crypto" class="skip slide" data-x="1000" data-y="-20">
+      <p class="centertext"><b>Cryptography</b><br><br><br></p>
+      <ul>
+        <li>Study of ways to communicate securely and privately in the presence of third parties</li>
+        <li>Charles Babbage, Edgar Allan Poe, Alan Turing, and Claude Shannon were all involved in cryptography.</li>
+      </ul>
+    </div>
+
+    <div id="crypto1" class="step" data-x="1000" data-y="-300" data-scale="0.5">
+    </div>
+
+    <div id="crypto2" class="step" data-x="1000" data-y="0">
+    </div>
+
+    <div id="scytale" class="step slide" data-x="2000" data-y="0">
+      <p class="centertext"><b>Message to the Class</b><br><br></p>
+      <pre><code style="font-size:60px">TSTEPHAAXLISLAESCEMQIYQ</code></pre>
+    </div>
+
+    <div id="scytale2" class="step slide" data-x="3000" data-y="0">
+      <p class="centertext"><b>Scytale</b><br><br></p>
+      <img class="centerimg" width="850" src="cis115fall2014/images/lecture17/scytale_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Scytale">Wikipedia</a></p>
+    </div>
+
+    <div id="scytale3" class="step slide" data-x="4000" data-y="0">
+      <p class="centertext"><b>Message to the Class</b><br><br></p>
+      <pre><code style="font-size:60px; line-height:65px">TSTEPHAAXLISLAESCEMQIYQ</code></pre>
+      <pre><code style="font-size:60px; line-height:65px">T    H    I    S    I</code></pre>
+      <pre><code style="font-size:60px; line-height:65px"> S    A    S    C    Y</code></pre>
+      <pre><code style="font-size:60px; line-height:65px">  T    A    L    E    Q</code></pre>
+      <pre><code style="font-size:60px; line-height:65px">   E    X    A    M</code></pre>
+      <pre><code style="font-size:60px; line-height:65px">    P    L    E    Q</code></pre>
+    </div>
+
+    <div id="early_ciphers" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>Early Ciphers</b><br><br></p>
+      <ul>
+        <li>Substitution Ciphers<ul>
+          <li><em>Cryptoquip</em> - Easily Breakable</li>
+        </ul></li>
+        <li>Polyalphabetic Ciphers<ul>
+          <li>First described by Al-Kindi in the 9<sup>th</sup> century</li>
+          <li>Later explained by Leon Battista Alberti in 1467</li>
+        </ul></li>
+      </ul>
+    </div>
+
+    <div id="tabula" class="step slide" data-x="-825" data-y="2025" data-scale="0.5">
+      <p class="centertext"><b>Tabula Recta</b></p>
+      <img class="centerimg" height="600" src="cis115fall2014/images/lecture17/tabula_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Polyalphabetic_cipher">Wikipedia</a></p>
+    </div>
+
+    <div id="europe" class="step slide" data-x="1000" data-y="900">
+      <img class="centerimg" height="675" src="cis115fall2014/images/lecture17/europe_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/German_occupied_europe">Wikipedia</a></p>
+    </div>
+
+    <div id="secret" class="step slide" data-x="2000" data-y="900">
+      <p><br></p>
+      <img class="centerimg" width="850" src="cis115fall2014/images/lecture17/secret.jpg">
+    </div>
+
+    <div id="enigma" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>Enigma Machine</b></p>
+      <img class="centerimg" height="600" src="cis115fall2014/images/lecture17/enigma_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Enigma_machine">Wikipedia</a></p>
+    </div>
+
+    <div id="enigma2" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>Enigma Machine Rotors</b></p>
+      <img class="centerimg" height="600" src="cis115fall2014/images/lecture17/enigma_rotor_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Enigma_machine">Wikipedia</a></p>
+    </div>
+
+    <div id="enigma3" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>Enigma Machine Rotors</b><br><br></p>
+      <img class="centerimg" width="850" src="cis115fall2014/images/lecture17/enigma_rotor2_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Enigma_machine">Wikipedia</a></p>
+    </div>
+
+    <div id="enigma4" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b>Enigma Machine Ratchet</b></p>
+      <img class="centerimg" width="850" src="cis115fall2014/images/lecture17/enigma_ratchet_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Enigma_machine">Wikipedia</a></p>
+    </div>
+
+    <div id="enigma5" class="step slide" data-x="2000" data-y="1800">
+      <img class="centerimg" height="690" src="cis115fall2014/images/lecture17/enigma_diagram_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Enigma_machine">Wikipedia</a></p>
+    </div>
+
+    <div id="enigma6" class="step slide" data-x="3000" data-y="1800">
+      <p class="centertext"><b>Enigma Machine Plugboard</b></p>
+      <img class="centerimg" height="600" src="cis115fall2014/images/lecture17/enigma_plugboard_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Enigma_machine">Wikipedia</a></p>
+    </div>
+
+    <div id="enigma_1" class="step" data-x="5000" data-y="1800">
+      <div id="G2_Q9FoD-oQ" data-id="G2_Q9FoD-oQ" class="youtube">
+        <a href="http://www.youtube.com/watch?v=G2_Q9FoD-oQ">Numberphile - Enigma Machine</a>
+      </div>
+    </div>
+
+    <div id="enigma_key" class="step slide" data-x="4000" data-y="1800">
+      <p class="centertext"><b>Enigma Key</b><br><br></p>
+      <ul>
+        <li>Choice and order of rotors</li>
+        <li>Initial position of rotors</li>
+        <li>Ring setting on rotors</li>
+        <li>Plug connections</li>
+      </ul>
+    </div>
+
+    <div id="enigma_operation" class="step slide" data-x="0" data-y="2700">
+      <p class="centertext"><b>Enigma Operation</b><br><br></p>
+      <ul>
+        <li>Set wheels to today's key from codebook</li>
+        <li>Operator chooses message key</li>
+        <li>Encode message key TWICE to avoid errors</li>
+        <li>Set wheels to message key</li>
+        <li>Encrypt and send message</li>
+      </ul>
+    </div>
+
+    <div id="enigma_strengths" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>Enigma Stengths</b><br><br></p>
+      <ul>
+        <li>Many factors to the encryption</li>
+        <li>Had up to 8 different wheels to choose from by the end of the war</li>
+        <li>150 Trillion different setups</li>
+      </ul>
+    </div>
+
+    <div id="enigma_weaknesses" class="step slide" data-x="2000" data-y="2700">
+      <p class="centertext"><b>Enigma Weaknesses</b><br><br></p>
+      <ul>
+        <li>A letter would never encrypt to itself</li>
+        <li>Plugboards were reciprocal</li>
+        <li>Wheels were not similar enough (could determine which wheels were used)</li>
+        <li>Poor policies and procedures</li>
+      </ul>
+    </div>
+
+    <div id="enigma_2" class="step" data-x="5000" data-y="2700">
+      <div id="V4V2bpZlqx8" data-id="V4V2bpZlqx8" class="youtube">
+        <a href="http://www.youtube.com/watch?v=V4V2bpZlqx8">Numberphile - Enigma Machine Flaw</a>
+      </div>
+    </div>
+
+    <div id="rejewski" class="step slide" data-x="3000" data-y="2700">
+      <p class="centertext"><b>Marian Rejewski</b></p>
+      <img class="centerimg" height="600" src="cis115fall2014/images/lecture17/rejewski_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Rejewski">Wikipedia</a></p>
+    </div>
+
+    <div id="cracking_enigma" class="step slide" data-x="4000" data-y="2700">
+      <p class="centertext"><b>Cracking Enigma</b><br><br></p>
+      <ul>
+        <li>1932 - First cracked by Marian Rejewski of Poland</li>
+        <li>1938 - Germany added 2 wheels</li>
+        <li>1939 - Alan Turing creates Bombe</li>
+        <li>1945 - Almost every message deciphered within 2 days</li>
+      </ul>
+    </div>
+
+    <div id="bobme" class="step slide" data-x="0" data-y="3600">
+      <p class="centertext"><b>Bombe</b></p>
+      <img class="centerimg" height="600" src="cis115fall2014/images/lecture17/bombe_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Bombe">Wikipedia</a></p>
+    </div>
+
+    <div id="bombe_vid" class="step" data-x="1000" data-y="3600">
+      <div id="rtilXsjlWCA" data-id="rtilXsjlWCA" class="youtube">
+        <a href="http://www.youtube.com/watch?v=UrtilXsjlWCA">Bombe on YouTube</a>
+      </div>
+    </div>
+
+    <div id="impact" class="step slide" data-x="2000" data-y="3600">
+      <p class="centertext"><b>Impact</b><br><br></p>
+      <p style="font-size:47px; line-height:51px">“My own conclusion is that it shortened the war by not less than two years and probably by four years … we wouldn't in fact have been able to do the Normandy Landings, even if we had left the Mediterranean aside, until at the earliest 1946, probably a bit later.”<br><br></p>
+      <p style="margin-left:250px; font-size:40px; line-height:42px">-Sir Harry Hinsley<br>British Intelligence Historian</p>
+    </div>
+
+    <div id="shannon" class="step slide" data-x="3000" data-y="3600">
+      <p class="centertext"><b>Claude Shannon</b></p>
+      <img class="centerimg" height="600" src="cis115fall2014/images/lecture17/shannon_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Claude_Shannon">Wikipedia</a></p>
+    </div>
+
+    <div id="symmetric" class="step slide" data-x="4000" data-y="3600">
+      <p class="centertext"><b>Symmetric Key Encryption</b></p>
+      <img class="centerimg" height="600" src="cis115fall2014/images/lecture17/symmetric_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Cryptography">Wikipedia</a></p>
+    </div>
+
+    <div id="public_key" class="step slide" data-x="0" data-y="4500">
+      <p class="centertext"><b>Public Key Encryption</b></p>
+      <img class="centerimg" height="600" src="cis115fall2014/images/lecture17/public_key_math.jpg">
+      <p class="imagecredit">Image Source: <a href="http://www.askamathematician.com/2013/09/q-how-do-i-encrypthideprotect-my-email/">Askamathematician.com</a></p>
+    </div>
+
+    <div id="rsa" class="step slide" data-x="1000" data-y="4500">
+      <p class="centertext"><b>RSA Encryption</b><br><br></p>
+      <ul>
+        <li>Developed in 1977</li>
+        <li>Named for the 3 creators (Ron Rivest, Adi Shamir, Lenonard Adleman)</li>
+        <li>Uses the product of 2 large prime numbers to generate a key</li>
+        <li>Key strength depends on the difficulty of factoring large numbers</li>
+      </ul>
+    </div>
+
+    <div id="rsa_ex" class="step slide" data-x="2000" data-y="4500">
+      <p class="centertext"><b>RSA Example</b><br><br></p>
+      <ul>
+        <li>Choose 2 distinct prime numbers<br><em>p</em> and <em>q</em></li>
+        <li>Compute their product <em>n</em> = <em>pq</em></li>
+        <li>Compute the totient <em>t</em> of <em>n</em>:<br><em>t</em> = (<em>p</em> - 1)(<em>q</em> - 1)</li>
+      </ul>
+    </div>
+
+    <div id="rsa_ex2" class="step slide" data-x="3000" data-y="4500">
+      <p class="centertext"><b>RSA Example</b><br><br></p>
+      <ul>
+        <li>Choose any number <em>e</em> less than <em>t</em> that is <b>coprime</b> to <em>t</em> (they share no common factors but 1)</li>
+        <li>Calculate <em>d</em> as the <b>modular multiplicative inverse</b> of <em>e</em> (mod <em>t</em>)<br><em>e</em> * <em>x</em> = 1 (mod <em>t</em>)</li>
+      </ul>
+    </div>
+
+    <div id="rsa_ex3" class="step slide" data-x="4000" data-y="4500">
+      <p class="centertext"><b>RSA Keys</b><br><br></p>
+      <ul>
+        <li>Public Key : (<em>n</em>, <em>e</em>)</li>
+        <li>Encode: <em>c</em> = <em>m<sup>e</sup></em> (mod <em>n</em>)<br><br></li>
+        <li>Private Key : (<em>n</em>, <em>d</em>)</li>
+        <li>Decode: <em>m</em> = <em>c<sup>d</sup></em> (mod <em>n</em>)<br></li>
+      </ul>
+    </div>
+
+    <div id="assignment" class="step slide" data-x="-825" data-y="-225" data-scale="0.5">
+      <p class="centertext">Assignments</p>
+      <ul>
+        <li>Read and be prepared to discuss:<ul>
+          <li><em>Tubes</em> Chapter 7: Where Data Sleeps</li></ul></li>
+        <li>Blog 8: TBD - Due 10/27 10:00 PM</li>
+        <li>HTML & CSS Project - Due 10/21 10:00 PM</li>
+        <li>Scratch Chaocipher - Due 10/28 10:00 PM</li>
+      </ul>
+    </div>
+
+    <div id="blog" class="step slide" data-x="-825" data-y="225" data-scale="0.5">
+      <p class="centertext" style="font-size: 35px; line-height: 45px"><b>Blog 8: TBD</b></p>
+      <p style="font-size: 30px; line-height: 32px">TBD
+        <ul style="font-size: 30px; line-height: 31px">
+          <li>TBD</li>
+        </ul>
+      </p>
+    </div>
+
+    <div id="activity" class="skip slide" data-x="-825" data-y="655" data-scale="0.5">
+      <p class="centertext"><b>RSA Activity</b></p>
+      <ul>
+        <li>Fill out the RSA Activity Worksheet</li>
+      </ul>
+    </div>
+
+    <div id="activity_1" class="step" data-x="-825" data-y="675" data-scale="0.5">
+    </div>
+
+    <div id="activity_2" class="step" data-x="-825" data-y="675" data-scale="0.5">
+    </div>
+
+    <div id="overview" class="step" data-x="2000" data-y="2250" data-z="-1" data-scale="7.5">
+    </div>
+
+</div>
+
+<script src="js/analytics.js"></script>
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
+<script src="js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+</body>
+</html>

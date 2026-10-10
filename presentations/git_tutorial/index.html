@@ -1,0 +1,187 @@
+<html lang="en">
+<head>
+    <link href="/favicon.ico" rel="shortcut icon">
+    <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+    <meta name="description" content="Git Tutorial" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Git Tutorial</title>
+    <link href="/css/impress.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>K-State ACM</b><br><br>Git Tutorial</p>
+    </div>
+
+    <div id="git_logo" class="step" data-x="1000" data-y="0">
+      <img class="centerimg" width="850" src="images/git-logo.png">
+      <p class="imagecredit">Image Source: <a href="https://git-scm.com/">Git</a></p>
+    </div>
+
+    <div id="whatis" class="step slide" data-x="2000" data-y="0">
+      <p class="centertext"><b>Git</b><br><br></p>
+      <ul>
+        <li>SCM: "Source Control Management"</li>
+        <li>Track changes & revisions</li>
+        <li>Stage and commit changes</li>
+        <li>Branch and merge code</li>
+        <li><i>Local and Distributed</i></li>
+        <li><i>Social Coding on Github</i></li>
+      </ul>
+    </div>
+
+    <div id="start" class="step" data-x="3000" data-y="0">
+      <p class="centertext" style="font-size: 100px">Where do I start?</p>
+    </div>
+
+    <div id="install" class="step slide" data-x="4000" data-y="0">
+      <p class="centertext"><b>Installing Git</b><br><br></p>
+      <ul>
+        <li>Debian/Ubuntu: sudo apt-get install git</li>
+        <li>RedHat/Fedora: sudo yum install git</li>
+        <li>Mac: <a href="http://git-scm.com/downloads">http://git-scm.com/downloads</a></li>
+        <li>Mac: XCode Command Line Tools</li>
+        <li>Win: <a href="http://git-scm.com/downloads">http://git-scm.com/downloads</a></li>
+        <li>Mac/Win: <a href="https://desktop.github.com/">https://desktop.github.com/</a></li>
+        <li><i>Win: <a href="https://tortoisegit.org/">https://tortoisegit.org/</a> (old)</i></li>
+      </ul>
+    </div>
+
+    <div id="learning" class="step slide" data-x="0" data-y="1000">
+      <p class="centertext"><b>Learning Git</b><br><br></p>
+      <ul>
+        <li><b><a href="https://try.github.io">https://try.github.io</a></b></li>
+        <li><a href="http://git-scm.com/doc">http://git-scm.com/doc</a></li>
+        <li>Many classes on Udacity, Udemy, CodeSchool, etc.</li>
+      </ul>
+    </div>
+
+    <div id="level1" class="step slide" data-x="1000" data-y="1000">
+      <p class="centertext"><b>Git Level 1 - Local</b><br><br></p>
+      <ul>
+        <li>git init</li>
+        <li>git status</li>
+        <li><i>create a file</i></li>
+        <li>git status</li>
+        <li>git add &lt;filename&gt;</li>
+        <li>git commit -m "&lt;message&gt;"</li>
+        <li>git log &lt;filename&gt;</li>
+      </ul>
+    </div>
+
+    <div id="level2" class="step slide" data-x="2000" data-y="1000">
+      <p class="centertext"><b>Git Level 2 - Remote</b><br><br></p>
+      <ul>
+        <li><i>Make a repository on GitHub</i></li>
+        <li style="font-size: 40px">git remote add origin https://github.com/&lt;username&gt;/&lt;repo&gt;.git</li>
+        <li>git push -u origin master</li>
+        <li><i>If this is your first time, configure</i></li>
+        <li>git pull origin master</li>
+        <li><i>git pull vs. git fetch</i></li>
+      </ul>
+    </div>
+
+    <div id="level3" class="step slide" data-x="3000" data-y="1000">
+      <p class="centertext"><b>Git Level 3 - Diff</b><br><br></p>
+      <ul>
+        <li>git diff HEAD</li>
+        <li><i>create/change a file</i></li>
+        <li>git add .</li>
+        <li>git diff --staged</li>
+        <li>git reset &lt;filename&gt;</li>
+        <li>git checkout -- &lt;filename&gt;</li>
+      </ul>
+    </div>
+
+    <div id="level4" class="step slide" data-x="4000" data-y="1000">
+      <p class="centertext"><b>Git Level 4 - Branching</b><br><br></p>
+      <ul>
+        <li>git branch &lt;branch_name&gt;</li>
+        <li>git checkout &lt;branch_name&gt;</li>
+        <li><i>make changes</i><ul>
+          <li>git mv &lt;old_file&gt; &lt;new_file&gt;
+          <li>git rm &lt;file&gt;
+          </ul></li>
+        <li>git commit -m "&lt;message&gt;"</li>
+      </ul>
+    </div>
+
+    <div id="level5" class="step slide" data-x="0" data-y="2000">
+      <p class="centertext"><b>Git Level 5 - Merging</b><br><br></p>
+      <ul>
+        <li>git checkout master</li>
+        <li>git merge &lt;branch_name&gt;</li>
+        <li>git branch -d &lt;branch_name&gt;</li>
+        <li>git tag -a &lt;name&gt; -m "&lt;message&gt;"
+        <li>git push</li>
+      </ul>
+    </div>
+
+    <div id="miniboss" class="step slide" data-x="1000" data-y="2000">
+      <p class="centertext"><b>Miniboss! - Conflicts</b><br><br></p>
+      <pre><code>the number of planets are
+<<<<<<< HEAD
+nine
+=======
+eight
+>>>>>>> branch-a
+
+</code></pre>
+      <ul>
+        <li>fix the file</li>
+        <li>git add &lt;file&gt;</li>
+        <li>git commit -m "&lt;message&gt;"
+      </ul>
+    </div>
+
+    <div id="level6" class="step slide" data-x="2000" data-y="2000">
+      <p class="centertext"><b>Git Level 6 - Advanced Git</b><br><br></p>
+      <ul>
+        <li>.gitignore - Ignore files</li>
+        <li>README.md</li>
+        <li>LICENSE</li>
+        <li>.git folder <b>DO NOT TOUCH</b></li>
+        <li>GitHub pages: <a href="https://pages.github.com/">https://pages.github.com/</a></li>
+        <li>SSH Keys</li>
+      </ul>
+    </div>
+
+    <div id="level7" class="step slide" data-x="3000" data-y="2000">
+      <p class="centertext"><b>Git Level 7 - Pro Git</b><br><br></p>
+      <ul>
+        <li>git rebase - Apply upstream changes to your branch to "catch up"</li>
+        <li>git stash - Save uncommitted changes and revert to clean working directory</li>
+      </ul>
+      <br>
+      <p>... and so much more</p>
+    </div>
+
+    <div id="mario" class="step slide" data-x="4000" data-y="2000">
+      <img class="centerimg" height="650" src="images/octoplumber.jpg">
+      <p class="imagecredit">Image Source: <a href="https://octodex.github.com">Octodex</a></p>
+    </div>
+
+    <div id="overview" class="step" data-x="2000" data-y="1000" data-z="-1" data-scale="6">
+    </div>
+
+</div>
+
+<script src="/js/analytics.js"></script>
+<script src="/js/impress.js"></script>
+<script>impress().init();</script>
+
+</body>
+</html>

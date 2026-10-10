@@ -1,0 +1,183 @@
+<html lang="en">
+<head>
+    <link href="/favicon.ico" rel="shortcut icon">
+    <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+    <meta name="description" content="CIS 527 - Monitoring" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 527 - Monitoring</title>
+    <link href="/css/impress.css" rel="stylesheet" />
+    <link href="/css/TimeCircles.css" rel="stylesheet" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+  <div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 527</b><br><br>Lecture 28 - Monitoring</p>
+    </div>
+
+    <div id="monitoring" class="step" data-x="1000" data-y="0">
+      <p class="centertext"><b>Monitoring</b><br><br></p>
+      <img class="centerimg" width="850" src="images/monitor_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/System_monitor">Wikipedia</a></p>
+    </div>
+
+    <div id="processor" class="step slide" data-x="2000" data-y="0">
+      <p class="centertext"><b>Processor Usage</b><br><br></p>
+      <ul>
+        <li>Windows - Resource Monitor, Process Explorer</li>
+        <li>Ubuntu - top, vmstat, ps, glances</li>
+      </ul>
+    </div>
+
+    <div id="memory" class="step slide" data-x="3000" data-y="0">
+      <p class="centertext"><b>Memory Usage</b><br><br></p>
+      <ul>
+        <li>Windows - Resource Monitor, Process Explorer</li>
+        <li>Ubuntu - free</li>
+      </ul>
+    </div>
+
+    <div id="disk" class="step slide" data-x="4000" data-y="0">
+      <p class="centertext"><b>Disk Usage</b><br><br></p>
+      <ul>
+        <li>Windows - Disk Management, Windirstat</li>
+        <li>Ubuntu - du, df, iostat</li>
+      </ul>
+    </div>
+
+    <div id="network" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>Network Usage</b><br><br></p>
+      <ul>
+        <li>Windows - Resource Monitor, TCPView</li>
+        <li>Ubuntu - netstat, ss, tcptrack, wireshark</li>
+      </ul>
+    </div>
+
+    <div id="inventory" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b>Inventory</b><br><br></p>
+      <p>Every good system administrator should keep an up-to-date inventory of all systems being managed</p>
+      <br>
+      <a href="http://www.pxserver.com/WinAudit.htm">WinAudit</a><br>
+      <a href="http://www.ocsinventory-ng.org/en/demo/">OCS-NG Demo Site</a>
+    </div>
+
+    <div id="snmp" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>Simple Network Management Protocol (SNMP)</b></p>
+      <ul>
+        <li>Read data from systems via network</li>
+        <li>Some system settings can be changed</li>
+        <li>Typically present on networking devices</li>
+        <li>GOOD: Easy to read data on many systems</li>
+        <li>BAD: Must be properly configured or can be security issue</li>
+    </div>
+
+    <div id="bigger" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>Enterprise Solutions</b><br><br></p>
+      <ul>
+        <li>Cacti</li>
+        <li>Nagios</li>
+        <li>Deep Freeze</li>
+        <li>Many Others</li>
+      </ul>
+      <a href="http://beocat.cis.ksu.edu">BEOCAT using Nagios</a>
+    </div>
+
+    <div id="badder" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>Enterprise Solutions</b><br><br></p>
+      <ul>
+        <li>Zabbix</li>
+        <li>Hyperic</li>
+        <li>Munin</li>
+        <li>Cacti</li>
+        <li>Nagios</li>
+        <li>Ganglia</li>
+      </ul>
+      <p>Features? Downsides? Would you use?</p>
+    </div>
+
+    <div id="choose_org" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b>SWOT Analysis</b><br><br></p>
+      <ul>
+        <li>Research K-State's IT infrastructure (or choose an IT infrastructure familiar to you)</li>
+        <li>Formulate one change that you would like to make</li>
+        <li>Perform a SWOT analysis regarding that change</li>
+      </ul>
+    </div>
+
+    <div id="swot" class="step" data-x="2000" data-y="1800">
+      <img class="centerimg" height="700" src="images/swot_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/SWOT_analysis">Wikipedia</a></p>
+    </div>
+
+    <div id="how_swot" class="step slide" data-x="3000" data-y="1800">
+      <p class="centertext"><b>SWOT Analysis</b><br><br></p>
+      <ul>
+        <li>Internal Strengths - things that you are good at</li>
+        <li>Internal Weaknesses - things that you are bad at</li>
+      </ul>
+    </div>
+
+    <div id="how_swot2" class="step slide" data-x="4000" data-y="1800">
+      <p class="centertext"><b>SWOT Analysis</b><br><br></p>
+      <ul>
+        <li>External Opportunities - things you can exploit to get better</li>
+        <li>External Threats - things that could exploit you and make you worse</li>
+      </ul>
+    </div>
+
+    <div id="presentation" class="step slide" data-x="0" data-y="2700">
+      <p class="centertext"><b>Presentation</b></p>
+      <ul>
+        <li>Overview of the IT org (~1-2 min)</li>
+        <li>Internal Strengths (~1.5 min)</li>
+        <li>Internal Weaknesses (~1.5 min)</li>
+        <li>External Opportunities (~1.5 min)</li>
+        <li>External Threats (~1.5 min)</li>
+        <li>Overall Recommendation (~2 min)</li>
+        <li>Questions (~2 min)</li>
+        <b>TOTAL: 10-12 Minutes</b>
+      </ul>
+    </div>
+    <div id="assignments" class="step slide" data-x="4000" data-y="3600" data-scale="1.0">
+        <p class="centertext"><b>Assignments</b></p>
+        <ul>
+            <li>Lab 7 - Backups & Monitoring - Due Monday, May 2nd by 11:30 AM</li>
+            <li>Final Presentations: Friday May 6th (and possibly Wednesday May 4th)</li>
+            <li>Final Presentations: Wednesday May 11th: 11:50 - 1:40</li>
+        </ul>
+    </div>
+
+
+    <div id="overview" class="step" data-x="2250" data-y="2000" data-scale="7.0">
+    </div>
+
+
+  </div>
+
+  <script src="/js/analytics.js"></script>
+  <script src="/js/impress.js"></script>
+  <script>impress().init();</script>
+  <script src="/js/jquery-1.10.2.min.js"></script>
+  <script src="/js/TimeCircles.js"></script>
+  <script src="/js/timer.js"></script>
+  <script src="/js/youtuber.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+
+
+
+
+  </body>
+</html>

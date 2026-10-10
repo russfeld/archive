@@ -1,0 +1,277 @@
+<html lang="en">
+<head>
+    <link href="/favicon.ico" rel="shortcut icon">
+    <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+    <meta name="description" content="CIS 225 - File System Management" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 225 - File System Management</title>
+    <link href="/css/impress.css" rel="stylesheet" />
+    <link href="/css/TimeCircles.css" rel="stylesheet" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 225</b><br><br>File System Management</p>
+    </div>
+
+    <div id="hard_drives" class="step" data-x="1000" data-y="0">
+      <p class="centertext"><b>Hard Drives</b></p>
+      <img class="centerimg" height="600" src="images/hdd_wiki.jpg">
+      <p class="imagecredit">Image Credit: <a href="http://en.wikipedia.org/wiki/Hard_disk_drive">Wikipedia</a></p>
+    </div>
+
+    <div id="hard_drives2" class="step" data-x="2000" data-y="0">
+      <p class="centertext"><b>Hard Drive History</b></p>
+      <img class="centerimg" height="600" src="images/hdd_pingdom.jpg">
+      <p class="imagecredit">Image Credit: <a href="http://royal.pingdom.com/2010/02/18/amazing-facts-and-figures-about-the-evolution-of-hard-disk-drives/">Pingdom</a></p>
+    </div>
+
+    <div id="hard_drives3" class="step" data-x="3000" data-y="0">
+      <p class="centertext"><b>How a Hard Drive Works</b></p>
+      <img class="centerimg" width="850" src="images/hddworks_wiki.png">
+      <p class="imagecredit">Image Credit: <a href="https://en.wikipedia.org/wiki/Hard_disk_drive">Wikipedia</a></p>
+    </div>
+
+    <div id="partitions" class="step slide" data-x="4000" data-y="0">
+      <p class="centertext"><b>Disk Partitions</b><br><br></p>
+      <ul>
+        <li>Logical subdivision of a physical disk</li>
+        <li>Has a file format, stores files</li>
+        <li>Each drive can have multiple partitions</li>
+        <li>Each operating system requires a separate partition</li>
+      </ul>
+    </div>
+
+    <div id="partition" class="step" data-x="5000" data-y="0">
+      <p class="centertext"><b>Partitions</b></p>
+      <img class="centerimg" height="600" src="images/partition_wiki.png">
+      <p class="imagecredit">Image Credit: <a href="http://en.wikipedia.org/wiki/Disk_partitioning">Wikipedia</a></p>
+    </div>
+
+
+    <div id="part_style" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>Partition Styles</b></p>
+      <ul style="line-height: 65px">
+        <li>Master Boot Record (MBR)<ul>
+          <li>Partition Table</li>
+          <li>4 primary partitions or<br>3 primary + 1 extended</li>
+          <li>BIOS for booting</li>
+        </ul></li>
+        <li>GUID Partition Table (GPT)<ul>
+          <li>Partition data within partitions</li>
+          <li>Redundant backup tables</li>
+          <li>EFI for booting</li>
+        </ul></li>
+      </ul>
+    </div>
+
+    <div id="bootloader" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b>Bootloader</b></p>
+      <ul>
+        <li>BIOS<ul>
+          <li>Uses MBR disks for booting</li>
+          <li>Master boot code in 1st sector</li>
+        </ul></li>
+        <li>EFI<ul>
+          <li>Uses GPT disks for booting</li>
+          <li>ESP (EFI System Partition) & MSR (Microsoft Reserved) partition required</li>
+        </ul></li>
+      </ul>
+    </div>
+
+    <div id="basic_dynamic" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>Basic vs. Dynamic</b></p>
+      <ul>
+        <li>Basic<ul>
+          <li>Drives correspond to partitions</li>
+          <li>Cannot modify on the fly</li>
+        </ul></li>
+        <li>Dynamic<ul>
+          <li>Allows spanning & RAID</li>
+          <li>Can modify on the fly (somewhat)</li>
+        </ul></li>
+      </ul>
+    </div>
+
+    <div id="formats" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>Windows Formats</b></p>
+      <ul>
+        <li>FAT/FAT32<ul>
+          <li>File Allocation Table</li>
+          <li>FAT: &lt;4GB; FAT32: &lt;32GB</li>
+          <li>Simple Access Controls</li>
+        </ul></li>
+        <li>NTFS<ul>
+          <li>New Technology File System</li>
+          <li>File info stored as Database</li>
+          <li>Advanced Access Controls</li>
+        </ul></li>
+      </ul>
+    </div>
+
+    <div id="lin_formats" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>Linux Formats</b></p>
+      <ul>
+        <li>exFAT<ul>
+          <li>File Allocation Table</li>
+          <li>Similar to Windows FAT32</li>
+        </ul></li>
+        <li>ext3/ext4<ul>
+          <li>Extended File System</li>
+          <li>Up to 1 Exbibyte (~10<sup>18</sup> bytes)</li>
+          <li>Journals Protect Against Crashes</li>
+        </ul></li>
+      </ul>
+    </div>
+
+    <div id="win_disk_mgmt" class="step" data-x="5000" data-y="900">
+      <p class="centertext"><b>Windows Disk Management</b></p>
+      <img class="centerimg" height="600" src="images/win8_mgmt.png">
+    </div>
+
+    <div id="lin_gparted" class="step" data-x="0" data-y="1800">
+      <p class="centertext"><b>Ubuntu Disk Management</b></p>
+      <img class="centerimg" height="600" src="images/lin_mgmt.png">
+    </div>
+
+    <div id="lin_gparted2" class="step" data-x="1000" data-y="1800">
+      <p class="centertext"><b>GParted</b></p>
+      <img class="centerimg" height="600" src="images/gparted.png">
+    </div>
+
+    <div id="permissions" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b>File Permissions</b><br><br></p>
+      <ul>
+        <li>Determines which users can read/write files or folders</li>
+        <li>Based on user and group memberships and file settings</li>
+        <li>Helps prevent unwanted access to files</li>
+    </div>
+
+    <div id="win_permissions" class="step" data-x="3000" data-y="1800">
+      <p class="centertext"><b>Windows Permissions</b></p>
+      <img class="centerimg" height="600" src="images/win8_perm.png">
+    </div>
+
+    <div id="win_perm_2" class="step slide" data-x="4000" data-y="1800">
+      <p class="centertext"><b>Windows Permissions</b><br><br></p>
+      <ul>
+        <li><b>Full Control</b> - Can take ownership & change permissions</li>
+        <li><b>Modify</b> - Read/Write/Change/Delete</li>
+        <li><b>Read & Execute</b></li>
+        <li><b>List Folder Contents</b> - Folders Only</li>
+        <li><b>Read</b> - Access files</li>
+        <li><b>Write</b> - Modify files</li>
+    </div>
+
+    <div id="lin_permissions" class="step" data-x="5000" data-y="1800">
+      <p class="centertext"><b>Ubuntu Permissions</b></p>
+      <img class="centerimg" height="600" src="images/lin_perm.png">
+    </div>
+
+    <div id="lin_perm_2" class="step slide" data-x="0" data-y="2700">
+      <p class="centertext"><b>Ubuntu Permissions</b><br><br></p>
+      <ul>
+        <li>3 classes: User, Group, Others</li>
+        <li>3 rights:<ul>
+          <li>Read - Can read contents</li>
+          <li>Write - Can create/modify/delete</li>
+          <li>Execute - Can run programs/scripts</li>
+        </ul></li>
+    </div>
+
+    <div id="lin_commands" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>Modifying Ubuntu Permissions</b></p>
+      <ul>
+        <li>chmod - Change permissions<ul>
+          <li>chmod [class][op][mode] file/folder</li>
+          <li>chmod [octal_mode] filename/folder</li>
+        </ul></li>
+        <li>chown - Change User/Group (sudo)<ul>
+          <li>chown [user]:[group] filename/folder</li>
+        </ul></li>
+        <li>chgrp - Change Group (must own file)<ul>
+          <li>chgrp [group] filename/folder</li>
+        </ul></li>
+      </ul>
+    </div>
+
+    <div id="ls" class="step" data-x="2000" data-y="2700">
+      <p class="centertext"><b>File Listing</b></p>
+      <img class="centerimg" width="850" src="images/ls_digitalocean.png">
+      <p class="imagecredit">Image Credit: <a href="https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-permissions">Digital Ocean</a></p>
+    </div>
+
+    <div id="mode" class="step" data-x="3000" data-y="2700">
+      <p class="centertext"><b>File Modes</b></p>
+      <img class="centerimg" width="850" src="images/mode_digitalocean.png">
+      <p class="imagecredit">Image Credit: <a href="https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-permissions">Digital Ocean</a></p>
+    </div>
+
+    <div id="example" class="step slide" data-x="4000" data-y="2700">
+      <p class="centertext"><b>Ubuntu Permission Example</b></p>
+      <ul>
+        <li>Users: acct, hr, user, guest, root
+        <li>/files: All users except guest should have rwx, guest r only</li>
+        <li>/files/acctg: acct should have rwx, hr should have r, all else no access</li>
+        <li>/files/hr: hr and acct should have rwx, user should have rx, all else no access</li> 
+      </ul>
+    </div>
+
+    <div id="example2" class="step slide" data-x="5000" data-y="2700">
+      <p class="centertext"><b>Ubuntu Permission Example</b></p>
+      <ul>
+        <li>group1: acct, hr, user</li>
+        <li>group2: acct, hr</li>
+        <li>group3: hr</li>
+        <br>
+        <li>/files: root:group1 rwxrwxr__</li>
+        <li>/files/acctg: acct:group3 rwxr_____</li>
+        <li>/files/hr: user:group2 r_xrwx___</li>
+      </ul>
+    </div>
+
+    <div id="reading" class="step slide" data-x="0" data-y="3600">
+      <p class="centertext"><b>Reading</b><br><br></p>
+      See Class Website: 
+      <p style="font-size:40px"><a href="/cis225fall2015/">http://people.cis.ksu.edu/~russfeld/cis225fall2015/</a></p>
+    </div>
+
+    <div id="assignments" class="step slide" data-x="1000" data-y="3600">
+      <p class="centertext"><b>Assignments</b><br><br></p>
+      <ul>
+        <li>Lab 3 - User Accounts & File Systems<br>Due 9/28 11:30 AM <b>Before Lecture!!</b></li>
+      </ul>
+    </div>
+
+    <div id="overview" class="step" data-x="2500" data-y="1800" data-z="-1" data-scale="6">
+    </div>
+
+</div>
+
+<script src="/js/analytics.js"></script>
+<script src="/js/impress.js"></script>
+<script>impress().init();</script>
+<script src="/js/jquery-1.10.2.min.js"></script>
+<script src="/js/TimeCircles.js"></script>
+<script src="/js/timer.js"></script>
+<script src="/js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+
+</body>
+</html>

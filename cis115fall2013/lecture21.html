@@ -1,0 +1,319 @@
+<html lang="en">
+<head>
+  <BASE href="../">
+  <link href="favicon.ico" rel="shortcut icon">
+  <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+  <meta name="description" content="CIS 115 Fall 2013 Lecture 21" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 115 Fall 2013 Lecture 21</title>
+    <link href="css/impress.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 115</b><br><br>Lecture 21: Web 2.0 & Social Media</p>
+    </div>
+
+    <div id="the_internet" class="step" data-x="1000" data-y="-900">
+      <div id="iDbyYGrswtg" data-id="iDbyYGrswtg" class="youtube">
+        <a href="http://www.youtube.com/watch?v=iDbyYGrswtg">The Internet (IT Crowd) on Youtube</a>
+      </div>
+    </div>
+
+    <div id="what" class="step" data-x="1000" data-y="0">
+      <p class="centertext"><b>What is Web 2.0?</b></p>
+    </div>
+
+    <div id="tag_cloud" class="step" data-x="2000" data-y="0">
+      <img class="centerimg" height="650" src="cis115fall2013/images/lecture21/tag_cloud_wiki.svg">
+      <p class="imagecredit">Image Source: <a href="http://upload.wikimedia.org/wikipedia/commons/a/a7/Web_2.0_Map.svg">Wikipedia</a></p>
+    </div> 
+
+    <div id="long_tail" class="step" data-x="3000" data-y="0">
+      <p class="centertext"><b>The Long Tail</b></p>
+      <img class="centerimg" width="850" src="cis115fall2013/images/lecture21/long_tail_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Long_tail">Wikipedia</a></p>
+    </div> 
+
+    <div id="compare" class="step slide" data-x="4000" data-y="0">
+      <table style="width:100%" class="table">
+        <tr>
+          <td><b>Web 1.0</b></td>
+          <td><b>Web 2.0</b></td>
+        </tr>
+        <tr>
+          <td>Static web pages</td>
+          <td>Dynamic pages</td>
+        </tr>
+        <tr>
+          <td>Content from few</td>
+          <td>Content from many</td>
+        </tr>
+        <tr>
+          <td>Local software</td>
+          <td>Web software</td>
+        </tr>
+        <tr>
+          <td>Local storage</td>
+          <td>Web storage</td>
+        </tr>
+        <tr>
+          <td>Read only</td>
+          <td>Write / Collaborate</td>
+        </tr>
+        <tr>
+          <td>Text only</td>
+          <td>Multimedia</td>
+        </tr>
+        <tr>
+          <td>Individual thoughts</td>
+          <td>Collective thoughts</td>
+        </tr>
+        <tr>
+          <td>Propietary</td>
+          <td>Open / Shared</td>
+        </tr>
+      </table>
+      <p class="imagecredit">Source: <a href="http://newtoolsworkshop.wikispaces.com/What+is+2.0%3F">New Tools Workshop</a></p>
+    </div> 
+
+    <div id="examples" class="step" data-x="0" data-y="900">
+      <p class="centertext"><b>Examples of Web 2.0 Sites?</b></p>
+    </div>
+
+    <div id="tech" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b>Core Web 2.0 Technologies</b><br><br></p>
+      <ul>
+        <li>DOM</li>
+        <li>Javascript</li>
+        <li>AJAX</li>
+        <li>JSON</li>
+      </ul>
+    </div>
+
+    <div id="dom" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>Document Object Model (DOM)</b></p>
+      <img class="centerimg" height="600" src="cis115fall2013/images/lecture21/dom_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Document_object_model">Wikipedia</a></p>
+    </div>
+
+    <div id="js" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>JavaScript (1995)</b><br><br></p>
+      <ul>
+        <li>Originally called "LiveScript"
+        <li>Used to manipulate the DOM after the page has loaded</li>
+        <li>Makes the web page much more interactive for the user</li>
+        <li>Unrelated to the Java programming language</li>
+      </ul>
+    </div>
+
+    <div id="ajax" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>AJAX (2005)</b><br><br></p>
+      <ul>
+        <li>Asynchronous Javascript and XML</li>
+        <li>Allows scripts on a webpage to send and receive data in the background without reloading the page</li>
+        <li>XML not required; may use JSON instead</li>
+      </ul>
+    </div>
+
+    <div id="xml" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>Extensible Markup Language (XML)</b></p>
+      <pre><code style="font-size:25px; line-height:30px">&lt;person>
+   &lt;firstName>John&lt;/firstName>
+   &lt;lastName>Smith&lt;/lastName>
+   &lt;age>25&lt;/age>
+   &lt;address>
+      &lt;city>New York&lt;/city>
+      &lt;postalCode>10021&lt;/postalCode>
+      &lt;state>NY&lt;/state>
+      &lt;streetAddress>21 2nd Street&lt;/streetAddress>
+   &lt;/address>
+   &lt;phoneNumbers>
+      &lt;element>
+         &lt;number>212 555-1234&lt;/number>
+         &lt;type>home&lt;/type>
+      &lt;/element>
+      &lt;element>
+         &lt;number>646 555-4567&lt;/number>
+         &lt;type>fax&lt;/type>
+      &lt;/element>
+   &lt;/phoneNumbers>
+&lt;/person></code></pre>
+    </div>
+
+    <div id="json" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b>JavaScript Object Notation (JSON)</b></p>
+      <pre><code style="font-size:25px; line-height:30px">{
+    "firstName": "John",
+    "lastName": "Smith",
+    "age": 25,
+    "address": {
+        "streetAddress": "21 2nd Street",
+        "city": "New York",
+        "state": "NY",
+        "postalCode": 10021
+    },
+    "phoneNumbers": [
+        {
+            "type": "home",
+            "number": "212 555-1234"
+        },
+        {
+            "type": "fax",
+            "number": "646 555-4567"
+        }
+    ]
+}</code></pre>
+    </div>
+
+    <div id="machine" class="step" data-x="2000" data-y="1800">
+      <div id="ApVQ1it4B04" data-id="NLlGopyXT_g" class="youtube">
+        <a href="http://www.youtube.com/watch?v=NLlGopyXT_g">The Machine is Us/ing Us on Youtube</a>
+      </div>
+    </div>
+
+    <div id="comic" class="step" data-x="3000" data-y="1800">
+      <img class="centerimg" height="650" src="cis115fall2013/images/lecture21/comic_geek_and_poke.jpg">
+      <p class="imagecredit">Image Source: <a href="http://geekandpoke.typepad.com/geekandpoke/2008/06/the-history-of.html">Geek and Poke</a></p>
+    </div>
+
+    <div id="social" class="step slide" data-x="4000" data-y="1800">
+      <p class="centertext"><b>Social Media</b><br><br></p>
+      <ul>
+        <li>How people communicate online</li>
+        <li>Users create and share content</li>
+        <li>Sharing is real-time between users</li>
+        <li>Content can be shared & discussed</li>
+      </ul>
+    </div>
+
+    <div id="rise" class="step slide" data-x="0" data-y="2700">
+      <p class="centertext"><b>Rise of Social Media</b></p>
+      <ul>
+        <li>1997 - Six Degrees</li>
+        <li>1999 - Blogger & LiveJournal</li>
+        <li>2001 - Wikipedia</li>
+        <li>2002 - Friendster</li>
+        <li>2003 - LinkedIn & MySpace</li>
+        <li>2004 - Facebook, Flickr & digg</li>
+        <li>2005 - YouTube & Reddit</li>
+        <li>2006 - Twitter</li>
+      </ul>
+    </div>
+
+    <div id="rise2" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>Social Media Stats</b><br><br></p>
+      <ul>
+        <li>#1 Activity on the Web</li>
+        <li>1 Billion Facebook Users</li>
+        <li>58% of Facebook Users log on Daily</li>
+        <li>43% of people 65+ use Social Media</li>
+        <li><em>Fewer teens are using Facebook than before</em></li>
+      </ul>
+    </div>
+
+    <div id="graphic" class="skip" data-x="-825" data-y="2030" data-scale="0.5">
+      <img class="centerimg" width="850" src="cis115fall2013/images/lecture21/social_media_graphic.png">
+      <p class="imagecredit">Image Source: <a href="http://www.creotivo.com/blog/portfolio/social-media/">Creotivo</a></p>
+    </div>
+
+    <div id="graphic_1" class="step" data-x="-825" data-y="1125" data-scale="0.5">
+    </div>
+
+    <div id="graphic_2" class="step" data-x="-825" data-y="1425" data-scale="0.5">
+    </div>
+
+    <div id="graphic_3" class="step" data-x="-825" data-y="1725" data-scale="0.5">
+    </div>
+
+    <div id="graphic_4" class="step" data-x="-825" data-y="1925" data-scale="0.5">
+    </div>
+
+    <div id="graphic_5" class="step" data-x="-825" data-y="2125" data-scale="0.5">
+    </div>
+
+    <div id="graphic_6" class="step" data-x="-825" data-y="2460" data-scale="0.5">
+    </div>
+
+    <div id="graphic_7" class="step" data-x="-825" data-y="2720" data-scale="0.5">
+    </div>
+
+    <div id="graphic_8" class="step" data-x="-825" data-y="2970" data-scale="0.5">
+    </div>
+
+    <div id="discussion" class="step slide" data-x="2000" data-y="2700">
+      <p class="centertext"><b>Discussion Time!</b><br><br></p>
+      <p class="centertext">Is Web 2.0 and Social Media<br>Good, Bad, or Otherwise?<br><br></p>
+      <p class="centertext">List <b>5-10 Good</b> and <b>5-10 Bad</b> aspects of Web 2.0 and Social Media</p>
+    </div>
+
+    <div id="assignment" class="step slide" data-x="-825" data-y="-225" data-scale="0.5">
+      <p class="centertext">Assignments</p>
+      <ul>
+        <li>Read and be prepared to discuss:<ul>
+          <li><em>Tubes</em> Chapter 6: The Longest Tubes</li></ul></li>
+        <li>Blog 10: Web Technologies - Due 11/10 10:00 PM</li>
+        <li>HTML & CSS Website: Due 11/5 10:00 PM</li>
+      </ul>
+    </div>
+
+    <div id="blog" class="step slide" data-x="-825" data-y="225" data-scale="0.5">
+      <p class="centertext" style="font-size: 35px; line-height: 45px"><b>Blog 10: Web Technologies</b></p>
+      <p style="font-size: 35px; line-height: 38px">While many people regard the internet as a single entity that is incomprehensible, we as computer scientists understand that it is actually made up of lots of underlying technologies and systems all combined together to bring life to the internet. Choose a technology related to the internet and tell us more about it. Try to think outside the box and find a technology no one else will write about. Here are some questions to ask yourself as you research it:</p>
+      <ul style="font-size: 35px; line-height: 38px">
+        <li>Where did it come from?</li>
+        <li>Who created it? When did they create it?</li>
+        <li>What was it originally created for? Is that how it is used today?</li>
+        <li>Are there any other related technologies?</li>
+        <li>How is it used today? How does it work?</li>
+        <li>Are there any privacy or security issues with this technology?</li>
+      </ul>
+    </div>
+
+    <div id="activity" class="skip slide" data-x="-825" data-y="655" data-scale="0.5">
+      <p class="centertext"><b>Create your own Website!</b></p>
+      <p>Create a webpage that has:</p>
+      <ul>
+        <li>A header &lt;h1&gt;</li>
+        <li>3 paragraphs &lt;p&gt;</li>
+        <li>1 list &lt;ul&gt; or &lt;ol&gt; with 3 list items &lt;li&gt;</li>
+        <li>1 working link to your favorite site <br>&lt;a href="http://www.google.com"&gt;</li>
+        <li>Valid HTML5 - <a href="http://validator.w3.org">http://validator.w3.org</a></li>
+      </ul>
+      <p class="centertext"><a href="http://www.w3schools.com/html">http://www.w3schools.com/html</a></p>
+    </div>
+
+    <div id="activity_1" class="step" data-x="-825" data-y="675" data-scale="0.5">
+    </div>
+
+    <div id="activity_2" class="step" data-x="-825" data-y="675" data-scale="0.5">
+    </div>
+
+    <div id="overview" class="step" data-x="2000" data-y="2000" data-z="-1" data-scale="6.5">
+    </div>
+
+</div>
+
+<script src="js/analytics.js"></script>
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
+<script src="js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+</body>
+</html>

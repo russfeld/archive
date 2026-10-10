@@ -1,0 +1,125 @@
+<html lang="en">
+<head>
+  <BASE href="../">
+  <link href="favicon.ico" rel="shortcut icon">
+  <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+  <meta name="description" content="CIS 225 Fall 2013 Lecture 23" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 225 Fall 2013 Lecture 23</title>
+    <link href="css/impress.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 225</b><br><br>Lecture 23: System Monitoring</p>
+    </div>
+
+    <div id="processor" class="step slide" data-x="1000" data-y="0">
+      <p class="centertext"><b>Processor Usage</b><br><br></p>
+      <ul>
+        <li>Windows - Resource Monitor, Process Explorer</li>
+        <li>Ubuntu - top, vmstat, ps</li>
+      </ul>
+    </div>
+
+    <div id="memory" class="step slide" data-x="2000" data-y="0">
+      <p class="centertext"><b>Memory Usage</b><br><br></p>
+      <ul>
+        <li>Windows - Resource Monitor, Process Explorer</li>
+        <li>Ubuntu - free</li>
+      </ul>
+    </div>
+    
+    <div id="disk" class="step slide" data-x="3000" data-y="0">
+      <p class="centertext"><b>Disk Usage</b><br><br></p>
+      <ul>
+        <li>Windows - Disk Management, Windirstat</li>
+        <li>Ubuntu - du, df, iostat</li>
+      </ul>
+    </div>
+
+    <div id="network" class="step slide" data-x="4000" data-y="0">
+      <p class="centertext"><b>Network Usage</b><br><br></p>
+      <ul>
+        <li>Windows - Resource Monitor, TCPView</li>
+        <li>Ubuntu - netstat, ss, tcptrack</li>
+      </ul>
+    </div>
+
+    <div id="inventory" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>Inventory</b><br><br></p>
+      <p>Every good system administrator should keep an up-to-date inventory of all systems being managed</p>
+      <br>
+      <a href="http://www.pxserver.com/WinAudit.htm">WinAudit</a><br>
+      <a href="http://www.ocsinventory-ng.org/en/demo/">OCS-NG Demo Site</a>
+    </div>
+
+    <div id="snmp" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b>Simple Network Management Protocol (SNMP)</b></p>
+      <ul>
+        <li>Read data from systems via network</li>
+        <li>Some system settings can be changed</li>
+        <li>Typically present on networking devices</li>
+        <li>GOOD: Easy to read data on many systems</li>
+        <li>BAD: Must be properly configured or can be security issue</li>
+    </div>
+
+    <div id="bigger" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>Enterprise Solutions</b><br><br></p>
+      <ul>
+        <li>Cacti</li>
+        <li>Nagios</li>
+        <li>Deep Freeze</li>
+        <li>Many Others</li>
+      </ul>
+      <a href="http://beocat.cis.ksu.edu">BEOCAT using Nagios</a>
+    </div>
+
+    <div id="prevent" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>Preventative Maintenance</b><br><br></p>
+      <ul style="-webkit-column-count:2">
+        <li style="font-size:38px">Check for Patches</li>
+        <li style="font-size:38px">Install Updates</li>
+        <li style="font-size:38px">Remove Old Users</li>
+        <li style="font-size:38px">Check Drive Space</li>
+        <li style="font-size:38px">Backup User Files</li>
+        <li style="font-size:38px">Backup System Files</li>
+        <li style="font-size:38px">Verify Backups</li>
+        <li style="font-size:38px">Update Anti-Virus</li>
+        <li style="font-size:38px">Scan for Viruses</li>
+        <li style="font-size:38px">Check Server Health</li>
+        <li style="font-size:38px">Change Passwords</li>
+        <li style="font-size:38px">Reboot Entire System</li>
+        <li style="font-size:38px">Rebuild System</li>
+        <li style="font-size:38px">Others?</li>
+      </ul>
+    </div>
+
+    <div id="overview" class="step" data-x="3500" data-y="3600" data-z="-1" data-scale="10.5">
+    </div>
+
+</div>
+
+<script src="js/analytics.js"></script>
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
+<script src="js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+</body>
+</html>

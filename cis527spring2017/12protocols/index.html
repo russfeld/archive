@@ -1,0 +1,209 @@
+<html lang="en">
+<head>
+    <link href="/favicon.ico" rel="shortcut icon">
+    <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+    <meta name="description" content="CIS 527 - Other Application Protocols" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 527 - Other Application Protocols</title>
+    <link href="/css/impress.css" rel="stylesheet" />
+    <link href="/css/TimeCircles.css" rel="stylesheet" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="-1000" data-y="0">
+        <p><b>CIS 527</b><br><br>Other Application Protocols</p>
+    </div>
+
+    <div id="http" class="step slide" data-x="0" data-y="0">
+      <p class="centertext"><b>HyperText Transfer Protocol (HTTP)</b></p>
+      <img class="centerimg" height="550" src="images/http_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">Wikipedia</a></p>
+    </div>
+
+    <div id="http_ex" class="step slide" data-x="1000" data-y="0">
+      <img class="centerimg" width="880" src="images/http_telnet_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">Wikipedia</a></p>
+    </div>
+
+    <div id="http_comm2" class="step slide" data-x="2000" data-y="0">
+      <p class="centertext"><b>HTTP Connection</b><br><br></p>
+      <pre><code style="line-height: 25px; font-size: 24px">cis527@cis527russfeldpuppet:~$ telnet en.wikipedia.com 80
+Trying 208.80.153.224...
+Connected to en.wikipedia.com.
+Escape character is '^]'.
+GET /wiki/Main_Page HTTP/1.1
+Host: en.wikipedia.org
+
+HTTP/1.1 301 TLS Redirect
+Server: Varnish
+Location: https://en.wikipedia.org/wiki/Main_Page
+Content-Length: 0
+Accept-Ranges: bytes
+Date: Fri, 26 Feb 2016 16:20:45 GMT
+X-Varnish: 1427912479
+Age: 0
+Via: 1.1 varnish
+Connection: close</code></pre>
+    </div>
+
+    <div id="http_comm" class="step slide" data-x="3000" data-y="0">
+      <p class="centertext"><b>HTTP Commands</b><br><br></p>
+      <ul>
+        <li>GET</li>
+        <li>POST</li>
+        <li>HEAD</li>
+        <li>PUT</li>
+        <li>DELETE</li>
+      </ul>
+    </div>
+
+    <div id="http_status2" class="step slide" data-x="4000" data-y="0">
+      <p class="centertext"><b>HTTP Status Codes</b><br><br></p>
+      <ul>
+        <li>200</li>
+        <li>301</li>
+        <li>403</li>
+        <li>404</li>
+        <li>500</li>
+        <li>503</li>
+      </ul>
+    </div>
+
+    <div id="http_status3" class="step slide" data-x="4000" data-y="0" data-z="-1" style="z-index: -1">
+      <p class="centertext"><b>HTTP Status Codes</b><br><br></p>
+      <ul>
+        <li>200 - OK</li>
+        <li>301 - Moved Permanently</li>
+        <li>403 - Forbidden</li>
+        <li>404 - Not Found</li>
+        <li>500 - Internal Server Error</li>
+        <li>503 - Service Unavailable</li>
+      </ul>
+    </div>
+
+    <div id="email" class="step slide" data-x="-1000" data-y="900">
+      <p class="centertext"><b>Email</b><br><br></p>
+      <ul>
+        <li>Protocol for sending messages across the internet</li>
+        <li>Used as early as the 1970's as an extension to FTP</li>
+        <li>Originally ASCII, extended by Multipurpose Internet Mail Extensions (MIME)</li>
+      </ul>
+    </div>
+
+
+    <div id="email_protocols" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>Email Procotols</b><br><br></p>
+      <ul>
+        <li>Post Office Protocol (POP3)</li>
+        <li>Simple Mail Transfer Protocol (SMTP)</li>
+        <li>Internet Message Access Protocol (IMAP)</li>
+        <li>Exchange ActiveSync</li>
+      </ul>
+    </div>
+
+    <div id="email_pic" class="step" data-x="1000" data-y="900">
+      <p class="centertext"><b>Email Process</b></p>
+      <img class="centerimg" height="600" src="images/email_wiki.svg">
+      <p class="imagecredit">Image Credit: <a href="https://en.wikipedia.org/wiki/Email">Wikipedia</a></p>
+    </div>
+
+    <div id="smtp" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>SMTP Connection</b></p>
+      <pre><code style="line-height: 21px; font-size: 19px">cis527@cis527russfeldpuppet:~$ telnet smtp.ksu.edu 25
+Trying 129.130.8.75...
+Connected to smtp.ksu.edu.
+Escape character is '^]'.
+220 smtp4.cc.ksu.edu ESMTP Sendmail 8.14.3/8.14.3; Fri, 26 Feb 2016 10:46:47 -0600 (CST); Unsolicited Commercial Email (spam) is UNWELCOME
+HELO smtp.ksu.edu
+250 smtp4.cc.ksu.edu Hello dhcp251-10.cis.ksu.edu [129.130.10.251], pleased to meet you
+MAIL FROM:<russfeld@ksu.edu>
+250 2.1.0 <russfeld@ksu.edu>... Sender ok
+RCPT TO:<test@beattieunioncemetery.org>
+250 2.1.5 <test@beattieunioncemetery.org>... Recipient ok
+DATA
+354 Enter mail, end with "." on a line by itself
+From: "Russell Feldhausen" <russfeld@ksu.edu>
+To: "Test" <test@beattieunioncemetery.org>
+Date: Fri, 26 February 2008 10:48:00 -0700
+Subject: Test Message
+
+This is a test from Russ! hope it goes through!
+.
+250 2.0.0 u1QGkl2x007949 Message accepted for delivery
+QUIT
+221 2.0.0 smtp4.cc.ksu.edu closing connection
+Connection closed by foreign host.
+</code></pre>
+    </div>
+
+    <div id="pop" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>POP3 Connection</b></p>
+      <pre><code style="line-height: 21px; font-size: 19px">cis527@cis527russfeldpuppet:~$ telnet mail.servergrove.com 110
+Trying 69.195.222.232...
+Connected to mail.servergrove.com.
+Escape character is '^]'.
++OK POP3 ready
+USER test@beattieunioncemetery.org
++OK
+PASS uns3cur3
++OK logged in.
+STAT
++OK 2 5580
+RETR 1
++OK 4363 octets follow.
+Received: (qmail 11929 invoked from network); 26 Feb 2016 16:16:14 +0000
+Received-SPF: none (no valid SPF record)
+Received: from mx-mia-1.servergrove.com (69.195.198.246)
+  by sg111.servergrove.com with SMTP; 26 Feb 2016 16:15:43 +0000
+...
+...
+...
+DELE 2
++OK message 2 deleted
+QUIT
++OK Bye-bye.
+</code></pre>
+    </div>
+
+
+
+    <div id="assignments" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>Assignments</b><br><br></p>
+      <ul>
+        <li>Lab 3 - Core Networking Services: Due Monday 2/27 10:30 AM</li>
+      </ul>
+    </div>
+
+    <div id="overview" class="step" data-x="2000" data-y="1800" data-z="-1" data-scale="7.5">
+    </div>
+
+</div>
+
+<script src="/js/analytics.js"></script>
+<script src="/js/impress.js"></script>
+<script>impress().init();</script>
+<script src="/js/jquery-1.10.2.min.js"></script>
+<script src="/js/TimeCircles.js"></script>
+<script src="/js/timer.js"></script>
+<script src="/js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+
+
+
+</body>
+</html>

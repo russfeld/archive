@@ -1,0 +1,210 @@
+<html lang="en">
+<head>
+  <BASE href="../">
+  <link href="favicon.ico" rel="shortcut icon">
+  <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+  <meta name="description" content="CIS 225 Fall 2013 Lecture 14"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 225 Fall 2013 Lecture 14</title>
+    <link href="css/impress.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 225</b><br><br>Lecture 14 - Software Architecture & Installation</p>
+    </div>
+
+    <div id="Software_Architecture" class="step slide" data-x="1000" data-y="0">
+      <p class="centertext"><b>Windows Software Architecture<br><br></b></p>
+      <ul>
+        <li>Executable Image (.EXE)</li>
+        <li>Dynamic Link Library (.DLL)</li>
+        <li>Initialization File (.INI)</li>
+        <li>Registry Keys</li>
+        <li><em>Drivers</em></li>
+        <li><em>Services</em></li>
+      </ul>
+    </div>
+
+    <div id="exe" class="step slide" data-x="2000" data-y="0">
+      <p class="centertext"><b>Executable Image (.EXE)<br><br></b></p>
+      <ul>
+        <li>Contains the actual executable code for an application</li>
+        <li>May also contain resources, graphics, fonts, etc.</li>
+        <li>Based on the old Unix COFF (Common Object File Format)</li>
+      </ul>
+    </div>
+
+    <div id="dll" class="step slide" data-x="3000" data-y="0">
+      <p class="centertext"><b>Dynamic Link Library (.DLL)<br><br></b></p>
+      <ul>
+        <li>Shared library files used by programs</li>
+        <li>Uses same format as .EXE file</li>
+        <li>Programs can access same .DLL files simultaneously</li>
+      </ul>
+    </div>
+
+    <div id="ini" class="step slide" data-x="4000" data-y="0">
+      <p class="centertext"><b>Initialization File (.INI)<br><br></b></p>
+      <ul>
+        <li>Informal standard for configuration files</li>
+        <li>Used extensively in Windows up to Windows ME for system & software settings</li>
+        <li>Structured text files</li>
+      </ul>
+    </div>
+
+    <div id="registry" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>Registry Keys<br><br></b></p>
+      <ul>
+        <li>Structured data storage for system settings</li>
+        <li>Key &lt;-&gt; Value pairs</li>
+        <li>Faster loading of settings</li>
+        <li>Allows multiple users to use a system simultaneously</li>
+      </ul>
+    </div>
+
+    <div id="install" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b>Windows Software Install Process<br><br></b></p>
+      <ul>
+        <li>Extract/expand files</li>
+        <li>Place files in location</li>
+        <li>Create registry keys</li>
+        <li>Install drivers/services</li>
+        <li>Create user data files</li>
+        <li>Create shortcuts</li>
+      </ul>
+    </div>
+
+    <div id="track_install" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>Tracking - Process Monitor</b></p>
+      <p class="centertext"><a href="http://technet.microsoft.com/en-us/sysinternals/bb896645.aspx">Download Link</a></p>
+      <img class="centerimg" height="550" src="cis225fall2013/images/lecture14/procmon.png">
+    </div>
+
+    <div id="track_install2" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>Tracking - InstallWatch Pro</b></p>
+      <p class="centertext"><a href="http://www.freewarebb.com/files/file/11562-installwatch-pro/">Download Link</a></p>
+      <img class="centerimg" height="550" src="cis225fall2013/images/lecture14/installwatch.png">
+    </div>
+
+    <div id="track_install3" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>Installing - Thunderbird</b></p>
+      <img class="centerimg" height="600" src="cis225fall2013/images/lecture14/thunderbird.png">
+    </div>
+
+    <div id="ubuntu_architecture" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>Ubuntu Software Architecture<br><br></b></p>
+      <ul>
+        <li>Binary Files</li>
+        <li>Shared Object Files (.SO)</li>
+        <li>Library Files</li>
+        <li>Settings Files</li>
+        <li>Documentation Files</li>
+        <li><em>Upstart/init scripts</em></li>
+      </ul>
+    </div>
+
+    <div id="binary" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b>Binary Files<br><br></b></p>
+      <ul>
+        <li>Contains the executable code for the application</li>
+        <li>Uses the ELF (Executable and Linkable Format)</li>
+        <li>Commonly used in many Unix-like systems</li>
+        <li>Usually stored in /bin folder</li>
+      </ul>
+    </div>
+
+    <div id="so" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b>Shared Object & Library Files<br><br></b></p>
+      <ul>
+        <li>Shared information or code used by multiple programs</li>
+        <li>Install once, use everywhere</li>
+        <li>May have to store multiple versions for different programs</li>
+        <li>Usually stored in /usr/lib</li>
+      </ul>
+    </div>
+
+    <div id="etc" class="step slide" data-x="3000" data-y="1800">
+      <p class="centertext"><b>Settings Files<br><br></b></p>
+      <ul>
+        <li>Configuration files used by programs</li>
+        <li>Text based, similar to .INI files</li>
+        <li>Usually stored in /etc for system-wide settings or in a hidden folder in ~/ (like ~/.thunderbird)</li>
+      </ul>
+    </div>
+
+    <div id="doc" class="step slide" data-x="4000" data-y="1800">
+      <p class="centertext"><b>Documentation Files<br><br></b></p>
+      <ul>
+        <li>Stores information about the software</li>
+        <li>Responds to 'man' command on terminal</li>
+        <li>Usually stored in /usr/share folder</li>
+      </ul>
+    </div>
+
+    <div id="package" class="step slide" data-x="0" data-y="2700">
+      <p class="centertext"><b>Ubuntu Package Management<br><br></b></p>
+      <ul>
+        <li>Most software installed via "packages"</li>
+        <li>Packages are provided from a repository</li>
+        <li>Programs such as Synaptic or apt can install packages</li>
+        <li>Programs can also be installed from source</li>
+      </ul>
+    </div>
+
+    <div id="install_ubuntu" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>Ubuntu Software Install Process<br><br></b></p>
+      <ul>
+        <li>Extract/expand files</li>
+        <li>Place files in location</li>
+        <li>Create user data files (usually on first run)</li>
+        <li><em>Create startup scripts</em></li>
+      </ul>
+    </div>
+
+    <div id="track_install4" class="step slide" data-x="2000" data-y="2700">
+      <p class="centertext"><b>Tracking - Synaptic</b></p>
+      <img class="centerimg" height="550" src="cis225fall2013/images/lecture14/synaptic.png">
+    </div>
+
+    <div id="reading" class="step slide" data-x="3000" data-y="2700">
+      <p class="centertext"><b>Reading<br><br></b></p>
+      <ul>
+        <li>Ubuntu Unleashed - Chapter 22</li>
+      </ul>
+    </div>
+
+    <div id="assignments" class="step slide" data-x="4000" data-y="2700">
+      <p class="centertext"><b>Assignments<br><br></b></p>
+      <ul>
+        <li>Lab 6 - Service & Process Management and Software Install: Due 10/21 @ 11:59 PM</li>
+      </ul>
+    </div>
+    
+    <div id="overview" class="step" data-x="2000" data-y="2000" data-z="-1" data-scale="6.5">
+    </div>
+
+
+</div>
+
+<script src="js/analytics.js"></script>
+
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <BASE href="../">
+  <link href="favicon.ico" rel="shortcut icon">
+  <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166 impress.js netc2014 netc" />
+  <meta name="description" content="Create Impressive Presentations with Impress.js" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Create Impressive Presentations with Impress.js</title>
+    <link href="css/impress.css" rel="stylesheet" />
+    <link href="css/highlight/default.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p>Create Impressive Presentations with Impress.js</p>
+        <p style="font-size:45px">Russ Feldhausen - NETC 2014</p>
+    </div>
+
+    <div id="intro" class="step" data-x="1000" data-y="0">
+      <p class="centertext"><a href="http://bartaz.github.io/impress.js">impress.js</a></p>
+    </div>
+
+    <div id="what" class="step slide" data-x="2000" data-y="0">
+      <p class="centertext"><b>What is impress.js?</b></p>
+      <ul>
+        <li>A presentation framework based on CSS3 transforms</li>
+        <li>Uses Javascript to add functionality to HTML code</li>
+        <li>Inspired by Prezi</li>
+        <li>Requires functional knowledge of HTML5, CSS3 to use</li>
+        <li>Knowledge of Javascript needed to modify how it works</li>
+      </ul>
+    </div>
+
+    <div id="why" class="step slide" data-x="3000" data-y="0">
+      <p class="centertext"><b>Why impress.js?</b></p>
+      <ul>
+        <li>Prezi is cool, but creating presentations is labor intensive</li>
+        <li>PowerPoint is nice, but difficult to embed multimedia into</li>
+        <li>Pages is sweet, but not cross-platform</li>
+        <li>impress.js is HTML5, CSS and JS; cross-platform, and easy to work with</li>
+        <li>In addition, I'm a nerd, and its nerdy!</li>
+      </ul>
+    </div>
+
+    <div id="experience" class="step slide" data-x="4000" data-y="0">
+      <p class="centertext"><b>My experiences</b><br><br></p>
+      <ul>
+        <li>2 semesters of CS courses</li>
+        <li>3 minor modifications to source code<ul>
+          <li>Ability to define skipped slides</li>
+          <li>Escape key goes to overview</li>
+          <li>Youtube and Vimeo embeds</li></ul>
+        <li>Wrote tool to create PDF notesheets</li>
+        <li>My presentations now flow very nicely</li>
+      </ul>
+    </div>
+
+    <div id="basics_html" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>The Basics - HTML</b><br><br></p>
+      <pre style="line-height:35px"><code>&lt;div id="experience" class="step slide"
+  data-x="4000" data-y="0" data-z="0" 
+  data-rotate-x="15" data-scale="2.0">
+
+&lt;div></code></pre>
+    </div>
+
+    <div id="basics_css" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b>The Basics - CSS</b><br><br></p>
+      <pre style="line-height:35px"><code style="font-size: 30px; line-height: 35px">.step {
+  position:     relative;
+
+  width:        1000px;
+  padding:      40px;
+  margin:       20px auto;
+
+  box-sizing:   border-box;
+  font-family:  'Open Sans', Arial, sans-serif;
+  font-size:    48px;
+  line-height:  1.5;
+}</code></pre>
+    </div>
+
+    <div id="basics_css2" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>The Basics - CSS</b><br><br></p>
+      <pre style="line-height:35px"><code style="font-size: 30px; line-height: 35px">.slide {
+  display:        block;
+
+  width:          1000px;
+  height:         750px;
+  padding:        40px 60px;
+
+  background-color: white;
+  border:         1px solid rgba(0, 0, 0, .3);
+  border-radius:  10px;
+  box-shadow:     0 2px 6px rgba(0, 0, 0, .1);
+}</code></pre>
+    </div>
+
+    <div id="basics_js" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>The Basics - Javascript</b></p>
+      <pre style="font-size: 20px; line-height:35px"><code style="font-size: 30px; line-height: 35px">css(root, {
+  transform: perspective( config.perspective / 
+        targetScale ) + scale( targetScale ),
+  transitionDuration: duration + "ms",
+  transitionDelay: (zoomin ? delay : 0) + "ms"
+});
+
+css(canvas, {
+  transform: rotate(target.rotate, true) + 
+        translate(target.translate),
+  transitionDuration: duration + "ms",
+  transitionDelay: (zoomin ? 0 : delay) + "ms"
+});</code></pre>
+    </div>
+
+    <div id="how" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>How it Works</b><br><br></p>
+      <ul>
+        <li>Define slides within HTML &lt;div> tags</li>
+        <li>Decorate slides with CSS</li>
+        <li>impress.js uses Javascript to add CSS transforms to slides</li>
+        <li>Key bindings in Javascript allow for movement</li>
+      </ul>
+    </div>
+
+    <div id="cool_stuff" class="skip" data-x="0" data-y="1810">
+      <p class="centertext"><b>Cool Stuff To Try</b><br><br></p>
+      <ul>
+        <li>Create a slide with<br>the 'skip' CSS class</li>
+        <br><br>
+        <li>and show multiple views of the same slide!</li>
+      </ul>
+    </div>
+
+    <div id="cool_stuff_1" class="step" data-x="-100" data-y="1700" data-scale="0.7">
+    </div>
+
+    <div id="cool_stuff_2" class="step" data-x="0" data-y="1800">
+    </div>
+
+    <div id="cool_html" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b>Skip HTML Code</b><br><br></p>
+      <pre style="font-size: 15px; line-height: 25px"><code style="font-size: 23px; line-height: 28px">&lt;div id="cool_stuff" class="skip" data-x="0" data-y="1810">
+  &lt;p class="centertext">&lt;b>Cool Stuff To Try&lt;/b>&lt;br>&lt;br>&lt;/p>
+  &lt;ul>
+    &lt;li>Create a slide with&lt;br>the 'skip' CSS class&lt;/li>
+    &lt;br>&lt;br>
+    &lt;li>and show multiple views of the same slide!&lt;/li>
+  &lt;/ul>
+&lt;/div>
+
+&lt;div id="cool_stuff_1" class="step" data-x="-100" 
+     data-y="1700" data-scale="0.7">
+&lt;/div>
+
+&lt;div id="cool_stuff_2" class="step" data-x="0" data-y="1800">
+&lt;/div></code></pre>
+    </div>
+
+    <div id="cool_stuff_3" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b>Cool Stuff To Try</b><br><br></p>
+      <p>Stack Slides One on Another</p>
+    </div>
+
+    <div id="cool_stuff_4" class="step slide" data-x="2000" data-y="1800" data-z="-1">
+      <br><br><br><br><p>To Reveal Content Slowly</p>
+    </div>
+
+    <div id="cool_html_2" class="step slide" data-x="3000" data-y="1800">
+      <p class="centertext"><b>Stacked HTML Code</b><br><br></p>
+<pre style="font-size: 15px; line-height: 25px"><code style="font-size: 23px; line-height: 28px">&lt;div id="cool_stuff_3" class="step slide" data-x="2000" 
+      data-y="1800">
+  &lt;p class="centertext">&lt;b>Cool Stuff To Try&lt;/b>&lt;br>&lt;br>&lt;/p>
+  &lt;p>Stack Slides One on Another&lt;/p>
+&lt;/div>
+
+&lt;div id="cool_stuff_4" class="step slide" data-x="2000" 
+      data-y="1800" data-z="-1">
+  &lt;br>&lt;br>&lt;br>&lt;br>&lt;p>To Reveal Content Slowly&lt;/p>
+&lt;/div></code></pre>
+    </div>
+
+    <div id="apollo13" class="step" data-x="4000" data-y="1800">
+      <div id="34664087" class="vimeo" data-start="33">
+        <p><a href="http://vimeo.com/34664087">Apollo 13 on Vimeo</a></p>
+      </div>
+    </div>
+
+    <div id="jacquard_vid" class="step" data-x="0" data-y="2700">
+      <div id="NSjmFD6Q7hw" data-id="NSjmFD6Q7hw" class="youtube" data-start="5">
+        <a href="http://www.youtube.com/watch?v=NSjmFD6Q7hw">Jacquard Loom on YouTube</a>
+      </div>
+    </div>
+
+    <div id="cool_html_3" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>Video Embed HTML Code</b><br><br></p>
+<pre style="font-size: 15px; line-height: 25px"><code style="font-size: 23px; line-height: 28px">&lt;div id="apollo13" class="step" data-x="0" data-y="2700">
+  &lt;div id="34664087" class="vimeo" data-start="33">
+    &lt;p>&lt;a href="http://vimeo.com/34664087">
+        Apollo 13 on Vimeo&lt;/a>&lt;/p>
+  &lt;/div>
+&lt;/div>
+
+&lt;div id="jacquard_vid" class="step" data-x="1000" data-y="2700">
+  &lt;div id="NSjmFD6Q7hw" data-id="NSjmFD6Q7hw" 
+        class="youtube" data-start="5">
+    &lt;a href="http://www.youtube.com/watch?v=NSjmFD6Q7hw">
+        Jacquard Loom on YouTube&lt;/a>
+  &lt;/div>
+&lt;/div></code></pre>
+    </div>
+
+    <div id="links" class="step slide" data-x="2000" data-y="2700">
+      <p class="centertext"><b>Links for Inspiration</b><br><br></p>
+      <ul>
+        <li><a href="/">http://people.cis.ksu.edu/~russfeld</a><ul>
+          <li><a href="/cis115spring2014/lecture4.html#/boolean_symbols_1">CIS 115 Spring 2014 Lecture 4</a></li>
+          <li><a href="/cis225fall2013/lecture2.html#/kstate_chart_view">CIS 225 Fall 2013 Lectures 2</a> & <a href="/cis225fall2013/lecture3.html#/mobo_big">3</a></li> 
+          <li><a href="/cis527spring2014/lecture9.html#/spanning_tree">CIS 527 Spring 2014 Lecture 9</a></li>
+          <li><a href="/presentations/kawse2013/kawse2013.html#/overview">KAWSE 2013 Presentation</a></li></ul></li>
+        <li>Materials are posted on the <a href="/presentations">Presentations</a> page of my website</li>
+    </div>
+
+    <div id="contact" class="step slide" data-x="3000" data-y="2700">
+      <p class="centertext"><b>My info</b><br><br></p>
+      <ul>
+        <li>russfeld AT ksu DOT edu</li>
+        <li><a href="/">http://people.cis.ksu.edu/~russfeld</a></li>
+        <li>212 Nichols Hall</li>
+        <li>(785) 532-7929 (office)</li>
+        <li>(785) 292-3121 (google voice)</li>
+        <li>Gtalk: russfeldh</li>
+      </ul>
+    </div>
+
+    <div id="overview" class="step" data-x="2000" data-y="1500" data-scale="5">
+    </div>
+
+</div>
+
+<script src="js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script src="js/analytics.js"></script>
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
+<script src="js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+
+
+
+</body>
+</html>

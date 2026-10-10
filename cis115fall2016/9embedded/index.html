@@ -1,0 +1,480 @@
+<html lang="en">
+<head>
+    <link href="/favicon.ico" rel="shortcut icon">
+    <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+    <meta name="description" content="CIS 115 - Embedded Systems, Computer Architecture & Finite State Machines" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 115 - Embedded Systems, Computer Architecture & Finite State Machines</title>
+    <link href="/css/impress.css" rel="stylesheet" />
+    <link href="/css/TimeCircles.css" rel="stylesheet" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="-2700">
+        <p><b>CIS 115</b><br><br>Embedded Systems, Computer Architecture & Finite State Machines</p>
+    </div>
+
+    <div id="tyranny" class="step slide" data-x="1000" data-y="-2700">
+      <p class="centertext"><b>Tyranny of Numbers</b></p>
+      <blockquote style="font-size:40px; line-height:45px">For some time now, electronic man has known how 'in principle' to extend greatly his visual, tactile, and mental abilities through the digital transmission and processing of all kinds of information. However, all these functions suffer from what has been called 'the tyranny of numbers.' Such systems, because of their complex digital nature, require hundreds, thousands, and sometimes tens of thousands of electron devices.</blockquote>
+      <p style="margin-left:250px; font-size:40px; line-height:42px">-Jack Morton - 1957<br>VP of Bell Labs</p>
+    </div>
+
+    <div id="kilby" class="step" data-x="2000" data-y="-2700">
+      <p class="centertext"><b>Jack Kilby</b></p>
+      <img class="centerimg" height="600" src="images/kilby_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Jack_Kilby">Wikipedia</a></p>
+    </div>
+
+    <div id="kilby_video" class="step" data-x="2000" data-y="-3600">
+      <div id="62JMBnT2HUc" data-id="62JMBnT2HUc" class="youtube" data-start="6">
+        <a href="https://www.youtube.com/watch?v=62JMBnT2HUc">IC Invention on Youtube</a>
+      </div>
+    </div>
+
+    <div id="integrated_circuit" class="step" data-x="3000" data-y="-2700">
+      <p class="centertext"><b>Integrated Circuit</b></p>
+      <img class="centerimg" height="600" src="images/ic_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Integrated_circuit">Wikipedia</a></p>
+    </div>
+
+    <div id="noyce" class="step" data-x="4000" data-y="-2700">
+      <p class="centertext"><b>Robert Noyce</b></p>
+      <img class="centerimg" height="600" src="images/noyce_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Robert_Noyce">Wikipedia</a></p>
+    </div>
+
+    <div id="intel_founders" class="step" data-x="5000" data-y="-2700">
+      <p class="centertext"><b>Intel Founders</b></p>
+      <img class="centerimg" height="550" src="images/intel_found_wiki.png">
+      <p class="centertext" style="font-size:35px">Andy Grove, Robert Noyce, Gordon Moore (1978)</p>
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Intel_Corporation">Wikipedia</a></p>
+    </div>
+
+    <div id="moores_law" class="step slide" data-x="0" data-y="-1800">
+      <p class="centertext"><b><a href="http://www.cs.utexas.edu/~fussell/courses/cs352h/papers/moore.pdf">Moore's Law</a></b></p>
+      <img class="centerimg" height="600" src="images/moores_law_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Moore%27s_Law">Wikipedia</a></p>
+    </div>
+
+    <div id="intel_4004" class="step slide" data-x="1000" data-y="-1800">
+      <p class="centertext"><b><a href="http://www.intel.com/content/www/us/en/history/museum-story-of-intel-4004.html">Intel 4004</a></b></p>
+      <img class="centerimg" height="600" src="images/intel_4004_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Intel_4004">Wikipedia</a></p>
+    </div>
+
+    <div id="microcontrollers" class="step" data-x="2000" data-y="-1800">
+      <p class="centertext"><b>Microcontrollers</b></p>
+      <img class="centerimg" height="600" src="images/microcontroller_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Microcontrollers">Wikipedia</a></p>
+    </div>
+
+    <div id="early" class="step" data-x="3000" data-y="-1800">
+      <p class="centertext"><b>Fixed Program Computers</b></p>
+      <img class="centerimg" height="630" src="images/diffengine_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Difference_engine">Wikipedia</a></p>
+    </div>
+
+    <div id="vonNeumann" class="step" data-x="4000" data-y="-1800">
+      <p class="centertext"><b>John von Neumann</b></p>
+      <img class="centerimg" height="630" src="images/vonneumann_wiki.gif">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/John_von_Neumann">Wikipedia</a></p>
+    </div>
+
+    <div id="storedprogram" class="step" data-x="5000" data-y="-1800">
+      <p class="centertext"><b>Stored Program Computers</b></p>
+      <img class="centerimg" height="630" src="images/storedprogram.png">
+    </div>
+
+    <div id="vnarch" class="step" data-x="6000" data-y="-1800">
+      <p class="centertext"><b>Von Neumann Architecture</b></p>
+      <img class="centerimg" width="850" src="images/vonneumannarch_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Von_Neumann_architecture">Wikipedia</a></p>
+    </div>
+
+    <div id="system_bus" class="step" data-x="0" data-y="-900">
+      <p class="centertext"><b>System Bus</b></p>
+      <img class="centerimg" width="850" src="images/systembus_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Von_Neumann_architecture">Wikipedia</a></p>
+    </div>
+
+    <div id="memory" class="step" data-x="1000" data-y="-900">
+      <img class="centerimg" width="850" src="images/memory_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Memory_hierarchy">Wikipedia</a></p>
+    </div>
+
+    <div id="isa" class="step slide" data-x="2000" data-y="-900">
+      <p class="centertext"><b>Instruction Set Architecture (ISA)</b><br><br></p>
+      <img class="centerimg" style="float:right" width="400" src="images/x86_wiki.jpg">
+      <ul>
+        <li>x86</li>
+        <li>x86-64</li>
+        <li>IA64 (Itanium)</li>
+        <li>ARM</li>
+        <li>PowerPC</li>
+        <li>MIPS</li>
+      </ul>
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/X86">Wikipedia</a></p>
+    </div>
+
+    <div id="hw_classes" class="step slide" data-x="3000" data-y="-900">
+      <p class="centertext"><b>Hardware Classes<br><br></b></p>
+      <ol>
+        <li>Internal Components</li>
+        <li>Storage</li>
+        <li>Peripherals</li>
+        <li>Cables & Connectors</li>
+      </ol>
+      <p class="imagecredit"><br><br>Information from <a href="http://en.wikibooks.org/wiki/Computer_Hardware">Wikibooks</a></p>
+    </div>
+
+    <div id="mobo" class="skip" data-x="3000" data-y="2020" data-scale="3">
+      <img class="centerimg" width="800" src="images/mobo_wiki.png">
+      <p class="imagecredit">Image Credit: <a href="http://en.wikipedia.org/wiki/Motherboard">Wikipedia</a></p>
+    </div>
+
+    <div id="mobo_big" class="step" data-x="3000" data-y="2000" data-scale="3">
+
+    </div>
+
+    <div id="mobo_features" class="step" data-x="2740" data-y="2125" data-scale="0.25">
+      <p class="centertext"><b>Motherboard Features<br><br></b></p>
+      <ul>
+        <li>CPU Socket</li>
+        <li>Memory Slots</li>
+        <li>Northbridge</li>
+        <li>Southbridge</li>
+        <li>Onboard GPU</li>
+        <li>Expansion Slots</li>
+      </ul>
+    </div>
+
+    <div id="old_diagram" class="step slide" data-x="2600" data-y="2900" data-scale="0.25">
+      <img class="centerimg" height="700" src="images/old_mobo_diagram_wiki.png" style="float:right">
+      <p class="centertext"><b>Old Motherboard Diagram</b></p>
+      <p class="imagecredit">Image Credit: <a href="http://en.wikipedia.org/wiki/Southbridge_(computing)">Wikipedia</a></p>
+    </div>
+
+    <div id="new_diagram" class="step slide" data-x="2850" data-y="2900" data-scale="0.25">
+      <p class="centertext"><b>New Motherboard Diagram</b></p>
+      <img class="centerimg" height="600" src="images/intel_z87_wiki.jpg">
+      <p class="imagecredit">Image Credit: <a href="http://en.wikipedia.org/wiki/Southbridge_(computing)">Wikipedia</a></p>
+    </div>
+
+    <div id="processor" class="step" data-x="1600" data-y="2200" data-scale="0.5">
+      <p class="centertext"><b>Processor</b></p>
+      <img class="centerimg" height="600" src="images/corei7_bottom_wiki.jpg">
+      <p class="imagecredit">Image Credit: <a href="http://en.wikipedia.org/wiki/X86_virtualization">Wikipedia</a></p>
+    </div>
+
+    <div id="processor_features" class="step slide" data-x="1600" data-y="2650" data-scale="0.5">
+      <p class="centertext"><b>Processor Features<br><br></b></p>
+      <ul>
+        <li>Architecture</li>
+        <li>Clock speed</li>
+        <li>Cache memory</li>
+        <li>Processing cores</li>
+      </ul>
+      <p style="font-size:40px; line-height:55px"><br><a href="http://cpuboss.com/cpu/Intel-Core-i7-3970X">cpuboss.com - Intel Core i7 3970X</a></p>
+      <p style="font-size:40px; line-height:55px"><a href="http://cpuboss.com/cpus/Intel-Core-i7-3970X-vs-AMD-FX-9370#specs">Intel Core i7 3970X vs. AMD FX 9370</a></p>
+    </div>
+
+    <div id="ram" class="step" data-x="1700" data-y="1000" data-scale="0.5">
+      <p class="centertext"><b>Memory (RAM)</b></p>
+      <img class="centerimg" height="600" src="images/ram_wiki.jpg">
+      <p class="imagecredit">Image Credit: <a href="http://en.wikipedia.org/wiki/Dynamic_random-access_memory">Wikipedia</a></p>
+    </div>
+
+    <div id="ram_features" class="step slide" data-x="1700" data-y="1400" data-scale="0.5">
+      <p class="centertext"><b>Memory Features<br><br></b></p>
+      <ul>
+        <li>Size</li>
+        <li>Speed</li>
+        <li>Type/Class</li>
+        <li>ECC (Error correction)</li>
+        <li>Registered</li>
+      </ul>
+    </div>
+
+    <div id="gpu" class="step" data-x="4500" data-y="2500" data-scale="0.5">
+      <p class="centertext"><b>Graphics Card</b></p>
+      <img class="centerimg" height="600" src="images/gpu_wiki.jpg">
+      <p class="imagecredit">Image Credit: <a href="http://en.wikipedia.org/wiki/Graphics_card">Wikipedia</a></p>
+    </div>
+
+    <div id="gpu_features" class="step slide" data-x="4500" data-y="2900" data-scale="0.5">
+      <p class="centertext"><b>Graphics Card Features<br><br></b></p>
+      <ul>
+        <li>GPU Chip</li>
+        <li>Video Memory</li>
+        <li>Motherboard Interface</li>
+        <li>Output Connections</li>
+      </ul>
+      <p style="font-size:40px; line-height:55px"><br><a href="http://gpuboss.com/graphics-card/EVGA-GeForce-GTX-TITAN">gpuboss.com - EVGA GeForce GTX TITAN</a></p>
+      <p style="font-size:40px; line-height:55px"><a href="http://gpuboss.com/gpus/EVGA-GeForce-GTX-TITAN-vs-AMD-Radeon-HD-7970-GHz-Edition">EVGA GeForce GTX TITAN vs AMD Radeon HD 7970</a></p>
+    </div>
+
+    <div id="hdd" class="step" data-x="2500" data-y="950" data-scale="0.5">
+      <p class="centertext"><b>Hard Disk Drive (HDD)</b></p>
+      <img class="centerimg" height="600" src="images/hdd_wiki.jpg">
+      <p class="imagecredit">Image Credit: <a href="http://en.wikipedia.org/wiki/Hard_disk_drive">Wikipedia</a></p>
+    </div>
+
+    <div id="ssd" class="step" data-x="3000" data-y="950" data-scale="0.5">
+      <p class="centertext"><b>Solid State Drive (SSD)</b></p>
+      <img class="centerimg" height="600" src="images/ssd_wiki.jpg">
+      <p class="imagecredit">Image Credit: <a href="http://en.wikipedia.org/wiki/Solid-state_drive">Wikipedia</a></p>
+    </div>
+
+    <div id="disk_features" class="step slide" data-x="3500" data-y="950" data-scale="0.5">
+      <p class="centertext"><b>Disk Drive Features</b></p>
+      <ul>
+        <li>Capacity</li>
+        <li>Interface</li>
+        <li>Spindle speed (HDD)</li>
+        <li>Read speed</li>
+        <li>Write speed</li>
+        <li>Latency</li>
+      </ul>
+    </div>
+
+    <div id="comparison" class="step slide" data-x="4000" data-y="950" data-scale="0.5">
+      <p class="centertext"><b>Comparison</b></p>
+      <img class="centerimg" height="600" src="images/ssd_hdd_chart_computerworld.png">
+      <p class="imagecredit">Image Credit: <a href="http://www.computerworld.com/s/article/9230882/Hard_disk_drives_vs._solid_state_drives_Are_SSDs_finally_worth_the_money_?pageNumber=1">Computerworld</a></p>
+    </div>
+
+    <div id="raid" class="step slide" data-x="4500" data-y="950" data-scale="0.5">
+      <p class="centertext"><b>RAID</b><br><br></p>
+      <ul>
+        <li>RAID 0 - Striping</li>
+        <li>RAID 1 - Mirroring</li>
+        <li>RAID 5 - Striping & Parity</li>
+        <li>RAID 6 - Striping & Dual Parity</li>
+        <li>RAID 10 - Mirroring + Striping</li>
+      </ul>
+    </div>
+
+    <div id="cdd" class="step" data-x="4500" data-y="1400" data-scale="0.5">
+      <p class="centertext"><b>Optical Disk Drive (ODD)</b></p>
+      <img class="centerimg" width="850" src="images/odd_wiki.jpg">
+      <p class="imagecredit">Image Credit: <a href="http://en.wikipedia.org/wiki/Optical_disc_drive">Wikipedia</a></p>
+    </div>
+
+    <div id="cdd_comparison" class="step slide" data-x="4500" data-y="1900" data-scale="0.5">
+      <p class="centertext"><b>Optical Disk Comparison</b><br><br></p>
+      <table style="width:100%">
+        <tr>
+          <th>Type</th>
+          <th>Capacity</th>
+          <th>Speed</th>
+        </tr>
+        <tr style="background: #CCCCCC">
+          <td>CD</td>
+          <td>800 MB</td>
+          <td>up to 88Mbit/s (72x)</td>
+        </tr>
+        <tr>
+          <td>DVD</td>
+          <td>4.7/8.5 GB</td>
+          <td>11.08 Mbit/s</td>
+        </tr>
+        <tr style="background: #CCCCCC">
+          <td>Blu-ray</td>
+          <td>25/128 GB</td>
+          <td>54 Mbit/s</td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="psu" class="step" data-x="3250" data-y="3100" data-scale="0.5">
+      <p class="centertext"><b>Power Supply (PSU)</b></p>
+      <img class="centerimg" height="600" src="images/psu_wiki.jpg">
+      <p class="imagecredit">Image Credit: <a href="http://en.wikipedia.org/wiki/Power_supply_unit_(computer)">Wikipedia</a></p>
+    </div>
+
+    <div id="psu_chart" class="step slide" data-x="3750" data-y="3100" data-scale="0.5">
+      <table style="width:100%">
+        <tr>
+          <th>Device</th>
+          <th>Usage</th>
+        </tr>
+        <tr style="background: #CCCCCC">
+          <td>Video Card</td>
+          <td>50-150W / plug</td>
+        </tr>
+        <tr>
+          <td>PCI Card</td>
+          <td>5-10W</td>
+        </tr>
+        <tr style="background: #CCCCCC">
+          <td>ODD</td>
+          <td>20-30W</td>
+        </tr>
+        <tr>
+          <td>HDD</td>
+          <td>15-30W</td>
+        </tr>
+        <tr style="background: #CCCCCC">
+          <td>SSD</td>
+          <td>~5W</td>
+        </tr>
+        <tr>
+          <td>Motherboard</td>
+          <td>50-150W</td>
+        </tr>
+        <tr style="background: #CCCCCC">
+          <td>RAM</td>
+          <td>~15W / DIMM</td>
+        </tr>
+        <tr>
+          <td>Processor</td>
+          <td>80-140W</td>
+        </tr>
+      </table>
+      <p class="imagecredit">Information from <a href="http://www.pcpower.com/technology/power_usage/">PCPower.com</a></p>
+      <p style="font-size:30px; line-height:35px">Note: multiply by 1.5 to account for real usages and efficiency</p>
+    </div>
+
+    <div id="rear_panel" class="step" data-x="500" data-y="1500" data-scale="2">
+      <img class="centerimg" height="600" src="images/mobo_rear_panel_build_your_own_computer.jpg">
+      <p class="imagecredit">Image Credit: <a href="http://www.build-your-own-computer.net/gigabyte-ga-ma78gm-s2h.html">build-your-own-computer.net</a></p>
+    </div>
+
+    <div id="other" class="step slide" data-x="4000" data-y="-900">
+      <p class="centertext"><b>Other Peripherals</b><br><br></p>
+      <ul>
+        <li>PCI Cards</li>
+        <li>Flash Memory</li>
+        <li>Display Devices</li>
+        <li>Input Devices</li>
+        <li>Printers</li>
+        <li>Networking Devices</li>
+      </ul>
+    </div>
+
+    <div id="model_world" class="step" data-x="5000" data-y="-900">
+      <p class="centertext"><b>How can we represent the way real-world systems operate using a computer?</b></p>
+    </div>
+
+    <div id="finite_state_machine" class="step slide" data-x="6000" data-y="-900">
+      <p class="centertext"><b>Finite State Machine</b></p>
+      <img class="centerimg" height="600" src="images/fsm_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Finite_state_machine">Wikipedia</a></p>
+    </div>
+
+    <div id="moore_machine" class="step slide" data-x="0" data-y="0">
+      <p class="centertext"><b>Moore Machine</b></p>
+      <img class="centerimg" width="850" src="images/moore_machine_stateworks.png">
+      <p class="imagecredit">Image Source: <a href="http://www.stateworks.com/technology/TN10-Moore-Or-Mealy-Model/">Stateworks.com</a></p>
+      <p class="centertext">Ouput depends <em>only</em> on state<br>-or-<br>Each state can only have <em>1</em> set of outputs</p>
+    </div>
+
+    <div id="mealy_machine" class="step slide" data-x="1000" data-y="0">
+      <p class="centertext"><b>Mealy Machine</b></p>
+      <img class="centerimg" width="850" height="300" src="images/mealy_machine_stateworks.png">
+      <p class="imagecredit">Image Source: <a href="http://www.stateworks.com/technology/TN10-Moore-Or-Mealy-Model/">Stateworks.com</a></p>
+      <p class="centertext">Ouput depends on <em>inputs and state</em><br>-or-<br>Each state can  have <em>multiple</em> sets of outputs</p>
+    </div>
+
+    <div id="fsm_examples" class="step slide" data-x="2000" data-y="0">
+      <p class="centertext"><b>Finite State Machine Examples</b></p>
+      <ol>
+        <li style="font-size:45px; line-height:50px">Elevator Control System</li>
+        <li style="font-size:45px; line-height:50px">Stoplight</li>
+        <li style="font-size:45px; line-height:50px">Baseball At-bat</li>
+        <li style="font-size:45px; line-height:50px">Starting a Car</li>
+        <li style="font-size:45px; line-height:50px">Pinball Machine</li>
+        <li style="font-size:45px; line-height:50px">Store Self-Checkout</li>
+        <li style="font-size:45px; line-height:50px">ATM Withdrawal</li>
+        <li style="font-size:45px; line-height:50px">Keypad Security Lock</li>
+        <li style="font-size:45px; line-height:50px">Paper-Rock-Scissors Game</li>
+        <li style="font-size:45px; line-height:50px">Changing a Tire</li>
+        <li style="font-size:45px; line-height:50px">2 Player Texas Hold-em Poker</li>
+        <li style="font-size:45px; line-height:50px">A DVD Player</li>
+      </ol>
+    </div>
+
+    <div id="fsm_examples2" class="step" data-x="2000" data-y="0" data-z="1">
+      <br>
+      <div class="pull-right">
+        <div id="timer1" class="timer centertext" data-timer="480" data-textsize="30" style="width: 70%; margin: 0 auto;"></div>
+      </div>
+    </div>
+
+    <div id="assignment" class="step slide" data-x="-825" data-y="-225" data-scale="0.5">
+      <p class="centertext"><b>Assignments</b></p>
+      <ul>
+        <li>Read and be prepared to discuss:<ul>
+          <li><em>Pattern on the Stone</em> Chapter 8: Computers that Learn and Adapt</li></ul></li>
+        <li>Blog 3: Making Meaning: POTS - Due 10/3 10:00 PM</li>
+        <li>FSM Project - Due 9/27 10:00 PM</li>
+      </ul>
+    </div>
+
+    <div id="blog" class="step slide" data-x="-825" data-y="225" data-scale="0.5">
+      <p class="centertext" style="font-size: 35px; line-height: 45px"><b>Blog 3: Making Meaning: POTS</b></p>
+      <p style="font-size: 30px; line-height: 33px">Now that we’ve finished reading the first textbook, it is time to step back and think about what we read. Write about your reactions to it and what you learned from it. I’d recommend almost treating this like an in-depth book review for others who are interested in reading the book, but don’t mind some spoilers. Some questions I’d like you to answer:<br><br>
+        <ul style="font-size: 30px; line-height: 33px">
+          <li>How did you feel reading this book? Engaged? Bored? Interested?</li>
+          <li>What was the most interesting thing you learned?</li>
+          <li>Were there any parts of the book you didn’t like?</li>
+          <li>Were there any terms or concepts that you looked up (Googled) to find more information about? What were they? What did you find?</li>
+          <li>Did this book help explain things you didn’t know about computers?</li>
+          <li>Did this book leave you with any questions unanswered?</li>
+          <li>Would you recommend this book to a friend that wanted to know more about computers?</li>
+        </ul>
+      </p>
+    </div>
+
+    <div id="activity" class="skip slide" data-x="-825" data-y="655" data-scale="0.5">
+      <p class="centertext"><b>Finite State Machine</b></p>
+      <ul>
+        <li>Implement logic for a Finite State Machine</li>
+        <li>Test the program running it for a while</li>
+        <li>Submit via K-State Canvas</li>
+        <li><b>Due: Sept 27th 10:00 PM</b></li>
+      </ul>
+    </div>
+
+    <div id="activity_1" class="step" data-x="-825" data-y="675" data-scale="0.5">
+    </div>
+
+    <div id="stoplight_fsm" class="step slide" data-x="-825" data-y="1125" data-scale="0.5">
+      <p class="centertext"><b>Soda FSM</b><br><br></p>
+      <img class="centerimg" width="850" src="images/fsm_soda.png">
+    </div>
+
+    <div id="activity_2" class="step" data-x="-825" data-y="675" data-scale="0.5">
+    </div>
+
+    <div id="overview" class="step" data-x="2500" data-y="-300" data-z="-1" data-scale="9.6">
+    </div>
+
+</div>
+
+<script src="/js/analytics.js"></script>
+<script src="/js/impress.js"></script>
+<script>impress().init();</script>
+<script src="/js/jquery-1.10.2.min.js"></script>
+<script src="/js/TimeCircles.js"></script>
+<script src="/js/timer.js"></script>
+<script src="/js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+</body>
+</html>

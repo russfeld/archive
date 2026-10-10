@@ -1,0 +1,589 @@
+<html lang="en">
+<head>
+  <BASE href="../">
+  <link href="favicon.ico" rel="shortcut icon">
+  <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+  <meta name="description" content="CIS 115 Fall 2014 Lecture 10" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 115 Fall 2014 Lecture 10</title>
+    <link href="css/impress.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 115</b><br><br>Lecture 10: Artificial Intelligence<br>Dr. William Hsu</p>
+    </div>
+
+    <div id="pbs" class="step" data-x="1000" data-y="0">
+      <div id="53K1dMyslJg" data-id="53K1dMyslJg" class="youtube">
+        <a href="http://www.youtube.com/watch?v=53K1dMyslJg">The Rise of Artificial Intelligence - PBS</a>
+      </div>
+    </div>
+
+    <div id="what" class="step" data-x="2000" data-y="0">
+        <p class="centertext"><b>What is Artificial Intelligence?</b></p>
+    </div>
+
+    <div id="mccarthy" class="step slide" data-x="3000" data-y="0">
+      <p class="centertext" style="font-size:49px; line-height:60px;"><b>John McCarthy (1927 - 2011)</b></p>
+      <img class="centerimg" height="550" src="cis115fall2014/images/lecture10/mccarthy_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/John_McCarthy_(computer_scientist)">Wikipedia</a></p>
+    </div>
+
+    <div id="dartmouth" class="step slide" data-x="4000" data-y="0">
+      <p class="centertext" style="font-size:49px; line-height:60px;"><b>Dartmouth Summer Research Project on Artificial Intelligence - 1956</b></p>
+      <img class="centerimg" height="550" src="cis115fall2014/images/lecture10/dartmouth_fabfive_onionesquereality.jpg">
+      <p class="imagecredit">Image Source: <a href="http://www.dartmouth.edu/~vox/0607/0724/ai50.html">Dartmouth</a></p>
+    </div>
+
+    <div id="mccarthy_vid" class="step" data-x="5000" data-y="0">
+      <div id="Ozipf13jRr4" data-id="Ozipf13jRr4" class="youtube" data-start="31">
+        <a href="http://www.youtube.com/watch?v=Ozipf13jRr4">John McCarthy</a>
+      </div>
+    </div>
+
+    <div id="what2" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>What is Artificial Intelligence?</b></p>
+      <p>It is the science and engineering of making intelligent machines, especially intelligent computer programs. It is related to the similar task of using computers to understand human intelligence, but AI does not have to confine itself to methods that are biologically observable. - John McCarthy, 2007</p>
+      <p class="imagecredit">Source: <a href="http://www-formal.stanford.edu/jmc/whatisai/">Stanford</a></p>
+
+    </div>
+
+    <div id="what3" class="step slide" data-x="250" data-y="900" data-z="-500" data-rotate-y="120">
+      <p class="centertext"><b>Yes, but what is intelligence?</b></p>
+      <p>Intelligence is the computational part of the ability to achieve goals in the world. Varying kinds and degrees of intelligence occur in people, many animals and some machines. - John McCarthy, 2007</p>
+      <p class="imagecredit">Source: <a href="http://www-formal.stanford.edu/jmc/whatisai/">Stanford</a></p>
+    </div>
+
+    <div id="what4" class="step slide" data-x="-250" data-y="900" data-z="-500" data-rotate-y="240">
+      <p class="centertext"><b>Isn't there a solid definition of intelligence that doesn't depend on relating it to human intelligence?</b></p>
+      <p>Not yet. The problem is that we cannot yet characterize in general what kinds of computational procedures we want to call intelligent. We understand some of the mechanisms of intelligence and not others. - John McCarthy, 2007</p>
+      <p class="imagecredit">Source: <a href="http://www-formal.stanford.edu/jmc/whatisai/">Stanford</a></p>
+    </div>
+
+    <div id="intelligent_behavior" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b>Intelligent or Merely Human?</b></p>
+      <img class="centerimg" height="600" src="cis115fall2014/images/lecture10/turing_test2_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Alan_Turing">Wikipedia</a></p>
+    </div> 
+
+    <div id="turing" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>Alan Turing (1912 - 1954)</b></p>
+      <p style="font-size:40px; line-height:45px;">"I propose to consider the question, <a href="http://www.csee.umbc.edu/courses/471/papers/turing.pdf">'Can machines think?'</a>" - Turing, 1950</p>
+      <img class="centerimg" height="500" src="cis115fall2014/images/lecture10/turing_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Alan_Turing">Wikipedia</a></p>
+    </div>  
+
+    <div id="turing_test" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>Turing Test</b></p>
+      <img class="centerimg" height="600" src="cis115fall2014/images/lecture10/turingtest_rutherford.jpg">
+      <p class="imagecredit">Image Source: <a href="http://www.rutherfordjournal.org/article040101.html#sdfootnotei34anc">Rutherford Journal</a></p>
+    </div>  
+
+
+    <div id="chinese_room" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>Chinese Room - <a href="http://cogprints.org/7150/1/10.1.1.83.5248.pdf">John Searle</a></b></p>
+      <img class="centerimg" height="600" src="cis115spring2014/images/lecture16/chinese_room_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Chinese_room">Wikipedia</a></p>
+    </div>   
+
+    <div id="strong_weak" class="step slide" data-x="5000" data-y="900">
+      <p class="centertext"><b>Strong AI vs. Weak AI</b><br><br></p>
+      <ul>
+        <li><b>Strong AI</b> - matches human intelligence and is capable of performing <em>any</em> task</li>
+        <li><b>Weak AI</b> - only designed to perform a <em>specific subset</em> of intelligent actions</li>
+    </div>
+
+    <div id="agents" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>Intelligent Agents</b><br><br></p>
+      <ul>
+        <li>Agent: Definition<ul>
+          <li>Any entity that <i>perceives</i> its environment through <i>sensors</i> and <i>acts</i> upon that environment through <i>effectors</i></li>
+          <li>Examples (class discussion): human, robotic, software agents</li></ul></li>
+      </ul>
+    </div>
+
+    <div id="perception" class="step slide" data-x="1000" data-y="1800" data-z="0" data-rotate-y="0">
+      <p class="centertext"><b>Agents</b></p>
+      <ul>
+        <li><b>Perception</b>: Signal from environment, may exceed sensory capacity</li>
+        <li><b>Sensors</b>: Acquires percepts, possible limitations</li>
+        <li><b>Action</b>: Attempts to affect environment, usually exceeds effector capacity</li>
+        <li><b>Effectors</b>: Transmits actions, possible limitations</li>
+      </ul>
+    </div>
+
+    <div id="agent_model" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b>Generic Intelligent Agent Model</b><br><br></p>
+      <img class="centerimg" width="850" src="cis115fall2014/images/lecture10/agent_model.png">
+      <p class="imagecredit">Image Source: <a href="http://people.cis.ksu.edu/~bhsu">Dr. Hsu</a></p>
+    </div>
+
+    <div id="how_act" class="step slide" data-x="3000" data-y="1800" data-z="0" data-rotate-y="0">
+      <p class="centertext"><b>How Agents Should Act</b></p>
+      <p>A rational agent:</p>
+      <ul>
+        <li>Does the <i>right thing</i></li>
+        <li>Given what it <i>believes</i></li>
+        <li>From what is <i>perceives</i></li>
+      </ul>
+      <br>
+      <p class="centertext"><b>Maximum Success Measure (Utility)</b></p>
+      <ul>
+        <li>What is the <i>right thing</i></li>
+        <li><i>How</i> and <i>When</i> to evaluate success</li>
+      </ul>
+    </div>
+
+    <div id="how_act2" class="step slide" data-x="4000" data-y="1800" data-z="0" data-rotate-y="0">
+      <p class="centertext"><b>How Agents Should Act</b></p>
+      <p>Questions raised about Beliefs, Uncertainty, Knowledge</p>
+      <ul>
+        <li>Representation</li>
+        <li>Reasoning</li>
+        <li>Learning</li>
+      </ul>
+      <br>
+      <p>Studying Rational Behavior Helps Understand Decision-Making</p>
+    </div>
+
+    <div id="logic_theorist" class="step slide" data-x="5000" data-y="1800">
+      <p class="centertext"><b>Logic Theorist</b></p>
+      <img class="centerimg" height="550" src="cis115spring2014/images/lecture16/logic_theorist_computerhistory.jpg">
+      <p class="imagecredit">Image Source: <a href="http://www.computerhistory.org/">Wikipedia</a></p>
+      <p class="centertext">Allen Newell&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Herbert Simon</p>
+    </div> 
+
+    <div id="rational_agents" class="step slide" data-x="0" data-y="2700">
+      <p class="centertext"><b>Rational Agents</b><br><br></p>
+      <p>"Doing the Right Thing"</p>
+      <ul>
+        <li>Committing actions: limited effectors, in context of agent knowlege</li>
+        <li>Meeting Specification: pre/post conditions</li>
+      </ul>
+    </div>
+
+    <div id="rational_agents2" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>Rational Agents Capabilities</b></p>
+      <ul>
+        <li><b>Choice</b>: select actions and carry them out</li>
+        <li><b>Knowledge</b>: represent knowledge about environment</li>
+        <li><b>Perception</b>: capability to sense environment</li>
+        <li><b>Criterion</b>: performance measure to define degree of success</li>
+      </ul>
+    </div>
+
+    <div id="rational_agents3" class="step slide" data-x="1000" data-y="2700" data-z="-1" data-rotate-y="-180">
+      <p class="centertext"><b>Rational Agents Capabilities</b></p>
+      <p>Possible additional capabilities</p>
+      <ul>
+        <li><b>Memory</b>: internal model of the state of the world</li>
+        <li>Knowledge about effectors, reasoning process, reflexive reasoning</li>
+      </ul>
+    </div>
+
+    <div id="measuring_performance" class="step slide" data-x="2000" data-y="2700">
+      <p class="centertext"><b>Measuring Performance</b></p>
+      <p>Criteria to determine Success</p>
+      <ul>
+        <li>Depends on Agents and Environments</li>
+        <li>Can be measured subjectively (need an accurate answer) or objectively (outside observation)</li>
+      </ul>
+      <p>When to Evaluate Success</p>
+      <ul>
+        <li>Depends on objective (short-term?)</li>
+        <li>Episodic? Milestones? Reinforcements? (games)</li>
+      </ul>
+    </div>
+
+    <div id="measuring_performance_ex" class="step slide" data-x="3000" data-y="2700">
+      <p class="centertext"><b>Measuring Performance Example</b></p>
+      <p>Web Crawling Agent</p>
+      <ul>
+        <li><b>Precision</b>: did you get <i>only</i> the pages you wanted?</li>
+        <li><b>Recall</b>: did you get <i>all</i> pages you wanted?</li>
+        <li><b>Ratio</b>: relevant hits vs. pages explored</li>
+        <li><b>Caveat</b>: "you get what you ask for"</li>
+      </ul>
+    </div>
+
+    <div id="rational" class="step slide" data-x="4000" data-y="2700">
+      <p class="centertext"><b>What is Rational?</b></p>
+      <p>Criteria</p>
+      <ul>
+        <li style="font-size:40px">Determines what is rational <i>at any given time</i></li>
+        <li style="font-size:40px">Varies with agent, environment, <i>situation</i></li>
+      </ul>
+      <br>
+      <p>Performance Measure</p>
+      <ul>
+        <li style="font-size:40px">Specified by outside observer or evaluator</li>
+        <li style="font-size:40px">Applied (consistently) to (one or more) IAs in a given environment</li>
+      </ul>
+    </div>
+
+    <div id="rational2" class="step slide" data-x="4250" data-y="2700" data-z="-500" data-rotate-y="120">
+      <p class="centertext"><b>What is Rational?</b></p>
+      <p>Percept Knowledge</p>
+      <ul>
+        <li style="font-size:40px">Definition: <i>entire history</i> of percepts gathered by agent</li>
+        <li style="font-size:40px">NB: agent may or may not have state (memory)</li>
+      </ul>
+      <br>
+      <p>Agent Knowledge</p>
+      <ul>
+        <li style="font-size:40px">Of environment - "required"</li>
+        <li style="font-size:40px">Of self (reflexive reasoning)</li>
+      </ul>
+    </div>
+
+    <div id="rational3" class="step slide" data-x="3750" data-y="2700" data-z="-500" data-rotate-y="240">
+      <p class="centertext"><b>What is Rational?</b><br><br></p>
+      <p>Feasible Action</p>
+      <ul>
+        <li style="font-size:40px">What can be performed?</li>
+        <li style="font-size:40px">What does the agent believe it can attempt?</li>
+      </ul>
+    </div>
+
+    <div id="structure" class="step slide" data-x="5000" data-y="2700">
+      <p class="centertext"><b>Structure of Intelligent Agents</b><br><br></p>
+      <p>Agent Behavior</p>
+      <ul>
+        <li style="font-size:40px"><b>Given</b>: a sequence of percepts</li>
+        <li style="font-size:40px"><b>Return</b>: IA's actions</li>
+        <li style="font-size:40px"><b>Simulator</b>: description of results of actions</li>
+        <li style="font-size:40px"><b>Real-world system</b>: committed action</li>
+      </ul>
+    </div>
+
+    <div id="structure2" class="step slide" data-x="5500" data-y="2700" data-z="-500" data-rotate-y="90">
+      <p class="centertext"><b>Structure of Intelligent Agents</b><br><br></p>
+      <p>Agent Programs</p>
+      <ul>
+        <li style="font-size:40px">Functions that implement the program</li>
+        <li style="font-size:40px">Assumed to run in a computing environment (<i>architecture</i>)</li>
+        <li style="font-size:40px"><b>Agent</b> = <i>architecture</i> + <i>program</i></li>
+      </ul>
+    </div>
+
+    <div id="structure3" class="step slide" data-x="5500" data-y="2700" data-z="-1500" data-rotate-y="90">
+      <p class="centertext"><b>Structure of Intelligent Agents</b><br><br></p>
+      <p>Applications</p>
+      <ul>
+        <li style="font-size:40px"><b>Decision Making</b>: data mining, analytics ("big data"), informatics</li>
+        <li style="font-size:40px"><b>Natural Language Processing (NLP)</b>: conversation, speech, text</li>
+        <li style="font-size:40px"><b>Vision</b></li>
+        <li style="font-size:40px"><b>Robotics and agents</b></li>
+      </ul>
+    </div>
+
+    <div id="angband" class="step slide" data-x="0" data-y="3600">
+      <p class="centertext"><b>Example: Game Playing Agent</b></p>
+      <img class="centerimg" height="600" src="cis115fall2014/images/lecture10/angband.png">
+      <p class="imagecredit">Image Source: <a href="http://people.cis.ksu.edu/~bhsu">Dr. Hsu</a></p>
+    </div>
+
+    <div id="ai_birds" class="step" data-x="1000" data-y="3600">
+      <div id="IEHZuU5Cpgc" data-id="IEHZuU5Cpgc" class="youtube" data-start="197">
+        <a href="http://www.youtube.com/watch?v=IEHZuU5Cpgc">AI Birds</a>
+      </div>
+    </div>
+
+    <div id="methods" class="step slide" data-x="2000" data-y="3600">
+      <p class="centertext"><b>Methods for Developing AI</b><br><br></p>
+      <ul>
+        <li style="font-size:40px">Knowledge Representation</li>
+        <li style="font-size:40px">Search</li>
+        <li style="font-size:40px">Expert Systems & Knowledge Bases</li>
+        <li style="font-size:40px">Planning: classical, universal</li>
+        <li style="font-size:40px">Probabilistic reasoning</li>
+        <li style="font-size:40px">Machine learning: neural networks, evolutionary computing</li>
+        <li style="font-size:40px">Applied AI: agents focus</li>
+        <li style="font-size:40px">Special topics (NLP focus)</li>
+      </ul>
+    </div>
+
+    <div id="peas" class="step slide" data-x="3000" data-y="3600">
+      <p class="centertext"><b>PEAS Framework</b></p>
+      <p>Performance Measure</p>
+      <ul>
+        <li style="font-size:40px">Specified by outside observer or evaluator</li>
+        <li style="font-size:40px">Applied (consistently) to (one or more) IAs in given environment</li>
+      </ul>
+      <p>Environment</p>
+      <ul>
+        <li style="font-size:40px">Reachable Status</li>
+        <li style="font-size:40px">"Things that can happen"</li>
+        <li style="font-size:40px">"Where the agent can go"</li>
+        <li style="font-size:40px">To be distinguished from: observable states</li>
+      </ul>
+    </div>
+
+    <div id="peas2" class="step slide" data-x="3000" data-y="3600" data-z="-1" data-rotate-y="180">
+      <p class="centertext"><b>PEAS Framework</b></p>
+      <p>Actuators</p>
+      <ul>
+        <li style="font-size:40px">What can be performed</li>
+        <li style="font-size:40px">Limited by physical factors <i>and</i> self-knowledge</li>
+      </ul>
+      <br>
+      <p>Sensors</p>
+      <ul>
+        <li style="font-size:40px">What can be observed</li>
+        <li style="font-size:40px">Subject to error: measurement, sampling, postprocessing</li>
+      </ul>
+    </div>
+
+    <div id="agents1" class="step slide" data-x="4000" data-y="3600">
+      <p class="centertext"><b>1 - Simple Reflex Agents</b></p>
+      <img class="centerimg" width="900" src="cis115fall2014/images/lecture10/agent1.png">
+      <p class="imagecredit">Image Source: <a href="http://people.cis.ksu.edu/~bhsu">Dr. Hsu</a></p>
+    </div>
+
+    <div id="agents2" class="step slide" data-x="4500" data-y="3600" data-z="-500" data-rotate-y="90">
+      <p class="centertext"><b>2 - Reflex Agents with Memory (State)</b></p>
+      <img class="centerimg" width="900" src="cis115fall2014/images/lecture10/agent2.png">
+      <p class="imagecredit">Image Source: <a href="http://people.cis.ksu.edu/~bhsu">Dr. Hsu</a></p>
+    </div>
+
+    <div id="agents3" class="step slide" data-x="4000" data-y="3600" data-z="-1000" data-rotate-y="180">
+      <p class="centertext"><b>3 - Goal-Based Agents</b></p>
+      <img class="centerimg" width="900" src="cis115fall2014/images/lecture10/agent3.png">
+      <p class="imagecredit">Image Source: <a href="http://people.cis.ksu.edu/~bhsu">Dr. Hsu</a></p>
+    </div>
+
+    <div id="agents4" class="step slide" data-x="3500" data-y="3600" data-z="-500" data-rotate-y="270">
+      <p class="centertext"><b>4 - Utility-Based Agents</b></p>
+      <img class="centerimg" width="900" src="cis115fall2014/images/lecture10/agent4.png">
+      <p class="imagecredit">Image Source: <a href="http://people.cis.ksu.edu/~bhsu">Dr. Hsu</a></p>
+    </div>
+
+    <div id="koller" class="step" data-x="5000" data-y="3600">
+      <div id="DX2_9ntOcQI" data-id="DX2_9ntOcQI" class="youtube" data-start="13">
+        <a href="http://www.youtube.com/watch?v=DX2_9ntOcQI">Daphne Koller</a>
+      </div>
+    </div>
+
+    <div id="uncertain" class="step slide" data-x="0" data-y="4500">
+      <p class="centertext"><b>Reasoning Under Uncertainty - Probability and Logic</b></p>
+      <img class="centerimg" width="900" src="cis115fall2014/images/lecture10/logic.png">
+    </div>
+
+    <div id="decision" class="step slide" data-x="1000" data-y="4500">
+      <p class="centertext"><b>Diagnosis & Decision Support</b></p>
+      <img class="centerimg" height="600" src="cis115fall2014/images/lecture10/diagnosis.png">
+      <p class="imagecredit">Image Source: <a href="http://people.cis.ksu.edu/~bhsu">Dr. Hsu</a></p>
+    </div>
+
+    <div id="recommender" class="step slide" data-x="2000" data-y="4500">
+      <p class="centertext"><b>Recommender Systems</b><br><br></p>
+      <img class="centerimg" width="900" src="cis115fall2014/images/lecture10/recommender.png">
+      <p class="imagecredit">Image Source: <a href="http://people.cis.ksu.edu/~bhsu">Dr. Hsu</a></p>
+    </div>
+
+    <div id="applied" class="step slide" data-x="3000" data-y="4500">
+      <p class="centertext"><b>Applied Data Science - Q&A</b><br><br></p>
+      <img class="centerimg" width="900" src="cis115fall2014/images/lecture10/jeopardy.png">
+      <p class="imagecredit">Image Source: <a href="http://youtu.be/TFe2pJETNuw">NBC on Youtube</a></p>
+    </div>
+
+    <div id="applied2" class="step slide" data-x="4000" data-y="4500">
+      <p class="centertext"><b>Applied Data Science - Q&A</b><br><br></p>
+      <img class="centerimg" width="900" src="cis115fall2014/images/lecture10/blues.png">
+      <p class="imagecredit">Image Source: <a href="http://youtu.be/TFe2pJETNuw">NBC on Youtube</a></p>
+    </div>
+
+    <div id="terms" class="step slide" data-x="5000" data-y="4500">
+      <p class="centertext"><b>Terminology</b><br><br></p>
+      <ul>
+        <li style="font-size:40px"><b>Rationality</b> - Informal definition</li>
+        <li style="font-size:40px">Examples: how to make decisions</li>
+        <li style="font-size:40px">Ideal vs. Bounded</li>
+        <li style="font-size:40px"><b>Automated Reasoning and Behavior</b></li>
+        <li style="font-size:40px">Regression-based problem solving</li>
+        <li style="font-size:40px">Goals & Deliberation</li>
+        <li style="font-size:40px"><b>Intelligent Agent Frameworks</b></li>
+        <li style="font-size:40px">Reactivity vs. State</li>
+        <li style="font-size:40px">From <i>goals</i> to <i>preferences</i> (utilities)</li>
+      </ul>
+    </div>
+
+
+    <div id="minsky" class="step slide" data-x="0" data-y="5400">
+      <p class="centertext"><b>Marvin Minsky</b></p>
+      <img class="centerimg" height="600" src="cis115spring2014/images/lecture16/minsky_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Marvin_minsky">Wikipedia</a></p>
+    </div> 
+
+    <div id="neural_networks" class="step slide" data-x="1000" data-y="5400">
+      <p class="centertext"><b>Artificial Neural Networks</b></p>
+      <img class="centerimg" height="600" src="cis115spring2014/images/lecture16/neural_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Neural_network">Wikipedia</a></p>
+    </div> 
+
+    <div id="neural_network_activity" class="step slide" data-x="2000" data-y="5400">
+      <p class="centertext"><b>Neural Network Activity</b><br><br></p>
+      <ul>
+        <li>Each person has 10 images</li>
+        <li>Vote if that image is a CAT or DOG</li>
+        <li>If you are <b>correct</b>, you get <em>more</em> votes next time</li>
+        <li>If you are <b>incorrect</b>, you get <em>less</em> votes next time</li>
+      </ul>
+    </div>  
+
+    <div id="tanks" class="step slide" data-x="3000" data-y="5400">
+      <p class="centertext"><b><a href="https://neil.fraser.name/writing/tank/">Camouflaging Tanks</a></b><br><br></p>
+      <ul>
+        <li>100 photos of tanks behind trees</li>
+        <li>100 photos of just trees</li>
+        <li>It worked for all pictures that were used to train the system</li>
+        <li>It didn't work for another set of pictures</li>
+      </ul>
+      <p class="centertext"><b>Why?</b></p>
+    </div> 
+
+    <div id="today" class="step" data-x="4000" data-y="5400">
+        <p class="centertext"><b>Artificial Intelligence Today</b></p>
+    </div>
+
+    <div id="deep_blue" class="step slide" data-x="5000" data-y="5400">
+      <p class="centertext"><b>Deep Blue</b></p>
+      <p class="centertext">Beat Gary Kasparov at Chess in 1997</p>
+      <img class="centerimg" height="540" src="cis115spring2014/images/lecture16/deepblue_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Deep_Blue_(chess_computer)">Wikipedia</a></p>
+    </div>
+
+    <div id="watson" class="step" data-x="0" data-y="6300">
+      <div id="C5Xnxjq63Zg" data-id="C5Xnxjq63Zg" class="youtube" data-start="30">
+        <a href="http://www.youtube.com/watch?v=C5Xnxjq63Zg">Watson on Jeoparty - Youtube</a>
+      </div>
+    </div>
+
+    <div id="other_uses" class="step slide" data-x="1000" data-y="6300">
+      <p class="centertext"><b>Other Uses</b><br><br></p>
+      <ul>
+        <li>Microsoft Kinect</li>
+        <li>Apple Siri</li>
+        <li>Google</li>
+        <li>Wolfram Alpha</li>
+      </ul>
+      <p class="centertext"><b><br>Almost Everywhere!</b></p>
+    </div> 
+
+    <div id="what_we_did" class="step slide" data-x="2000" data-y="6300">
+      <p class="centertext"><b>What we talked about</b><br><br></p>
+      <ul>
+        <li>Alan Turing & the Turing Test</li>
+        <li>John Searle & the Chinese Room</li>
+        <li>Newell & Simon's Logic Theorist</li>
+        <li>Dartmouth Research Project</li>
+        <li>Subtopics & Tools in AI</li>
+        <li>Marvin Minsky & Neural Networks</li>
+        <li>AI Today (breifly)</li>
+      </ul>
+    </div>
+
+    <div id="what_we_didnt" class="step slide" data-x="3000" data-y="6300">
+      <p class="centertext"><b>What we didn't talked about</b><br><br></p>
+      <ul>
+        <li>Philosophical Implications</li>
+        <li>Ethical Implications</li>
+        <li>Solvability - Is there something a human can do that can't be done by an AI?</li>
+        <li>The Singularity</li>
+        <li>What is "consciousness"?</li>
+      </ul>
+    </div>
+
+    <div id="kaku" class="step" data-x="4000" data-y="6300">
+      <div id="JPVOPzYiCeg" data-id="JPVOPzYiCeg" class="youtube">
+        <a href="http://www.youtube.com/watch?v=JPVOPzYiCeg">Michio Kaku: How to Stop Robots from Killing Us - Youtube</a>
+      </div>
+    </div>
+
+    <div id="chatbots" class="step" data-x="5000" data-y="6300">
+      <div id="WnzlbyTZsQY" data-id="WnzlbyTZsQY" class="youtube">
+        <a href="http://www.youtube.com/watch?v=WnzlbyTZsQY">AI vs. AI - Two chatbots talking - Youtube</a>
+      </div>
+    </div>
+
+    <div id="assignment" class="step slide" data-x="-825" data-y="-225" data-scale="0.5">
+      <p class="centertext">Assignments<br><br></p>
+      <ul>
+        <li>Read and be prepared to discuss:<ul>
+          <li><em>Pattern on the Stone</em> Chapter 8: Computers that Learn and Adapt</li></ul></li>
+        <li>Blog 4: Computer Systems in Daily Life - Due 9/29 10:00 PM</li>
+        <li>Scratch Stoplight Project - Due 9/29 10:00 PM</li>
+      </ul>
+    </div>
+
+    <div id="blog" class="step slide" data-x="-825" data-y="225" data-scale="0.5">
+      <p class="centertext" style="font-size: 35px; line-height: 45px"><b>Blog 4: Computer Systems in Daily Life</b></p>
+      <p style="font-size: 30px; line-height: 33px">We interact with a variety of computer systems on a daily basis, but most of the time we don’t take the time to think about where they came from and how they work. Choose a computer system you see in your everyday life and write about it and its history. Tell us how it works and how it affects us in our daily life. A simple example would be the keycard entry systems at the K-State dorms and the engineering labs. Some questions to ask yourself while you are doing your research:<br><br>
+        <ul style="font-size: 30px; line-height: 33px">
+          <li>Who created this system?</li>
+          <li>What are the underlying technologies?</li>
+          <li>Is this a very common system, or something unique to a particular field or use?</li>
+          <li>How long has this system been around?</li>
+          <li>How difficult would life be without this system?</li>
+          <li>Are there any privacy, security or safety concerns with this system? Are there any concerns if this system didn’t exist?</li>
+        </ul>
+      </p>
+    </div>
+
+    <div id="activity" class="skip slide" data-x="-825" data-y="655" data-scale="0.5">
+      <p class="centertext"><b>Scratch Stoplight</b></p>
+      <ul>
+        <li>Download starter file from K-State Canvas</li>
+        <li>Implement logic for a stoplight controller</li>
+        <li>Test the program running it for a while</li>
+        <li>Submit via K-State Canvas</li>
+        <li><b>Due: September 29th 10:00 PM</b></li>
+      </ul>
+    </div>
+
+    <div id="activity_1" class="step" data-x="-825" data-y="675" data-scale="0.5">
+    </div>
+
+    <div id="stoplight_fsm" class="step slide" data-x="-825" data-y="1125" data-scale="0.5">
+      <p class="centertext"><b>Stoplight FSM</b><br><br></p>
+      <img class="centerimg" width="850" src="cis115spring2014/images/lecture9/state_machine.png">
+    </div>
+
+    <div id="stoplight_pic" class="step slide" data-x="-825" data-y="1575" data-scale="0.5">
+      <p class="centertext"><b>Stoplight Project</b></p>
+      <img class="centerimg" width="850" src="cis115spring2014/images/lecture9/stoplight_starter.png">
+    </div>
+
+    <div id="activity_2" class="step" data-x="-825" data-y="675" data-scale="0.5">
+    </div>
+
+    <div id="overview" class="step" data-x="2500" data-y="3150" data-z="-1" data-scale="9.5">
+    </div>
+
+
+</div>
+
+<script src="js/analytics.js"></script>
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
+<script src="js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+</body>
+</html>

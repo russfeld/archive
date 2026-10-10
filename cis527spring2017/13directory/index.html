@@ -1,0 +1,244 @@
+<html lang="en">
+<head>
+    <link href="/favicon.ico" rel="shortcut icon">
+    <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+    <meta name="description" content="CIS 527 - Directory Services" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 527 - Directory Services</title>
+    <link href="/css/impress.css" rel="stylesheet" />
+    <link href="/css/TimeCircles.css" rel="stylesheet" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 527</b><br><br>Directory Services</p>
+    </div>
+
+    <div id="directory_services" class="step slide" data-x="1000" data-y="0">
+      <p class="centertext"><b>Directory Services</b><br><br></p>
+      <p>Software system that stores and provides access to information<br><br>Stored objects can include information about users, groups, and resources on a computer system or network</p>
+    </div>
+
+    <div id="dns" class="step slide" data-x="2000" data-y="0">
+      <p class="centertext"><b>Domain Name System</b></p>
+      <img class="centerimg" height="600" src="images/dns_wiki.svg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Domain_Name_System">Wikipedia</a></p>
+    </div>
+
+    <div id="timeline" class="step slide" data-x="3000" data-y="0">
+      <p class="centertext"><b>Timeline</b><br><br></p>
+      <ul>
+        <li>1988 - X.500 standard published<ul><li>LDAP soon followed</li></ul></li>
+        <li>1993 - Samba</li>
+        <li>1993 - Novell Directory Services</li>
+        <li>1993 - Kerberos (<a href="http://tools.ietf.org/html/rfc1510">RFC 1510</a>)</li>
+        <li>1999 - Microsoft Active Directory</li>
+      </ul>
+    </div>
+
+    <div id="x_500" class="step slide" data-x="4000" data-y="0">
+      <p class="centertext"><b>X.500</b></p>
+      <ul>
+        <li>First released in 1988</li>
+        <li>Name lookups for the X.400 email standard</li>
+        <li>Originally used OSI transport protocol</li>
+        <li>Several protocols:<ul>
+          <li>DAP - Directory Access</li>
+          <li>DSP - Directory System</li>
+        </ul></li>
+        <li><a href="http://www.x500standard.com">http://www.x500standard.com</a></li>
+      </ul>
+    </div>
+
+    <div id="ldap" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>Lightweight Directory Access Protocol</b><br><br></p>
+      <ul>
+        <li>Implementation of X.500 DAP using TCP/IP</li>
+        <li>Used by many enterprise servers<ul>
+          <li>Active Directory</li>
+          <li>Novell Directory Services</li>
+          <li>OpenLDAP</li>
+        </ul></li>
+      </ul>
+    </div>
+
+    <div id="x500_venn" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b>X.500 vs. LDAP</b><br><br></p>
+      <img class="centerimg" width="850" src="images/x500ldap_x500standard.png">
+      <p class="imagecredit">Image Source: <a href="https://directory.apache.org/apacheds/basic-ug/1.2-some-background.html">x500standard.com</a></p>
+    </div>
+
+    <div id="ldap_timeline" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>X.500 to LDAP</b></p>
+      <img class="centerimg" width="850" src="images/ldap1_apache.png">
+      <p class="imagecredit">Image Source: <a href="https://directory.apache.org/apacheds/basic-ug/1.2-some-background.html">Apache</a></p>
+    </div>
+
+    <div id="ldap_usage" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>LDAP Uses</b></p>
+      <img class="centerimg" width="850" src="images/ldap2_apache.png">
+      <p class="imagecredit">Image Source: <a href="https://directory.apache.org/apacheds/basic-ug/1.2-some-background.html">Apache</a></p>
+    </div>
+
+    <div id="ldap_entry" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>LDAP Entry</b><br><br></p>
+      <code><pre>dn: cn=John Doe,dc=example,dc=com
+cn: John Doe
+givenName: John
+sn: Doe
+telephoneNumber: +1 888 555 6789
+telephoneNumber: +1 888 555 1232
+mail: john@example.com
+manager: cn=Barbara Doe,dc=example,dc=com
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top</pre></code>
+    </div>
+
+    <div id="ldap_entry2" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>LDAP Entry Items</b><br><br></p>
+      <ul>
+        <li>dn - Distinguished Name</li>
+        <li>cn - Common Name</li>
+        <li>sn - Surname</li>
+        <li>dc - Domain Component</li>
+        <li>ou - Organizational Unit</li>
+      </ul>
+    </div>
+
+    <div id="ldap_tree" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b>LDAP Tree Structure</b></p>
+      <img class="centerimg" width="850" src="images/ldap_tree_openldap.gif">
+      <p class="imagecredit">Image Source: <a href="http://www.openldap.org/doc/admin22/intro.html">OpenLDAP</a></p>
+    </div>
+
+    <div id="novell" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b>Novell Directory Services</b><br><br></p>
+      <ul>
+        <li>Released in 1993 by Novell</li>
+        <li>Now called NetIQ eDirectory</li>
+        <li>Originally used IPX/SPX instead of TCP/IP</li>
+        <li>Most common directory service until the rise of Microsoft Active Directory</li>
+      </ul>
+    </div>
+
+    <div id="nds" class="step slide" data-x="3000" data-y="1800">
+      <p class="centertext"><b>Novell NDS</b><br><br></p>
+      <img class="centerimg" width="850" src="images/nds_novell.gif">
+      <p class="imagecredit">Image Source: <a href="http://support.novell.com/techcenter/articles/dnd19970304.html">Novell</a></p>
+    </div>
+
+    <div id="workgroup" class="step slide" data-x="4000" data-y="1800">
+      <p class="centertext"><b>Windows Workgroup</b><br><br></p>
+      <ul>
+        <li>Network sharing system present in Windows</li>
+        <li>Each computer has a local copy of the security information</li>
+        <li>Allows sharing of resources without a central server</li>
+      </ul>
+    </div>
+
+    <div id="homegroup" class="step slide" data-x="0" data-y="2700">
+      <p class="centertext"><b>Windows Homegroup</b><br><br></p>
+      <ul>
+        <li>Introduced in Windows 7</li>
+        <li>Allows easy sharing of resources with a pre-shared password</li>
+        <li>Homegroup computers can also be in a Workgroup or Domain</li>
+      </ul>
+    </div>
+
+    <div id="workgroup_1" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>Windows Workgroup</b></p>
+      <img class="centerimg" width="850" src="images/workgroup_etutorials.jpg">
+      <p class="imagecredit">Image Source: <a href="http://etutorials.org/Microsoft+Products/microsoft+windows+xp+professional+training+kit/Chapter+1+-+Introduction+to+Windows+XP+Professional/Lesson+3nbspUnderstanding+Workgroups+and+Domains/">eTutorials</a></p>
+    </div>
+
+    <div id="active_directory" class="step slide" data-x="2000" data-y="2700">
+      <p class="centertext"><b>Active Directory</b><br><br></p>
+      <ul>
+        <li>Introduced in 1999 with Windows 2000</li>
+        <li>Implements a directory service along with protocols such as LDAP</li>
+        <li>Commonly used in Windows based networks</li>
+      </ul>
+    </div>
+
+    <div id="domain_1" class="step slide" data-x="3000" data-y="2700">
+      <p class="centertext"><b>Windows Domain</b></p>
+      <img class="centerimg" height="600" src="images/domain_etutorials.jpg">
+      <p class="imagecredit">Image Source: <a href="http://etutorials.org/Microsoft+Products/microsoft+windows+xp+professional+training+kit/Chapter+1+-+Introduction+to+Windows+XP+Professional/Lesson+3nbspUnderstanding+Workgroups+and+Domains/">eTutorials</a></p>
+    </div>
+
+    <div id="domain_2" class="step slide" data-x="4000" data-y="2700">
+      <p class="centertext"><b>Active Directory</b></p>
+      <img class="centerimg" height="600" src="images/ad_microsoft.png">
+      <p class="imagecredit">Image Source: <a href="http://msdn.microsoft.com/en-us/library/aa746492%28v=vs.85%29.aspx">Microsoft</a></p>
+    </div>
+
+    <div id="forest" class="step slide" data-x="0" data-y="3600">
+      <p class="centertext"><b>Active Directory Forest</b></p>
+      <img class="centerimg" height="600" src="images/forest_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Active_Directory">Wikipedia</a></p>
+    </div>
+
+    <div id="cerberus" class="step slide" data-x="1000" data-y="3600">
+      <p class="centertext"><b>Kerberos</b></p>
+      <img class="centerimg" width="850" src="images/cerberus_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Cerberus">Wikipedia</a></p>
+    </div>
+
+    <div id="kerberos" class="step slide" data-x="2000" data-y="3600">
+      <p class="centertext"><b>Kerberos</b><br><br></p>
+      <ul>
+        <li>Developed by MIT in 1980s</li>
+        <li>Published in 1993 as <a href="http://tools.ietf.org/html/rfc1510"> RFC 1510</a></li>
+        <li>Allows authentication via a 3rd party server on an open network</li>
+        <li>Used by Active Directory & many other directory services</li>
+      </ul>
+    </div>
+
+    <div id="handshake" class="step slide" data-x="3000" data-y="3600">
+      <p class="centertext"><b>Kerberos</b></p>
+      <img class="centerimg" height="600" src="images/kerberos_wiki.svg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Kerberos_%28protocol%29">Wikipedia</a></p>
+    </div>
+
+    <div id="assignments" class="step slide" data-x="4000" data-y="3600">
+      <p class="centertext"><b>Assignments</b><br><br></p>
+      <ul>
+        <li>Lab 4 - Directory Services: Due Monday 3/13 10:30 AM</li>
+      </ul>
+    </div>
+
+    <div id="overview" class="step" data-x="2000" data-y="1800" data-z="-1" data-scale="7.5">
+    </div>
+
+</div>
+
+<script src="/js/analytics.js"></script>
+<script src="/js/impress.js"></script>
+<script>impress().init();</script>
+<script src="/js/jquery-1.10.2.min.js"></script>
+<script src="/js/TimeCircles.js"></script>
+<script src="/js/timer.js"></script>
+<script src="/js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+
+
+
+</body>
+</html>

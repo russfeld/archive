@@ -1,0 +1,229 @@
+<html lang="en">
+<head>
+  <BASE href="../">
+  <link href="favicon.ico" rel="shortcut icon">
+  <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+  <meta name="description" content="CIS 225 Fall 2013 Lecture 7" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 225 Fall 2013 Lecture 7</title>
+    <link href="css/impress.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 225</b><br><br>Lecture 7: Scripting and Automation 1</p>
+    </div>
+
+    <div id="building" class="step slide" data-x="1000" data-y="0">
+      <p class="centertext"><b>Building Shell Scripts<br><br></b></p>
+      <p>Open a new file using a text editor</p>
+      <pre><code style="font-size:50px; line-height:53px">$ nano script.sh</code></pre>
+      <p><br>Add the following header at the top</p>
+      <pre><code style="font-size:50px; line-height:53px">#!/bin/bash</code></pre>
+    </div>
+
+    <div id="saving" class="step slide" data-x="2000" data-y="0">
+      <p class="centertext"><b>Building Shell Scripts<br><br></b></p>
+      <p>Input commands below (1 per line)</p>
+      <pre><code style="font-size:50px; line-height:53px">cd ~/bin
+ls -al</code></pre>
+      <p><br>Save the file (CTRL + X) and run</p>
+      <pre><code style="font-size:50px; line-height:53px">$ chmod u+x ./script.sh
+$ ./script.sh</code></pre>
+    </div>
+
+    <div id="hello1" class="step slide" data-x="3000" data-y="0">
+      <p class="centertext"><b>Shell Hello World<br><br></b></p>
+      <pre><code style="font-size:50px; line-height:53px">#!/bin/bash
+
+echo "Hello World"
+exit 0</code></pre>
+    </div>
+
+    <div id="hello2" class="step slide" data-x="4000" data-y="0">
+      <p class="centertext"><b>Shell Hello World<br><br></b></p>
+      <pre><code style="font-size:50px; line-height:53px">echo "Hello World"</code></pre>
+      <p>echo prints text<br><br></p>
+      <pre><code style="font-size:50px; line-height:53px">exit 0</code></pre>
+      <p>exit stops the command</p>
+    </div>
+
+    <div id="simple" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>Simple Script</b></p>
+      <pre><code style="font-size:37px; line-height:38px">#!/bin/bash
+#batman.sh
+
+if (( $# < 1 || $# > 1 )); then
+  echo "Usage: batman.sh &lt;name&gt;"
+  exit 1
+fi
+
+if [ "$1" = "Batman" ]; then
+  echo "Hello Mr. Wayne"
+elif [ "$1" = "Robin" ]; then
+  echo "Welcome back Mr. Grayson"
+else
+  echo "Intruder alert!"
+fi
+exit 0</code></pre>
+    </div>
+
+    <div id="parameters" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b>Shell Script Parameters<br><br></b></p>
+      <pre><code style="font-size:50px; line-height:53px">$1 - First Parameter
+$2 - Second Parameter
+...
+${10} - Tenth Parameter
+${11} - Eleventh Parameter
+
+$# - Number of Parameters
+$* - All Parameters (as String)</code></pre>
+    </div>
+
+    <div id="conditionals" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>Conditionals<br><br></b></p>
+      <pre><code style="font-size:50px; line-height:53px">if (( $# < 1 || $# > 1 )); then</code></pre>
+      <p>Douple parens for arithmetic evaluation<br><br></p>
+      <pre><code style="font-size:50px; line-height:53px">if [ "$1" = "Batman" ]; then</code></pre>
+      <p>Square brackets for logical test<br>(using Linux 'test' command)</p>
+    </div>
+
+    <div id="loops" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>Loop Script<br><br></b></p>
+      <pre><code style="font-size:50px; line-height:53px">#!/bin/bash
+#listfiles.sh
+
+files=`ls $* 2> /dev/null`
+for afile in "$files"; do 
+    echo "$afile"
+done
+exit 0
+</code></pre>
+    </div>
+
+    <div id="loops2" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>Loops<br><br></b></p>
+      <pre><code style="font-size:50px; line-height:53px">files=`ls $* 2> /dev/null`</code></pre>
+      <p>Declares a new variable $files<br>Backticks (`) get output of command<br><br></p>
+      <pre><code style="font-size:50px; line-height:53px">for afile in "$files"; do</code></pre>
+      <p>Perfom commands below once for each item in $files</p>
+    </div>
+
+    <div id="path" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>Environment Variables<br><br></b></p>
+      <p>Stores information about the system that can be used in scripts<br><br></p>
+      <pre><code style="font-size:50px; line-height:53px">$ printenv</code></pre>
+      <p>Prints the current environment variables<br><br></p>
+    </div>
+
+    <div id="path2" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b>PATH Variable<br><br></b></p>
+      <p>Tells your system where to look for binary files and scripts<br><br></p>
+      <pre><code style="font-size:50px; line-height:53px">$ export PATH=$PATH:$HOME/bin</code></pre>
+      <p>Add a folder to the path<br>(Add this line to ~/.bashrc to make it permanent)<br></p>
+    </div>
+
+    <div id="building_ps" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b>Building PowerShell Scripts<br><br></b></p>
+      <p>Open the PowerShell ISE (search for it on the Start menu)<br>You can also use a text editor such as Notepad<br>To be able to run them, open an Administrative Powershell and enter "Set-ExecutionPolicy Unrestricted"</p>
+    </div>
+
+    <div id="psscripts" class="step slide" data-x="3000" data-y="1800">
+      <p class="centertext"><b>PowerShell Scripts<br><br></b></p>
+      <pre><code style="font-size:50px; line-height:53px">Write-Host "Hello World"
+return</code></pre>
+    </div>
+
+    <div id="psparameters" class="step slide" data-x="4000" data-y="1800">
+      <p class="centertext"><b>PowerShell Parameters<br><br></b></p>
+      <pre><code style="font-size:50px; line-height:53px">Param(
+  [string]$computerName,
+  [string]$userName
+)</code></pre>
+    </div>
+
+    <div id="pssimple" class="step slide" data-x="0" data-y="2700">
+      <p class="centertext"><b>Simple Script</b></p>
+      <pre><code style="font-size:34px; line-height:36px">Param(
+  [string]$user
+)
+if ( -not ($user)){
+  Write-Host "Usage: batman.ps1 &lt;name&gt;"
+  return
+}
+if ($user.CompareTo("Batman") -eq 0){
+  Write-Host "Hello Mr. Wayne"
+}else{ 
+    if ($user.CompareTo("Robin") -eq 0){
+        Write-Host "Welcome back Mr. Grayson"
+    }else{
+      Write-Host "Intruder alert!"
+    }
+}
+return</code></pre>
+    </div>
+
+    <div id="psloops" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>Loop Script<br><br></b></p>
+      <pre><code style="font-size:37px; line-height:40px">param(
+  [string]$path
+)
+
+$files = Get-ChildItem $path
+
+foreach($file in $files){
+    Write-Host $file.name
+}
+</code></pre>
+    </div>
+
+    <div id="envars" class="step slide" data-x="2000" data-y="2700">
+      <p class="centertext"><b>Environment Variables<br><br></b></p>
+      <p>Control Panel &gt; System and Security &gt; System &gt; Advanced System Settings &gt; Environment Variables</p>
+      <p><br>Add a new variable called PATH to the user variables and give it the value "C:\Users\cis225\bin"</p>
+    </div>
+
+    <div id="reading" class="step slide" data-x="3000" data-y="2700">
+      <p class="centertext"><b>Reading<br><br></b></p>
+      <ul>
+        <li>PowerShell Cookbook - Chapters 22 & 24</li>
+        <li>Linux Shell Scripting Cookbook - Chapter 2</li>
+      </ul>
+    </div>
+
+    <div id="assignments" class="step slide" data-x="4000" data-y="2700">
+      <p class="centertext"><b>Assignments<br><br></b></p>
+      <ul>
+        <li>Lab 3 - OS Security & Scripting 1: Due 9/23 @ 11:59 PM</li>
+      </ul>
+    </div>
+
+    
+    <div id="overview" class="step" data-x="2000" data-y="1500" data-z="-1" data-scale="5">
+    </div>
+
+
+
+</div>
+
+<script src="js/analytics.js"></script>
+
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+
+</body>
+</html>

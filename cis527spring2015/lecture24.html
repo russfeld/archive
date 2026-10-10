@@ -1,0 +1,227 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <BASE href="../">
+  <link href="favicon.ico" rel="shortcut icon">
+  <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+  <meta name="description" content="CIS 527 Spring 2015 Lecture 24" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 527 Spring 2015 Lecture 24</title>
+    <link href="css/impress.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 527</b><br><br>Lecture 24 - The Cloud</p>
+    </div>
+
+    <div id="whatis" class="step" data-x="1000" data-y="0">
+      <p class="centertext"><b>What is the Cloud?</b></p>
+    </div>
+
+    <div id="xkcd" class="step" data-x="2000" data-y="0">
+      <img class="centerimg" width="850" src="cis527spring2015/images/lecture24/cloud_xkcd.png">
+      <p class="imagecredit">Image Source: <a href="https://xkcd.com/908/">Randall Munroe (XKCD)</a></p>
+    </div>
+
+    <div id="cloud_wiki" class="step" data-x="3000" data-y="0">
+      <img class="centerimg" height="650" src="cis527spring2015/images/lecture24/cloud_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Cloud_computing">Wikipedia</a></p>
+    </div>
+
+    <div id="early_electric" class="step" data-x="4000" data-y="0">
+      <img class="centerimg" width="850" src="cis527spring2015/images/lecture24/bezos_infoweek.jpg">
+      <p class="imagecredit centertext">Jeff Bezos in front of an 1890s electric generator from a Belgian beer brewery</p>
+      <p class="imagecredit">Image Source: <a href="http://www.informationweek.com/software/information-management/the-cloud-electric-generator-analogy/d/d-id/1075830?">Information Week</a></p>
+    </div>
+
+    <div id="now" class="step" data-x="0" data-y="900">
+      <img class="centerimg" height="650" src="cis527spring2015/images/lecture24/jeffrey_openbuilding.jpg">
+      <p class="imagecredit centertext">Jeffrey Energy Center</p>
+      <p class="imagecredit">Image Source: <a href="http://openbuildings.com/buildings/jeffrey-energy-center-profile-19472#!buildings-media/0">Open Buildings</a></p>
+    </div>
+
+    <div id="switch" class="step" data-x="1000" data-y="900">
+      <img class="centerimg" height="650" src="cis527spring2015/images/lecture24/bigswitch_carr.jpg">
+      <p class="imagecredit">Image Source: <a href="http://www.nicholascarr.com/?page_id=21/">Nicholas Carr</a></p>
+    </div>
+
+    <div id="the_cloud3" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>Cloud Computing</b></p>
+      <ul>
+        <li>Originated in "time sharing" in the 1950ss</li>
+        <li>Early network diagrams used a cloud for unknown networks</li>
+        <li>Businesses started using VPNs in the 1990s</li>
+        <li>Popularized in 2006 by Amazon's Elastic Compute Cloud (EC2)</li>
+      </ul>
+    </div>
+
+    <div id="VPN" class="step" data-x="3000" data-y="900">
+      <p class="centertext"><b>Virtual Private Networks</b></p>
+      <img class="centerimg" height="600" src="cis527spring2015/images/lecture24/vpn_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Virtual_private_network">Wikipedia</a></p>
+    </div>
+
+    <div id="soa" class="step" data-x="4000" data-y="900">
+      <p class="centertext"><b>Service Oriented Architecture</b></p>
+      <img class="centerimg" height="600" src="cis527spring2015/images/lecture24/soa_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Service-oriented_architecture">Wikipedia</a></p>
+    </div>
+
+    <div id="aws" class="step" data-x="0" data-y="1800">
+      <img class="centerimg" width="900" src="cis527spring2015/images/lecture24/aws_amazon.gif">
+      <p class="imagecredit">Image Source: <a href="https://aws.amazon.com/blogs/aws/lots-of-bits/">Amazon</a></p>
+    </div>
+
+    <div id="the_cloud" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b>Cloud Computing Characteristics</b><br>According to NIST<br><br></p>
+      <ul>
+        <li>On-demand self-service</li>
+        <li>Broad network access</li>
+        <li>Resource Pooling</li>
+        <li>Rapid elasticity</li>
+        <li>Measured Service</li>
+    </div>
+
+    <div id="the_cloud2" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b>What makes Cloud Computing Work</b><br><br></p>
+      <ul>
+        <li>Location Independent</li>
+        <li>Multi-tenancy (share costs)</li>
+        <li>Reliability</li>
+        <li>Scalability / Elasticity</li>
+        <li>Security</li>
+      </ul>
+    </div>
+
+    <div id="scaling" class="step" data-x="3000" data-y="1800">
+      <p class="centertext"><b>Scaling - Animoto</b></p>
+      <img class="centerimg" height="600" src="cis527spring2015/images/lecture24/animoto_rightscale.gif">
+      <p class="imagecredit">Image Source: <a href="http://www.rightscale.com/blog/enterprise-cloud-strategies/animotos-facebook-scale">Right Scale</a></p>
+    </div>
+
+    <div id="service_models" class="step slide" data-x="4000" data-y="1800">
+      <p class="centertext"><b>Service Models</b><br><br></p>
+      <ul>
+        <li>Infrastructure as a Service (IaaS)</li>
+        <li>Platform as a Service (PaaS)</li>
+        <li>Software as a Service (Saas)</li>
+        <li>Data as a Service (Daas)</li>
+        <li>&lt;Anything&gt; as a Service</li>
+        <li>
+      </ul>
+    </div>
+
+    <div id="scaling2" class="step" data-x="0" data-y="2700">
+      <img class="centerimg" height="600" src="cis527spring2015/images/lecture24/layers_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Cloud_computing">Wikipedia</a></p>
+    </div>
+
+    <div id="deploy" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>Deployment Models</b><br><br></p>
+      <ul>
+        <li>Private Cloud</li>
+        <li>Public Cloud</li>
+        <li>Hybrid Cloud</li>
+        <li>Community Cloud</li>
+        <li>Distributed Cloud</li>
+        <li>Intercloud/Multicloud</li>
+    </div>
+
+    <div id="deploy2" class="step" data-x="2000" data-y="2700">
+      <img class="centerimg" height="600" src="cis527spring2015/images/lecture24/deploy_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Cloud_computing">Wikipedia</a></p>
+    </div>
+
+    <div id="big_players" class="step slide" data-x="3000" data-y="2700">
+      <p class="centertext"><b>Big Players in the Cloud</b><br><br></p>
+      <ul>
+        <li>Amazon Web Services</li>
+        <li>Microsoft Azure</li>
+        <li>IBM SmartCloud</li>
+        <li>Rackspace Cloud</li>
+        <li>Heroku</li>
+        <li>Google</li>
+        <li>HP</li>
+      </ul>
+    </div>
+
+    <div id="threats" class="step slide" data-x="4000" data-y="2700">
+      <p class="centertext"><b>Cloud Threats</b><br><br></p>
+      <ul>
+        <li>Insecure Interfaces & APIs - 29%</li>
+        <li>Data Loss & Leakage - 25%</li>
+        <li>Hardware Failure - 10%</li>
+        <br>
+        <li>Legal Data Ownership</li>
+        <li>Lack of Physical Control</li>
+        <li>Big Targets for Hackers</li>
+      </ul>
+    </div>
+
+    <div id="openstack" class="step slide" data-x="0" data-y="3600">
+      <p class="centertext"><b>Open Stack</b><br><br></p>
+      <ul>
+        <li>Started in 2010 by Rackspace Hosting & NASA</li>
+        <li>Open source project to help companies with cloud computing</li>
+        <li>Includes many components needed for cloud computing</li>
+      </ul>
+    </div>
+
+    <div id="openstack2" class="step" data-x="1000" data-y="3600">
+      <img class="centerimg" width="900" src="cis527spring2015/images/lecture24/openstack.png">
+      <p class="imagecredit">Image Source: <a href="http://www.openstack.org/software/">OpenStack</a></p>
+    </div>
+
+    <div id="infographic" class="skip" data-x="2000" data-y="3580">
+      <img class="centerimg" height="800" src="cis527spring2015/images/lecture24/infographic.png">
+      <p class="imagecredit">Image Source: <a href="http://2ndwatch.com/blog/cloud-forecast-2015-skills-security-and-public-cloud-tools-in-demand/">2nd Watch</a></p>
+    </div>
+
+    <div id="info2" class="step" data-x="2000" data-y="3600">
+      </div>
+    
+    <div id="info3" class="step" data-x="2400" data-y="3600">
+      </div>
+
+    <div id="assignments" class="step slide" data-x="4000" data-y="3600" data-scale="1.0">
+        <p class="centertext"><b>Assignments</b></p>
+        <ul>
+            <li>Lab Help Session Fridays 12:30 - 1:45 PM!</li>
+            <li>Lab 6: Backups - Due May 4 12:30 PM</li>
+            <li>Lab 7: The Cloud - Due May 11 10:00 PM</li>
+            <li>Turn in:<ul>
+                <li>VIA K-STATE CANVAS!</li>
+                </ul></li> 
+        </ul>
+    </div>
+
+
+    <div id="overview" class="step" data-x="2250" data-y="2000" data-scale="7.0">
+    </div>
+
+
+</div>
+
+<script src="js/analytics.js"></script>
+
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+
+</body>
+</html>

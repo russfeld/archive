@@ -1,0 +1,188 @@
+<html lang="en">
+<head>
+    <link href="/favicon.ico" rel="shortcut icon">
+    <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+    <meta name="description" content="CIS 625 Spring 2016 Final Project" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 625 Spring 2016 Final Project</title>
+    <link href="/css/impress.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>Parallelizing the NEAT Method using UPC</b><br><br>Russell Feldhausen</p>
+    </div>
+
+    <div id="whatis" class="step slide" data-x="1000" data-y="0">
+      <p class="centertext"><b>What is NEAT?</b></p>
+      <ul>
+        <li><b><i>N</i></b>euro<b><i>E</i></b>volution of <b><i>A</i></b>ugmenting <b><i>T</i></b>opologies</li>
+        <li>Based on Evolutionary Computing and Neural Networks</li>
+        <li>Developed by Stanley and Miikkulainen at the University of Texas</li>
+        <li>Known to gamers through <a href="https://www.youtube.com/watch?v=qv6UVOQ0F44">MarI/O by SethBling on YouTube</a></li>
+      </ul>
+    </div>
+
+    <div id="features" class="step slide" data-x="2000" data-y="0">
+      <p class="centertext"><b>Features of NEAT</b></p>
+      <ul>
+        <li>Neural Network of input nodes, output nodes, and hidden nodes</li>
+        <li>Connecting links have real number weights assigned to each</li>
+        <li>Similar networks are grouped into "species" to protect novel features</li>
+        <li>Networks can crossbreed to share features</li>
+      </ul>
+    </div>
+
+    <div id="evolve" class="step" data-x="3000" data-y="0">
+      <p class="centertext"><b>NEAT Evolution</b></p>
+      <img class="centerimg" width="850" src="images/stanley1.png">
+      <p class="imagecredit">Image Source: <a href="http://nn.cs.utexas.edu/downloads/papers/stanley.ec02.pdf">Stanley & Miikkulainen</a></p>
+    </div>
+
+    <div id="approach" class="step slide" data-x="4000" data-y="0">
+      <p class="centertext"><b>My Approach</b></p>
+      <ul>
+        <li>Use UPC and the PGAS model to parallelize NEAT</li>
+        <li>A global population of networks shared across threads</li>
+        <li>Each thread evolves and evaluates new networks locally, then shares them globally</li>
+        <li>Continue until solved or stagnation</li>
+      </ul>
+    </div>
+
+    <div id="phase1" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>Algorithm - Phase 1</b></p>
+      <ol>
+        <li>Cull bottom 50% of each species</li>
+        <li>Randomly breed/crossbreed within species to fill population</li>
+        <li>Evaluate and retain single best network in each species</li>
+      </ol>
+    </div>
+
+    <div id="phase2" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b>Algorithm - Phase 2</b></p>
+      <ol>
+        <li>Breed species representatives to repopulate</li>
+        <li>Evaluate new children and place into species, creating new species as needed</li>
+      </ol>
+    </div>
+
+    <div id="optimize" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>Optimizations</b></p>
+      <ul>
+        <li>No dynamic memory allocation</li>
+        <li>Networks are bred and evaluated on local thread memory, then copied to shared memory</li>
+        <li>Two shared memory buffers (read-only and write-only) to prevent race conditions and eliminate locks</li>
+        <li>Single lock for few shared variables</li>
+      </ul>
+    </div>
+
+    <div id="testing" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>Testing</b></p>
+      <ul>
+        <li>Two input binary XOR function
+        <ul>
+          <li>Requires a hidden node to solve</li>
+          <li>Used by Stanley and Miikkulainen as a baseline test</li>
+        </ul></li>
+        <li>Single-node scaling</li>
+        <li>Multi-node scaling
+        <ul>
+          <li>Max 8 threads/node</li>
+          <li>Max 2 threads/node</li>
+        </ul></li>
+      </ul>
+    </div>
+
+    <div id="24across1" class="step" data-x="4000" data-y="900">
+      <p class="centertext"><b>2 Input - Single Node</b></p>
+      <img class="centerimg" width="850" src="images/24across1.png">
+    </div>
+
+    <div id="64across32" class="step" data-x="0" data-y="1800">
+      <p class="centertext"><b>2 Input - 32 Nodes</b></p>
+      <img class="centerimg" width="850" src="images/64across32.png">
+    </div>
+
+    <div id="64across8" class="step" data-x="1000" data-y="1800">
+      <p class="centertext"><b>2 Input - 8 Nodes</b></p>
+      <img class="centerimg" width="850" src="images/64across8.png">
+    </div>
+
+    <div id="testing" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b>Second Testing</b></p>
+      <ul>
+        <li>First test results == No scaling<br>(but not bad overhead either)</li>
+        <li>Ran two more tests:
+        <ul>
+          <li>Each thread has large local population, no shared memory; stop when any thread finds a solution</li>
+          <li>Repeat that attempt with larger 3 input binary XOR problem</li>
+        </ul></li>
+      </ul>
+    </div>
+
+    <div id="2inputsingle" class="step" data-x="3000" data-y="1800">
+      <p class="centertext"><b>2 Input - Single Node - First to Solve</b></p>
+      <img class="centerimg" width="850" src="images/2input.png">
+    </div>
+
+    <div id="3inputsingle" class="step" data-x="4000" data-y="1800">
+      <p class="centertext"><b>3 Input - Single Node - First to Solve</b></p>
+      <img class="centerimg" width="850" src="images/64across32.png">
+    </div>
+
+    <div id="3inputmulti" class="step" data-x="0" data-y="2700">
+      <p class="centertext"><b>3 Input - 16 Nodes - First to Solve</b></p>
+      <img class="centerimg" width="850" src="images/128across16_3input.png">
+    </div>
+
+    <div id="outcome" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>Outcome</b></p>
+      <ul>
+        <li>UPC makes PGAS very simple</li>
+        <li>NEAT can be parallelized, but no scaling present by default</li>
+        <li>Distributed, independent NEAT threads do show scaling across many nodes</li>
+        <li>More evaluation with larger problems may reveal different results</li>
+      </ul>
+    </div>
+
+    <div id="patrick" class="step" data-x="2000" data-y="2700">
+      <img class="centerimg" width="850" src="images/patrick.jpg">
+    </div>
+
+    <div id="squidward" class="step" data-x="3000" data-y="2700">
+      <img class="centerimg" height="650" src="images/squidward.jpg">
+    </div>
+
+    <div id="elephant" class="skip" data-x="4020" data-y="2680">
+      <a data-flickr-embed="true"  href="https://www.flickr.com/photos/russfeld/5936966231/in/album-72157627069733005/" title="Fair 2011 Hopefuls"><img src="https://farm7.staticflickr.com/6006/5936966231_5a9158cd07_b.jpg" width="850" height="667" alt="Fair 2011 Hopefuls"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+    </div>
+
+    <div id="questions" class="step" data-x="4000" data-y="2700">
+        <p class="centertext" style="font-size: 100px; color: #FFFFFF; text-shadow: 10px 10px 25px #000000"><b>Any Questions?</b></p>
+    </div>
+
+
+    <div id="overview" class="step" data-x="2000" data-y="1800" data-z="-1" data-scale="6">
+    </div>
+
+</div>
+
+<script src="/js/analytics.js"></script>
+<script src="/js/impress.js"></script>
+<script>impress().init();</script>
+
+</body>
+</html>

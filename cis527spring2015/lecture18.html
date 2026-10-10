@@ -1,0 +1,271 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <BASE href="../">
+  <link href="favicon.ico" rel="shortcut icon">
+  <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+  <meta name="description" content="CIS 527 Spring 2015 Lecture 18" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 527 Spring 2015 Lecture 18</title>
+    <link href="css/impress.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 527</b><br><br>Lecture 18 - Application Servers Overview</p>
+    </div>
+
+    <div id="file_server" class="step" data-x="1000" data-y="0">
+      <p class="centertext"><b>Application Server</b></p>
+      <img class="centerimg" width="850" src="cis527spring2015/images/lecture18/server_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Server_%28computing%29">Wikipedia</a></p>
+    </div>
+
+    <div id="app_servers" class="step slide" data-x="2000" data-y="0">
+      <p class="centertext"><b>Application Server</b><br><br></p>
+      <ul>
+        <li>Provide a platform for running applications</li>
+        <li>Perform back-end processing and storage</li>
+        <li>Always on, always available</li>
+        <li>Backbone of most organizations</li>
+      </ul>
+    </div>
+
+    <div id="common" class="step slide" data-x="3000" data-y="0">
+      <p class="centertext"><b>Common Application Servers</b><br><br></p>
+      <ul>
+        <li>Web - Apache, IIS, ngnix, Tomcat</li>
+        <li>Database - MySQL, Microsoft SQL, PostgreSQL</li>
+        <li>Email - Exchange, Postfix, Exim</li>
+        <li>Customer Relationship Management Software</li>
+        <li>Inventory & Accounting Software</li>
+      </ul>
+    </div>
+
+    <div id="web_servers" class="step slide" data-x="4000" data-y="0">
+      <p class="centertext"><b>Web Servers</b><br><br></p>
+      <ul>
+        <li>First created in 1989 by Tim Berners-Lee</li>
+        <li>Provides web pages via HTTP</li>
+        <li>Modern examples provide scripting support for dynamic webpages, virtual hosting, caching, etc</li>
+      </ul>
+    </div>
+
+    <div id="apache" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>Apache</b><br><br></p>
+      <ul>
+        <li>53% market share (May '13)</li>
+        <li>Key player in initial WWW growth</li>
+        <li>Cross platform (commonly Unix-like)</li>
+        <li>Many modules available</li>
+      </ul>
+    </div>
+
+    <div id="iis" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b>Internet Information Services (IIS)</b><br><br></p>
+      <ul>
+        <li>17% market share (May '13)</li>
+        <li>Microsoft's proprietary web server (NT)</li>
+        <li>Partially caused US v. Microsoft case</li>
+        <li>Some extensions available</li>
+        <li>Natively supports ASP.NET</li>
+      </ul>
+    </div>
+
+    <div id="ngnix" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>nginx</b><br><br></p>
+      <ul>
+        <li>15% market share (May '13)</li>
+        <li>Reverse proxy web server</li>
+        <li>Runs on Unix-like systems</li>
+        <li>High performance & concurrency</li>
+        <li>~2.5 MB memory per 10k inactive connections</li>
+      </ul>
+    </div>
+    
+    <div id="reverse_proxy" class="step" data-x="3000" data-y="900">
+      <p class="centertext"><b>Reverse Proxy</b></p>
+      <img class="centerimg" width="850" src="cis527spring2015/images/lecture18/proxy_wiki.svg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Reverse_proxy">Wikipedia</a></p>
+    </div>
+
+    <div id="database" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>Database Servers</b><br><br></p>
+      <ul>
+        <li>aka Database Management Systems (DBMSs)</li>
+        <li>Manages data storage definitions, updates, retrievals, and administration</li>
+        <li>May store data in files or on block devices</li>
+        <li>Supports some query language</li>
+      </ul>
+    </div>
+
+    <div id="mssql" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>Microsoft SQL Server</b><br><br></p>
+      <ul>
+        <li>68% of companies use MSSQL</li>
+        <li>Stand-alone software for Windows</li>
+        <li>Uses T-SQL for querying</li>
+        <li>Commonly used with IIS for web applications</li>
+      </ul>
+    </div>
+
+    <div id="mysql" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b>MySQL / MariaDB</b><br><br></p>
+      <ul>
+        <li>50% of companies use MySQL</li>
+        <li>Open source DBMS</li>
+        <li>Cross-platform</li>
+        <li>Now owned by Oracle</li>
+        <li>Typically used as part of the LAMP stack for web applications</li>
+      </ul>
+    </div>
+
+    <div id="postgres" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b>PostgreSQL</b><br><br></p>
+      <ul>
+        <li>Object-relational DBMS</li>
+        <li>Focuses on extensibility and standards compliance</li>
+        <li>Cross-platform</li>
+        <li>Used by Yahoo, State Farm, Disqus, etc.</li>
+      </ul>
+    </div>
+
+    <div id="mta" class="step slide" data-x="3000" data-y="1800">
+      <p class="centertext"><b>Email Server</b><br><br></p>
+      <ul>
+        <li>aka Message Transfer Agent</li>
+        <li>Handles transfer and delivery of email messages</li>
+        <li>Supports POP3, IMAP, SMTP and other protocols</li>
+      </ul>
+    </div>
+
+    <div id="exim" class="step slide" data-x="0" data-y="2700">
+      <p class="centertext"><b>Exim</b><br><br></p>
+      <ul>
+        <li>Open source, cross-platform MTA</li>
+        <li>Default MTA on many Linux systems</li>
+        <li>Used in many high-traffic systems</li>
+        <li>47% market share (2013)</li>
+      </ul>
+    </div>
+
+    <div id="postfix" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>Postfix</b><br><br></p>
+      <ul>
+        <li>Open source, cross-platform MTA</li>
+        <li>Developed as a replacement for Sendmail</li>
+        <li>Designed for high performance delivery (~2500/sec)</li>
+        <li>26% market share (2013)</li>
+      </ul>
+    </div>
+
+    <div id="exchange" class="step slide" data-x="2000" data-y="2700">
+      <p class="centertext"><b>Exchange</b><br><br></p>
+      <ul>
+        <li>Microsoft's email, calendar and contact management server</li>
+        <li>First used in 1995 by Microsoft itself</li>
+        <li>8% market share (2013)</li>
+      </ul>
+    </div>
+
+    <div id="others" class="step slide" data-x="3000" data-y="2700">
+      <p class="centertext"><b>Other Concerns</b><br><br></p>
+      <ul>
+        <li>Scripting Languages - PHP, Python, Perl, .NET, Ruby</li>
+        <li>Frameworks - Zend, Wiki, Drupal</li>
+        <li>Platforms - Rails, Tomcat, MS Dynamics</li>
+        <li>Applications - Wordpress, RT, Wiki</li>
+      </ul>
+    </div>
+
+    <div id="discussion_time" class="step slide" data-x="4000" data-y="2700">
+      <p class="centertext"><b>Discussion Time</b><br><br></p>
+      <ul>
+        <li>You are an IT administrator for a <b>large</b> insurance company</li>
+        <li>You have been tasked with reviewing a new CRM web application</li>
+        <br>
+        <li>List 5 questions or concerns</li>
+      </ul>
+    </div>
+
+    <div id="ideas" class="step slide" data-x="0" data-y="3600">
+      <p class="centertext"><b>Software Source</b><br><br></p>
+      <ul>
+        <li>Reputable Sources</li>
+        <li>Support Offerings</li>
+        <li>Company History</li>
+        <li>Coding Practices</li>
+        <li>Extensibility</li>
+      </ul>
+    </div>
+ 
+    <div id="ideas2" class="step slide" data-x="1000" data-y="3600">
+      <p class="centertext"><b>Installation</b><br><br></p>
+      <ul>
+        <li>Other Software/Tools Needed</li>
+        <li>Storage Requirements</li>
+        <li>Data Migration</li>
+        <li>Ease of Configuration</li>
+        <li>Testbeds & Beta Test</li>
+      </ul>
+    </div>
+
+    <div id="ideas3" class="step slide" data-x="2000" data-y="3600">
+      <p class="centertext"><b>Usage</b><br><br></p>
+      <ul>
+        <li>Network Security & Encryption</li>
+        <li>System Load & Balancing</li>
+        <li>Ease of Updates</li>
+        <li>Logging & Accountability</li>
+        <li>Evaluation - Meeting Needs?</li>
+      </ul>
+    </div>
+
+    <div id="heartbleed" class="step" data-x="3000" data-y="3600">
+      <p class="centertext"><b>Heartbleed</b></p>
+      <img class="centerimg" width="850" src="cis527spring2015/images/lecture18/heartbleed_xkcd.png">
+      <p class="imagecredit">Image Source: <a href="http://xkcd.com/1354/">Randall Munroe (XKCD)</a></p>
+    </div>
+
+    <div id="assignments" class="step slide" data-x="4000" data-y="3600" data-scale="1.0">
+        <p class="centertext"><b>Assignments</b></p>
+        <ul>
+            <li>Lab Help Session Fridays 9 - 10 AM!</li>
+            <li>Lab 5 - File & Application Servers - Due Sunday, April 13th by 12:30 PM</li>
+            <li>Set up a File & Web Server</li>
+            <li>Turn in:<ul>
+                <li>CIS Transient Storage</li>
+                <li>via Storage Media in class Monday April 13th</li>
+                </ul></li> 
+        </ul>
+    </div>
+
+
+    <div id="overview" class="step" data-x="2250" data-y="2000" data-scale="7.0">
+    </div>
+
+
+</div>
+
+<script src="js/analytics.js"></script>
+
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+
+</body>
+</html>

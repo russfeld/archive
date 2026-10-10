@@ -1,0 +1,403 @@
+<html lang="en">
+<head>
+    <link href="/favicon.ico" rel="shortcut icon">
+    <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+    <meta name="description" content="CIS 527 - Virtualization & Operating Systems" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 527 - Virtualization & Operating Systems</title>
+    <link href="/css/impress.css" rel="stylesheet" />
+    <link href="/css/TimeCircles.css" rel="stylesheet" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 527</b><br><br>Virtualization & Operating Systems</p>
+    </div>
+
+    <div id="compywork" class="step slide" data-x="1000" data-y="0">
+      <p class="centertext"><b>How a Computer Works<br><small>Simple Version</small><br></b></p>
+      <ul>
+        <li>The Operating System runs Software</li>
+        <li>The Operating System and software send instructions to the Hardware</li>
+        <li>The Hardware performs the operations instructed through electronic circuits</li>
+        <li>Data is stored and manipulated physically</li>
+      </ul>
+    </div>
+
+    <div id="vm_before" class="step" data-x="2000" data-y="0">
+      <img class="centerimg" height="600" src="images/vmware-before.png">
+      <p class="imagecredit">Image Source: <a href="https://www.vmware.com/pdf/virtualization.pdf">VMWare</a></p>
+    </div>
+
+    <div id="virtualization" class="step slide" data-x="3000" data-y="0">
+      <p class="centertext"><b>Virtualization<br><br></b></p>
+      <ul>
+        <li>Software that <i>emulates</i> computer hardware</li>
+        <li>Run multiple operating systems on a single piece of hardware</li>
+        <li>Easily migrate systems between different hardware setups</li>
+      </ul>
+    </div>
+
+    <div id="vm_after" class="step" data-x="4000" data-y="0">
+      <img class="centerimg" height="600" src="images/vmware-after.png">
+      <p class="imagecredit">Image Source: <a href="https://www.vmware.com/pdf/virtualization.pdf">VMWare</a></p>
+    </div>
+
+    <div id="types" class="step slide" data-x="5000" data-y="0">
+      <p class="centertext"><b>Types of Virtualization<br><br></b></p>
+      <ul>
+        <li>Hosted</li>
+        <li>Bare Metal (Hypervisor)</li>
+        <br>
+        <li>Hardware</li>
+        <li>Operating System (Containers)</li>
+        <li>Application (Sandboxing)</li>
+      </ul>
+    </div>
+
+    <div id="vm_hosted" class="step" data-x="0" data-y="900">
+      <img class="centerimg" height="600" src="images/vmware-hosted.png">
+      <p class="imagecredit">Image Source: <a href="https://www.vmware.com/pdf/virtualization.pdf">VMWare</a></p>
+    </div>
+
+    <div id="vm_bare" class="step" data-x="1000" data-y="900">
+      <img class="centerimg" height="600" src="images/vmware-bare.png">
+      <p class="imagecredit">Image Source: <a href="https://www.vmware.com/pdf/virtualization.pdf">VMWare</a></p>
+    </div>
+
+    <div id="virtualization3" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>Old & Busted<br><br></b></p>
+      <ul>
+        <li>One operating system per server</li>
+        <li>One server per application</li>
+        <li>Storage per-server</li>
+        <li>Lots of servers</li>
+        <li>Redundancy is difficult</li>
+        <li>Management nightmare</li>
+      </ul>
+    </div>
+
+    <div id="virtualization2" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>New Hotness<br><br></b></p>
+      <ul>
+        <li>Many operating systems on a single physical server</li>
+        <li>One virtual machine per application</li>
+        <li>Shared, virtual storage pools</li>
+        <li>Fewer physical servers</li>
+        <li>Easy redundancy</li>
+      </ul>
+    </div>
+
+    <div id="virtual" class="step" data-x="4000" data-y="900">
+      <p class="centertext"><b>VMWare Workstation</b></p>
+      <img class="centerimg" width="850" src="images/vmware.png">
+    </div>
+
+    <div id="others" class="step slide" data-x="5000" data-y="900">
+      <p class="centertext"><b>Other Virtual Machines<br><br></b></p>
+      <ul>
+        <li>Oracle VirtualBox</li>
+        <li>Hyper-V</li>
+        <li>KVM & Qemu</li>
+        <li>Parallels</li>
+        <li>Virtual PC</li>
+        <li>Xen</li>
+      </ul>
+    </div>
+
+    <div id="others2" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>Cloud Providers<br><br></b></p>
+      <ul>
+        <li>Digital Ocean</li>
+        <li>Azure</li>
+        <li>AWS (Amazon Web Services)</li>
+        <li>OpenStack</li>
+        <li>Rackspace</li>
+        <li>Linode</li>
+      </ul>
+    </div>
+
+    <div id="os" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b>Operating Systems<br><br></b></p>
+      <img class="centerimg" width="850" src="images/windows_logo_wiki.png">
+      <p><br></p>
+      <img class="centerimg" width="850" src="images/ubuntu_logo_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Microsoft_Windows">Wikipedia</a> and <a href="http://en.wikipedia.org/wiki/Ubuntu_(operating_system)">Wikipedia</a></p>
+    </div>
+
+    <div id="os_diagram" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b>Architecture</b></p>
+      <img class="centerimg" height="600" src="images/os_diagram1_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Operating_system">Wikipedia</a></p>
+    </div>
+
+    <div id="kernel_diagram" class="step slide" data-x="3000" data-y="1800">
+      <p class="centertext"><b>Kernel</b></p>
+      <img class="centerimg" height="600" src="images/kernel_diagram_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Operating_system">Wikipedia</a></p>
+    </div>
+
+    <div id="win10desktop" class="step" data-x="4000" data-y="1800">
+      <img class="centerimg" width="900" src="images/win10desktop_wiki.png">
+      <p class="imagecredit">Image Source: <a href="https://en.wikipedia.org/wiki/Microsoft_Windows">Wikipedia</a></p>
+    </div>
+
+    <div id="win_history" class="step slide" data-x="5000" data-y="1800">
+      <p class="centertext"><b>Windows History</b></p>
+      <ul>
+        <li>Originally a graphical shell for MS-DOS</li>
+        <li>Written in C, C++ and Assembly</li>
+        <li>Windows 95 was a huge success</li>
+        <li>Windows NT became Windows 2000, XP</li>
+        <li>Windows 10 is latest, runs on everything</li>
+      </ul>
+    </div>
+
+    <div id="win_tree" class="step" data-x="0" data-y="2700">
+      <img class="centerimg" width="900" src="images/wintree_wiki.png">
+      <p class="imagecredit">Image Source: <a href="https://en.wikipedia.org/wiki/Microsoft_Windows">Wikipedia</a></p>
+    </div>
+
+    <div id="winsetting" class="step" data-x="1000" data-y="2700">
+      <img class="centerimg" height="650" src="images/win10settings.png">
+    </div>
+
+    <div id="wincontrol" class="step" data-x="2000" data-y="2700">
+      <img class="centerimg" width="900" src="images/win10control.png">
+    </div>
+
+    <div id="winregistry" class="step" data-x="3000" data-y="2700">
+      <img class="centerimg" width="900" src="images/registry_wiki.png">
+      <p class="imagecredit">Image Source: <a href="https://en.wikipedia.org/wiki/Windows_Registry">Wikipedia</a></p>
+    </div>
+
+    <div id="winfile" class="step" data-x="4000" data-y="2700">
+      <img class="centerimg" height="650" src="images/windowsfile.png">
+    </div>
+
+    <div id="startup" class="step slide" data-x="5000" data-y="2700">
+      <p class="centertext"><b>Windows NT Startup</b></p>
+      <ul style="font-size: 45px !important; line-height: 50px">
+        <li>BIOS looks in the first sector for a bootloader (NTLDR)</li>
+        <li>NTLDR checks for hiberfil.sys. If so, resumes from hibernation</li>
+        <li>NTLDR check for boot.ini, displays boot menu to the user</li>
+        <li>NTLDR reads uses ntdetect.com to scan for hardware & collect info</li>
+        <li>The kernel is loaded, given hardware info, and assumes control</li>
+      </ul>
+    </div>
+
+    <div id="startup2" class="step slide" data-x="0" data-y="3600">
+      <p class="centertext"><b>Windows 10 Startup<br><br></b></p>
+      <ul style="font-size: 45px !important; line-height: 50px">
+        <li>Windows Boot Manager is started via EFI</li>
+        <li>It reads the Boot Configuration Data (BCD) from disk</li>
+        <li>BCD is stored on a special EFI partition in the same file format as the registry</li>
+        <li>Using that, it loads winload.exe to load the kernel and device drivers</li>
+        <li>The kernel assumes control</li>
+      </ul>
+    </div>
+
+    <div id="ubu14" class="step" data-x="1000" data-y="3600">
+      <img class="centerimg" width="900" src="images/ubuntu14.png">
+    </div>
+
+    <div id="history" class="step slide" data-x="2000" data-y="3600">
+      <p class="centertext"><b>Ubuntu History</b></p>
+      <ul>
+        <li>Based on the Debian Linux system</li>
+        <li>4.10 - Warty Warthog (Oct. 2004)</li>
+        <li>New releases every 6 months</li>
+        <li>14.04 - Trusty Tahr (LTS): 5 years of security updates</li>
+        <li>16.04 - Xenial Xerus due in April</li>
+      </ul>
+    </div>
+
+    <div id="linux_kernel" class="step" data-x="3000" data-y="3600">
+      <img class="centerimg" width="900" src="images/linuxarch_wiki.svg">
+      <p class="imagecredit">Image Source: <a href="https://en.wikipedia.org/wiki/Linux_distribution">Wikipedia</a></p>
+    </div>
+
+    <div id="linux_tree" class="skip" data-x="5000" data-y="5300">
+      <img class="centerimg" width="900" src="images/linuxtimeline_wiki.svg">
+      <p class="imagecredit">Image Source: <a href="https://en.wikipedia.org/wiki/Linux_distribution">Wikipedia</a></p>
+    </div>
+
+    <div id="linux_tree2" class="step" data-x="5000" data-y="3600"></div>
+
+    <div id="linux_tree3" class="step" data-x="5000" data-y="4300"></div>
+
+    <div id="linux_tree4" class="step" data-x="5000" data-y="5000"></div>
+
+    <div id="linux_tree5" class="step" data-x="5000" data-y="5700"></div>
+
+    <div id="linux_tree6" class="step" data-x="5000" data-y="6400"></div>
+
+    <div id="linux_tree7" class="step" data-x="5000" data-y="7000"></div>
+
+    <div id="history1" class="step slide" data-x="4000" data-y="3600">
+      <p class="centertext"><b>What is Linux?</b></p>
+      <ul>
+        <li>A free operating system kernel written to be compatible with Unix</li>
+        <li>Most use GNU implementations of core Unix utilities and programs</li>
+        <li>Linux Distributions tie a certain kernel to certain programs, utilities, and display managers</li>
+      </ul>
+    </div>
+
+    <div id="history2" class="step slide" data-x="0" data-y="4500">
+      <p class="centertext"><b>Linux History</b></p>
+      <ul>
+        <li>1971 - Unix released by Bell Labs</li>
+        <li>1983 - Richard Stallman creates GNU project to create free Unix utilities</li>
+        <li>1990 - GNU kernel project stalled</li>
+        <li>1991 - Linus Torvalds develops a kernel for use with GNU tools</li>
+        <li>1992 - Linux released under GPL License</li>
+      </ul>
+    </div>
+
+    <div id="history3" class="step slide" data-x="1000" data-y="4500">
+      <p class="centertext"><b>Linux History</b></p>
+      <ul>
+        <li>1993 - Slackware & Debian created</li>
+        <li>1994 - Version 1.0 of the kernel</li>
+        <li>1994 - Red Hat & SUSE released</li>
+        <li>1996 - Version 2.0, multiprocessor support</li>
+        <li>1998 - Compaq, IBM, & Oracle support Linux</li>
+      </ul>
+    </div>
+
+    <div id="parts" class="step slide" data-x="2000" data-y="4500">
+      <p class="centertext"><b>Major Ubuntu Components</b></p>
+      <ul>
+        <li>GNOME Desktop with Unity</li>
+        <li>System Settings</li>
+        <li>Software Center</li>
+        <li>File System Layout</li>
+        <li>Configuration Files</li>
+        <li>The <em>Dreaded</em> Terminal</li>
+        <li>Mir, Wayland, Upstart, Init, etc.</li>
+      </ul>
+    </div>
+
+    <div id="ubusettings" class="step" data-x="3000" data-y="4500">
+      <img class="centerimg" width="900" src="images/ubuntusettings.png">
+    </div>
+
+    <div id="ubufs" class="step slide" data-x="4000" data-y="4500">
+      <p class="centertext"><b>Filesystem Layout</b></p>
+      <ul>
+        <li>bin - Binary utilities</li>
+        <li>dev - Devices (as files!)</li>
+        <li>etc - Configuration files</li>
+        <li>home - User files</li>
+        <li>lib - Shared libraries</li>
+        <li>usr - User Programs</li>
+        <li>var - Variable data (logs)</li>
+      </ul>
+    </div>
+
+    <div id="fsimg" class="skip" data-x="0" data-y="5700">
+      <img class="centerimg" width="900" src="images/filesys_geekstuff.png">
+      <p class="imagecredit">Image Source: <a href="http://www.thegeekstuff.com/2010/09/linux-file-system-structure/">Geek Stuff</a></p>
+    </div>
+
+    <div id="fsimg1" class="step" data-x="0" data-y="5400"></div>
+
+    <div id="fsimg2" class="step" data-x="0" data-y="6000"></div>
+
+    <div id="configs" class="step slide" data-x="1000" data-y="5400">
+      <p class="centertext"><b>Configuration Files</b><br><br></p>
+      <ul>
+        <li>Most Linux programs store configuration in text files</li>
+        <li>They can be found in /etc</li>
+        <li>Usually requires administrator access to edit them</li>
+        <li>MAKE BACKUPS! BE CAREFUL!</li>
+      </ul>
+    </div>
+
+    <div id="other" class="step slide" data-x="2000" data-y="5400">
+      <p class="centertext"><b>Other Stuff</b></p>
+      <ul>
+        <li>X.org - Library for displaying GUI</li>
+        <li>Wayland - Replacing X on most distros</li>
+        <li>Mir - Ubuntu's replacement</li>
+        <li>init - System startup process</li>
+        <li>Upstart - Ubuntu's init replacement</li>
+        <li>systemd - New startup process, most distros (incl. Ubuntu) use it now</li>
+      </ul>
+    </div>
+
+    <div id="boot1" class="step slide" data-x="3000" data-y="5400">
+      <p class="centertext"><b>Ubuntu Boot Process</b></p>
+      <ul>
+        <li>BIOS looks for a bootloader in first sector of the disk</li>
+        <li>Typically either GRUB or LILO</li>
+        <li>The bootloader loads the kernel and the initial ramdisk (initrd)</li>
+        <li>The root filesystem is found, mounted, and init/upstart/systemd start loading processes</li>
+      </ul>
+    </div>
+
+    <div id="boot2" class="step slide" data-x="4000" data-y="5400">
+      <p class="centertext"><b>Ubuntu Boot Process</b></p>
+      <ul>
+        <li>The X window system is started</li>
+        <li>The desktop environment is loaded (GNOME, KDE, etc.)</li>
+        <li>Other services are loaded in parallel</li>
+        <li>The system is ready for use</li>
+      </ul>
+    </div>
+
+    <div id="installation" class="step slide" data-x="-800" data-y="-220" data-scale="0.5">
+      <p class="centertext"><b>OS Installation<br><br></b></p>
+      <ol>
+        <li>Partition the disk</li>
+        <li>Copy installation files</li>
+        <li>Extract & install</li>
+        <li>Configure basic settings</li>
+        <li>Reboot</li>
+      </ol>
+    </div>
+
+    <div id="installation" class="step slide" data-x="-800" data-y="220" data-scale="0.5">
+      <p class="centertext"><b>Next Week<br><br></b></p>
+      <ul>
+        <li>Command Line Interfaces & Scripts</li>
+        <li>Users & Groups</li>
+        <li>File System Permissions</li>
+        <li>Software</li>
+        <li>Security</li>
+      </ul>
+    </div>
+
+    <div id="overview" class="step" data-x="2000" data-y="2700" data-z="-1" data-scale="8.5">
+    </div>
+
+</div>
+
+<script src="/js/analytics.js"></script>
+<script src="/js/impress.js"></script>
+<script>impress().init();</script>
+<script src="/js/jquery-1.10.2.min.js"></script>
+<script src="/js/TimeCircles.js"></script>
+<script src="/js/timer.js"></script>
+<script src="/js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+
+
+
+</body>
+</html>

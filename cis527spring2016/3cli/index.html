@@ -1,0 +1,481 @@
+<html lang="en">
+<head>
+    <link href="/favicon.ico" rel="shortcut icon">
+    <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+    <meta name="description" content="CIS 527 - Command Line Interfaces & Simple Scripts" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 527 - Command Line Interfaces & Simple Scripts</title>
+    <link href="/css/impress.css" rel="stylesheet" />
+    <link href="/css/TimeCircles.css" rel="stylesheet" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 527</b><br><br>Command Line Interfaces & Simple Scripts</p>
+    </div>
+
+    <div id="linux_commands" class="step slide" data-x="1000" data-y="0">
+      <p class="centertext"><b>Linux Commands</b></p>
+      <ul>
+        <li>pwd - Get current directory</li>
+        <li>cd - Change directory</li>
+        <li>ls - List files</li>
+        <li>mkdir - Make new directory</li>
+        <li>rmdir - Remove directory</li>
+        <li>rm - Remove file</li>
+        <li>cp - Copy file</li>
+        <li>mv - Move file</li>
+      </ul>
+    </div>
+
+    <div id="linux_commands_2" class="step slide" data-x="2000" data-y="0">
+      <p class="centertext"><b>Linux Commands 2</b></p>
+      <ul>
+        <li>grep - Search for text</li>
+        <li>wc - Get word count</li>
+        <li>cat - Print files</li>
+        <li>sort - Sort items</li>
+        <li>apropos - Find commands</li>
+        <li>whereis - Find command location</li>
+        <li>whatis - Find command descriptions</li>
+        <li>man - Find command help</li>
+      </ul>
+    </div>
+
+    <div id="linux_commands_3" class="step slide" data-x="3000" data-y="0">
+      <p class="centertext"><b>Linux File Permissions</b></p>
+      <ul>
+        <li>ls -al - Find file permissions<ul>
+          <li>[user][group][others]</li>
+          <li>r = read; w = write; x = execute</li>
+          <li>rwxr--r--</li>
+        </ul></li>
+        <li>chmod - Change file permissions</li>
+        <li>chown - Change file ownership</li>
+        <li>sudo - Run as administrator</li>
+        <li>script - Record commands in text file</li>
+      </ul>
+    </div>
+
+    <div id="power_shell_commands" class="step slide" data-x="4000" data-y="0">
+      <p class="centertext"><b>PowerShell Commands</b></p>
+      <ul>
+        <li>Get-Location - Get current directory</li>
+        <li>Set-Location - Change directory</li>
+        <li>Get-ChildItem - List files</li>
+        <li>New-Item - Make new directory</li>
+        <li>Remove-Item - Remove directory</li>
+        <li>Remove-Item - Remove file</li>
+        <li>Copy-Item - Copy file</li>
+        <li>Move-Item - Move file</li>
+      </ul>
+    </div>
+
+    <div id="power_shell_commands_2" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>PowerShell Commands 2</b></p>
+      <ul>
+        <li>Select-String - Search for text</li>
+        <li>Measure-Object - Get word count</li>
+        <li>Get-Content - Print files</li>
+        <li>Sort-Object - Sort items</li>
+        <li>Get-Command - Find commands</li>
+        <li>Where-Object - Find object location</li>
+        <li>Get-Help - Find command descriptions</li>
+        <li>Get-Help - Find command help</li>
+      </ul>
+    </div>
+
+    <div id="power_shell_commands_3" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b>PowerShell Commands 3</b></p>
+      <ul>
+        <li>Get-Alias - Find Aliases for commands</li>
+        <li>Select-Object - Get parts of output</li>
+        <li>Out-GridView - Output to a grid view</li>
+        <li>Out-File - Output to a file</li>
+        <li>Add-Content - Add content to files</li>
+        <li>Add-Item - Create new files/folders</li>
+        <li>'-Whatif' flag - See command steps</li>
+        <li>Start-Transcript - Record commands</li>
+      </ul>
+    </div>
+
+    <div id="file_output" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>File Output</b></p>
+      <ul>
+        <li>&gt;    Output to a file (overwrite)</li>
+        <li>&gt;&gt;    Output to a file (append)</li>
+        <li>|    Pass output of one command to another</li>
+      </ul>
+    </div>
+
+    <div id="special_dirs" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>Special Directories</b></p>
+      <ul>
+  <li> ./    Current Directory</li>
+  <li> ../    Parent Directory</li>
+  <li> ~/    Home Directory</li>
+  <li> /    System Root</li>
+  <li> -    Previous Directory (Linux)</li>
+  <li> $HOME\    Home Directory (Windows)</li>
+      </ul>
+    </div>
+
+
+    <div id="building" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>Building Shell Scripts<br><br></b></p>
+      <p>Open a new file using a text editor</p>
+      <pre><code style="font-size:50px; line-height:53px">$ nano script.sh</code></pre>
+      <p><br>Add the following header at the top</p>
+      <pre><code style="font-size:50px; line-height:53px">#!/bin/bash</code></pre>
+    </div>
+
+    <div id="saving" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>Building Shell Scripts<br><br></b></p>
+      <p>Input commands below (1 per line)</p>
+      <pre><code style="font-size:50px; line-height:53px">cd ~/bin
+ls -al</code></pre>
+      <p><br>Save the file (CTRL + X) and run</p>
+      <pre><code style="font-size:50px; line-height:53px">$ chmod u+x ./script.sh
+$ ./script.sh</code></pre>
+    </div>
+
+    <div id="hello1" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b>Shell Hello World<br><br></b></p>
+      <pre><code style="font-size:50px; line-height:53px">#!/bin/bash
+
+echo "Hello World"
+exit 0</code></pre>
+    </div>
+
+    <div id="hello2" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b>Shell Hello World<br><br></b></p>
+      <pre><code style="font-size:50px; line-height:53px">echo "Hello World"</code></pre>
+      <p>echo prints text<br><br></p>
+      <pre><code style="font-size:50px; line-height:53px">exit 0</code></pre>
+      <p>exit stops the command</p>
+    </div>
+
+    <div id="simple" class="step slide" data-x="3000" data-y="1800">
+      <p class="centertext"><b>Simple Script</b></p>
+      <pre><code style="font-size:37px; line-height:38px">#!/bin/bash
+#batman.sh
+
+if (( $# < 1 || $# > 1 )); then
+  echo "Usage: batman.sh &lt;name&gt;"
+  exit 1
+fi
+
+if [ "$1" = "Batman" ]; then
+  echo "Hello Mr. Wayne"
+elif [ "$1" = "Robin" ]; then
+  echo "Welcome back Mr. Grayson"
+else
+  echo "Intruder alert!"
+fi
+exit 0</code></pre>
+    </div>
+
+    <div id="parameters" class="step slide" data-x="4000" data-y="1800">
+      <p class="centertext"><b>Shell Script Parameters<br><br></b></p>
+      <pre><code style="font-size:45px; line-height:53px">$1 - First Parameter
+$2 - Second Parameter
+...
+${10} - Tenth Parameter
+${11} - Eleventh Parameter
+
+$# - Number of Parameters
+$* - All Parameters (as String)</code></pre>
+    </div>
+
+    <div id="conditionals" class="step slide" data-x="0" data-y="2700">
+      <p class="centertext"><b>Conditionals<br><br></b></p>
+      <pre><code style="font-size:45px; line-height:53px">if (( $# < 1 || $# > 1 )); then</code></pre>
+      <p>Double parens for arithmetic evaluation<br><br></p>
+      <pre><code style="font-size:50px; line-height:53px">if [ "$1" = "Batman" ]; then</code></pre>
+      <p>Square brackets for logical test<br>(using Linux 'test' command)</p>
+    </div>
+
+    <div id="loops" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>Loop Script<br><br></b></p>
+      <pre><code style="font-size:50px; line-height:53px">#!/bin/bash
+#listfiles.sh
+
+files=`ls $* 2> /dev/null`
+for afile in "$files"; do
+    echo "$afile"
+done
+exit 0
+</code></pre>
+    </div>
+
+    <div id="loops2" class="step slide" data-x="2000" data-y="2700">
+      <p class="centertext"><b>Loops<br><br></b></p>
+      <pre><code style="font-size:50px; line-height:53px">files=`ls $* 2> /dev/null`</code></pre>
+      <p>Declares a new variable $files<br>Backticks (`) get output of command<br><br></p>
+      <pre><code style="font-size:50px; line-height:53px">for afile in "$files"; do</code></pre>
+      <p>Perfom commands below once for each item in $files</p>
+    </div>
+
+    <div id="path" class="step slide" data-x="3000" data-y="2700">
+      <p class="centertext"><b>Environment Variables<br><br></b></p>
+      <p>Stores information about the system that can be used in scripts<br><br></p>
+      <pre><code style="font-size:50px; line-height:53px">$ printenv</code></pre>
+      <p>Prints the current environment variables<br><br></p>
+    </div>
+
+    <div id="path2" class="step slide" data-x="4000" data-y="2700">
+      <p class="centertext"><b>PATH Variable<br><br></b></p>
+      <p>Tells your system where to look for binary files and scripts<br><br></p>
+      <pre><code style="font-size:45px; line-height:53px">$ export PATH=$PATH:$HOME/bin</code></pre>
+      <p>Add a folder to the path<br>(Add this line to ~/.bashrc to make it permanent)<br></p>
+    </div>
+
+    <div id="building_ps" class="step slide" data-x="0" data-y="3600">
+      <p class="centertext"><b>Building PowerShell Scripts<br><br></b></p>
+      <p>Open the PowerShell ISE (search for it on the Start menu)<br>You can also use a text editor such as Notepad<br>To be able to run them, open an Administrative Powershell and enter "Set-ExecutionPolicy Unrestricted"</p>
+    </div>
+
+    <div id="psscripts" class="step slide" data-x="1000" data-y="3600">
+      <p class="centertext"><b>PowerShell Scripts<br><br></b></p>
+      <pre><code style="font-size:50px; line-height:53px">Write-Host "Hello World"
+return</code></pre>
+    </div>
+
+    <div id="psparameters" class="step slide" data-x="2000" data-y="3600">
+      <p class="centertext"><b>PowerShell Parameters<br><br></b></p>
+      <pre><code style="font-size:50px; line-height:53px">Param(
+  [string]$computerName,
+  [string]$userName
+)</code></pre>
+    </div>
+
+    <div id="pssimple" class="step slide" data-x="3000" data-y="3600">
+      <p class="centertext"><b>Simple Script</b></p>
+      <pre><code style="font-size:30px; line-height:34px">Param(
+  [string]$user
+)
+if ( -not ($user)){
+    Write-Host "Usage: batman.ps1 &lt;name&gt;"
+    return
+}
+if ($user.CompareTo("Batman") -eq 0){
+    Write-Host "Hello Mr. Wayne"
+}else{
+    if ($user.CompareTo("Robin") -eq 0){
+        Write-Host "Welcome back Mr. Grayson"
+    }else{
+        Write-Host "Intruder alert!"
+    }
+}
+return</code></pre>
+    </div>
+
+    <div id="psloops" class="step slide" data-x="4000" data-y="3600">
+      <p class="centertext"><b>Loop Script<br><br></b></p>
+      <pre><code style="font-size:37px; line-height:40px">param(
+  [string]$path
+)
+
+$files = Get-ChildItem $path
+
+foreach($file in $files){
+    Write-Host $file.name
+}
+</code></pre>
+    </div>
+
+    <div id="envars" class="step slide" data-x="0" data-y="4500">
+      <p class="centertext"><b>Environment Variables<br><br></b></p>
+      <p>Control Panel &gt; System and Security &gt; System &gt; Advanced System Settings &gt; Environment Variables</p>
+      <p><br>Add a new variable called PATH to the user variables and give it the value "C:\Users\cis527\bin"</p>
+    </div>
+
+ <div id="review_sh" class="step slide" data-x="1000" data-y="4500">
+      <p class="centertext"><b>Review</b><br><br></p>
+      <ul>
+        <li>Printing Text</li>
+        <li>Accepting Parameters</li>
+        <li>If Statements</li>
+        <li>Looping</li>
+        <li>Environment Variables</li>
+      </ul>
+    </div>
+
+    <div id="select" class="step slide" data-x="2000" data-y="4500">
+      <p class="centertext"><b>Select Statement</b></p>
+      <pre><code style="font-size:30px; line-height:32px">#!/bin/bash
+#simplemenu.sh
+OPTIONS="Build Run Clean Quit"
+select opt in $OPTIONS; do
+  if [ "$opt" = "Build" ]; then
+    echo "Building project..."
+  elif [ "$opt" = "Run" ]; then
+    echo "Running project..."
+  elif [ "$opt" = "Clean" ]; then
+    echo "Cleaning project..."
+  elif [ "$opt" = "Quit" ]; then
+    echo "Exiting..."
+    break
+  else
+    echo "Invalid Input"
+  fi
+done
+exit 0</code></pre>
+    </div>
+
+    <div id="select_screenshot" class="step slide" data-x="3000" data-y="4500">
+      <p class="centertext"><b>Select Statement</b></p>
+      <img class="centerimg" width="850" src="images/ubuntu_select.png">
+    </div>
+
+    <div id="user_input" class="step slide" data-x="4000" data-y="4500">
+      <p class="centertext"><b>User Input</b><br><br></p>
+      <pre><code style="font-size:35px; line-height:43px">#!/bin/bash
+#simpleinput.sh
+echo "Input your name and press [ENTER]"
+read name
+echo "Welcome $name!"
+exit 0</code></pre>
+    </div>
+
+    <div id="input_screenshot" class="step slide" data-x="0" data-y="5400">
+      <p class="centertext"><b>User Input</b><br><br></p>
+      <img class="centerimg" width="850" src="images/ubuntu_userinput.png">
+    </div>
+
+    <div id="cron" class="step slide" data-x="1000" data-y="5400">
+      <p class="centertext"><b>Scheduling Tasks - Cron</b><br><br></p>
+      <p>Cron allows you to schedule tasks to run a specific times<br><br>Very useful for tasks that need done regularly</p>
+    </div>
+
+    <div id="cron_howto" class="step slide" data-x="2000" data-y="5400">
+      <p class="centertext"><b>Cron HowTo</b></p>
+      <pre><code style="font-size:45px; line-height:43px">$ crontab -e</code></pre>
+      <p>Edit the current cron schedule<br><br></p>
+      <pre><code style="font-size:45px; line-height:43px">$ crontab -l</code></pre>
+      <p>View the current cron schedule<br><br></p>
+      <pre><code style="font-size:45px; line-height:43px">$ sudo crontab -e</code></pre>
+      <p>Edit the root cron schedule</p>
+    </div>
+
+    <div id="crontab" class="step slide" data-x="3000" data-y="5400">
+      <p class="centertext"><b>Crontab</b><br><br></p>
+      <img class="centerimg" width="850" src="images/ubuntu_crontab.png">
+    </div>
+
+    <div id="crontab_times" class="step slide" data-x="4000" data-y="5400">
+      <p class="centertext"><b>Crontab Timing</b></p>
+      <ul>
+        <li><code style="font-size:35px; line-height:38px">m h dom mon dow</code></li>
+        <li><code style="font-size:35px; line-height:38px">15 5 * * 0</code> 5:15 AM every Sunday (0)</li>
+        <li><code style="font-size:35px; line-height:38px">*/10 8 - 16 * * 1-5</code> every 10 min 8AM - 5PM weekdays</li>
+        <li><code style="font-size:35px; line-height:38px">0 0 1 1 1</code> run at 12:00 AM every January 1 and every Monday</li>
+        <li><code style="font-size:35px; line-height:38px">@reboot</code> run once, after system starts</li>
+    </div>
+
+    <div id="powershell_menu" class="step slide" data-x="0" data-y="6300">
+      <p class="centertext"><b>PowerShell Menu</b></p>
+      <pre><code style="font-size:21px; line-height:23px">$title = "Select Options"
+$message = "Choose an option to perform"
+$build = New-Object `
+  System.Management.Automation.Host.ChoiceDescription `
+  "&Build", "Build the project"
+$run = New-Object `
+  System.Management.Automation.Host.ChoiceDescription `
+  "&Run", "Run the project"
+$clean = New-Object `
+  System.Management.Automation.Host.ChoiceDescription `
+  "&Clean", "Clean the project"
+$quit = New-Object `
+  System.Management.Automation.Host.ChoiceDescription `
+  "&Quit", "Quit"
+$options = `
+  [System.Management.Automation.Host.ChoiceDescription[]] `
+  ($build, $run, $clean, $quit)
+$result = $host.ui.PromptForChoice($title, $message, $options, 0)
+switch ($result)
+{
+    0 {"You selected Build"}
+    1 {"You selected Run"}
+    2 {"You selected Clean"}
+    3 {"You selected Quit"}
+}</code></pre>
+    </div>
+
+    <div id="powershell_menu_ex" class="step slide" data-x="1000" data-y="6300">
+      <p class="centertext"><b>PowerShell Menu</b><br><br></p>
+      <img class="centerimg" width="850" src="images/windows_menu.png">
+    </div>
+
+    <div id="powershell_input" class="step slide" data-x="2000" data-y="6300">
+      <p class="centertext"><b>PowerShell Input</b><br><br></p>
+      <pre><code style="font-size:35px; line-height:37px">$name = Read-Host `
+    "Input your name and press [ENTER]"
+Write-Host "Welcome $name!"</code></pre>
+    </div>
+
+    <div id="powershell_input_ex" class="step slide" data-x="3000" data-y="6300">
+      <p class="centertext"><b>PowerShell Input</b><br><br></p>
+      <img class="centerimg" width="850" src="images/windows_input.png">
+    </div>
+
+    <div id="windows_schedule_task" class="step slide" data-x="4000" data-y="6300">
+      <p class="centertext"><b>Windows Task Scheduler</b></p>
+      <img class="centerimg" width="850" src="images/windows_schedule.png">
+    </div>
+
+    <div id="windows_create_task" class="step slide" data-x="0" data-y="7200">
+      <p class="centertext"><b>Windows Create Task</b></p>
+      <img class="centerimg" height="600" src="images/windows_newtask.png">
+    </div>
+
+    <div id="windows_create_task2" class="step slide" data-x="1000" data-y="7200">
+      <p class="centertext"><b>Windows Create Task</b></p>
+      <img class="centerimg" height="600" src="images/windows_newtask2.png">
+    </div>
+
+    <div id="windows_create_task3" class="step slide" data-x="2000" data-y="7200">
+      <p class="centertext"><b>Windows Create Task</b></p>
+      <img class="centerimg" height="600" src="images/windows_newtask3.png">
+    </div>
+
+    <div id="assignments" class="step slide" data-x="3000" data-y="7200">
+      <p class="centertext"><b>Assignments</b><br><br></p>
+      <ul>
+        <li>Lab 1 - Building Secure Workstations: Due Monday Feb 1st by 11:30 AM</li>
+      </ul>
+    </div>
+
+    <div id="overview" class="step" data-x="2000" data-y="3600" data-z="-1" data-scale="10.5">
+    </div>
+
+</div>
+
+<script src="/js/analytics.js"></script>
+<script src="/js/impress.js"></script>
+<script>impress().init();</script>
+<script src="/js/jquery-1.10.2.min.js"></script>
+<script src="/js/TimeCircles.js"></script>
+<script src="/js/timer.js"></script>
+<script src="/js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+
+
+
+</body>
+</html>

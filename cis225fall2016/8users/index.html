@@ -1,0 +1,285 @@
+<html lang="en">
+<head>
+    <link href="/favicon.ico" rel="shortcut icon">
+    <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+    <meta name="description" content="CIS 225 - User Account Management" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 225 - User Accont Management</title>
+    <link href="/css/impress.css" rel="stylesheet" />
+    <link href="/css/TimeCircles.css" rel="stylesheet" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 225</b><br><br>User Account Management</p>
+    </div>
+
+    <div id="users" class="step slide" data-x="1000" data-y="0">
+      <p class="centertext"><b>User Accounts</b><br><br></p>
+      <ul>
+        <li>Allows multiple people to share resources</li>
+        <li>Each user can have different permissions</li>
+        <li>Aids in auditing (who did what)</li>
+        <li>Protects system from unauthorized use</li>
+      </ul>
+    </div>
+
+    <div id="authorize_authenticate" class="step slide" data-x="2000" data-y="0">
+      <p class="centertext"><b>Authentication vs. Authorization</b><br><br></p>
+      <ul>
+        <li><b>Authentication</b> - Confirming a user is who he or she claims to be (logging in)</li>
+        <li><b>Authorization</b> - Allow an authenticated user access to specific resources</li>
+        <li>Authentication <b>DOES NOT IMPLY</b> Authorization</li>
+      </ul>
+    </div>
+
+    <div id="authenticate" class="step slide" data-x="3000" data-y="0">
+      <p class="centertext"><b>Authentication Methods</b><br><br></p>
+      <p>One or more of the following factors</p>
+      <ul>
+        <li>Ownership factors - something user has</li>
+        <li>Knowledge factors - something user knows</li>
+        <li>Inherence factors - something user is or does</li>
+      </ul>
+    </div>
+
+    <div id="authorize" class="step slide" data-x="4000" data-y="0">
+      <p class="centertext"><b>Authorization Methods</b><br><br></p>
+      <ul>
+        <li>Security Policies</li>
+        <li>Access Control Lists (ACL)</li>
+        <li>File System Security Settings</li>
+      </ul>
+    </div>
+
+    <div id="user_accounts" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>User Identification</b><br><br></p>
+      <ul>
+        <li>Operating systems refer to users by a unique identifier<ul>
+          <li>Linux: user identifier (UID)</li>
+          <li>Windows: security identifier (SID)</li></ul></li>
+        <li>This allows user to change usernames without affecting the account</li>
+      </ul>
+    </div>
+
+    <div id="identification" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b>User Account Information</b><br><br></p>
+      <ul>
+        <li>UID / SID</li>
+        <li>Username</li>
+        <li>Password</li>
+        <li>Home directory</li>
+        <li>Group(s)</li>
+      </ul>
+    </div>
+
+    <div id="groups" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>Groups</b><br><br></p>
+      <ul>
+        <li>List of user accounts</li>
+        <li>Aid in assigning access to users</li>
+        <li>Each user may be a part of one or many groups</li>
+        <li>Unique identifier<ul>
+          <li>Linux: group identifier (GID)</li>
+          <li>Windows: security identifier (SID)</li></ul></li>
+      </ul>
+    </div>
+
+    <div id="win10_setting" class="step" data-x="3000" data-y="900">
+      <p class="centertext"><b>Windows 10 - Settings</b></p>
+      <img class="centerimg" height="600" src="images/win10settings.png">
+    </div>
+
+    <div id="win10_control" class="step" data-x="4000" data-y="900">
+      <p class="centertext"><b>Windows 10 - Control Panel</b></p>
+      <img class="centerimg" height="600" src="images/win10control.png">
+    </div>
+
+    <div id="win10_manage" class="step" data-x="5000" data-y="900">
+      <p class="centertext"><b>Windows 10 - Management</b></p>
+      <img class="centerimg" height="600" src="images/win10manage.png">
+    </div>
+
+    <div id="win_default_accounts" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>Windows 10 Default Accounts</b></p>
+      <ul>
+        <li><b>Administrator</b><ul>
+          <li>Access to <em>everything</em></li>
+          <li>Cannot be deleted</li>
+          <li>Disabled by default</li>
+          <li><em><b>Has no password by default</b></em></li></ul></li>
+        <li><b>Guest</b><ul>
+          <li>Limited access</li>
+          <li>Disabled by default</li></ul></li>
+      </ul>
+    </div>
+
+    <div id="win_pseudo_accounts" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b>Windows 10 Pseudo Accounts</b></p>
+      <ul>
+        <li><b>LocalSystem</b> - system-level tasks & services</li>
+        <li><b>LocalService</b> - fewer rights than LocalSystem</li>
+        <li><b>NetworkService</b> - fewer rights than LocalService, but allows network access</li>
+      </ul>
+    </div>
+
+    <div id="win8_default_groups" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b>Windows 10 Default Groups</b></p>
+      <ul>
+        <li><b>Administrators</b> - complete access</li>
+        <li><b>Event Log Readers</b> - read event logs</li>
+        <li><b>Guests</b> - access system only</li>
+        <li><b>Power Users</b> - <em>not used</em></li>
+        <li><b>Remote Desktop Users</b> - log on remotely</li>
+        <li><b>Users</b> - normal users</li>
+      </ul>
+      <p>Many others, refer to documentation</p>
+    </div>
+
+    <div id="win8_uac" class="step slide" data-x="3000" data-y="1800">
+      <p class="centertext"><b>User Account Control</b></p>
+      <ul>
+        <img class="centerimg" width="400" src="images/win10uac.png">
+        <li>Protects the system from unwanted changes</li>
+        <li>Allows administrators to run commands from a non-administrator account</li>
+      </ul>
+    </div>
+
+    <div id="win8_gpedit" class="step slide" data-x="4000" data-y="1800">
+      <p class="centertext"><b>Local Group Policy Editor</b></p>
+      <p class="centertext" style="font-size:40px">WIN+R - gpedit.msc</p>
+      <img class="centerimg" height="530" src="images/win10gpedit.png">
+    </div>
+
+    <div id="ubuntu_acct" class="step slide" data-x="0" data-y="2700">
+      <p class="centertext"><b>Ubuntu Account Types</b></p>
+      <ul style="line-height: 70px">
+        <li>Super User (root)<ul>
+          <li>Complete control of the system</li>
+          <li>Disabled by default on Ubuntu</li>
+          <li>UID = 0; GID = 0</li></ul></li>
+        <li>Regular User<ul>
+          <li>User who can log on to the system</li></ul></li>
+        <li>System User<ul>
+          <li>Used by programs and services to interact with the system</li></ul></li>
+      </ul>
+    </div>
+
+    <div id="ubuntu_acct2" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>Ubuntu Accounts</b><br><br></p>
+      <p>Regular Users:</p>
+      <ul>
+        <li>UID: starting at 1000 and up</li>
+        <li>Each account has a private group created with matching GID and is made a member of that group</li>
+        <li>Each account receives a skeleton directory in /home
+      </ul>
+    </div>
+
+    <div id="ubuntu_accounts" class="step" data-x="2000" data-y="2700">
+      <p class="centertext"><b>Ubuntu Accounts - System Settings</b></p>
+      <img class="centerimg" width="850" src="images/ubuntuusers.png">
+    </div>
+
+    <div id="ubuntu_accounts1" class="step" data-x="3000" data-y="2700">
+      <p class="centertext"><b>Ubuntu Accounts - Users & Groups</b></p>
+      <p class="centertext" style="font-size: 40px; line-height:45px">Install "gnome-system-tools"</p>
+      <img class="centerimg" height="500" src="images/ubuntuusersgroups.png">
+    </div>
+
+    <div id="ubuntu_accounts2" class="step" data-x="4000" data-y="2700">
+      <p class="centertext"><b>/etc/passwd</b></p>
+      <img class="centerimg" width="850" src="images/ubuntupasswd.png">
+    </div>
+
+    <div id="ubuntu_accounts3" class="step" data-x="5000" data-y="2700">
+      <p class="centertext"><b>/etc/shadow</b></p>
+      <img class="centerimg" width="850" src="images/ubuntushadow.png">
+    </div>
+
+    <div id="ubuntu_accounts4" class="step" data-x="0" data-y="3600">
+      <p class="centertext"><b>/etc/group</b></p>
+      <img class="centerimg" width="850" src="images/ubuntugroups.png">
+    </div>
+
+    <div id="commands" class="step slide" data-x="1000" data-y="3600">
+      <p class="centertext"><b>Commands</b></p>
+      <ul style="line-height: 60px">
+        <li>groupadd - add a group</li>
+        <li>groupdel - remove a group</li>
+        <li>groupmod - modify group</li>
+        <li>gpasswd - change group administrator or password</li>
+        <li>useradd - add a system user</li>
+        <li>userdel - remove a user</li>
+        <li>usermod - modify a user</li>
+        <li><b>adduser - add a regular user</b></li>
+        <li>passwd - change password</li>
+      </ul>
+    </div>
+
+    <div id="sudo" class="step slide" data-x="2000" data-y="3600">
+      <p class="centertext"><b>sudo</b><br><br></p>
+      <ul>
+        <li>Short for "super user do"</li>
+        <li>Allows regular users to run commands as root user</li>
+        <li>User and rights listed in /etc/sudoers</li>
+        <li>Add users to the "sudo" or "admin" group to give them access</li>
+        <li>Use 'visudo' command to edit file</li>
+      </ul>
+    </div>
+
+    <div id="best_prac" class="step slide" data-x="3000" data-y="3600">
+      <p class="centertext"><b>Best Practices</b></p>
+      <ul>
+        <li>Each person must have a unique account</li>
+        <li>Enforce strong passwords & regular changes</li>
+        <li>Assign minimal rights by default</li>
+        <li>Log any logins/logouts/sudo usage</li>
+        <li>Remove unneeded users ASAP</li>
+        <li>Don't use admin account for daily use</li>
+      </ul>
+    </div>
+
+    <div id="reading" class="step slide" data-x="4000" data-y="3600">
+      <p class="centertext"><b>Reading</b><br><br></p>
+      See Class Website:
+      <p style="font-size:40px"><a href="/cis225fall2016/">http://people.cis.ksu.edu/~russfeld/cis225fall2016/</a></p>
+    </div>
+
+    <div id="assignments" class="step slide" data-x="5000" data-y="3600">
+      <p class="centertext"><b>Assignments</b><br><br></p>
+      <ul>
+        <li>Lab 3 - User Accounts & File Systems<br>Due 9/19 11:30 AM <b>Before Lecture!!</b></li>
+      </ul>
+    </div>
+
+    <div id="overview" class="step" data-x="2000" data-y="1800" data-z="-1" data-scale="6">
+    </div>
+
+</div>
+
+<script src="/js/analytics.js"></script>
+<script src="/js/impress.js"></script>
+<script>impress().init();</script>
+<script src="/js/jquery-1.10.2.min.js"></script>
+<script src="/js/TimeCircles.js"></script>
+<script src="/js/timer.js"></script>
+<script src="/js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+
+</body>
+</html>

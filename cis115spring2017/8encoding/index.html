@@ -1,0 +1,830 @@
+<html lang="en">
+<head>
+    <link href="/favicon.ico" rel="shortcut icon">
+    <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+    <meta name="description" content="CIS 115 - Encoding Data" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 115 - Encoding Data</title>
+    <link href="/css/highlight/github.css" rel="stylesheet" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/impress.css" rel="stylesheet" />
+    <link href="/css/TimeCircles.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="0">
+        <p><b>CIS 115</b><br><br>Encoding Data</p>
+    </div>
+
+    <div id="leibniz" class="step" data-x="1250" data-y="-225" data-scale="0.4">
+      <p class="centertext"><b>Gottfried Willhelm von Leibniz</b></p>
+      <img class="centerimg" height="600" src="images/leibniz_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz">Wikipedia</a></p>
+    </div>
+
+    <div id="boole" class="step" data-x="750" data-y="-225" data-scale="0.4">
+      <p class="centertext"><b>George Boole</b></p>
+      <img class="centerimg" height="600" src="images/boole_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/George_Boole">Wikipedia</a></p>
+    </div>
+
+    <div id="babbage" class="step" data-x="750" data-y="225" data-scale="0.4">
+      <p class="centertext"><b>Charles Babbage</b></p>
+      <img class="centerimg" height="600" src="images/babbage_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Charles_Babbage">Wikipedia</a></p>
+    </div>
+
+    <div id="shannon" class="step" data-x="1250" data-y="225" data-scale="0.4">
+      <p class="centertext"><b>Claude Shannon</b></p>
+      <img class="centerimg" height="600" src="images/shannon_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Claude_Shannon">Wikipedia</a></p>
+    </div>
+
+    <div id="stibitz" class="step" data-x="2000" data-y="0">
+      <p class="centertext"><b>George Stibitz</b></p>
+      <img class="centerimg" height="600" src="images/stibitz_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/George_Stibitz">Wikipedia</a></p>
+    </div>
+
+    <div id="cnc" class="step" data-x="3000" data-y="0">
+      <p class="centertext"><b>Complex Numerical Calculator</b></p>
+      <img class="centerimg" height="600" src="images/cnc_comphistory.jpg">
+      <p class="imagecredit">Image Source: <a href="http://www.computerhistory.org/timeline/?category=cmptr">Computer History Museum</a></p>
+    </div>
+
+    <div id="stibitz_video" class="step" data-x="3000" data-y="-900">
+      <div id="a4bhZYoY3lo" data-id="a4bhZYoY3lo" class="youtube" data-start="74">
+        <a href="https://www.youtube.com/watch?v=a4bhZYoY3lo">AT&T Archives: Invention of the First Electric Computer</a>
+      </div>
+    </div>
+
+    <div id="binary_natural" class="step slide" data-x="4000" data-y="0">
+      <p class="centertext"><b>Binary - Natural Numbers</b><br><br></p>
+      <table style="width:100%; table-layout:fixed; border: 1px solid black">
+        <tr>
+          <td class="centertext" style="border: 1px solid black">128</td>
+          <td class="centertext" style="border: 1px solid black">64</td>
+          <td class="centertext" style="border: 1px solid black">32</td>
+          <td class="centertext" style="border: 1px solid black">16</td>
+          <td class="centertext" style="border: 1px solid black">8</td>
+          <td class="centertext" style="border: 1px solid black">4</td>
+          <td class="centertext" style="border: 1px solid black">2</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+        </tr>
+        <tr>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="binary_natural_1" class="step slide" data-x="4000" data-y="0" data-z="-1" style="z-index: -1">
+      <p class="centertext"><br><br><br><br><br></p>
+      <table style="width:100%; table-layout:fixed; border: 1px solid black">
+        <tr>
+          <td class="centertext" style="border: 1px solid black; font-size:38px">0*128</td>
+          <td class="centertext" style="border: 1px solid black">0*64</td>
+          <td class="centertext" style="border: 1px solid black">1*32</td>
+          <td class="centertext" style="border: 1px solid black">0*16</td>
+          <td class="centertext" style="border: 1px solid black">1*8</td>
+          <td class="centertext" style="border: 1px solid black">0*4</td>
+          <td class="centertext" style="border: 1px solid black">1*2</td>
+          <td class="centertext" style="border: 1px solid black">0*1</td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="binary_natural_2" class="step slide" data-x="4000" data-y="0" data-z="-2" style="z-index: -2">
+      <p class="centertext"><br><br><br><br><br><br><br></p>
+      <p>32 + 8 + 2 = 42</p>
+    </div>
+
+    <div id="data_types" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>Binary Data Types</b><br><br></p>
+      <ul>
+        <li>Unsigned Integer (Natural Number)</li>
+        <li>Signed Integer</li>
+        <li>Float</li>
+      </ul>
+    </div>
+
+    <div id="negative" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b>Negative Numbers<br><br><br></b></p>
+      <ul>
+        <li>One's Compliment - Just invert the bits</li>
+        <li style="color:red">Sign Bit: 0 is positive, 1 is negative</li>
+      </ul>
+      <br>
+      <table style="width:100%; table-layout:fixed; border: 1px solid black">
+        <tr>
+          <td class="centertext" style="border: 1px solid black; color:red">0</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black"><b>42</b></td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="negative1" class="step slide" data-x="1000" data-y="900" data-z="-1" style="z-index: -1">
+      <p class="centertext"><b>Negative Numbers<br><br><br></b></p>
+      <ul>
+        <li>One's Compliment - Just invert the bits</li>
+        <li style="color:red">Sign Bit: 0 is positive, 1 is negative</li>
+      </ul>
+      <br>
+      <table style="width:100%; table-layout:fixed; border: 1px solid black">
+        <tr>
+          <td class="centertext" style="border: 1px solid black; color:red">0</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black"><b>42</b></td>
+        </tr>
+      </table>
+      <br>
+      <table style="width:100%; table-layout:fixed; border: 1px solid black">
+        <tr>
+          <td class="centertext" style="border: 1px solid black; color:red">1</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black"><b>-42</b></td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="neg_addition" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>One's Compliment Addition<br><br></b></p>
+      <table style="width:100%; table-layout:fixed; border: 1px solid black">
+        <tr>
+          <td class="centertext" style="border: 1px solid black; color:red">0</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black"><b>42</b></td>
+        </tr>
+      </table>
+      <p class="centertext">+</p>
+      <table style="width:100%; table-layout:fixed; border: 1px solid black">
+        <tr>
+          <td class="centertext" style="border: 1px solid black; color:red">1</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black"><b>-42</b></td>
+        </tr>
+      </table>
+      <p class="centertext">=</p>
+    </div>
+
+    <div id="neg_addition1" class="step slide" data-x="2000" data-y="900" data-z="-1" style="z-index: -1">
+      <p class="centertext"><b>One's Compliment Addition<br><br></b></p>
+      <table style="width:100%; table-layout:fixed; border: 1px solid black">
+        <tr>
+          <td class="centertext" style="border: 1px solid black; color:red">0</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black"><b>42</b></td>
+        </tr>
+      </table>
+      <p class="centertext">+</p>
+      <table style="width:100%; table-layout:fixed; border: 1px solid black">
+        <tr>
+          <td class="centertext" style="border: 1px solid black; color:red">1</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black"><b>-42</b></td>
+        </tr>
+      </table>
+      <p class="centertext">=</p>
+      <table style="width:100%; table-layout:fixed; border: 1px solid black">
+        <tr>
+          <td class="centertext" style="border: 1px solid black; color:red">1</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black"><b>-0</b></td>
+        </tr>
+      </table>
+      <p><br>Hmm, that's not quite right...</p>
+    </div>
+
+    <div id="twos_comp" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>Negative Numbers</b></p>
+      <ul>
+        <li>Two's Compliment - <br>Invert the bits and add 1</li>
+      </ul>
+      <br>
+      <table style="width:100%; table-layout:fixed; border: 1px solid black">
+        <tr>
+          <td class="centertext" style="border: 1px solid black; color:red">0</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black"><b>42</b></td>
+        </tr>
+      </table>
+      <p class="centertext">invert</p>
+      <table style="width:100%; table-layout:fixed; border: 1px solid black">
+        <tr>
+          <td class="centertext" style="border: 1px solid black; color:red">1</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black"><b></b></td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="twos_comp1" class="step slide" data-x="3000" data-y="900" data-z="-1" style="z-index: -1">
+      <p class="centertext"><b>Negative Numbers</b></p>
+      <ul>
+        <li>Two's Compliment - <br>Invert the bits and add 1</li>
+      </ul>
+      <br>
+      <table style="width:100%; table-layout:fixed; border: 1px solid black">
+        <tr>
+          <td class="centertext" style="border: 1px solid black; color:red">0</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black"><b>42</b></td>
+        </tr>
+      </table>
+      <p class="centertext">invert</p>
+      <table style="width:100%; table-layout:fixed; border: 1px solid black">
+        <tr>
+          <td class="centertext" style="border: 1px solid black; color:red">1</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black"><b></b></td>
+        </tr>
+      </table>
+      <p class="centertext">plus 1</p>
+      <table style="width:100%; table-layout:fixed; border: 1px solid black">
+        <tr>
+          <td class="centertext" style="border: 1px solid black; color:red">1</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black"><b>-42</b></td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="neg_addition_2" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>Two's Compliment Addition<br><br></b></p>
+      <table style="width:100%; table-layout:fixed; border: 1px solid black">
+        <tr>
+          <td class="centertext" style="border: 1px solid black; color:red">0</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black"><b>42</b></td>
+        </tr>
+      </table>
+      <p class="centertext">+</p>
+      <table style="width:100%; table-layout:fixed; border: 1px solid black">
+        <tr>
+          <td class="centertext" style="border: 1px solid black; color:red">1</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black"><b>-42</b></td>
+        </tr>
+      </table>
+      <p class="centertext">=</p>
+    </div>
+
+    <div id="neg_addition_2_1" class="step slide" data-x="4000" data-y="900" data-z="-1" style="z-index: -1">
+      <p class="centertext"><b>Two's Compliment Addition<br><br></b></p>
+      <table style="width:100%; table-layout:fixed; border: 1px solid black">
+        <tr>
+          <td class="centertext" style="border: 1px solid black; color:red">0</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black"><b>42</b></td>
+        </tr>
+      </table>
+      <p class="centertext">+</p>
+      <table style="width:100%; table-layout:fixed; border: 1px solid black">
+        <tr>
+          <td class="centertext" style="border: 1px solid black; color:red">1</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black"><b>-42</b></td>
+        </tr>
+      </table>
+      <p class="centertext">=</p>
+      <table style="width:100%; table-layout:fixed; border: 1px solid black">
+        <tr>
+          <td class="centertext" style="border: 1px solid black; color:red">0</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black"><b>0</b></td>
+        </tr>
+      </table>
+      <p><br>That works!</p>
+    </div>
+
+    <div id="other_values" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>Other Values</b></p>
+      <table style="width:100%; table-layout:fixed; border: 1px solid black">
+        <tr>
+          <td class="centertext" style="border: 1px solid black; font-size:45px; line-height:50px">Binary</td>
+          <td class="centertext" style="border: 1px solid black; font-size:45px; line-height:50px">Unsigned</td>
+          <td class="centertext" style="border: 1px solid black; font-size:45px; line-height:50px">Signed</td>
+        </tr>
+        <tr style="background:#AAAAAA">
+          <td class="centertext" style="border: 1px solid black; font-size:45px; line-height:50px">00000000</td>
+          <td class="centertext" style="border: 1px solid black; font-size:45px; line-height:50px">0</td>
+          <td class="centertext" style="border: 1px solid black; font-size:45px; line-height:50px">0</td>
+        </tr>
+        <tr>
+          <td class="centertext" style="border: 1px solid black; font-size:45px; line-height:50px">00000001</td>
+          <td class="centertext" style="border: 1px solid black; font-size:45px; line-height:50px">1</td>
+          <td class="centertext" style="border: 1px solid black; font-size:45px; line-height:50px">1</td>
+        </tr>
+        <tr style="background:#AAAAAA">
+          <td class="centertext" style="border: 1px solid black; font-size:45px; line-height:50px">00000010</td>
+          <td class="centertext" style="border: 1px solid black; font-size:45px; line-height:50px">2</td>
+          <td class="centertext" style="border: 1px solid black; font-size:45px; line-height:50px">2</td>
+        </tr>
+        <tr>
+          <td class="centertext" style="border: 1px solid black; font-size:45px; line-height:50px">01111110</td>
+          <td class="centertext" style="border: 1px solid black; font-size:45px; line-height:50px">126</td>
+          <td class="centertext" style="border: 1px solid black; font-size:45px; line-height:50px">126</td>
+        </tr>
+        <tr style="background:#AAAAAA">
+          <td class="centertext" style="border: 1px solid black; font-size:45px; line-height:50px">01111111</td>
+          <td class="centertext" style="border: 1px solid black; font-size:45px; line-height:50px">127</td>
+          <td class="centertext" style="border: 1px solid black; font-size:45px; line-height:50px">127</td>
+        </tr>
+        <tr>
+          <td class="centertext" style="border: 1px solid black; font-size:45px; line-height:50px">10000000</td>
+          <td class="centertext" style="border: 1px solid black; font-size:45px; line-height:50px">128</td>
+          <td class="centertext" style="border: 1px solid black; font-size:45px; line-height:50px">-128</td>
+        </tr>
+        <tr style="background:#AAAAAA">
+          <td class="centertext" style="border: 1px solid black; font-size:45px; line-height:50px">10000001</td>
+          <td class="centertext" style="border: 1px solid black; font-size:45px; line-height:50px">129</td>
+          <td class="centertext" style="border: 1px solid black; font-size:45px; line-height:50px">-127</td>
+        </tr>
+        <tr>
+          <td class="centertext" style="border: 1px solid black; font-size:45px; line-height:50px">10000010</td>
+          <td class="centertext" style="border: 1px solid black; font-size:45px; line-height:50px">130</td>
+          <td class="centertext" style="border: 1px solid black; font-size:45px; line-height:50px">-126</td>
+        </tr>
+        <tr style="background:#AAAAAA">
+          <td class="centertext" style="border: 1px solid black; font-size:45px; line-height:50px">11111110</td>
+          <td class="centertext" style="border: 1px solid black; font-size:45px; line-height:50px">254</td>
+          <td class="centertext" style="border: 1px solid black; font-size:45px; line-height:50px">-2</td>
+        </tr>
+        <tr>
+          <td class="centertext" style="border: 1px solid black; font-size:45px; line-height:50px">11111111</td>
+          <td class="centertext" style="border: 1px solid black; font-size:45px; line-height:50px">255</td>
+          <td class="centertext" style="border: 1px solid black; font-size:45px; line-height:50px">-1</td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="xkcd_sheep_skip" class="skip slide" data-x="-825" data-y="2455" data-scale="0.5">
+      <p class="centertext"><b>Integer Overflow</b><br><br></p>
+      <img class="centerimg" height="250" src="images/cant_sleep_xkcd.png">
+      <p class="imagecredit">Image Source: <a href="http://xkcd.com/571/">Randall Munroe (XKCD)</a></p>
+    </div>
+
+    <div id="xkcd_sheep2" class="step" data-x="-965" data-y="2444" data-scale="0.18">
+    </div>
+
+    <div id="xkcd_sheep3" class="step" data-x="-875" data-y="2444" data-scale="0.18">
+    </div>
+
+    <div id="xkcd_sheep4" class="step" data-x="-785" data-y="2444" data-scale="0.18">
+    </div>
+
+    <div id="xkcd_sheep5" class="step" data-x="-695" data-y="2444" data-scale="0.18">
+    </div>
+
+    <div id="xkcd_sheep" class="step" data-x="-825" data-y="2475" data-scale="0.5">
+    </div>
+
+    <div id="range_of_values" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b>Range of Values</b><br><br></p>
+      <ul>
+        <li>8 Bit numbers<ul>
+          <li>Unsigned: 0 &rarr; 2<sup>8</sup> - 1</li>
+          <li>Signed: -(2<sup>7</sup>) &rarr; 2<sup>7</sup> - 1</li>
+        </ul></li>
+        <li>General Numbers - n bits<ul>
+          <li>Unsigned: 0 &rarr; 2<sup>n</sup> - 1</li>
+          <li>Signed: -(2<sup>n-1</sup>) &rarr; 2<sup>n-1</sup> - 1</li>
+        </ul></li>
+      </ul>
+    </div>
+
+    <div id="rational" class="skip slide" data-x="2000" data-y="1780">
+      <p class="centertext"><b>Rational Numbers<br><br><br></b></p>
+      <p>The decimal point can "float" around
+      <img class="centerimg" width="850" src="images/floating.png">
+
+    </div>
+
+    <div id="rational1" class="step" data-x="2000" data-y="1450" data-scale=".5">
+    </div>
+
+    <div id="rational2" class="step" data-x="2000" data-y="1800">
+    </div>
+
+    <div id="floating_point" class="step slide" data-x="3000" data-y="1800">
+      <p class="centertext"><b>Floating Point<br><br></b></p>
+      <ul>
+        <li>IEEE 754 Standard - 16 bits (Half)<ul>
+          <li>The exponent has a bias of 15</li>
+          <li>The leading one of the mantissa is implied</li>
+        </ul></li>
+      </ul>
+      <table style="width:100%; table-layout:fixed; border: 1px solid black">
+        <tr>
+          <td class="centertext" style="border: 1px solid black; color:red">-</td>
+          <td colspan="5" class="centertext" style="border: 1px solid black">Exponent</td>
+          <td colspan="10" class="centertext" style="border: 1px solid black">Mantissa</td>
+        </tr>
+        <tr>
+          <td class="centertext" style="border: 1px solid black; color:red">0</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="floating_point_ex" class="step slide" data-x="4000" data-y="1800">
+      <p class="centertext"><b>Floating Point Example<br><br></b></p>
+      <table style="width:100%; table-layout:fixed; border: 1px solid black">
+        <tr>
+          <td class="centertext" style="border: 1px solid black; color:red">-</td>
+          <td colspan="5" class="centertext" style="border: 1px solid black">Exponent</td>
+          <td colspan="10" class="centertext" style="border: 1px solid black">Mantissa</td>
+        </tr>
+        <tr>
+          <td class="centertext" style="border: 1px solid black; color:red">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+        </tr>
+      </table>
+      <p>Mantissa: (1).01010 = 1.3125<br>Exponent: 10100 - 01111 = 20 - 15 = 5</p>
+    </div>
+
+    <div id="floating_point_ex_2" class="step slide" data-x="4000" data-y="1800" data-z="-1" style="z-index: -1">
+      <p class="centertext"><b>Floating Point Example<br><br></b></p>
+      <table style="width:100%; table-layout:fixed; border: 1px solid black">
+        <tr>
+          <td class="centertext" style="border: 1px solid black; color:red">-</td>
+          <td colspan="5" class="centertext" style="border: 1px solid black">Exponent</td>
+          <td colspan="10" class="centertext" style="border: 1px solid black">Mantissa</td>
+        </tr>
+        <tr>
+          <td class="centertext" style="border: 1px solid black; color:red">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">1</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+          <td class="centertext" style="border: 1px solid black">0</td>
+        </tr>
+      </table>
+      <p>Mantissa: (1).01010 = 1.3125<br>Exponent: 10100 - 01111 = 20 - 15 = 5<br>Value: 1.3125 * 2<sup>5</sup> = 42</p>
+      <p>1.01010 * 2<sup>5</sup> = 101010 = 42</p>
+    </div>
+
+    <div id="floating_range" class="step slide" data-x="0" data-y="2700">
+      <p class="centertext"><b>Range of Values<br><br></b></p>
+      <ul>
+        <li>-65504 &rarr; +65504</li>
+        <li>5.96046 x 10<sup>-8</sup> : minimum positive</li>
+        <li>0 11111 0000000000 = infinity</li>
+        <li>1 11111 0000000000 = -infinity</li>
+        <li>0 01101 0101010101 &asymp; 0.33325 &asymp; 1/3</li>
+      </ul>
+      <p><br>Not exact, but not bad either</p>
+    </div>
+
+    <div id="real_word" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>Real World<br><br></b></p>
+      <ul>
+        <li>Integer - 32 bits</li>
+        <li>Long Integer - 64 bits</li>
+        <li>Half - 16 bits (5 + 10)</li>
+        <li>Float (Single) - 32 bits (8 + 23)</li>
+        <li>Double - 64 bits (11 + 52)</li>
+      </ul>
+    </div>
+
+    <div id="ascii" class="step slide" data-x="2000" data-y="2700">
+      <p class="centertext"><b>Text - ASCII</b></p>
+      <img class="centerimg" height="600" src="images/ascii_asciitable.gif">
+      <p class="imagecredit">Image Source: <a href="http://www.asciitable.com">ASCIItable.com</a></p>
+    </div>
+
+    <div id="ascii_example" class="step slide" data-x="3000" data-y="2700">
+      <p class="centertext"><b>Text - ASCII</b><br><br></p>
+      <p style="font-size:44px; line-height:50px">011001100110111101110010011101000111<br>100100100000011101000111011101101111<br><br></p>
+    </div>
+
+    <div id="ascii_example_2" class="step slide" data-x="3000" data-y="2700" data-z="-1" style="z-index: -1">
+      <p class="centertext"><b>Text - ASCII</b><br><br></p>
+      <p style="font-size:44px; line-height:50px">011001100110111101110010011101000111<br>100100100000011101000111011101101111<br><br></p>
+      <ul style="columns:2; -webkit-columns:2; -moz-columns:2;">
+        <li style="font-size:44px; line-height:50px">01100110 (102)</li>
+        <li style="font-size:44px; line-height:50px">01101111 (111)</li>
+        <li style="font-size:44px; line-height:50px">01110010 (114)</li>
+        <li style="font-size:44px; line-height:50px">01110100 (116)</li>
+        <li style="font-size:44px; line-height:50px">01111001 (121)</li>
+        <li style="font-size:44px; line-height:50px">00100000 (32)</li>
+        <li style="font-size:44px; line-height:50px">01110100 (116)</li>
+        <li style="font-size:44px; line-height:50px">01110111 (119)</li>
+        <li style="font-size:44px; line-height:50px">01101111 (111)</li>
+      </ul>
+    </div>
+
+    <div id="ascii_example_3" class="step slide" data-x="3000" data-y="2700" data-z="-2" style="z-index: -2">
+      <p class="centertext"><b>Text - ASCII</b><br><br></p>
+      <p style="font-size:44px; line-height:50px">011001100110111101110010011101000111<br>100100100000011101000111011101101111<br><br></p>
+      <ul style="columns:2; -webkit-columns:2; -moz-columns:2;">
+        <li style="font-size:44px; line-height:50px">01100110 (102) - f</li>
+        <li style="font-size:44px; line-height:50px">01101111 (111) - o</li>
+        <li style="font-size:44px; line-height:50px">01110010 (114) - r</li>
+        <li style="font-size:44px; line-height:50px">01110100 (116) - t</li>
+        <li style="font-size:44px; line-height:50px">01111001 (121) - y</li>
+        <li style="font-size:44px; line-height:50px">00100000 (32) - sp</li>
+        <li style="font-size:44px; line-height:50px">01110100 (116) - t</li>
+        <li style="font-size:44px; line-height:50px">01110111 (119) - w</li>
+        <li style="font-size:44px; line-height:50px">01101111 (111) - o</li>
+      </ul>
+    </div>
+
+    <div id="images" class="step slide" data-x="4000" data-y="2700">
+      <p class="centertext"><b>Images</b></p>
+      <img class="centerimg" height="600" src="images/vector_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Vector_graphics">Wikipedia</a></p>
+    </div>
+
+    <div id="svg" class="step slide" data-x="5000" data-y="2700">
+      <p class="centertext"><b>Vector Graphics (SVG)<br><br></b></p>
+      <pre><code style="font-size:25px; line-height:30px;">&lt;?xml version="1.0" encoding="UTF-8" ?>
+&lt;!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+&lt;svg width="350pt" height="450pt"
+  viewBox="0 0 350 450" version="1.1"
+  xmlns="http://www.w3.org/2000/svg">
+&lt;path fill="#ffffff" d=" M 0.00 0.00 L 270.80
+   0.00 C 270.29 1.10 269.84 2.22 269.41 3.34 C
+  270.05 3.42 271.34 3.57 271.98 3.65 C 271.83
+  2.43 271.66 1.21 271.49 0.00 L 320.83 0.00 C
+  320.62 1.16 320.43 2.32 320.27 3.48 C 320.88
+  3.49 322.11 3.50 322.73 3.51 C 322.60 2.64
+  322.35 0.89 322.23 0.01....</code></pre>
+    </div>
+
+    <div id="sprite" class="step" data-x="0" data-y="3600">
+      <img class="centerimg" width="850" src="images/sprite.png">
+    </div>
+
+    <div id="rgb" class="step slide" data-x="1000" data-y="3600">
+      <p class="centertext"><b>RGB Colors</b></p>
+      <img class="centerimg" height="600" src="images/rgb_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Rgb">Wikipedia</a></p>
+    </div>
+
+    <div id="sprite_hex" class="step" data-x="2000" data-y="3600">
+      <img class="centerimg" width="1000" src="images/img_hex.png">
+    </div>
+
+    <div id="sprite_hex_2" class="step" data-x="3000" data-y="3600">
+      <img class="centerimg" width="850" src="images/sprite_hex.png">
+    </div>
+
+    <div id="sprite_hex_3" class="step" data-x="4000" data-y="3600">
+      <img class="centerimg" width="850" height="637" src="images/sprite_reduced.png">
+    </div>
+
+    <div id="compression" class="step slide" data-x="-825" data-y="1125" data-scale="0.5">
+      <p class="centertext"><b>Compression</b></p>
+      <p class="centertext">How much wood could<br>a woodchuck chuck if a<br>woodchuck could chuck wood?</p>
+    </div>
+
+    <div id="compression2" class="step slide" data-x="-825" data-y="1125" data-scale="0.5" data-z="-1" style="z-index: -1">
+      <p class="centertext"><b>Compression</b></p>
+      <p class="centertext">How much wood could<br>a woodchuck chuck if a<br>woodchuck could chuck wood?</p>
+      <br>
+      <p class="centertext">wood = 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;could = 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chuck = 3</p>
+    </div>
+
+    <div id="compression3" class="step slide" data-x="-825" data-y="1125" data-scale="0.5" data-z="-2" style="z-index: -2">
+      <p class="centertext"><b>Compression</b></p>
+      <p class="centertext">How much wood could<br>a woodchuck chuck if a<br>woodchuck could chuck wood?</p>
+      <br>
+      <p class="centertext">wood = 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;could = 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chuck = 3</p>
+      <br>
+      <p class="centertext">How much 1 2 a 13 3 if a 13 2 3 1?</p>
+    </div>
+
+    <div id="xerox" class="step slide" data-x="-825" data-y="1575" data-scale="0.5">
+      <p class="centertext"><b>Image Compression</b></p>
+      <img class="centerimg" height="250" src="images/xerox1_dkriesel.png">
+      <p class="imagecredit">Image Source: <a href="http://www.dkriesel.com/en/blog/2013/0802_xerox-workcentres_are_switching_written_numbers_when_scanning">D. Kriesel</a></p>
+    </div>
+
+    <div id="xerox2" class="step slide" data-x="-825" data-y="2025" data-scale="0.5">
+      <p class="centertext"><b>Image Compression</b></p>
+      <img class="centerimg" height="250" src="images/xerox1_dkriesel.png">
+      <p class="imagecredit">Image Source: <a href="http://www.dkriesel.com/en/blog/2013/0802_xerox-workcentres_are_switching_written_numbers_when_scanning">D. Kriesel</a></p>
+      <img class="centerimg" height="250" src="images/xerox2_dkriesel.png">
+      <p class="imagecredit">Image Source: <a href="http://www.dkriesel.com/en/blog/2013/0802_xerox-workcentres_are_switching_written_numbers_when_scanning">D. Kriesel</a></p>
+      <p class="centertext"><a href="http://www.dkriesel.com/en/blog/2013/0802_xerox-workcentres_are_switching_written_numbers_when_scanning">Read more here</a></p>
+    </div>
+
+    <div id="assignment" class="step slide" data-x="-825" data-y="-225" data-scale="0.5">
+      <p class="centertext"><b>Assignments</b><br><br></p>
+      <ul>
+        <li>Read and be prepared to discuss:<ul>
+          <li><em>Pattern on the Stone</em> Chapter 7: Speed: Parallel Computers</li></ul></li>
+        <li>Blog 2: Algorithms - Due <em>Monday</em> 2/13 10:00 PM</li>
+        <li>Scratch Sorting Project - Due 2/14 10:00 PM</li>
+      </ul>
+    </div>
+
+    <div id="blog" class="step slide" data-x="-825" data-y="225" data-scale="0.5">
+      <p class="centertext" style="font-size: 35px; line-height: 45px"><b>Blog 2: Algorithms</b></p>
+      <p style="font-size: 30px; line-height: 33px">There are many important algorithms in Computing Science. In fact, we’re going to learn about many of them later in this class. For now, however, I’d like you to pick an algorithm from Wikipedia’s list of algorithms (https://en.wikipedia.org/wiki/List_of_algorithms) and write about it. Some things you can cover:<br><br>
+        <ul style="font-size: 30px; line-height: 33px">
+          <li>Where did this algorithm come from?</li>
+          <li>How does it work?</li>
+          <li>What makes it special or unique?</li>
+          <li>Are there other algorithms that achieve the same or similar outcome?</li>
+          <li>Could you do this algorithm manually? Or does it require a computer?</li>
+          <li>How does this algorithm relate to what we’ve already read in the textbook? Did the textbook help you understand how this algorithm works? (textbook references)</li>
+          <li>Where can this algorithm be found in the real world? (outside reference)</li>
+        </ul>
+      </p>
+    </div>
+
+    <div id="activity" class="skip slide" data-x="-825" data-y="655" data-scale="0.5">
+      <p class="centertext"><b>Binary Worksheet<br><br></b></p>
+    </div>
+
+    <div id="activity_1" class="step" data-x="-825" data-y="675" data-scale="0.5">
+    </div>
+
+    <div id="overview" class="step" data-x="2250" data-y="1350" data-z="-1" data-scale="7">
+    </div>
+
+</div>
+
+<script src="/js/analytics.js"></script>
+<script src="/js/impress.js"></script>
+<script>impress().init();</script>
+<script src="/js/jquery-1.10.2.min.js"></script>
+<script src="/js/TimeCircles.js"></script>
+<script src="/js/timer.js"></script>
+<script src="/js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

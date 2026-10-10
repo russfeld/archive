@@ -1,0 +1,458 @@
+<html lang="en">
+<head>
+    <link href="/favicon.ico" rel="shortcut icon">
+    <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+    <meta name="description" content="CIS 527 - Networking Overview" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 527 - Networking Overview</title>
+    <link href="/css/impress.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="-1000" data-y="0">
+        <p><b>CIS 527</b><br><br>Networking Overview</p>
+    </div>
+
+    <div id="packet1" class="step slide" data-x="0" data-y="0">
+      <img class="centerimg" width="850" src="images/packet1.png">
+    </div>
+
+    <div id="osi" class="step slide" data-x="1000" data-y="0">
+      <p class="centertext"><b>7 Layer OSI Network Model</b></p>
+      <ul>
+        <li>Application</li>
+        <li>Presentation</li>
+        <li>Session</li>
+        <li>Transport - TCP/UDP</li>
+        <li>Network - IPv4/IPv6</li>
+        <li>Data Link  - Ethernet</li>
+        <li>Physical - 100BASE-T</li>
+      </ul>
+    </div>
+
+    <div id="nic" class="step slide" data-x="2000" data-y="0">
+      <p class="centertext"><b>Physical - 100BASE-T</b></p>
+      <img class="centerimg" height="600" src="images/nic_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Ethernet_card">Wikipedia</a></p>
+    </div>
+
+    <div id="ethernet" class="step slide" data-x="3000" data-y="0">
+      <p class="centertext"><b>Data Link - Ethernet</b></p>
+      <img class="centerimg" height="600" src="images/ethernet_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Ethernet">Wikipedia</a></p>
+    </div>
+
+    <div id="routing" class="step slide" data-x="4000" data-y="0">
+      <p class="centertext"><b>Routing</b><br><br></p>
+      <ul>
+        <li>Determines best way to get from point to point on a network</li>
+        <li>Prevents loops</li>
+        <li>Allows for redundant links in case of an error</li>
+        <li>Simple networks use Spanning Tree Algorithm</li>
+      </ul>
+    </div>
+
+    <div id="vlan" class="step slide" data-x="5000" data-y="0">
+      <p class="centertext"><b>Virtual LAN</b><br><br></p>
+      <ul>
+        <li>Partition a single layer-2 network</li>
+        <li>Each partition is isolated</li>
+        <li>Helps simplify network design</li>
+        <li>Group items by function, not location</li>
+      </ul>
+    </div>
+
+    <div id="spanning_tree" class="step slide" data-x="6000" data-y="0">
+      <p class="centertext"><b>Spanning Tree Algorithm</b></p>
+      <img class="centerimg" height="600" src="images/net1_wiki.svg">
+      <p class="imagecredit">Image Credit: <a href="http://en.wikipedia.org/wiki/Spanning_Tree_Protocol">Wikipedia</a></p>
+    </div>
+
+    <div id="spanning_tree2" class="step slide" data-x="6000" data-y="-675" data-z="-500" data-rotate-x="60">
+      <p class="centertext"><b>Spanning Tree Algorithm</b></p>
+      <img class="centerimg" height="600" src="images/net2_wiki.svg">
+      <p class="imagecredit">Image Credit: <a href="http://en.wikipedia.org/wiki/Spanning_Tree_Protocol">Wikipedia</a></p>
+    </div>
+
+    <div id="spanning_tree3" class="step slide" data-x="6000" data-y="-675" data-z="-1500" data-rotate-x="120">
+      <p class="centertext"><b>Spanning Tree Algorithm</b></p>
+      <img class="centerimg" height="600" src="images/net3_wiki.svg">
+      <p class="imagecredit">Image Credit: <a href="http://en.wikipedia.org/wiki/Spanning_Tree_Protocol">Wikipedia</a></p>
+    </div>
+
+    <div id="spanning_tree4" class="step slide" data-x="6000" data-y="0" data-z="-2000" data-rotate-x="180">
+      <p class="centertext"><b>Spanning Tree Algorithm</b></p>
+      <img class="centerimg" height="600" src="images/net4_wiki.svg">
+      <p class="imagecredit">Image Credit: <a href="http://en.wikipedia.org/wiki/Spanning_Tree_Protocol">Wikipedia</a></p>
+    </div>
+
+    <div id="spanning_tree5" class="step slide" data-x="6000" data-y="675" data-z="-1500" data-rotate-x="240">
+      <p class="centertext"><b>Spanning Tree Algorithm</b></p>
+      <img class="centerimg" height="600" src="images/net5_wiki.svg">
+      <p class="imagecredit">Image Credit: <a href="http://en.wikipedia.org/wiki/Spanning_Tree_Protocol">Wikipedia</a></p>
+    </div>
+
+    <div id="spanning_tree6" class="step slide" data-x="6000" data-y="675" data-z="-500" data-rotate-x="300">
+      <p class="centertext"><b>Spanning Tree Algorithm</b></p>
+      <img class="centerimg" height="600" src="images/net6_wiki.svg">
+      <p class="imagecredit">Image Credit: <a href="http://en.wikipedia.org/wiki/Spanning_Tree_Protocol">Wikipedia</a></p>
+    </div>
+
+    <div id="ipv4" class="step slide" data-x="-1000" data-y="900">
+      <p class="centertext"><b>Network - IPv4</b><br><br></p>
+      <table style="width:100%" class="table">
+        <tr><td colspan="2"><b>IPv4 Packet Structure</b></td></tr>
+        <tr><td>Version Info</td><td>Length</td></tr>
+        <tr><td>Packet ID</td><td>Flags & Offset</td></tr>
+        <tr><td>Protocol & TTL</td><td>Checksum</td></tr>
+        <tr><td colspan="2">Source IP Address</td></tr>
+        <tr><td colspan="2">Destination IP Address</td></tr>
+        <tr><td colspan="2">Data...</td></tr>
+      </table>
+    </div>
+
+    <div id="ipv4vsipv6" class="step slide" data-x="0" data-y="900">
+      <p class="centertext"><b>IPv4 vs. IPv6</b><br><br></p>
+      <p class="centertext">IPv4: 32 bit Addresses<br>2<sup>32</sup> = 4,294,967,296<br><br></p>
+      <p class="centertext">IPv6: 128 bit Addresses<br>2<sup>128</sup> = 340,282,366,920,938,463,463,<br>374,607,431,768,211,456<br>or 340 Undecillion addresses</p>
+    </div>
+
+    <div id="ipv6" class="step slide" data-x="1000" data-y="900">
+      <p class="centertext"><b>Network - IPv6</b></p>
+      <img class="centerimg" height="600" src="images/ipv6_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Ipv6">Wikipedia</a></p>
+    </div>
+
+    <div id="interfaces" class="step slide" data-x="2000" data-y="900">
+      <p class="centertext"><b>Network Interfaces</b><br><br></p>
+      <ul>
+        <li>Localhost</li>
+        <li>Ethernet Adapter</li>
+        <li>Wireless Adapter</li>
+      </ul>
+    </div>
+
+    <div id="localhost" class="step slide" data-x="3000" data-y="900">
+      <p class="centertext"><b>Localhost</b><br><br></p>
+      <ul>
+        <li>a.k.a Loopback Adapter (lo)</li>
+        <li>IP Address: 127.0.0.1</li>
+        <li>DNS Name: localhost</li>
+        <li>Defined in Software</li>
+        <li>Allows a system to access itself via nework protocols</li>
+      </ul>
+    </div>
+
+    <div id="adapters" class="step slide" data-x="4000" data-y="900">
+      <p class="centertext"><b>Network Adapters</b><br><br></p>
+      <ul>
+        <li>Physical hardware connections to a network</li>
+        <li>Includes Wired (Ethernet) and Wireless adapters</li>
+        <li>Each adapter may have 1 or more IP addresses</li>
+      </ul>
+    </div>
+
+    <div id="win_devicemgr" class="step slide" data-x="5000" data-y="900">
+      <p class="centertext"><b>Windows Network Adapters</b><br>Device Manager</p>
+      <img class="centerimg" height="550" src="images/win_adapters1.png">
+    </div>
+
+    <div id="win_cpl" class="step slide" data-x="-1000" data-y="1800">
+      <p class="centertext"><b>Windows Network Adapters</b><br>Network Connections</p>
+      <img class="centerimg" width="850" src="images/win_adapters2.png">
+    </div>
+
+    <div id="ubuntu_hosts" class="step slide" data-x="0" data-y="1800">
+      <p class="centertext"><b>Ubuntu Network Adapters</b><br>/etc/hosts</p>
+      <img class="centerimg" height="200" src="images/ubuntu_adapters1.png">
+      <p class="centertext">/etc/network/interfaces</p>
+      <img class="centerimg" height="200" src="images/ubuntu_adapters2.png">
+    </div>
+
+    <div id="ubuntu_interfaces" class="step slide" data-x="1000" data-y="1800">
+      <p class="centertext"><b>Ubuntu Network Adapters</b><br>
+      <img class="centerimg" height="550" src="images/ubuntu_adapters3.png">
+    </div>
+
+    <div id="ip_addresses" class="step slide" data-x="2000" data-y="1800">
+      <p class="centertext"><b>IP Addresses</b><br><br></p>
+      <ul>
+        <li>Unique Identifier on a Network</li>
+        <li>Used for packet routing</li>
+        <li>3 common configurations<ul>
+          <li>Automatic - DHCP</li>
+          <li>Manual - Static IP Addresses</li>
+          <li>Automatic Private IP Addressing (APIPA)</li>
+        </ul></li>
+      </ul>
+    </div>
+
+    <div id="ip_addresses_components" class="step slide" data-x="3000" data-y="1800">
+      <p class="centertext"><b>IP Address Components</b><br><br></p>
+      <ul>
+        <li><b>IP Address</b> - The identifier of this computer</li>
+        <li><b>Subnet Mask</b> - The subnet this computer belongs to</li>
+        <li><b>Default Gateway</b> - The IP address of the "way out"</li>
+      </ul>
+    </div>
+
+    <div id="subnet" class="step slide" data-x="4000" data-y="1800">
+      <p class="centertext"><b>Subnet</b><br><br></p>
+      <ul>
+        <li>Logical subdivision of an IP network</li>
+        <li>Aids in routing and management</li>
+        <li>Traffic between subnets is exchanged across <em>routers</em></li>
+      </ul>
+    </div>
+
+    <div id="cidr" class="step slide" data-x="5000" data-y="1800">
+      <p class="centertext"><b>Classless Inter-Domain Routing</b><br><br></p>
+      <ul>
+        <li>Early internet routing assigned 4 classes of networks<ul>
+          <li>A - 2<sup>24</sup> (16M) addresses</li>
+          <li>B - 2<sup>16</sup> (65K) addresses</li>
+          <li>C - 2<sup>8</sup> (256) addresses</li>
+          <li>D - multicast addresses</li>
+        </ul></li>
+        <li>Inefficient usage of IP addresses</li>
+      </ul>
+    </div>
+
+    <div id="subnet_mask" class="step slide" data-x="-1000" data-y="2700">
+      <p class="centertext"><b>Subnet Mask</b><br><br></p>
+      <code style="font-size:40px; line-height:45px"><pre>IP Address: 192.168.5.130
+  11000000.10101000.00000101.10000010</pre></code>
+    </div>
+
+    <div id="subnet_mask2" class="step slide" data-x="-1000" data-y="2700" data-z="-1">
+      <p class="centertext"><b>Subnet Mask</b><br><br></p>
+      <code style="font-size:40px; line-height:45px"><pre>IP Address: 192.168.5.130
+  11000000.10101000.00000101.10000010
+
+  Subnet Mask: 255.255.255.0
+  11111111.11111111.11111111.00000000</pre></code>
+    </div>
+
+    <div id="subnet_mask3" class="step slide" data-x="-1000" data-y="2700" data-z="-2">
+      <p class="centertext"><b>Subnet Mask</b><br><br></p>
+      <code style="font-size:40px; line-height:45px"><pre>IP Address: 192.168.5.130
+  11000000.10101000.00000101.10000010
+
+  Subnet Mask: 255.255.255.0
+  11111111.11111111.11111111.00000000
+
+  Network Prefix: 192.168.5.0
+  11000000.10101000.00000101.00000000</pre></code>
+    </div>
+
+    <div id="subnet_mask4" class="step slide" data-x="-1000" data-y="2700" data-z="-3">
+      <p class="centertext"><b>Subnet Mask</b><br><br></p>
+      <code style="font-size:40px; line-height:45px"><pre>IP Address: 192.168.5.130
+  11000000.10101000.00000101.10000010
+
+  Subnet Mask: 255.255.255.0
+  11111111.11111111.11111111.00000000
+
+  Network Prefix: 192.168.5.0
+  11000000.10101000.00000101.00000000
+
+  Host Part: 0.0.0.130
+  00000000.00000000.00000000.10000010</pre></code>
+    </div>
+
+    <div id="cidr_notation" class="step slide" data-x="0" data-y="2700" data-z="-3">
+      <p class="centertext"><b>CIDR Notation</b><br><br></p>
+      <ul>
+        <li>Number of bits in network prefix</li>
+        <li>/8 = Class A size</li>
+        <li>/16 = Class B size</li>
+        <li>/24 = 255.255.255.0 = 254 hosts</li>
+        <li>/26 = 255.255.255.192 = 62 hosts</li>
+        <li>/28 = 255.255.255.240 = 14 hosts</li>
+        <li>192.168.5.0/24</li>
+      </ul>
+    </div>
+
+    <div id="reserved" class="step slide" data-x="1000" data-y="2700">
+      <p class="centertext"><b>Reserved IP Address Sections</b><br><br></p>
+      <ul>
+        <li>192.168.0.0/16</li>
+        <li>172.16.0.0/12</li>
+        <li>10.0.0.0/8</li>
+        <li>169.254.0.0/16(APIPA)</li>
+      </ul>
+    </div>
+
+    <div id="dhcp" class="step slide" data-x="2000" data-y="2700">
+      <p class="centertext"><b>Dynamic Host Configuration Protocol (DHCP)</b></p>
+      <img class="centerimg" height="550" src="images/dhcp_tech_juice.jpg">
+      <p class="imagecredit">Image Source: <a href="http://www.tech-juice.org/2011/06/21/the-dhcp-protocol-for-ipv4-explained/">Tech Juice</a></p>
+    </div>
+
+    <div id="dhclient" class="step slide" data-x="3000" data-y="2700">
+      <p class="centertext"><b>Ubuntu - dhclient</b><br><br></p>
+      <img class="centerimg" width="850" src="images/dhclient.png">
+    </div>
+
+    <div id="manual" class="step slide" data-x="4000" data-y="2700">
+      <p class="centertext"><b>Manual Configuration</b><br><br></p>
+      <ul>
+        <li>Manually enter IP address information for hosts</li>
+        <li>Normally used on servers and core network devices</li>
+        <li>More control, but more work to make changes</li>
+      </ul>
+    </div>
+
+    <div id="apipa" class="step slide" data-x="5000" data-y="2700">
+      <p class="centertext"><b>Automatic Private IP Addressing (APIPA)</b><br><br></p>
+      <ul>
+        <li>When all else fails, your system will assign an address that is non-routable</li>
+        <li>If your IP is like 169.254.x.x then something is not working correctly</li>
+      </ul>
+    </div>
+
+    <div id="win_ip_config" class="step slide" data-x="-1000" data-y="3600">
+      <p class="centertext"><b>Windows IP Configuration</b></p>
+      <img class="centerimg" height="600" src="images/win_ipconfig.png">
+    </div>
+
+    <div id="ubuntu_ip_config" class="step slide" data-x="0" data-y="3600">
+      <p class="centertext"><b>Ubuntu IP Configuration</b></p>
+      <img class="centerimg" height="600" src="images/ubuntu_ipconfig.png">
+    </div>
+
+    <div id="commands" class="step slide" data-x="1000" data-y="3600">
+      <p class="centertext"><b>Windows Diagnostic Commands</b><br><br></p>
+      <ul>
+        <li><span style="font-family:monospace, monospace;">ping</span> - contact IP addresses and DNS names</li>
+        <li><span style="font-family:monospace, monospace;">tracert</span> - trace route between hosts</li>
+        <li><span style="font-family:monospace, monospace;">ipconfig</span> - access IP configuration</li>
+      </ul>
+    </div>
+
+    <div id="ipconfig" class="step slide" data-x="2000" data-y="3600">
+      <p class="centertext"><b>ipconfig</b><br><br></p>
+      <ul>
+        <li><span style="font-family:monospace, monospace;">ipconfig /release</span></li>
+        <li><span style="font-family:monospace, monospace;">ipconfig /renew</span></li>
+        <li><span style="font-family:monospace, monospace;">ipconfig /all</span></li>
+        <li><span style="font-family:monospace, monospace;">ipconfig /flushdns</span></li>
+        <li><span style="font-family:monospace, monospace;">ipconfig /displaydns</span></li>
+      </ul>
+    </div>
+
+    <div id="ubuntu_commands" class="step slide" data-x="3000" data-y="3600">
+      <p class="centertext"><b>Ubuntu Diagnostic Commands</b><br><br></p>
+      <ul>
+        <li><span style="font-family:monospace, monospace;">ping</span> - contact IP addresses and DNS names</li>
+        <li><span style="font-family:monospace, monospace;">traceroute</span> - trace route between hosts</li>
+        <li><span style="font-family:monospace, monospace;">ifconfig</span> - access IP configuration</li>
+        <li><span style="font-family:monospace, monospace;">mtr</span> - combine ping and traceroute</li>
+      </ul>
+    </div>
+
+    <div id="tcp" class="step slide" data-x="4000" data-y="3600">
+      <p class="centertext"><b>Transport - TCP</b><br><br></p>
+      <table style="width:100%" class="table">
+        <tr><td colspan="2"><b>TCP Packet Structure</b></td></tr>
+        <tr><td>Source Port</td><td>Dest. Port</td></tr>
+        <tr><td colspan="2">Sequence Number</td></tr>
+        <tr><td colspan="2">Acknowledgement Number</td></tr>
+        <tr><td>Options</td><td>Length</td></tr>
+        <tr><td>Checksum</td><td>Urgent</td></tr>
+        <tr><td colspan="2">Data...</td></tr>
+      </table>
+    </div>
+
+    <div id="udp" class="step slide" data-x="5000" data-y="3600">
+      <p class="centertext"><b>Transport - UDP</b><br><br></p>
+      <table style="width:100%" class="table">
+        <tr><td colspan="2"><b>UDP Packet Structure</b></td></tr>
+        <tr><td>Source Port</td><td>Dest. Port</td></tr>
+        <tr><td>Length</td><td>Checksum</td></tr>
+        <tr><td colspan="2">Data...</td></tr>
+      </table>
+    </div>
+
+    <div id="tcpvsudp" class="step slide" data-x="-1000" data-y="4500">
+      <p class="centertext"><b>TCP vs. UDP</b><br><br></p>
+      <table style="width:100%" class="table">
+        <tr><td><b>TCP</b></td><td><b>UDP</b></td></tr>
+        <tr><td>Connection Oriented</td><td>Connectionless</td></tr>
+        <tr><td>Reliable</td><td>Unreliable</td></tr>
+        <tr><td>Acknowledge</td><td>No Acknowledge</td></tr>
+      </table>
+    </div>
+
+    <div id="ports" class="step slide" data-x="0" data-y="4500">
+      <p class="centertext"><b>Ports</b></p>
+      <ul>
+        <li>Individual connection points for each application on a computer</li>
+        <li>65535 possible ports (2<sup>16</sup>)</li>
+        <li>Around 250 are "well known" ports with widely accepted uses for incoming connections</li>
+        <li>Outgoing connections use high numbered "ephemeral" ports</li>
+      </ul>
+    </div>
+
+    <div id="wkports" class="step slide" data-x="1000" data-y="4500">
+      <p class="centertext"><b>Well Known Ports</b><br>/etc/services</p>
+      <ul>
+        <li>21 - FTP</li>
+        <li>22 - SSH</li>
+        <li>25 - SMTP</li>
+        <li>80 - HTTP</li>
+        <li>443 - HTTPS</li>
+        <li>3389 - Remote Desktop</li>
+      </ul>
+    </div>
+
+    <div id="tcpview" class="step slide" data-x="2000" data-y="4500">
+      <p class="centertext"><b>Windows - Sysinternals TCPView</b>
+      <img class="centerimg" height="600" src="images/tcpview.png">
+    </div>
+
+    <div id="netstat" class="step slide" data-x="3000" data-y="4500">
+      <p class="centertext"><b>Ubuntu - netstat</b>
+      <img class="centerimg" width="850" src="images/netstat.png">
+    </div>
+
+
+    <div id="assignments" class="step slide" data-x="4000" data-y="4500">
+      <p class="centertext"><b>Assignments</b><br><br></p>
+      <ul>
+        <li>Lab 3 - Core Networking Services: Due Monday 2/27 10:30 AM</li>
+      </ul>
+    </div>
+
+    <div id="overview" class="step" data-x="2500" data-y="2350" data-z="-1" data-scale="8.5">
+    </div>
+
+</div>
+
+<script src="/js/analytics.js"></script>
+<script src="/js/impress.js"></script>
+<script>impress().init();</script>
+<script src="/js/jquery-1.10.2.min.js"></script>
+<script src="/js/TimeCircles.js"></script>
+<script src="/js/timer.js"></script>
+<script src="/js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+
+
+
+</body>
+</html>

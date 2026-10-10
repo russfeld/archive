@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+  <BASE href="./">
+  <link href="favicon.ico" rel="shortcut icon">
+  <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+  <meta name="description" content="Timer" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Timer</title>
+    <link href="css/impress.css" rel="stylesheet" />
+    <link href="css/TimeCircles.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="timer10" class="step" data-x="1000" data-y="900">
+      <p class="centertext"><b>12 Minute Timer</b></p>
+      <div id="timer1" class="timer" data-timer="720" style="width: 100%"></div>
+    </div>
+
+</div>
+
+<script src="js/analytics.js"></script>
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/TimeCircles.js"></script>
+<script src="js/timer.js"></script>
+
+</body>
+</html>

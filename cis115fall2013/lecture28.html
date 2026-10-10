@@ -1,0 +1,364 @@
+<html lang="en">
+<head>
+  <BASE href="../">
+  <link href="favicon.ico" rel="shortcut icon">
+  <meta name="keywords" content="Russell Feldhausen russfeld russfeldh russfeld_2166" />
+  <meta name="description" content="CIS 115 Fall 2013 Lecture 28" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CIS 115 Fall 2013 Lecture 28</title>
+    <link href="css/impress.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step slide" data-x="0" data-y="-900">
+        <p><b>CIS 115</b><br><br>Lecture 28: Computer Architecture</p>
+    </div>
+
+    <div id="early" class="step" data-x="1000" data-y="-900">
+      <p class="centertext"><b>Fixed Program Computers</b></p>
+      <img class="centerimg" height="630" src="cis115fall2013/images/lecture28/diffengine_wiki.jpg">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Difference_engine">Wikipedia</a></p>
+    </div> 
+
+    <div id="vonNeumann" class="step" data-x="2000" data-y="-900">
+      <p class="centertext"><b>John von Neumann</b></p>
+      <img class="centerimg" height="630" src="cis115fall2013/images/lecture28/vonneumann_wiki.gif">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/John_von_Neumann">Wikipedia</a></p>
+    </div> 
+
+    <div id="storedprogram" class="step" data-x="3000" data-y="-900">
+      <p class="centertext"><b>Stored Program Computers</b></p>
+      <img class="centerimg" height="630" src="cis115fall2013/images/lecture28/storedprogram.png">
+    </div> 
+
+    <div id="vnarch" class="step" data-x="4000" data-y="-900">
+      <p class="centertext"><b>Von Neumann Architecture</b></p>
+      <img class="centerimg" width="850" src="cis115fall2013/images/lecture28/vonneumannarch_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Von_Neumann_architecture">Wikipedia</a></p>
+    </div> 
+
+    <div id="system_bus" class="step" data-x="0" data-y="0">
+      <p class="centertext"><b>System Bus</b></p>
+      <img class="centerimg" width="850" src="cis115fall2013/images/lecture28/systembus_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Von_Neumann_architecture">Wikipedia</a></p>
+    </div> 
+
+    <div id="memory" class="step" data-x="1000" data-y="0">
+      <img class="centerimg" width="850" src="cis115fall2013/images/lecture28/memory_wiki.png">
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/Memory_hierarchy">Wikipedia</a></p>
+    </div> 
+
+    <div id="isa" class="step slide" data-x="2000" data-y="0">
+      <p class="centertext"><b>Instruction Set Architecture (ISA)</b><br><br></p>
+      <img class="centerimg" style="float:right" width="400" src="cis115fall2013/images/lecture28/x86_wiki.jpg">
+      <ul>
+        <li>x86</li>
+        <li>x86-64</li>
+        <li>IA64 (Itanium)</li>
+        <li>ARM</li>
+        <li>PowerPC</li>
+        <li>MIPS</li>
+      </ul>
+      <p class="imagecredit">Image Source: <a href="http://en.wikipedia.org/wiki/X86">Wikipedia</a></p>
+    </div> 
+
+    <div id="hw_classes" class="step slide" data-x="3000" data-y="0">
+      <p class="centertext"><b>Hardware Classes<br><br></b></p>
+      <ol>
+        <li>Internal Components</li>
+        <li>Storage</li>
+        <li>Peripherals</li>
+        <li>Cables & Connectors</li>
+      </ol>
+      <p class="imagecredit"><br><br>Information from <a href="http://en.wikibooks.org/wiki/Computer_Hardware">Wikibooks</a></p>
+    </div>
+
+    <div id="mobo" class="skip" data-x="3000" data-y="2020" data-scale="3">
+      <img class="centerimg" width="800" src="cis115fall2013/images/lecture28/mobo_wiki.png">
+      <p class="imagecredit">Image Credit: <a href="http://en.wikipedia.org/wiki/Motherboard">Wikipedia</a></p>
+    </div>
+
+    <div id="mobo_big" class="step" data-x="3000" data-y="2000" data-scale="3">
+
+    </div>
+
+    <div id="mobo_features" class="step" data-x="2740" data-y="2125" data-scale="0.25">
+      <p class="centertext"><b>Motherboard Features<br><br></b></p>
+      <ul>
+        <li>CPU Socket</li>
+        <li>Memory Slots</li>
+        <li>Northbridge</li>
+        <li>Southbridge</li>
+        <li>Onboard GPU</li>
+        <li>Expansion Slots</li>
+      </ul>
+    </div>
+
+    <div id="old_diagram" class="step slide" data-x="2600" data-y="2900" data-scale="0.25">
+      <img class="centerimg" height="700" src="cis115fall2013/images/lecture28/old_mobo_diagram_wiki.png" style="float:right">
+      <p class="centertext"><b>Old Motherboard Diagram</b></p>
+      <p class="imagecredit">Image Credit: <a href="http://en.wikipedia.org/wiki/Southbridge_(computing)">Wikipedia</a></p>
+    </div>
+
+    <div id="new_diagram" class="step slide" data-x="2850" data-y="2900" data-scale="0.25">
+      <p class="centertext"><b>New Motherboard Diagram</b></p>
+      <img class="centerimg" height="600" src="cis115fall2013/images/lecture28/intel_z87_wiki.jpg">
+      <p class="imagecredit">Image Credit: <a href="http://en.wikipedia.org/wiki/Southbridge_(computing)">Wikipedia</a></p>
+    </div>
+
+    <div id="processor" class="step" data-x="1600" data-y="2200" data-scale="0.5">
+      <p class="centertext"><b>Processor</b></p>
+      <img class="centerimg" height="600" src="cis115fall2013/images/lecture28/corei7_bottom_wiki.jpg">
+      <p class="imagecredit">Image Credit: <a href="http://en.wikipedia.org/wiki/X86_virtualization">Wikipedia</a></p>
+    </div>
+
+    <div id="processor_features" class="step slide" data-x="1600" data-y="2650" data-scale="0.5">
+      <p class="centertext"><b>Processor Features<br><br></b></p>
+      <ul>
+        <li>Architecture</li>
+        <li>Clock speed</li>
+        <li>Cache memory</li>
+        <li>Processing cores</li>
+      </ul>
+      <p style="font-size:40px; line-height:55px"><br><a href="http://cpuboss.com/cpu/Intel-Core-i7-3970X">cpuboss.com - Intel Core i7 3970X</a></p>
+      <p style="font-size:40px; line-height:55px"><a href="http://cpuboss.com/cpus/Intel-Core-i7-3970X-vs-AMD-FX-9370#specs">Intel Core i7 3970X vs. AMD FX 9370</a></p>
+    </div>
+
+    <div id="ram" class="step" data-x="1700" data-y="1000" data-scale="0.5">
+      <p class="centertext"><b>Memory (RAM)</b></p>
+      <img class="centerimg" height="600" src="cis115fall2013/images/lecture28/ram_wiki.jpg">
+      <p class="imagecredit">Image Credit: <a href="http://en.wikipedia.org/wiki/Dynamic_random-access_memory">Wikipedia</a></p>
+    </div>
+
+    <div id="ram_features" class="step slide" data-x="1700" data-y="1400" data-scale="0.5">
+      <p class="centertext"><b>Memory Features<br><br></b></p>
+      <ul>
+        <li>Size</li>
+        <li>Speed</li>
+        <li>Type/Class</li>
+        <li>ECC (Error correction)</li>
+        <li>Registered</li>
+      </ul>
+    </div>
+
+    <div id="gpu" class="step" data-x="4500" data-y="2500" data-scale="0.5">
+      <p class="centertext"><b>Graphics Card</b></p>
+      <img class="centerimg" height="600" src="cis115fall2013/images/lecture28/gpu_wiki.jpg">
+      <p class="imagecredit">Image Credit: <a href="http://en.wikipedia.org/wiki/Graphics_card">Wikipedia</a></p>
+    </div>
+
+    <div id="gpu_features" class="step slide" data-x="4500" data-y="2900" data-scale="0.5">
+      <p class="centertext"><b>Graphics Card Features<br><br></b></p>
+      <ul>
+        <li>GPU Chip</li>
+        <li>Video Memory</li>
+        <li>Motherboard Interface</li>
+        <li>Output Connections</li>
+      </ul>
+      <p style="font-size:40px; line-height:55px"><br><a href="http://gpuboss.com/graphics-card/EVGA-GeForce-GTX-TITAN">gpuboss.com - EVGA GeForce GTX TITAN</a></p>
+      <p style="font-size:40px; line-height:55px"><a href="http://gpuboss.com/gpus/EVGA-GeForce-GTX-TITAN-vs-AMD-Radeon-HD-7970-GHz-Edition">EVGA GeForce GTX TITAN vs AMD Radeon HD 7970</a></p>
+    </div>
+
+    <div id="hdd" class="step" data-x="2500" data-y="950" data-scale="0.5">
+      <p class="centertext"><b>Hard Disk Drive (HDD)</b></p>
+      <img class="centerimg" height="600" src="cis115fall2013/images/lecture28/hdd_wiki.jpg">
+      <p class="imagecredit">Image Credit: <a href="http://en.wikipedia.org/wiki/Hard_disk_drive">Wikipedia</a></p>
+    </div>
+
+    <div id="ssd" class="step" data-x="3000" data-y="950" data-scale="0.5">
+      <p class="centertext"><b>Solid State Drive (SSD)</b></p>
+      <img class="centerimg" height="600" src="cis115fall2013/images/lecture28/ssd_wiki.jpg">
+      <p class="imagecredit">Image Credit: <a href="http://en.wikipedia.org/wiki/Solid-state_drive">Wikipedia</a></p>
+    </div>
+
+    <div id="disk_features" class="step slide" data-x="3500" data-y="950" data-scale="0.5">
+      <p class="centertext"><b>Disk Drive Features</b></p>
+      <ul>
+        <li>Capacity</li>
+        <li>Interface</li>
+        <li>Spindle speed (HDD)</li>
+        <li>Read speed</li>
+        <li>Write speed</li>
+        <li>Latency</li>
+      </ul>
+    </div>
+
+    <div id="comparison" class="step slide" data-x="4000" data-y="950" data-scale="0.5">
+      <p class="centertext"><b>Comparison</b></p>
+      <img class="centerimg" height="600" src="cis115fall2013/images/lecture28/ssd_hdd_chart_computerworld.png">
+      <p class="imagecredit">Image Credit: <a href="http://www.computerworld.com/s/article/9230882/Hard_disk_drives_vs._solid_state_drives_Are_SSDs_finally_worth_the_money_?pageNumber=1">Computerworld</a></p>
+    </div>
+
+    <div id="raid" class="step slide" data-x="4500" data-y="950" data-scale="0.5">
+      <p class="centertext"><b>RAID</b><br><br></p>
+      <ul>
+        <li>RAID 0 - Striping</li>
+        <li>RAID 1 - Mirroring</li>
+        <li>RAID 5 - Striping & Parity</li>
+        <li>RAID 6 - Striping & Dual Parity</li>
+        <li>RAID 10 - Mirroring + Striping</li>
+      </ul>
+    </div>
+
+    <div id="cdd" class="step" data-x="4500" data-y="1400" data-scale="0.5">
+      <p class="centertext"><b>Optical Disk Drive (ODD)</b></p>
+      <img class="centerimg" width="850" src="cis115fall2013/images/lecture28/odd_wiki.jpg">
+      <p class="imagecredit">Image Credit: <a href="http://en.wikipedia.org/wiki/Optical_disc_drive">Wikipedia</a></p>
+    </div>
+
+    <div id="cdd_comparison" class="step slide" data-x="4500" data-y="1900" data-scale="0.5">
+      <p class="centertext"><b>Optical Disk Comparison</b><br><br></p>
+      <table style="width:100%">
+        <tr>
+          <th>Type</th>
+          <th>Capacity</th>
+          <th>Speed</th>
+        </tr>
+        <tr style="background: #CCCCCC">
+          <td>CD</td>
+          <td>800 MB</td>
+          <td>up to 88Mbit/s (72x)</td>
+        </tr>
+        <tr>
+          <td>DVD</td>
+          <td>4.7/8.5 GB</td>
+          <td>11.08 Mbit/s</td>
+        </tr>
+        <tr style="background: #CCCCCC">
+          <td>Blu-ray</td>
+          <td>25/128 GB</td>
+          <td>54 Mbit/s</td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="psu" class="step" data-x="3250" data-y="3100" data-scale="0.5">
+      <p class="centertext"><b>Power Supply (PSU)</b></p>
+      <img class="centerimg" height="600" src="cis115fall2013/images/lecture28/psu_wiki.jpg">
+      <p class="imagecredit">Image Credit: <a href="http://en.wikipedia.org/wiki/Power_supply_unit_(computer)">Wikipedia</a></p>
+    </div>
+
+    <div id="psu_chart" class="step slide" data-x="3750" data-y="3100" data-scale="0.5">
+      <table style="width:100%">
+        <tr>
+          <th>Device</th>
+          <th>Usage</th>
+        </tr>
+        <tr style="background: #CCCCCC">
+          <td>Video Card</td>
+          <td>50-150W / plug</td>
+        </tr>
+        <tr>
+          <td>PCI Card</td>
+          <td>5-10W</td>
+        </tr>
+        <tr style="background: #CCCCCC">
+          <td>ODD</td>
+          <td>20-30W</td>
+        </tr>
+        <tr>
+          <td>HDD</td>
+          <td>15-30W</td>
+        </tr>
+        <tr style="background: #CCCCCC">
+          <td>SSD</td>
+          <td>~5W</td>
+        </tr>
+        <tr>
+          <td>Motherboard</td>
+          <td>50-150W</td>
+        </tr>
+        <tr style="background: #CCCCCC">
+          <td>RAM</td>
+          <td>~15W / DIMM</td>
+        </tr>
+        <tr>
+          <td>Processor</td>
+          <td>80-140W</td>
+        </tr>
+      </table>
+      <p class="imagecredit">Information from <a href="http://www.pcpower.com/technology/power_usage/">PCPower.com</a></p>
+      <p style="font-size:30px; line-height:35px">Note: multiply by 1.5 to account for real usages and efficiency</p>
+    </div>
+
+    <div id="rear_panel" class="step" data-x="500" data-y="1500" data-scale="2">
+      <img class="centerimg" height="600" src="cis115fall2013/images/lecture28/mobo_rear_panel_build_your_own_computer.jpg">
+      <p class="imagecredit">Image Credit: <a href="http://www.build-your-own-computer.net/gigabyte-ga-ma78gm-s2h.html">build-your-own-computer.net</a></p>
+    </div>
+
+    <div id="other" class="step slide" data-x="4000" data-y="0">
+      <p class="centertext"><b>Other Peripherals</b><br><br></p>
+      <ul>
+        <li>PCI Cards</li>
+        <li>Flash Memory</li>
+        <li>Display Devices</li>
+        <li>Input Devices</li>
+        <li>Printers</li>
+        <li>Networking Devices</li>
+      </ul>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="assignment" class="step slide" data-x="-825" data-y="-225" data-scale="0.5">
+      <p class="centertext"><b>Assignments</b><br><br></p>
+      <ul>
+        <li>Scratch Game Project - Due Thursday 12/12 <b>5:00 PM</b> via KSOL or email</li>
+        <li>Textbook Section - Due Friday 12/20 10:00 PM via KSOL wiki</li>
+        <li>Blog 13: Cybersecurity -  <b>Due 12/8 10:00 PM</b></li>
+      </ul>
+    </div>
+
+    <div id="blog" class="step slide" data-x="-825" data-y="225" data-scale="0.5">
+      <p class="centertext" style="font-size: 35px; line-height: 45px"><b>Blog 13: Cybersecurity</b></p>
+      <p style="font-size: 32px; line-height: 35px">You are employed by a large, multinational corporation, and your responsibility is to protect your companies network, intellectual data, customer data, and computer systems from attack. We’ve spent time in class discussing many different topics related to cybersecurity, but now is your chance to use that knowledge. Tell us how you would go about defending your company from malicious users.</p>
+      <ul style="font-size: 35px; line-height: 37px">
+        <li>What protections would you put in place?</li>
+        <li>How would you store your data?</li>
+        <li>Would you hire teams to do white-hat hacking or penetration testing? What would you want them to look for?</li>
+        <li>How would you train your employees to spot malicious behavior?</li>
+        <li>How would you protect against social engineering and other physical means of attack?</li>
+        <li>If someone attacked you, would you retaliate? Do you feel it is ethical/legal to do so?</li>
+      </ul>
+    </div>
+
+    <div id="overview" class="step" data-x="2000" data-y="1400" data-z="-1" data-scale="7.5">
+    </div>
+
+
+</div>
+
+<script src="js/analytics.js"></script>
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
+<script src="js/youtuber.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+</body>
+</html>
